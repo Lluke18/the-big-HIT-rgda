@@ -17,6 +17,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 SteamManager="*uid://f1v0qsbgum66"
+MultiplayerManager="*uid://drqvwqir7nuro"
 
 [display]
 

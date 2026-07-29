@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://8vxiktmnccoq"]
+
+[ext_resource type="Script" uid="uid://u0kxy4sb6s8a" path="res://scripts/multiplayer/enet_network.gd" id="1_dpyjx"]
+
+[node name="EnetNetwork" type="Node" unique_id=1810409804]
+script = ExtResource("1_dpyjx")

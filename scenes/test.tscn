@@ -1,11 +1,14 @@
 [gd_scene format=3 uid="uid://cq21ce8u3xxh1"]
 
 [ext_resource type="Script" uid="uid://hrcdgfgrmlrd" path="res://scripts/test.gd" id="1_errlg"]
+[ext_resource type="Script" uid="uid://bspdmvrmr3dne" path="res://scripts/multiplayer/network_manager.gd" id="2_bl13t"]
 
 [node name="Node2D" type="Node2D" unique_id=1601845632]
 script = ExtResource("1_errlg")
 
-[node name="NetworkManager" type="Node" parent="." unique_id=286062784]
+[node name="NetworkManager" type="Node" parent="." unique_id=286062784 node_paths=PackedStringArray("_players_spawn_node")]
+script = ExtResource("2_bl13t")
+_players_spawn_node = NodePath("../Players")
 
 [node name="Button" type="Button" parent="." unique_id=655515963]
 anchors_preset = 8
@@ -13,14 +16,45 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 485.0
-offset_top = 301.0
-offset_right = 573.0
-offset_bottom = 332.0
+offset_left = 82.0
+offset_top = 78.0
+offset_right = 170.0
+offset_bottom = 109.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "use steam"
 
 [node name="Players" type="Node2D" parent="." unique_id=915747481]
 
+[node name="becomehost" type="Button" parent="." unique_id=1712485091]
+offset_left = 315.0
+offset_top = 197.0
+offset_right = 577.0
+offset_bottom = 254.0
+text = "become host"
+
+[node name="joinasclient" type="Button" parent="." unique_id=527190238]
+offset_left = 355.0
+offset_top = 297.0
+offset_right = 460.0
+offset_bottom = 328.0
+text = "join as client"
+
+[node name="listlobbies" type="Button" parent="." unique_id=674275193]
+offset_left = 362.0
+offset_top = 336.0
+offset_right = 453.0
+offset_bottom = 367.0
+text = "list lobbies"
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="." unique_id=173436829]
+spawn_path = NodePath("../Players")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1417549646]
+offset_right = 40.0
+offset_bottom = 40.0
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="becomehost" to="." method="_on_becomehost_pressed"]
+[connection signal="pressed" from="joinasclient" to="." method="_on_joinasclient_pressed"]
+[connection signal="pressed" from="listlobbies" to="." method="_on_listlobbies_pressed"]
