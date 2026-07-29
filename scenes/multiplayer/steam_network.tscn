@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://c65bsixi570ml"]
+
+[ext_resource type="Script" uid="uid://32dqson0bh2t" path="res://scripts/multiplayer/steam_network.gd" id="1_thvc2"]
+
+[node name="SteamNetwork" type="Node" unique_id=1551435579]
+script = ExtResource("1_thvc2")

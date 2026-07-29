@@ -14,10 +14,19 @@ config/name="rgda-jam-HIT"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+SteamManager="*uid://f1v0qsbgum66"
+MultiplayerManager="*uid://drqvwqir7nuro"
+
 [display]
 
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godotsteam/plugin.cfg")
 
 [physics]
 
