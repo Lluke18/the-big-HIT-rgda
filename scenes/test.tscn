@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://cq21ce8u3xxh1"]
+
+[ext_resource type="Script" uid="uid://hrcdgfgrmlrd" path="res://scripts/test.gd" id="1_errlg"]
+
+[node name="Node2D" type="Node2D" unique_id=1601845632]
+script = ExtResource("1_errlg")
+
+[node name="NetworkManager" type="Node" parent="." unique_id=286062784]
+
+[node name="Button" type="Button" parent="." unique_id=655515963]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 485.0
+offset_top = 301.0
+offset_right = 573.0
+offset_bottom = 332.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "use steam"
+
+[node name="Players" type="Node2D" parent="." unique_id=915747481]
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
