@@ -19,7 +19,7 @@ sky = SubResource("Sky_0wfyh")
 glow_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_agfs1"]
-albedo_texture = ExtResource("2_sugp2")
+
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0wfyh"]
 roughness = 0.0
