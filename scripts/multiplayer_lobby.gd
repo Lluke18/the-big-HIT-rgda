@@ -1,7 +1,7 @@
 extends Control
 
 @onready var network_manager: Node = $NetworkManager
-@onready var main_scene := preload("res://scenes/main.tscn")
+#@onready var main_scene := preload("res://scenes/main.tscn")
 @export var multiplayer_ui: Control
 #enum player_select{VAMPIRE, DEVIL, WEREWOLF} useless
 

@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ie26pxxkdffy"
-path.s3tc="res://.godot/imported/DocBoard.png-37098ed9e6bccb80bd2c2b91c53a9a7d.s3tc.ctex"
+path.s3tc="res://.godot/imported/DocBoard.png-86b019dc249eb57c953507e997878d38.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/textures/DocBoard.png"
-dest_files=["res://.godot/imported/DocBoard.png-37098ed9e6bccb80bd2c2b91c53a9a7d.s3tc.ctex"]
+source_file="res://assets/Textures/DocBoard.png"
+dest_files=["res://.godot/imported/DocBoard.png-86b019dc249eb57c953507e997878d38.s3tc.ctex"]
 
 [params]
 
