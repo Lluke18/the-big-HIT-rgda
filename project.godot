@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 
 SteamManager="*uid://f1v0qsbgum66"
 MultiplayerManager="*uid://drqvwqir7nuro"
+SignalBus="*uid://uvkju27vdshn"
 
 [display]
 

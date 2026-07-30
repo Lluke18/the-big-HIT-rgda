@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://dp757es78f0oh"]
 
 [ext_resource type="Script" uid="uid://bspdmvrmr3dne" path="res://scripts/multiplayer/network_manager.gd" id="1_0wfyh"]
-[ext_resource type="PackedScene" uid="uid://deyqy5skl5ddn" path="res://scenes/character.tscn" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://deyqy5skl5ddn" path="res://scenes/characters/character.tscn" id="1_o5qli"]
+[ext_resource type="Texture2D" uid="uid://btc4h5vm1emkw" path="res://texture7.png" id="2_sugp2"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_o5qli"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -16,7 +17,7 @@ sky = SubResource("Sky_0wfyh")
 glow_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_agfs1"]
-albedo_color = Color(0.18116832, 0.46579307, 0.2615865, 1)
+albedo_texture = ExtResource("2_sugp2")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0wfyh"]
 roughness = 0.0
@@ -39,9 +40,9 @@ shadow_enabled = true
 environment = SubResource("Environment_sugp2")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=734039370]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.922185, 0, -8.921359)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9968348, 0, -15.947631)
 use_collision = true
-size = Vector3(69.60744, 1, 88.891975)
+size = Vector3(73.45814, 1, 102.94452)
 material = SubResource("StandardMaterial3D_agfs1")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=590677735]
@@ -52,6 +53,7 @@ material = SubResource("StandardMaterial3D_0wfyh")
 
 [node name="Character" parent="." unique_id=1744164533 instance=ExtResource("1_o5qli")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8503008, 0)
+visible = false
 
 [node name="players" type="Node3D" parent="." unique_id=769424871]
 
@@ -60,3 +62,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.990517, 0.9465618, -35.95
 use_collision = true
 size = Vector3(8.634644, 0.89312744, 25.267578)
 material = SubResource("StandardMaterial3D_xrivr")
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="." unique_id=1637721779]
+spawn_path = NodePath("../players")
+
+[node name="multiplayerButtons" type="CanvasLayer" parent="." unique_id=1571101762]

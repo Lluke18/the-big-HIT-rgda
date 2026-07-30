@@ -2,7 +2,8 @@ extends Control
 
 @onready var network_manager: Node = $NetworkManager
 @onready var main_scene := preload("res://scenes/main.tscn")
-
+@export var multiplayer_ui: Control
+#enum player_select{VAMPIRE, DEVIL, WEREWOLF} useless
 
 func _ready() -> void:
 	if OS.has_feature("dedicated_server"):
@@ -22,12 +23,13 @@ func _on_button_pressed() -> void: #use steam btn
 func _on_becomehost_pressed() -> void:
 	print("become host pressed")
 	network_manager.become_host()
-	
+	multiplayer_ui.hide()
 
 
 func _on_joinasclient_pressed() -> void:
 	print("Join as player 2")
 	join_lobby()
+	multiplayer_ui.hide()
 
 
 func _on_listlobbies_pressed() -> void: #LIST STEAM LOBBIES!
@@ -37,7 +39,7 @@ func _on_listlobbies_pressed() -> void: #LIST STEAM LOBBIES!
 func join_lobby(lobby_id = 0):
 	print("Joining lobby %s" % lobby_id)
 	network_manager.join_as_client(lobby_id)
-	
+	multiplayer_ui.hide()
 
 
 func _on_lobby_match_list(lobbies: Array):

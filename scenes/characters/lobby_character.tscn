@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://dutrwh3b8a48c"]
+
+[ext_resource type="Script" uid="uid://berpo71vx55vm" path="res://scripts/characters/lobby_character.gd" id="1_ir1gk"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_qqea1"]
+properties/0/path = NodePath(".:player_id")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:curr_selection")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+
+[node name="LobbyCharacter" type="Control" unique_id=1491880909]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ir1gk")
+character_select = Array[String](["VAMPIRE", "DEVIL", "WEREWOLF"])
+
+[node name="characterName" type="Label" parent="." unique_id=142708598]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.0
+offset_top = -11.5
+offset_right = 35.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "VAMPIRE"
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=2026980388]
+replication_config = SubResource("SceneReplicationConfig_qqea1")

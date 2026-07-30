@@ -1,5 +1,7 @@
 extends CharacterBody3D
 
+class_name Player
+
 const SPRINT_SPEED = 8.7  #RUUUUN
 var walk_speed := 5.0
 var current_speed

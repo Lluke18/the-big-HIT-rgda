@@ -2,7 +2,7 @@ extends Node
 
 enum MULTIPLAYER_NETWORK_TYPE { ENET, STEAM }
 
-@export var _players_spawn_node: Node2D
+@export var _players_spawn_node: Node
 
 var active_network_type: MULTIPLAYER_NETWORK_TYPE = MULTIPLAYER_NETWORK_TYPE.ENET
 var enet_network_scene := preload("res://scenes/multiplayer/enet_network.tscn")
