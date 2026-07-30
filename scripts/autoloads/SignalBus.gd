@@ -1,0 +1,3 @@
+extends Node
+
+enum CLASS{VAMPIRE, DEVIL, WEREWOLF}

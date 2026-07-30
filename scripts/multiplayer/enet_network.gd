@@ -5,7 +5,7 @@ const SERVER_PORT = 8080
 const SERVER_IP = "127.0.0.1"
 
 #here load the multiplayer controller
-var multiplayer_scene = preload("res://scenes/testchar.tscn")
+var multiplayer_scene = preload("res://scenes/characters/lobby_character.tscn")
 var multiplayer_peer: ENetMultiplayerPeer = ENetMultiplayerPeer.new()
 var _players_spawn_node
 
@@ -27,13 +27,14 @@ func join_as_client(lobby_id):
 	multiplayer_peer.create_client(SERVER_IP, SERVER_PORT)
 	multiplayer.multiplayer_peer = multiplayer_peer
 
-func _add_player_to_game(id: int):
+func _add_player_to_game(id: int): #here we add the lobby_character
 	print("Player %s joined the game!" % id)
 	
 	var player_to_add = multiplayer_scene.instantiate()
+	#it starts by having selected the vampire
 	player_to_add.player_id = id
 	player_to_add.name = str(id)
-	
+	#added the hbox
 	_players_spawn_node.add_child(player_to_add, true)
 	
 func _del_player(id: int):
