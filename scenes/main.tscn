@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dp757es78f0oh"]
 
 [ext_resource type="Script" uid="uid://bspdmvrmr3dne" path="res://scripts/multiplayer/network_manager.gd" id="1_0wfyh"]
-[ext_resource type="PackedScene" uid="uid://deyqy5skl5ddn" path="res://scenes/character.tscn" id="1_o5qli"]
+[ext_resource type="Script" uid="uid://douif56hqpoxv" path="res://scripts/level/main.gd" id="1_tefeu"]
 [ext_resource type="PackedScene" uid="uid://bxjt634a253al" path="res://assets/OfficeFBX/Wall_Standard_Alt_1.fbx" id="3_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://c2cy7ts2vbxjd" path="res://assets/OfficeFBX/Wall_Standard_Door.fbx" id="4_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://bsagyqj2u2uts" path="res://assets/Objects/wall_medium.tscn" id="5_tbgi4"]
@@ -20,17 +20,20 @@ glow_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_agfs1"]
 
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0wfyh"]
 roughness = 0.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xrivr"]
 albedo_color = Color(0.73980933, 0.0012812406, 0.8596882, 1)
 
-[node name="Main" type="Node3D" unique_id=1847829112]
+[node name="Main" type="Node3D" unique_id=1847829112 node_paths=PackedStringArray("network_manager", "players_spawn")]
+script = ExtResource("1_tefeu")
+network_manager = NodePath("NetworkManager")
+players_spawn = NodePath("players")
 
-[node name="NetworkManager" type="Node" parent="." unique_id=1851574284]
+[node name="NetworkManager" type="Node" parent="." unique_id=1851574284 node_paths=PackedStringArray("_players_spawn_node")]
 script = ExtResource("1_0wfyh")
+_players_spawn_node = NodePath("../players")
 
 [node name="GameManager" type="Node3D" parent="." unique_id=633486043]
 
@@ -53,11 +56,8 @@ use_collision = true
 size = Vector3(25.645897, 1, 24.037605)
 material = SubResource("StandardMaterial3D_0wfyh")
 
-[node name="Character" parent="." unique_id=1744164533 instance=ExtResource("1_o5qli")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8503008, 0)
-visible = false
-
 [node name="players" type="Node3D" parent="." unique_id=769424871]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.995867, -1.5480781)
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="." unique_id=168378962]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.990517, 0.9465618, -35.95591)
@@ -73,3 +73,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.28407, 0.5, 6.5671015)
 
 [node name="Wall_Medium" parent="." unique_id=1030242223 instance=ExtResource("5_tbgi4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.460148, 0.5, -6.201746)
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="." unique_id=1415623724]
+_spawnable_scenes = PackedStringArray("uid://deyqy5skl5ddn")
+spawn_path = NodePath("../players")

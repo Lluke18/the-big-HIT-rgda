@@ -1,6 +1,6 @@
 extends Node
 
-var multiplayer_scene = preload("res://scenes/testchar.tscn")
+var multiplayer_scene = preload("res://scenes/characters/lobby_character.tscn")
 var multiplayer_peer: SteamMultiplayerPeer = SteamMultiplayerPeer.new()
 var _players_spawn_node
 var _hosted_lobby_id = 0
