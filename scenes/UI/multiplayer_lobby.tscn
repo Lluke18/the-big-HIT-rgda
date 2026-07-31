@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://smfksbdwdcsr" path="res://scripts/multiplayer_lobby.gd" id="1_6gqji"]
 [ext_resource type="Script" uid="uid://bspdmvrmr3dne" path="res://scripts/multiplayer/network_manager.gd" id="2_4ea5e"]
 
-[node name="Node2D" type="Control" unique_id=1482253729 node_paths=PackedStringArray("multiplayer_ui")]
+[node name="Node2D" type="Control" unique_id=1482253729 node_paths=PackedStringArray("multiplayer_ui", "lobby_ui")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,7 +11,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_6gqji")
+start_scene_path = "res://scenes/main.tscn"
 multiplayer_ui = NodePath("MultiplayerUI")
+lobby_ui = NodePath("LobbyUI")
 
 [node name="NetworkManager" type="Node" parent="." unique_id=286062784 node_paths=PackedStringArray("_players_spawn_node")]
 script = ExtResource("2_4ea5e")
@@ -96,7 +98,28 @@ offset_right = 212.0
 offset_bottom = 289.0
 text = "join as client"
 
+[node name="LobbyUI" type="CanvasLayer" parent="." unique_id=1033623780]
+visible = false
+
+[node name="Start Game" type="Button" parent="LobbyUI" unique_id=1030180200]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = -8.0
+offset_right = 4.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "START GAME"
+
+[node name="Leave Lobby" type="Button" parent="LobbyUI" unique_id=444240625]
+offset_right = 8.0
+offset_bottom = 8.0
+
 [connection signal="pressed" from="MultiplayerUI/listlobbies" to="." method="_on_listlobbies_pressed"]
 [connection signal="pressed" from="MultiplayerUI/becomehost" to="." method="_on_becomehost_pressed"]
 [connection signal="pressed" from="MultiplayerUI/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="MultiplayerUI/joinasclient" to="." method="_on_joinasclient_pressed"]
+[connection signal="pressed" from="LobbyUI/Start Game" to="." method="_on_start_game_pressed"]

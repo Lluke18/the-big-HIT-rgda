@@ -1,17 +1,23 @@
 extends Control
 
 @onready var network_manager: Node = $NetworkManager
-#@onready var main_scene := preload("res://scenes/main.tscn")
+@onready var main_scene := preload("res://scenes/main.tscn")
+@export var start_scene_path: String
 @export var multiplayer_ui: Control
+@export var lobby_ui: CanvasLayer
+@onready var h_box_container: HBoxContainer = $Players/HBoxContainer
+
 #enum player_select{VAMPIRE, DEVIL, WEREWOLF} useless
 
 func _ready() -> void:
 	if OS.has_feature("dedicated_server"):
 		print("Starting dedicated server...")
 		network_manager.become_host(true)
+	lobby_ui.hide()
 
 
 func _on_button_pressed() -> void: #use steam btn
+	SignalBus.steam_activated = true
 	print("using steam...")
 	SteamManager.initialize_steam()
 	Steam.lobby_match_list.connect(_on_lobby_match_list)
@@ -24,12 +30,14 @@ func _on_becomehost_pressed() -> void:
 	print("become host pressed")
 	network_manager.become_host()
 	multiplayer_ui.hide()
+	lobby_ui.show()
 
 
 func _on_joinasclient_pressed() -> void:
 	print("Join as player 2")
 	join_lobby()
 	multiplayer_ui.hide()
+	lobby_ui.show()
 
 
 func _on_listlobbies_pressed() -> void: #LIST STEAM LOBBIES!
@@ -40,6 +48,7 @@ func join_lobby(lobby_id = 0):
 	print("Joining lobby %s" % lobby_id)
 	network_manager.join_as_client(lobby_id)
 	multiplayer_ui.hide()
+	lobby_ui.show()
 
 
 func _on_lobby_match_list(lobbies: Array):
@@ -63,3 +72,18 @@ func _on_lobby_match_list(lobbies: Array):
 			lobby_button.connect("pressed", Callable(self, "join_lobby").bind(lobby))
 			
 			$"VBoxContainer".add_child(lobby_button)
+
+
+func _on_start_game_pressed() -> void:
+	
+	for lobby_char in h_box_container.get_children():
+		print("i am a player: ", lobby_char.player_id)
+		var peer_id = lobby_char.name.to_int()
+		var selection = lobby_char.curr_selection
+		MultiplayerManager.player_characters[peer_id] = selection
+	
+	if multiplayer.is_server():
+		MultiplayerManager.change_scene_to_everyone.rpc(start_scene_path)
+	
+	#loads the main scene with all the players and their coresponding characters
+	

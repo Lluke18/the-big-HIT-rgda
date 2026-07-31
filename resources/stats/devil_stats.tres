@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="BaseStats" format=3 uid="uid://bvcupbytn6bqa"]
+
+[ext_resource type="Script" uid="uid://b1fsd6ts7cxfq" path="res://resources/stats/base_stats.gd" id="1_fsdei"]
+
+[resource]
+script = ExtResource("1_fsdei")
+max_hp = 60
+curr_hp = 60
+damage = 70
+speed_multiplier = 1.0
+metadata/_custom_type_script = "uid://b1fsd6ts7cxfq"

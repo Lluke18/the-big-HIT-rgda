@@ -25,7 +25,7 @@ const FOV_CHANGE: float = 1.5
 @export var seetext : Label
 @onready var seecast := %SeeCast
 
-@onready var footstep_player = $FootStepsPlayer
+#@onready var footstep_player = $FootStepsPlayer
 var footstep_timer : float = 0.0
 const FOOTSTEP_INTERVAL : float = 0.9
 
@@ -34,17 +34,35 @@ signal clicked
 @export var footstep_sound_indoor : AudioStream
 @export var footstep_sound_outdoor : AudioStream
 
+@export var stats: BaseStats
+
+#@export var player_id := 1:
+	#set(id):
+		#player_id = id
+		#print("setting the id")
+		#%InputSynchronizer.set_multiplayer_authority(id)
+
+func _enter_tree() -> void:
+	# Set authority for both the player and the input synchronizer
+	set_multiplayer_authority(name.to_int())
+	%InputSynchronizer.set_multiplayer_authority(name.to_int())
+
 
 func _ready():
+	if is_multiplayer_authority():
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		camera.current = true
+	else: camera.current = false
+	
 	#Input.set_custom_mouse_cursor(cursor)
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	if footstep_sound_indoor:
-		footstep_player.stream = footstep_sound_indoor
+	#Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	#if footstep_sound_indoor:
+		#footstep_player.stream = footstep_sound_indoor
 		
 var current_footstep_sounds: Array[AudioStream] = [] #wtf is this
 
-func set_footstep_sound(stream: AudioStream) -> void:
-	footstep_player.stream = stream
+#func set_footstep_sound(stream: AudioStream) -> void:
+	#footstep_player.stream = stream
 	
 func set_footstep_sounds_random(sounds: Array[AudioStream]) -> void:
 	current_footstep_sounds = sounds
@@ -66,11 +84,11 @@ func _physics_process(delta: float) -> void:
 		current_speed = SPRINT_SPEED
 	else: current_speed = walk_speed
 	
-	var input_dir = Input.get_vector("3D_left","3D_right", "3D_forward", "3D_backward")
-	var direction = (head.transform.basis * Vector3(
-		input_dir.x,0, input_dir.y)).normalized()
+	var synced_input = %InputSynchronizer.input_dir
 	
-
+	var direction = (head.transform.basis * Vector3(
+		synced_input.x, 0, synced_input.y)).normalized()
+	
 	
 	
 	if is_on_floor():
