@@ -30,6 +30,12 @@ window/stretch/aspect="expand"
 
 enabled=PackedStringArray("res://addons/godotsteam/plugin.cfg")
 
+[global_group]
+
+character=""
+npc=""
+interactable=""
+
 [input]
 
 jump={

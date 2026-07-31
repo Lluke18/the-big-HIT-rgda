@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://1s24sdpuq1tu"]
+
+[ext_resource type="Script" uid="uid://bu1e7dtww230r" path="res://scenes/NPCs/npc.gd" id="1_iag0i"]
+[ext_resource type="Script" uid="uid://bkuygnj6nmexp" path="res://scripts/fsm scripts/fsm.gd" id="2_bjc1w"]
+[ext_resource type="Script" uid="uid://bw2nkbod1cyb" path="res://scripts/fsm scripts/wander.gd" id="3_2cktm"]
+[ext_resource type="Script" uid="uid://be2vkrgly3wld" path="res://scripts/fsm scripts/infinite_follow.gd" id="4_bjc1w"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_xrivr"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xrivr"]
+
+[node name="NPC" type="CharacterBody3D" unique_id=399691295 groups=["npc"]]
+script = ExtResource("1_iag0i")
+move_speed = 10.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1264006287]
+mesh = SubResource("CapsuleMesh_xrivr")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1175898848]
+shape = SubResource("CapsuleShape3D_xrivr")
+
+[node name="StateMachine" type="Node" parent="." unique_id=470339980 node_paths=PackedStringArray("initial_state")]
+script = ExtResource("2_bjc1w")
+initial_state = NodePath("InfiniteFollow")
+
+[node name="Idle" type="Node" parent="StateMachine" unique_id=1233826377]
+
+[node name="Wander" type="Node" parent="StateMachine" unique_id=1760459452 node_paths=PackedStringArray("npc")]
+script = ExtResource("3_2cktm")
+npc = NodePath("../..")
+
+[node name="InfiniteFollow" type="Node" parent="StateMachine" unique_id=96281055 node_paths=PackedStringArray("npc")]
+script = ExtResource("4_bjc1w")
+npc = NodePath("../..")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=838253104]

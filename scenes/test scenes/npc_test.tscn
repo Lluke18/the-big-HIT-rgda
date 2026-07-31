@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://cfimtuu08xjdb"]
+
+[ext_resource type="PackedScene" uid="uid://deyqy5skl5ddn" path="res://scenes/characters/character.tscn" id="1_dntle"]
+[ext_resource type="PackedScene" uid="uid://1s24sdpuq1tu" path="res://scenes/NPCs/npc.tscn" id="2_qcdj7"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_dntle"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_qcdj7"]
+sky_material = SubResource("ProceduralSkyMaterial_dntle")
+
+[sub_resource type="Environment" id="Environment_sob5y"]
+background_mode = 2
+sky = SubResource("Sky_qcdj7")
+glow_enabled = true
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_xrivr"]
+vertices = PackedVector3Array(-0.7026596, 0.05921161, 6.809679, 1.5473404, 0.05921161, 7.309679, 1.5473404, 0.05921161, 0.80967903, -1.9526596, 0.05921161, 7.309679, 3.0473404, 0.05921161, -17.690321, -18.70266, 0.05921161, -17.690321, -18.70266, 0.05921161, 9.559679, -2.9526596, 0.05921161, 9.559679, 3.2973404, 0.05921161, 0.55967903, 8.04734, 0.05921161, 0.55967903, 8.29734, 0.05921161, 2.809679, 13.29734, 0.05921161, 2.809679, 13.29734, 0.05921161, -17.690321, 2.5473404, 1.0592117, 1.559679, 2.5473404, 1.0592117, 8.309679, 7.2973404, 1.0592117, 8.309679, 7.2973404, 1.0592117, 1.559679, 8.29734, 0.05921161, 9.059679, 2.2973404, 0.05921161, 9.309679, 2.0473404, 0.05921161, 11.059679, 13.29734, 0.05921161, 22.809679, -0.2026596, 0.05921161, 12.309679, -0.2026596, 0.05921161, 22.809679, 1.2973404, 8.159211, 10.059679, 1.0473404, 8.159211, 8.559679, 0.2973404, 8.159211, 8.059679, -0.9526596, 8.159211, 11.059679, 0.2973404, 8.159211, 11.059679, -1.4526596, 8.159211, 8.309679, -1.9526596, 8.159211, 9.309679, -1.2026596, 0.05921161, 8.559679, -1.4526596, 0.05921161, 9.059679, -1.4526596, 0.05921161, 10.059679, 0.5473404, 0.05921161, 10.559679, 1.0473404, 0.05921161, 9.809679, 0.7973404, 0.05921161, 8.809679, 0.047340393, 0.05921161, 8.309679, -0.7026596, 0.05921161, 10.809679, -2.4526596, 0.05921161, 11.309679, -18.70266, 0.05921161, 22.809679)
+polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(0, 3, 2), PackedInt32Array(2, 3, 6), PackedInt32Array(2, 6, 4), PackedInt32Array(4, 6, 5), PackedInt32Array(3, 7, 6), PackedInt32Array(4, 8, 2), PackedInt32Array(9, 11, 10), PackedInt32Array(9, 8, 4), PackedInt32Array(11, 9, 12), PackedInt32Array(12, 9, 4), PackedInt32Array(16, 15, 13), PackedInt32Array(13, 15, 14), PackedInt32Array(19, 18, 17), PackedInt32Array(10, 11, 17), PackedInt32Array(17, 11, 20), PackedInt32Array(19, 17, 21), PackedInt32Array(21, 17, 22), PackedInt32Array(22, 17, 20), PackedInt32Array(23, 25, 24), PackedInt32Array(27, 26, 23), PackedInt32Array(23, 26, 29), PackedInt32Array(23, 29, 28), PackedInt32Array(23, 28, 25), PackedInt32Array(32, 31, 30), PackedInt32Array(35, 34, 33), PackedInt32Array(36, 35, 30), PackedInt32Array(30, 35, 32), PackedInt32Array(32, 35, 37), PackedInt32Array(37, 35, 33), PackedInt32Array(38, 21, 22), PackedInt32Array(38, 22, 7), PackedInt32Array(7, 22, 6), PackedInt32Array(6, 22, 39)]
+cell_height = 0.1
+
+[node name="NpcTest" type="Node3D" unique_id=483961267]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1912552571]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1688017761]
+environment = SubResource("Environment_sob5y")
+
+[node name="Character" parent="." unique_id=1744164533 groups=["character"] instance=ExtResource("1_dntle")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2163359, 0)
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=968282550]
+navigation_mesh = SubResource("NavigationMesh_xrivr")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="NavigationRegion3D" unique_id=1426752404]
+transform = Transform3D(4.0951433, 0, 0, 0, 4.0951433, 0, 0, 0, 4.0951433, -0.27534294, 3.9543505, 9.557451)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="NavigationRegion3D" unique_id=37191811]
+transform = Transform3D(1.0723121, 0, 0, 0, 1, 0, 0, 0, 7.413347, 4.9972363, 0.35921192, 4.878811)
+size = Vector3(5.1429443, 1, 1)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D" unique_id=1827776479]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -2.6780434, -0.64078844, 2.5647378)
+use_collision = true
+size = Vector3(33.049232, 1, 41.510113)
+
+[node name="NPC" parent="NavigationRegion3D" unique_id=399691295 instance=ExtResource("2_qcdj7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1359477, 0.8592138, 16.925026)
+player_path = NodePath("../../Character")
+move_speed = 2.0
