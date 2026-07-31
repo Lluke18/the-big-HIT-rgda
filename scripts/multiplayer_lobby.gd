@@ -73,17 +73,31 @@ func _on_lobby_match_list(lobbies: Array):
 			
 			$"VBoxContainer".add_child(lobby_button)
 
-
+#JOCUL MERGE DOAR DACA DAI RUN SCENE LA MULTIPLAYE LOBBY
 func _on_start_game_pressed() -> void:
+	if !multiplayer.is_server():
+		return
+	
+	var chosen_classes = []
+	var has_duplicates: bool = false
 	
 	for lobby_char in h_box_container.get_children():
 		print("i am a player: ", lobby_char.player_id)
 		var peer_id = lobby_char.name.to_int()
 		var selection = lobby_char.curr_selection
-		MultiplayerManager.player_characters[peer_id] = selection
+		
+		if selection in chosen_classes:
+			has_duplicates = true
+			break
+		else:
+			chosen_classes.append(selection)
+			MultiplayerManager.player_characters[peer_id] = selection
 	
-	if multiplayer.is_server():
-		MultiplayerManager.change_scene_to_everyone.rpc(start_scene_path)
+	if has_duplicates:
+		print("DUPLICATES CHOSEN!")
+		return
+	
+	MultiplayerManager.change_scene_to_everyone.rpc(start_scene_path)
 	
 	#loads the main scene with all the players and their coresponding characters
 	
