@@ -1,7 +1,7 @@
 extends CharacterBody3D
 class_name NPC #or human?
 
-
+@export var stats: NPCStats
 var player = null
 @export var players_spawn: Node3D
 var players: Array[Player]
