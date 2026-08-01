@@ -9,9 +9,14 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xrivr"]
 
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_bjc1w"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+
 [node name="NPC" type="CharacterBody3D" unique_id=399691295 groups=["npc"]]
 script = ExtResource("1_iag0i")
-move_speed = 10.0
+move_speed = 3.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1264006287]
 mesh = SubResource("CapsuleMesh_xrivr")
@@ -34,3 +39,10 @@ script = ExtResource("4_bjc1w")
 npc = NodePath("../..")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=838253104]
+
+[node name="RayCast3D" type="RayCast3D" parent="." unique_id=833471495]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0.7617147, 0)
+target_position = Vector3(0, -1.825, 0)
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=400696466]
+replication_config = SubResource("SceneReplicationConfig_bjc1w")
