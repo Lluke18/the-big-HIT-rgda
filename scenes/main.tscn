@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bxjt634a253al" path="res://assets/OfficeFBX/Wall_Standard_Alt_1.fbx" id="3_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://c2cy7ts2vbxjd" path="res://assets/OfficeFBX/Wall_Standard_Door.fbx" id="4_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://bsagyqj2u2uts" path="res://assets/Objects/wall_medium.tscn" id="5_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://1s24sdpuq1tu" path="res://scenes/NPCs/npc.tscn" id="6_tefeu"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_o5qli"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -88,3 +89,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9968348, 0, -15.947631)
 use_collision = true
 size = Vector3(73.45814, 1, 102.94452)
 material = SubResource("StandardMaterial3D_agfs1")
+
+[node name="NPC" parent="NavigationRegion3D" unique_id=399691295 node_paths=PackedStringArray("players_spawn") instance=ExtResource("6_tefeu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.645775, 1.6863317, 8.215199)
+players_spawn = NodePath("../../players")

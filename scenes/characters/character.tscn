@@ -22,7 +22,7 @@ properties/0/path = NodePath("InputSynchronizer:input_dir")
 properties/0/spawn = true
 properties/0/replication_mode = 1
 
-[node name="Character" type="CharacterBody3D" unique_id=1744164533 node_paths=PackedStringArray("camera", "head")]
+[node name="Character" type="CharacterBody3D" unique_id=1744164533 node_paths=PackedStringArray("camera", "head") groups=["character"]]
 script = ExtResource("1_agfs1")
 camera = NodePath("head/Camera3D")
 head = NodePath("head")
