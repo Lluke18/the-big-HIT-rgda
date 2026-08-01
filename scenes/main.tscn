@@ -91,5 +91,5 @@ size = Vector3(73.45814, 1, 102.94452)
 material = SubResource("StandardMaterial3D_agfs1")
 
 [node name="NPC" parent="NavigationRegion3D" unique_id=399691295 node_paths=PackedStringArray("players_spawn") instance=ExtResource("6_tefeu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.645775, 1.6863317, 8.215199)
+transform = Transform3D(-0.35826042, 0, 0.9336217, 0, 1, 0, -0.9336217, 0, -0.35826042, -14.645775, 1.6863317, 8.215199)
 players_spawn = NodePath("../../players")

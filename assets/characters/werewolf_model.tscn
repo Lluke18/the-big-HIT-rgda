@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://bce361ng2syeo"]
+
+[ext_resource type="PackedScene" uid="uid://b5nip54n54bns" path="res://assets/characters/Werewolf.glb" id="1_hd4yh"]
+
+[node name="Root Scene" unique_id=1458199447 instance=ExtResource("1_hd4yh")]
