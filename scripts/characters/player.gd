@@ -82,7 +82,6 @@ func _unhandled_input(event: InputEvent) -> void:
 		
 		camera.rotate_x(-synced_rotation.y * SENSITIVITY)
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-20), deg_to_rad(20))
-		print(rad_to_deg(camera.rotation.x))
 
 func _physics_process(delta: float) -> void:
 	if !is_on_floor():

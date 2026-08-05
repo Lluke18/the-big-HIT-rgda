@@ -9,8 +9,14 @@ var multiplayer_scene = preload("res://scenes/characters/lobby_character.tscn")
 var multiplayer_peer: ENetMultiplayerPeer = ENetMultiplayerPeer.new()
 var _players_spawn_node
 
+var multiplayer_mode_enabled = false
+var host_mode_enabled = false
+
 func become_host():
 	print("Starting host!")
+	
+	multiplayer_mode_enabled = true
+	host_mode_enabled = true
 	
 	multiplayer_peer.create_server(SERVER_PORT)
 	multiplayer.multiplayer_peer = multiplayer_peer
@@ -18,11 +24,15 @@ func become_host():
 	multiplayer.peer_connected.connect(_add_player_to_game)
 	multiplayer.peer_disconnected.connect(_del_player)
 
+	
+
 	if not OS.has_feature("dedicated_server"):
 		_add_player_to_game(1)
 	
 func join_as_client(lobby_id):
 	print("Player 2 joining")
+	
+	multiplayer_mode_enabled = true
 	
 	multiplayer_peer.create_client(SERVER_IP, SERVER_PORT)
 	multiplayer.multiplayer_peer = multiplayer_peer
