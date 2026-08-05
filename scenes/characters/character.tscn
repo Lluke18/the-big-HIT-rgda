@@ -2,45 +2,54 @@
 
 [ext_resource type="Script" uid="uid://iljoxu343aw4" path="res://scripts/characters/player.gd" id="1_agfs1"]
 [ext_resource type="Script" uid="uid://dkkxcbjegykti" path="res://scripts/characters/input_synchronizer.gd" id="2_1bdar"]
+[ext_resource type="PackedScene" uid="uid://csrj6j2v2bg0h" path="res://assets/NPC/corporatist.tscn" id="2_e22cc"]
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_13qdw"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ragau"]
+radius = 0.21972656
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0wfyh"]
-albedo_color = Color(0.33913305, 0.59884006, 0.32837477, 1)
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xrivr"]
-radius = 0.56396484
-height = 2.0488281
+[sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_2qjml"]
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_agfs1"]
 properties/0/path = NodePath(".:position")
 properties/0/spawn = true
 properties/0/replication_mode = 1
+properties/1/path = NodePath(".:rotation")
+properties/1/spawn = true
+properties/1/replication_mode = 1
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_e22cc"]
 properties/0/path = NodePath("InputSynchronizer:input_dir")
 properties/0/spawn = true
 properties/0/replication_mode = 1
+properties/1/path = NodePath("InputSynchronizer:rotation_input")
+properties/1/spawn = true
+properties/1/replication_mode = 1
 
-[node name="Character" type="CharacterBody3D" unique_id=1744164533 node_paths=PackedStringArray("camera", "head") groups=["character"]]
+[node name="Player" type="CharacterBody3D" unique_id=1744164533 node_paths=PackedStringArray("camera", "head") groups=["character"]]
 script = ExtResource("1_agfs1")
-camera = NodePath("head/Camera3D")
+camera = NodePath("head/SpringArm3D/Camera3D")
 head = NodePath("head")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=519852207]
-mesh = SubResource("CapsuleMesh_13qdw")
-surface_material_override/0 = SubResource("StandardMaterial3D_0wfyh")
+[node name="Corporatist" parent="." unique_id=797959439 instance=ExtResource("2_e22cc")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1885405618]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.024414063, 0)
-shape = SubResource("CapsuleShape3D_xrivr")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2035863389]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8177901, 0)
+shape = SubResource("CapsuleShape3D_ragau")
 
 [node name="head" type="Node3D" parent="." unique_id=258094133]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 1.6445591, -0.26777744)
 
-[node name="Camera3D" type="Camera3D" parent="head" unique_id=1379982063]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.84966505, 0)
+[node name="SpringArm3D" type="SpringArm3D" parent="head" unique_id=395550988]
+transform = Transform3D(0.9999997, 0, 0, 0, 1, 0, 0, 0, 0.9999997, 0, 0, 0.01539427)
+shape = SubResource("SeparationRayShape3D_2qjml")
+spring_length = 0.1
+margin = 10.0
 
-[node name="SeeCast" type="RayCast3D" parent="head/Camera3D" unique_id=1703385875]
+[node name="Camera3D" type="Camera3D" parent="head/SpringArm3D" unique_id=1379982063]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0076625347)
+
+[node name="SeeCast" type="RayCast3D" parent="head/SpringArm3D/Camera3D" unique_id=1703385875]
 unique_name_in_owner = true
 transform = Transform3D(1.9106855e-15, -4.371139e-08, -1, -1, -4.371139e-08, 0, -4.371139e-08, 1, -4.371139e-08, 0, 0, -0.325)
 target_position = Vector3(0, -2, 0)

@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bjb525lclsitd"]
+
+[ext_resource type="PackedScene" uid="uid://drd1pb8rcfvtl" path="res://assets/OfficeFBX/Door_A.fbx" id="1_2kiqs"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_hk1ni"]
+points = PackedVector3Array(0, -0.0045395494, -0.04353879, 0, -0.0045395494, 0.04353879, 0, 2.020341, -0.04353879, 0.9657129, -0.0045395494, -0.04353879, 0.9657129, -0.0045395494, 0.04353879, 0, 2.020341, 0.04353879, 0.9657129, 2.020341, -0.04353879, 0.9657129, 2.020341, 0.04353879)
+
+[node name="Door_A" unique_id=598435035 instance=ExtResource("1_2kiqs")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Door_A" parent_id_path=PackedInt32Array(1418155338) index="0" unique_id=1171763751]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Door_A/StaticBody3D" index="0" unique_id=184610485]
+shape = SubResource("ConvexPolygonShape3D_hk1ni")
