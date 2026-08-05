@@ -23,7 +23,7 @@ const BASE_FOV: float = 75.0
 const FOV_CHANGE: float = 1.5
 
 @export var seetext : Label
-@onready var seecast := %SeeCast
+@onready var see_cast: RayCast3D = %SeeCast
 
 #@onready var footstep_player = $FootStepsPlayer
 var footstep_timer : float = 0.0
@@ -35,6 +35,8 @@ signal clicked
 @export var footstep_sound_outdoor : AudioStream
 
 @export var stats: BaseStats
+
+@onready var input_synchronizer: MultiplayerSynchronizer = %InputSynchronizer
 
 #@export var player_id := 1:
 	#set(id):
@@ -70,9 +72,17 @@ func set_footstep_sounds_random(sounds: Array[AudioStream]) -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
-		head.rotate_y(-event.relative.x * SENSITIVITY)
-		camera.rotate_x(-event.relative.y * SENSITIVITY)
-		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-60), deg_to_rad(60))
+		var synced_rotation = input_synchronizer.rotation_input
+		
+		#head.rotate_y(-event.relative.x * SENSITIVITY)
+		#head.rotation.y = clamp(head.rotation.y, deg_to_rad(-90), deg_to_rad(90))
+		
+		#We should rotate the entire body
+		rotate_y(-synced_rotation.x * SENSITIVITY)
+		
+		camera.rotate_x(-synced_rotation.y * SENSITIVITY)
+		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-20), deg_to_rad(20))
+		print(rad_to_deg(camera.rotation.x))
 
 func _physics_process(delta: float) -> void:
 	if !is_on_floor():
@@ -84,9 +94,9 @@ func _physics_process(delta: float) -> void:
 		current_speed = SPRINT_SPEED
 	else: current_speed = walk_speed
 	
-	var synced_input = %InputSynchronizer.input_dir
+	var synced_input = input_synchronizer.input_dir
 	
-	var direction = (head.transform.basis * Vector3(
+	var direction = (transform.basis * Vector3(
 		synced_input.x, 0, synced_input.y)).normalized()
 	
 	
