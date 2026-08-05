@@ -25,7 +25,7 @@ func _ready() -> void:
 			new_player.name = str(peer_id)
 			new_player.add_to_group("character")
 			players_spawn.add_child(new_player, true)
-			await get_tree().create_timer(0.5).timeout #ca sa nu se suprapuna
+			#await get_tree().create_timer(3).timeout #ca sa nu se suprapuna
 			
 """if OS.has_feature("dedicated_server"):
 		print("Starting dedicated server...")
