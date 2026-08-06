@@ -2,9 +2,10 @@
 
 [ext_resource type="Script" uid="uid://de64ajertuip3" path="res://scenes/levels/test_level.gd" id="1_j0sv7"]
 [ext_resource type="PackedScene" uid="uid://bxjt634a253al" path="res://assets/OfficeFBX/Wall_Standard_Alt_1.fbx" id="1_timdk"]
-[ext_resource type="PackedScene" uid="uid://c2cy7ts2vbxjd" path="res://assets/OfficeFBX/Wall_Standard_Door.fbx" id="2_j0sv7"]
+[ext_resource type="PackedScene" uid="uid://bomhk68100kty" path="res://assets/OfficeFBX/Wall_Standard_Door.fbx" id="2_j0sv7"]
 [ext_resource type="PackedScene" uid="uid://bsagyqj2u2uts" path="res://assets/Objects/wall_medium.tscn" id="3_buy1m"]
 [ext_resource type="PackedScene" uid="uid://1s24sdpuq1tu" path="res://scenes/NPCs/npc.tscn" id="4_4unv2"]
+[ext_resource type="PackedScene" uid="uid://oaehv5yiswn6" path="res://assets/Objects/floors/floor.tscn" id="6_buy1m"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_yynx6"]
 vertices = PackedVector3Array(-39.725903, 0.8302002, -47.66989, -31.475903, 0.8302002, -47.41989, -31.475903, 0.8302002, -48.91989, -30.725903, 0.8302002, -49.66989, -22.475903, 0.8302002, -66.41989, -39.725903, 0.8302002, -66.41989, -22.725903, 0.8302002, -49.66989, -21.225903, 0.8302002, -49.66989, -20.475903, 0.8302002, -48.91989, 4.7740974, 0.8302002, -7.4198914, 5.5240974, 0.8302002, -6.1698914, 31.774097, 0.8302002, -6.1698914, -20.475903, 0.8302002, -23.169891, 0.024097443, 0.8302002, -7.6698914, 31.774097, 0.8302002, -66.41989, -39.725903, 0.8302002, -24.169891, -31.475903, 0.8302002, -24.419891, -29.475903, 1.8302002, -47.66989, -29.475903, 1.8302002, -24.169891, -22.475903, 1.8302002, -24.169891, -22.475903, 1.8302002, -47.66989, -7.9759026, 0.8302002, 8.830109, -2.7259026, 0.8302002, 7.8301086, -3.4759026, 0.8302002, 7.0801086, -3.4759026, 0.8302002, 6.0801086, -8.725903, 0.8302002, 7.8301086, -39.725903, 0.8302002, 10.580109, -11.225903, 0.8302002, 10.580109, -11.225903, 0.8302002, 8.580109, -2.7259026, 0.8302002, 5.3301086, -0.97590256, 0.8302002, -5.9198914, -0.97590256, 0.8302002, -6.6698914, -10.475903, 0.8302002, 7.8301086, -21.475903, 0.8302002, -22.169891, -30.725903, 0.8302002, -22.169891, -31.475903, 0.8302002, -22.919891, -0.22590256, 0.8302002, 5.3301086, 0.024097443, 0.8302002, -5.1698914, 4.7740974, 0.8302002, -4.9198914, 0.77409744, 0.8302002, 6.5801086, 31.774097, 0.8302002, 6.5801086, -8.725903, 0.8302002, 34.08011, -9.475903, 0.8302002, 34.08011, -9.475903, 0.8302002, 34.58011, 31.774097, 0.8302002, 34.58011, 0.024097443, 0.8302002, 7.8301086, -7.9759026, 0.8302002, 33.33011, -10.475903, 0.8302002, 34.08011, -39.725903, 0.8302002, 34.58011, -11.225903, 0.8302002, 33.33011)
@@ -55,6 +56,9 @@ material = SubResource("StandardMaterial3D_ae2j3")
 
 [node name="NPC" parent="NavigationRegion3D" unique_id=399691295 instance=ExtResource("4_4unv2")]
 transform = Transform3D(-0.35826042, 0, 0.9336217, 0, 1, 0, -0.9336217, 0, -0.35826042, -14.645775, 1.6863317, 8.215199)
+
+[node name="Floor" parent="NavigationRegion3D" unique_id=2031031718 instance=ExtResource("6_buy1m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.3706503, 0.5375, -3.1913247)
 
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="." unique_id=1797761099]
 _spawnable_scenes = PackedStringArray("uid://deyqy5skl5ddn")

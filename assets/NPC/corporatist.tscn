@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://csrj6j2v2bg0h"]
 
 [ext_resource type="PackedScene" uid="uid://bdk02ltlm5fr7" path="res://assets/NPC/Casual Character.glb" id="1_agmgq"]
-[ext_resource type="Script" uid="uid://8du4hgdpbreo" path="res://assets/NPC/animated_mesh.gd" id="2_g1aux"]
+[ext_resource type="Script" uid="uid://8du4hgdpbreo" path="res://assets/NPC/animated_character.gd" id="2_g1aux"]
 
 [node name="Corporatist" unique_id=797959439 instance=ExtResource("1_agmgq")]
 script = ExtResource("2_g1aux")

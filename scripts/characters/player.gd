@@ -25,7 +25,7 @@ const FOV_CHANGE: float = 1.5
 @export var seetext : Label
 @onready var see_cast: RayCast3D = %SeeCast
 
-@onready var animated_mesh: AnimatedMesh = $AnimatedMesh
+@onready var animated_mesh: AnimatedCharacter = $AnimatedCharacter
 
 #@onready var footstep_player = $FootStepsPlayer
 var footstep_timer : float = 0.0
