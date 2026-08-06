@@ -1,6 +1,9 @@
 extends Node3D
 
 func _ready() -> void:
+	var lobby_ui = get_node("/root/Main/Lobby")
+	if lobby_ui:
+		lobby_ui.hide()
 	# Fiecare jucător (atât serverul, cât și clienții) trimite un RPC către server
 	# în momentul în care această scenă 3D s-a încărcat complet local
 	var local_id = multiplayer.get_unique_id()

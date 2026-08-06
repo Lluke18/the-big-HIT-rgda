@@ -30,24 +30,22 @@ script = ExtResource("1_agfs1")
 camera = NodePath("head/SpringArm3D/Camera3D")
 head = NodePath("head")
 
-[node name="Corporatist" parent="." unique_id=797959439 instance=ExtResource("2_e22cc")]
+[node name="AnimatedMesh" parent="." unique_id=797959439 instance=ExtResource("2_e22cc")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2035863389]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8177901, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0126698, 0)
 shape = SubResource("CapsuleShape3D_ragau")
 
 [node name="head" type="Node3D" parent="." unique_id=258094133]
-transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 1.6445591, -0.26777744)
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 1.6445591, -0.35546142)
 
 [node name="SpringArm3D" type="SpringArm3D" parent="head" unique_id=395550988]
 transform = Transform3D(0.9999997, 0, 0, 0, 1, 0, 0, 0, 0.9999997, 0, 0, 0.01539427)
 shape = SubResource("SeparationRayShape3D_2qjml")
 spring_length = 0.1
-margin = 10.0
 
 [node name="Camera3D" type="Camera3D" parent="head/SpringArm3D" unique_id=1379982063]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0076625347)
 
 [node name="SeeCast" type="RayCast3D" parent="head/SpringArm3D/Camera3D" unique_id=1703385875]
 unique_name_in_owner = true
