@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="rgda-jam-HIT"
-run/main_scene="uid://bbbc124sp3tn6"
+run/main_scene="uid://dp757es78f0oh"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 

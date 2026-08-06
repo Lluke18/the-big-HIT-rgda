@@ -4,7 +4,7 @@ extends Control
 @onready var main_scene := preload("res://scenes/main.tscn")
 @export var start_scene_path: String
 @export var multiplayer_ui: Control
-@export var lobby_ui: CanvasLayer
+@export var lobby_ui: Control
 @onready var h_box_container: HBoxContainer = $Players/HBoxContainer
 
 @onready var test_level_scene_path : String = "res://scenes/levels/TestLevel.tscn"

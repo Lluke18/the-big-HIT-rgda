@@ -53,9 +53,8 @@ use_collision = true
 size = Vector3(73.45814, 1, 102.94452)
 material = SubResource("StandardMaterial3D_ae2j3")
 
-[node name="NPC" parent="NavigationRegion3D" unique_id=399691295 node_paths=PackedStringArray("players_spawn") instance=ExtResource("4_4unv2")]
+[node name="NPC" parent="NavigationRegion3D" unique_id=399691295 instance=ExtResource("4_4unv2")]
 transform = Transform3D(-0.35826042, 0, 0.9336217, 0, 1, 0, -0.9336217, 0, -0.35826042, -14.645775, 1.6863317, 8.215199)
-players_spawn = NodePath("")
 
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="." unique_id=1797761099]
 _spawnable_scenes = PackedStringArray("uid://deyqy5skl5ddn")

@@ -19,9 +19,16 @@ lobby_ui = NodePath("LobbyUI")
 script = ExtResource("2_4ea5e")
 _players_spawn_node = NodePath("../Players/HBoxContainer")
 
-[node name="Players" type="Node" parent="." unique_id=109661283]
+[node name="Players" type="Control" parent="." unique_id=948891525]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Players" unique_id=1537976398]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -98,10 +105,16 @@ offset_right = 212.0
 offset_bottom = 289.0
 text = "join as client"
 
-[node name="LobbyUI" type="CanvasLayer" parent="." unique_id=1033623780]
-visible = false
+[node name="LobbyUI" type="Control" parent="." unique_id=456822598]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Start Game" type="Button" parent="LobbyUI" unique_id=1030180200]
+layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -115,6 +128,7 @@ grow_vertical = 0
 text = "START GAME"
 
 [node name="Leave Lobby" type="Button" parent="LobbyUI" unique_id=444240625]
+layout_mode = 0
 offset_right = 8.0
 offset_bottom = 8.0
 

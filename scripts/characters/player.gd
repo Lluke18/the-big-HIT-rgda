@@ -25,6 +25,8 @@ const FOV_CHANGE: float = 1.5
 @export var seetext : Label
 @onready var see_cast: RayCast3D = %SeeCast
 
+@onready var animated_mesh: AnimatedMesh = $AnimatedMesh
+
 #@onready var footstep_player = $FootStepsPlayer
 var footstep_timer : float = 0.0
 const FOOTSTEP_INTERVAL : float = 0.9
@@ -51,6 +53,7 @@ func _enter_tree() -> void:
 
 
 func _ready():
+	animated_mesh.play_idle_animation()
 	if is_multiplayer_authority():
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		camera.current = true
@@ -102,9 +105,14 @@ func _physics_process(delta: float) -> void:
 	
 	if is_on_floor():
 		if direction:
+			if current_speed == SPRINT_SPEED:
+				animated_mesh.play_run_animation()
+			else:
+				animated_mesh.play_walk_animation()
 			velocity.x = direction.x * current_speed  #RUUUUN 
 			velocity.z = direction.z * current_speed  #RUUUUN
 		else:
+			animated_mesh.play_idle_animation()
 			velocity.x = lerp(velocity.x, direction.x * current_speed, delta * 7.0)
 			velocity.z = lerp(velocity.z, direction.z * current_speed, delta * 7.0)
 	else:

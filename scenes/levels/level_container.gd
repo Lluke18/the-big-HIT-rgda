@@ -1,13 +1,9 @@
 extends Node
 
-@onready var lobby: Control = $"../Lobby"
-
 func _ready() -> void:
 	SignalBus.change_scene.connect(change_scene_to_3d)
 
 func change_scene_to_3d(scene_path: String) -> void:
-	lobby.hide()
-	
 	if not multiplayer.is_server():
 		return # Doar serverul are voie să schimbe nivelul în rețea
 		
