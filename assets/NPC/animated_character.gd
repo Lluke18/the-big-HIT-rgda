@@ -1,5 +1,5 @@
 extends Node3D
-class_name AnimatedMesh
+class_name AnimatedCharacter
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
