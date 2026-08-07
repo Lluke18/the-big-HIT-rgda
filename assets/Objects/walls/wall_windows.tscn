@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://eeo5mgumr86u"]
+
+[ext_resource type="PackedScene" uid="uid://ibxk3cfa0hi3" path="res://assets/Objects/walls/wall_medium.tscn" id="1_eug75"]
+[ext_resource type="PackedScene" uid="uid://besbimhdjckmp" path="res://assets/Objects/windows/window.tscn" id="2_ff63d"]
+
+[node name="WallWindows" type="Node3D" unique_id=376110060]
+
+[node name="Window" parent="." unique_id=1239368459 instance=ExtResource("2_ff63d")]
+transform = Transform3D(4, 0, 0, 0, 2, 0, 0, 0, 1, 5, 2.615, 0)
+
+[node name="Window2" parent="." unique_id=1918182818 instance=ExtResource("2_ff63d")]
+transform = Transform3D(4, 0, 0, 0, 2, 0, 0, 0, 1, 11.384496, 2.615, 0)
+
+[node name="Window3" parent="." unique_id=2145801345 instance=ExtResource("2_ff63d")]
+transform = Transform3D(4, 0, 0, 0, 2, 0, 0, 0, 1, 17.81325, 2.6154318, 0)
+
+[node name="Wall_Medium2" parent="." unique_id=2137611996 instance=ExtResource("1_eug75")]
+transform = Transform3D(1, 0, 0, 0, 0.13, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Wall_Medium3" parent="." unique_id=62503023 instance=ExtResource("1_eug75")]
+transform = Transform3D(1, 0, 0, 0, 0.13, 0, 0, 0, 1, 0, 4.4149585, 0)
+
+[node name="Wall_Medium4" parent="." unique_id=65748816 instance=ExtResource("1_eug75")]
+transform = Transform3D(0.055, 0, 0, 0, 1, 0, 0, 0, 2.5, 0, 0, 0)
+
+[node name="Wall_Medium6" parent="." unique_id=1272326159 instance=ExtResource("1_eug75")]
+transform = Transform3D(0.075, 0, 0, 0, 1, 0, 0, 0, 2.5, 5.9862766, 0, 0)
+
+[node name="Wall_Medium7" parent="." unique_id=1251304383 instance=ExtResource("1_eug75")]
+transform = Transform3D(0.075, 0, 0, 0, 1, 0, 0, 0, 2.5, 12.432147, 0, 0)
+
+[node name="Wall_Medium5" parent="." unique_id=367197622 instance=ExtResource("1_eug75")]
+transform = Transform3D(0.055, 0, 0, 0, 1, 0, 0, 0, 2.5, 18.900557, 0, 0)

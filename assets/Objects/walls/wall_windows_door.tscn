@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://bclevbabhc5qa"]
+
+[ext_resource type="PackedScene" uid="uid://besbimhdjckmp" path="res://assets/Objects/windows/window.tscn" id="1_r210p"]
+[ext_resource type="PackedScene" uid="uid://ibxk3cfa0hi3" path="res://assets/Objects/walls/wall_medium.tscn" id="2_dmhnc"]
+[ext_resource type="PackedScene" uid="uid://ch3va1th02ful" path="res://assets/Objects/doors/double_glass_doors.tscn" id="3_dmhnc"]
+
+[node name="WallWindowsDoor" type="Node3D" unique_id=2060587920]
+
+[node name="Window" parent="." unique_id=1239368459 instance=ExtResource("1_r210p")]
+transform = Transform3D(6, 0, 0, 0, 2, 0, 0, 0, 1, 6.852087, 2.615, 0)
+
+[node name="Window3" parent="." unique_id=121969693 instance=ExtResource("1_r210p")]
+transform = Transform3D(6, 0, 0, 0, 2, 0, 0, 0, 1, 17.254833, 2.6154318, 0)
+
+[node name="Wall_Medium2" parent="." unique_id=2137611996 instance=ExtResource("2_dmhnc")]
+transform = Transform3D(0.435, 0, 0, 0, 0.13, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Wall_Medium8" parent="." unique_id=597015388 instance=ExtResource("2_dmhnc")]
+transform = Transform3D(0.425, 0, 0, 0, 0.13, 0, 0, 0, 1, 11.168436, 0, 0)
+
+[node name="Wall_Medium3" parent="." unique_id=1026602967 instance=ExtResource("2_dmhnc")]
+transform = Transform3D(1, 0, 0, 0, 0.13, 0, 0, 0, 1, 0, 4.4149585, 0)
+
+[node name="Wall_Medium4" parent="." unique_id=1142331288 instance=ExtResource("2_dmhnc")]
+transform = Transform3D(0.055, 0, 0, 0, 1, 0, 0, 0, 2.5, 0, 0, 0)
+
+[node name="Wall_Medium6" parent="." unique_id=1368122531 instance=ExtResource("2_dmhnc")]
+transform = Transform3D(0.025, 0, 0, 0, 1, 0, 0, 0, 2.5, 8.3241415, 0, 0)
+
+[node name="Wall_Medium7" parent="." unique_id=1050435879 instance=ExtResource("2_dmhnc")]
+transform = Transform3D(0.02, 0, 0, 0, 1, 0, 0, 0, 2.5, 11.025017, 0, 0)
+
+[node name="Wall_Medium5" parent="." unique_id=699696550 instance=ExtResource("2_dmhnc")]
+transform = Transform3D(0.055, 0, 0, 0, 1, 0, 0, 0, 2.5, 18.900557, 0, 0)
+
+[node name="DoubleGlassDoors" parent="." unique_id=358607124 instance=ExtResource("3_dmhnc")]
+transform = Transform3D(1, 0, 0, 0, 1.2, 0, 0, 0, 1, 8.914108, 0, 0)
+
+[node name="Wall_Medium9" parent="." unique_id=504080183 instance=ExtResource("2_dmhnc")]
+transform = Transform3D(0.115, 0, 0, 0, 0.5, 0, 0, 0, 3, 8.767693, 2.5056784, 0)

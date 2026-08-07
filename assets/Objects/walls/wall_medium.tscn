@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://ibxk3cfa0hi3"]
+
+[ext_resource type="PackedScene" uid="uid://kkc466upbgak" path="res://assets/OfficeFBX/Wall_Medium.fbx" id="1_56lip"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_auvm2"]
+points = PackedVector3Array(0, 0, -0.040000014, 0, 0, 0.04000002, 0, 2.5, -0.040000014, 1.9998045, 0, -0.040000014, 1.9998045, 0, 0.04000002, 0, 2.5, 0.04000002, 1.9998045, 2.5, -0.040000014, 1.9998045, 2.5, 0.04000002)
+
+[node name="Wall_Medium" unique_id=2137611996 instance=ExtResource("1_56lip")]
+
+[node name="Wall_Medium" parent="." index="0" unique_id=1465244875]
+transform = Transform3D(10, 0, 0, 0, 2, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall_Medium" index="0" unique_id=1043226253]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall_Medium/StaticBody3D" index="0" unique_id=116700623]
+shape = SubResource("ConvexPolygonShape3D_auvm2")

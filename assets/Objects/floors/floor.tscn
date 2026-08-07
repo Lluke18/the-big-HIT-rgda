@@ -1,79 +1,16 @@
-[gd_scene format=4 uid="uid://oaehv5yiswn6"]
+[gd_scene format=3 uid="uid://oaehv5yiswn6"]
 
 [ext_resource type="PackedScene" uid="uid://drhrysbemwqc8" path="res://assets/OfficeFBX/Floor.fbx" id="1_w8e2k"]
-[ext_resource type="Texture2D" uid="uid://hp8u3qdng15a" path="res://assets/Textures/palette1.png" id="3_4ser2"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_glit8"]
 points = PackedVector3Array(9.834766e-07, -2.0000002, -0.0375, 9.834766e-07, -2.0000002, 0, 9.834766e-07, -0.00019574165, -0.0375, 1.9999992, -2.0000002, -0.0375, 1.9999992, -2.0000002, 0, 9.834766e-07, -0.00019574165, 0, 1.9999992, -0.00019574165, -0.0375, 1.9999992, -0.00019574165, 0)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jmcoh"]
-resource_name = "Palette"
-vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("3_4ser2")
-emission_enabled = true
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_6w3mb"]
-_surfaces = [{
-"aabb": AABB(9.834766e-07, -2.0000002, -0.0375, 1.9999982, 2.0000002, 0.0375),
-"format": 34359742465,
-"index_count": 30,
-"index_data": PackedByteArray("AAABAAIAAQAAAAMAAAAEAAMAAAACAAQAAQADAAUAAgAGAAQABwABAAUAAQAHAAIABwAFAAYAAgAHAAYA"),
-"name": "Palette",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 8,
-"vertex_data": PackedByteArray("AACENQEAAMAAAAAAAACENQAAwDMAAAAA+f//PwEAAMAAAAAAAACENQAAwDOamRm9AACENQEAAMCamRm9+f//PwAAwDOamRm9+f//PwEAAMCamRm9+f//PwAAwDMAAAAA")
-}]
-blend_shape_mode = 0
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_qo3a0"]
-resource_name = "Cube_116"
-_surfaces = [{
-"aabb": AABB(9.834766e-07, -2.0000002, -0.0375, 1.9999982, 2.0000002, 0.0375),
-"attribute_data": PackedByteArray("F25aP4wraD4Xblo/LEdFPi8nYz+MK2g+LydjPyxHRT4vJ2M/jCtoPi8nYz8sR0U+LydjP4wraD4vJ2M/LEdFPhduWj8sR0U+F25aP4wraD4Xblo/LEdFPhduWj+MK2g+LydjPyxHRT4Xblo/LEdFPi8nYz8sR0U+F25aPyxHRT4Xblo/jCtoPi8nYz+MK2g+F25aP4wraD4vJ2M/jCtoPg=="),
-"format": 34359742487,
-"index_count": 30,
-"index_data": PackedByteArray("AAABAAIAAQADAAIABAAFAAYABQAHAAYACAAJAAoACQALAAoADAANAA4ADQAPAA4AEAARABIAEQATABIA"),
-"material": SubResource("StandardMaterial3D_jmcoh"),
-"name": "Palette",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 20,
-"vertex_data": PackedByteArray("AACENQEAAMAAAAAAAACENQAAwDMAAAAA+f//PwEAAMAAAAAA+f//PwAAwDMAAAAA+f//PwEAAMAAAAAA+f//PwAAwDMAAAAA+f//PwEAAMCamRm9+f//PwAAwDOamRm9AACENQAAwDMAAAAAAACENQEAAMAAAAAAAACENQAAwDOamRm9AACENQEAAMCamRm9+f//PwAAwDMAAAAAAACENQAAwDMAAAAA+f//PwAAwDOamRm9AACENQAAwDOamRm9AACENQEAAMAAAAAA+f//PwEAAMAAAAAAAACENQEAAMCamRm9+f//PwEAAMCamRm9/3//f////7//f/9/////v/9//3////+//3//f////7////9/////v////3////+/////f////7////9/////vwAA/3////+/AAD/f////78AAP9/////vwAA/3////+//3///////7//f///////v/9///////+//3///////7//fwAA////v/9/AAD///+//38AAP///7//fwAA////vw==")
-}]
-blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_6w3mb")
-
 [node name="Floor" unique_id=2031031718 instance=ExtResource("1_w8e2k")]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Floor_005" parent_id_path=PackedInt32Array(1561537808) index="0" unique_id=1408911308]
+[node name="Floor_005" parent="." index="0" unique_id=1561537808]
+transform = Transform3D(10, 0, 0, 0, -4.371139e-07, 1, 0, -10, -4.371139e-08, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Floor_005" index="0" unique_id=1408911308]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor_005/StaticBody3D" index="0" unique_id=1709241191]
-shape = SubResource("ConvexPolygonShape3D_glit8")
-
-[node name="Floor_006" type="MeshInstance3D" parent="." index="1" unique_id=1274900397]
-transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, -2)
-mesh = SubResource("ArrayMesh_qo3a0")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Floor_006" index="0" unique_id=1621445328]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor_006/StaticBody3D" index="0" unique_id=3126296]
-shape = SubResource("ConvexPolygonShape3D_glit8")
-
-[node name="Floor_007" type="MeshInstance3D" parent="." index="2" unique_id=870898404]
-transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, -2.0017009, 0, 0)
-mesh = SubResource("ArrayMesh_qo3a0")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Floor_007" index="0" unique_id=416613794]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor_007/StaticBody3D" index="0" unique_id=1220739699]
-shape = SubResource("ConvexPolygonShape3D_glit8")
-
-[node name="Floor_008" type="MeshInstance3D" parent="." index="3" unique_id=2020266873]
-transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, -2.0017009, 0, -2)
-mesh = SubResource("ArrayMesh_qo3a0")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Floor_008" index="0" unique_id=1104850889]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor_008/StaticBody3D" index="0" unique_id=1281701437]
 shape = SubResource("ConvexPolygonShape3D_glit8")

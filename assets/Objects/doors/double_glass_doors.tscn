@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://ch3va1th02ful"]
+
+[ext_resource type="PackedScene" uid="uid://vvvv1nolqbni" path="res://assets/Objects/doors/door_frame.tscn" id="1_l5pqv"]
+[ext_resource type="PackedScene" uid="uid://yqkbnrjlpke2" path="res://assets/Objects/doors/glass_door.tscn" id="2_648bn"]
+
+[node name="DoubleGlassDoors" type="Node3D" unique_id=358607124]
+transform = Transform3D(1, 0, 0, 0, 1.2, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Door_Frame" parent="." unique_id=1959880357 instance=ExtResource("1_l5pqv")]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Door_C_Right" parent="." unique_id=1967383213 instance=ExtResource("2_648bn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0026461, 0, 0)
+
+[node name="Door_C_Left" parent="." unique_id=1526314609 instance=ExtResource("2_648bn")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.0026461, 0, 0)

@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://3v6csnmk61r7"]
+
+[ext_resource type="PackedScene" uid="uid://4x84jhpj1m1a" path="res://assets/Window_Collection.fbx" id="1_a0511"]
+
+[node name="Window_Collection" unique_id=487112099 instance=ExtResource("1_a0511")]

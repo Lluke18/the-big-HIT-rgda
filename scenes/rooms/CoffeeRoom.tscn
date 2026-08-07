@@ -1,3 +1,22 @@
 [gd_scene format=3 uid="uid://b3q827r7ufnby"]
 
+[ext_resource type="PackedScene" uid="uid://oaehv5yiswn6" path="res://assets/Objects/floors/floor.tscn" id="1_xdpj6"]
+[ext_resource type="PackedScene" uid="uid://eeo5mgumr86u" path="res://assets/Objects/walls/wall_windows.tscn" id="2_rh1wt"]
+[ext_resource type="PackedScene" uid="uid://bclevbabhc5qa" path="res://assets/Objects/walls/wall_windows_door.tscn" id="3_wabl4"]
+
 [node name="CoffeeRoom" type="Node3D" unique_id=538983221]
+
+[node name="Floor" parent="." unique_id=2031031718 instance=ExtResource("1_xdpj6")]
+
+[node name="Walls" type="Node3D" parent="." unique_id=374419697]
+
+[node name="WallWindows" parent="Walls" unique_id=376110060 instance=ExtResource("2_rh1wt")]
+
+[node name="WallWindows2" parent="Walls" unique_id=692367103 instance=ExtResource("2_rh1wt")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="WallWindowsDoor" parent="Walls" unique_id=2060587920 instance=ExtResource("3_wabl4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 20)
+
+[node name="WallWindowsDoor2" parent="Walls" unique_id=1722862039 instance=ExtResource("3_wabl4")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 20, 0, 0)
