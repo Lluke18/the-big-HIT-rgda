@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://ykjkvnw12pl5"]
+
+[ext_resource type="PackedScene" uid="uid://vvvv1nolqbni" path="res://assets/Objects/doors/door_frame.tscn" id="1_m2iwn"]
+[ext_resource type="PackedScene" uid="uid://1b5sk0phnrvl" path="res://assets/Objects/doors/door_a.tscn" id="2_kt2v8"]
+
+[node name="DoubleDoors" type="Node3D" unique_id=1955729017]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1.2, 0, -8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="Door_Frame" parent="." unique_id=1959880357 instance=ExtResource("1_m2iwn")]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Door_A" parent="." unique_id=598435035 instance=ExtResource("2_kt2v8")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 1.0035007, 0, 0)
+
+[node name="Door_Handle_1" parent="Door_A" index="0" unique_id=470311168]
+transform = Transform3D(-1, 8.742278e-08, 0, 8.742278e-08, 1, -8.742278e-08, -7.1054274e-15, -8.742278e-08, -1, 0.11780089, 1.0308313, -0.048490528)
+
+[node name="Door_A2" parent="." unique_id=372459484 instance=ExtResource("2_kt2v8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[editable path="Door_A"]

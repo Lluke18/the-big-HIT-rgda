@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://yqkbnrjlpke2"]
+
+[ext_resource type="PackedScene" uid="uid://dhs6n0c71ovjs" path="res://assets/OfficeFBX/Door_C.fbx" id="1_org07"]
+[ext_resource type="PackedScene" uid="uid://ctp47g4lt78e4" path="res://assets/Objects/doors/door_handle_1.tscn" id="2_md23c"]
+[ext_resource type="Material" uid="uid://0wowd82o4o0x" path="res://assets/materials/GlassMaterial.tres" id="3_v2sdd"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ragau"]
+
+[node name="Door_C" unique_id=1526314609 instance=ExtResource("1_org07")]
+
+[node name="Door_Handle_1" parent="." index="1" unique_id=470311168 instance=ExtResource("2_md23c")]
+transform = Transform3D(-1, -8.742278e-08, 0, 8.742278e-08, -1, 0, 0, 0, 1, 0.069248796, 0.84419584, 0.058871582)
+
+[node name="Glass" type="MeshInstance3D" parent="." index="2" unique_id=150975891]
+transform = Transform3D(0.755, 0, 0, 0, 1.5, 0, 0, 0, 0.05, 0.4909302, 0.9803827, -0.01564768)
+mesh = SubResource("BoxMesh_ragau")
+surface_material_override/0 = ExtResource("3_v2sdd")
+
+[node name="Door_Handle_2" parent="." index="3" unique_id=2022418709 instance=ExtResource("2_md23c")]
+transform = Transform3D(-1, 8.742278e-08, 0, 8.742278e-08, 1, 8.742278e-08, 7.642742e-15, 8.742278e-08, -1, 0.069248796, 0.84419584, -0.052222535)

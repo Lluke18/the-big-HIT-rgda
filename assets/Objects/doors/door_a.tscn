@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://1b5sk0phnrvl"]
+
+[ext_resource type="PackedScene" uid="uid://drd1pb8rcfvtl" path="res://assets/OfficeFBX/Door_A.fbx" id="1_ouudy"]
+[ext_resource type="PackedScene" uid="uid://ctp47g4lt78e4" path="res://assets/Objects/doors/door_handle_1.tscn" id="2_y4jiu"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_y4jiu"]
+points = PackedVector3Array(0, -0.0045395494, -0.04353879, 0, -0.0045395494, 0.04353879, 0, 2.020341, -0.04353879, 0.9657129, -0.0045395494, -0.04353879, 0.9657129, -0.0045395494, 0.04353879, 0, 2.020341, 0.04353879, 0.9657129, 2.020341, -0.04353879, 0.9657129, 2.020341, 0.04353879)
+
+[node name="Door_A" unique_id=598435035 instance=ExtResource("1_ouudy")]
+
+[node name="Door_Handle_1" parent="." index="0" unique_id=470311168 instance=ExtResource("2_y4jiu")]
+transform = Transform3D(-1, -8.742278e-08, 0, 8.742278e-08, -1, 0, 0, 0, 1, 0.11780091, 1.0308313, 0.04872337)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Door_A" parent_id_path=PackedInt32Array(1418155338) index="0" unique_id=385169201]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Door_A/StaticBody3D" index="0" unique_id=4390372]
+shape = SubResource("ConvexPolygonShape3D_y4jiu")

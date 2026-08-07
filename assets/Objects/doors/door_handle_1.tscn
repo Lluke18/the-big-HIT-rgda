@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://ctp47g4lt78e4"]
+
+[ext_resource type="PackedScene" uid="uid://bsjta8csupbs7" path="res://assets/OfficeFBX/Door_Handle_1.fbx" id="1_1gwhq"]
+
+[node name="Door_Handle_1" unique_id=470311168 instance=ExtResource("1_1gwhq")]

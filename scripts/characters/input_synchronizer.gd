@@ -17,10 +17,7 @@ func _ready() -> void:
 		set_physics_process(false)
 		set_process_input(false)
 
-
-
 func _physics_process(delta: float) -> void:
-	
 	input_dir = Input.get_vector("3D_left", "3D_right", "3D_forward", "3D_backward")
 	
 func _unhandled_input(event: InputEvent) -> void:
