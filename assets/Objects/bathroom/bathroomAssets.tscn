@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://6d5gq2olndp6"]
+
+[ext_resource type="PackedScene" uid="uid://w3hwbtlsta3a" path="res://assets/Objects/Bathroom.blend" id="1_j2ev1"]
+
+[node name="Bathroom" unique_id=17091300 instance=ExtResource("1_j2ev1")]

@@ -9,8 +9,14 @@ transform = Transform3D(1, 0, 0, 0, 1.2, 0, 0, 0, 1, 0, 0, 0)
 [node name="Door_Frame" parent="." unique_id=1959880357 instance=ExtResource("1_l5pqv")]
 transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="Door_C_Right" parent="." unique_id=1967383213 instance=ExtResource("2_648bn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0026461, 0, 0)
+[node name="DoorLeft" type="Node3D" parent="." unique_id=1075732227]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, 0, 0, 0)
 
-[node name="Door_C_Left" parent="." unique_id=1526314609 instance=ExtResource("2_648bn")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.0026461, 0, 0)
+[node name="Door_C_Left" parent="DoorLeft" unique_id=1526314609 instance=ExtResource("2_648bn")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1, 0, 0)
+
+[node name="DoorRight" type="Node3D" parent="." unique_id=2140891874]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 2, 0, 0)
+
+[node name="Door_C_Right" parent="DoorRight" unique_id=1967383213 instance=ExtResource("2_648bn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
