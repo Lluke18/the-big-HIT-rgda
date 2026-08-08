@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://ck5026ivujci0"]
+
+[ext_resource type="PackedScene" uid="uid://c003saa02ugpl" path="res://assets/OfficeFBX/Coffee_Table.fbx" id="1_qedmq"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_qedmq"]
+points = PackedVector3Array(0.85561955, 0.3299991, 0.3807653, 0.85561955, -0.3300637, 0.3807653, 0.85561955, 0.3299991, 0.3083468, -0.85561967, 0.3299991, 0.3807653, 0.85561955, -0.3300637, 0.3083468, -0.85561967, -0.3300637, 0.3807653, 0.85360956, 0.3108725, 0.23443751, 0.7933074, 0.25200635, 0, -0.85561967, 0.3299991, 0.3083468, 0.7933074, -0.25207096, 0, 0.85360956, -0.31093708, 0.23443751, -0.85561967, -0.3300637, 0.3083468, -0.79347503, 0.25200635, 0, -0.8537771, 0.3108725, 0.23443751, -0.79347503, -0.25207096, 0, -0.8537771, -0.31093708, 0.23443751)
+
+[node name="Coffee_Table" unique_id=1324090835 instance=ExtResource("1_qedmq")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Coffee_Table" parent_id_path=PackedInt32Array(1803939844) index="0" unique_id=498856836]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Coffee_Table/StaticBody3D" index="0" unique_id=804822534]
+shape = SubResource("ConvexPolygonShape3D_qedmq")

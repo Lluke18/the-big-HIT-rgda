@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bwymq3svyg5u6"]
+
+[ext_resource type="PackedScene" uid="uid://oi682bw1f38g" path="res://assets/OfficeFBX/Counter_2_A.fbx" id="1_0bf5h"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_n1pqq"]
+points = PackedVector3Array(-0.50000095, -0.08531585, 5.0286857e-08, -0.50000095, 0.4024756, 5.0286857e-08, 0.50000095, -0.08531585, 5.0286857e-08, -0.50000095, -0.35984313, 0.91810256, -0.50000095, 0.40240103, 0.9490373, 0.50000095, 0.4024756, 5.0286857e-08, 0.49990308, -0.35984313, 0.91810256, 0.50000095, -0.08531585, 0.91810256, -0.50000095, -0.35984313, 0.94894445, 0.49990308, 0.40240103, 0.9490373, 0.50000095, 0.40240103, 0.91810256, 0.49990308, -0.35984313, 0.94894445)
+
+[node name="Counter_2_A" unique_id=2004368662 instance=ExtResource("1_0bf5h")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Counter_2_A" parent_id_path=PackedInt32Array(1897597150) index="0" unique_id=1257580415]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Counter_2_A/StaticBody3D" index="0" unique_id=438469627]
+shape = SubResource("ConvexPolygonShape3D_n1pqq")
