@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://8du4hgdpbreo" path="res://assets/NPC/animated_character.gd" id="2_g1aux"]
 
 [node name="Corporatist" unique_id=797959439 instance=ExtResource("1_agmgq")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)
 script = ExtResource("2_g1aux")
 
 [node name="Skeleton3D" parent="RootNode/CharacterArmature" parent_id_path=PackedInt32Array(1977627537) index="0" unique_id=1177535243]

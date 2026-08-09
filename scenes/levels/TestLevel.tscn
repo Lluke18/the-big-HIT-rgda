@@ -99,10 +99,20 @@ spawn_path = NodePath("../Players")
 
 [node name="NPCs" type="Node3D" parent="." unique_id=91423297]
 
-[node name="NPC" parent="NPCs" unique_id=399691295 node_paths=PackedStringArray("players_spawn") instance=ExtResource("4_4unv2")]
-transform = Transform3D(-0.35826042, 0, 0.9336217, 0, 1, 0, -0.9336217, 0, -0.35826042, -14.645775, 1.6863317, 8.215199)
+[node name="NPC" parent="NPCs" unique_id=399691295 node_paths=PackedStringArray("players_spawn", "route_locations") instance=ExtResource("4_4unv2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.645775, 1.0213647, 8.215199)
 players_spawn = NodePath("../../Players")
+route_locations = [NodePath("../../NPCRoutes/Route1/Marker3D"), NodePath("../../NPCRoutes/Route1/Marker3D2"), NodePath("../../NPCRoutes/Route1/Marker3D3")]
 
 [node name="NPCRoutes" type="Node3D" parent="." unique_id=1434859096]
 
 [node name="Route1" type="Node3D" parent="NPCRoutes" unique_id=1779912846]
+
+[node name="Marker3D" type="Marker3D" parent="NPCRoutes/Route1" unique_id=1333358001]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.230656, 0, 0)
+
+[node name="Marker3D2" type="Marker3D" parent="NPCRoutes/Route1" unique_id=736835175]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.230656, 0, -12.004653)
+
+[node name="Marker3D3" type="Marker3D" parent="NPCRoutes/Route1" unique_id=2144133129]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.265656, 0, -6.173477)
