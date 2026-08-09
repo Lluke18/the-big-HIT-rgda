@@ -5,23 +5,30 @@
 [ext_resource type="Script" uid="uid://bw2nkbod1cyb" path="res://scripts/fsm scripts/wander.gd" id="3_2cktm"]
 [ext_resource type="Script" uid="uid://be2vkrgly3wld" path="res://scripts/fsm scripts/infinite_follow.gd" id="4_bjc1w"]
 [ext_resource type="PackedScene" uid="uid://csrj6j2v2bg0h" path="res://assets/NPC/corporatist.tscn" id="5_2cktm"]
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xrivr"]
-radius = 0.18066406
-height = 1.7868347
+[ext_resource type="PackedScene" uid="uid://oenhlr20lqb2" path="res://scenes/UI/SuspicionBar.tscn" id="6_p2aeo"]
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_bjc1w"]
 properties/0/path = NodePath(".:position")
 properties/0/spawn = true
 properties/0/replication_mode = 1
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xrivr"]
+radius = 0.18066406
+height = 1.7868347
+
+[sub_resource type="FogMaterial" id="FogMaterial_2cktm"]
+density = 0.05
+
+[sub_resource type="Environment" id="Environment_ragau"]
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.02
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_isfhd"]
+viewport_path = NodePath("SubViewport")
+
 [node name="NPC" type="CharacterBody3D" unique_id=399691295 groups=["npc"]]
 script = ExtResource("1_iag0i")
 move_speed = 3.0
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1175898848]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.01850912, 0.03996277, 0)
-shape = SubResource("CapsuleShape3D_xrivr")
 
 [node name="StateMachine" type="Node" parent="." unique_id=470339980 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("2_bjc1w")
@@ -39,12 +46,42 @@ npc = NodePath("../..")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=838253104]
 
-[node name="RayCast3D" type="RayCast3D" parent="." unique_id=833471495]
+[node name="SeeCast" type="RayCast3D" parent="." unique_id=833471495]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0.7617147, 0)
-target_position = Vector3(0, 0, 1)
+target_position = Vector3(0, 0, 4.8)
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=400696466]
 replication_config = SubResource("SceneReplicationConfig_bjc1w")
 
-[node name="Corporatist" parent="." unique_id=797959439 instance=ExtResource("5_2cktm")]
+[node name="AnimatedCharacter" parent="." unique_id=797959439 instance=ExtResource("5_2cktm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.82309425, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1175898848]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.01850912, 0.03996277, 0)
+shape = SubResource("CapsuleShape3D_xrivr")
+
+[node name="FogVolume" type="FogVolume" parent="." unique_id=818601699]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.8842773)
+size = Vector3(2, 2, 4.131836)
+material = SubResource("FogMaterial_2cktm")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=1315327744]
+transform = Transform3D(1, 0, 0, 0, -0.9008198, 0.4341933, 0, -0.4341933, -0.9008198, 0, 0.8461004, 0.18998182)
+light_color = Color(1, 0, 0, 1)
+light_energy = 16.0
+light_volumetric_fog_energy = 10.0
+spot_angle = 10.8
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=520533488]
+environment = SubResource("Environment_ragau")
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=1333327056]
+disable_3d = true
+transparent_bg = true
+
+[node name="SuspicionBar" parent="SubViewport" unique_id=1428092685 instance=ExtResource("6_p2aeo")]
+value = 50.0
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=153913080]
+billboard = 1
+texture = SubResource("ViewportTexture_isfhd")

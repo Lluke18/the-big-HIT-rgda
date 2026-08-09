@@ -25,7 +25,7 @@ properties/1/path = NodePath("InputSynchronizer:rotation_input")
 properties/1/spawn = true
 properties/1/replication_mode = 1
 
-[node name="Player" type="CharacterBody3D" unique_id=1744164533 node_paths=PackedStringArray("camera", "head") groups=["character"]]
+[node name="Player" type="CharacterBody3D" unique_id=1744164533 node_paths=PackedStringArray("camera", "head") groups=["player"]]
 script = ExtResource("1_agfs1")
 camera = NodePath("head/SpringArm3D/Camera3D")
 head = NodePath("head")
