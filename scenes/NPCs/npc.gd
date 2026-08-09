@@ -13,6 +13,8 @@ var gravity = 9.8
 
 @onready var nav_agent: NavigationAgent3D = $NavigationAgent3D
 
+@onready var see_cast: RayCast3D = $SeeCast
+@onready var suspicion_bar: SuspicionBar = $SubViewport/SuspicionBar
 
 func _ready() -> void:
 	await get_tree().create_timer(1).timeout
@@ -25,7 +27,19 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	if !multiplayer.is_server():
-		return
+		#return
+		pass
+	
+	if is_instance_valid(see_cast) and see_cast.is_colliding():
+		var target = see_cast.get_collider()
+		if target != null and target.is_in_group("player"): # OR MAKE A GROUP!
+			suspicion_bar.start_increase()
+			#print("NPC sees player!")
+		else:
+			suspicion_bar.stop_increase()
+	else:
+		suspicion_bar.stop_increase()
+		
 	
 	if !is_on_floor():
 		velocity.y -= gravity * delta

@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://oenhlr20lqb2"]
+
+[ext_resource type="Script" uid="uid://bf4w3nc2yf461" path="res://scenes/UI/suspicion_bar.gd" id="1_jo1md"]
+
+[node name="SuspicionBar" type="ProgressBar" unique_id=1428092685]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -144.0
+offset_top = 114.0
+offset_right = 144.0
+offset_bottom = 141.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_jo1md")
