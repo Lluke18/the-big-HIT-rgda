@@ -9,6 +9,7 @@ var players: Array[Player]
 #or a stats var like the player's
 #salutare dani
 @export var move_speed: float
+@export var route_locations: Array[Marker3D]
 var gravity = 9.8
 
 @onready var nav_agent: NavigationAgent3D = $NavigationAgent3D

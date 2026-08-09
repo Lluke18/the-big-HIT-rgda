@@ -3,8 +3,7 @@ class_name State
 
 @export var npc: NPC
 
-@warning_ignore("unused_signal")
-signal state_transition
+signal state_transition(source_state : State, new_state_name : String)
 
 func Enter():
 	pass
