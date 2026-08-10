@@ -11,7 +11,6 @@ func _ready() -> void:
 	#animated_character.play_walk_animation()
 
 func Enter():
-	print("entered wander")
 	#randomize_wander()
 	pick_new_location()
 

@@ -87,6 +87,10 @@ func _unhandled_input(event: InputEvent) -> void:
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-20), deg_to_rad(20))
 
 func _physics_process(delta: float) -> void:
+	if not is_multiplayer_authority():
+		return
+	
+	#region Movement
 	if !is_on_floor():
 		velocity.y -= gravity * delta
 	
@@ -100,8 +104,6 @@ func _physics_process(delta: float) -> void:
 	
 	var direction = (transform.basis * Vector3(
 		synced_input.x, 0, synced_input.y)).normalized()
-	
-	
 	
 	if is_on_floor():
 		if direction:
@@ -129,6 +131,21 @@ func _physics_process(delta: float) -> void:
 	#camera.fov = lerp(camera.fov, target_fov, delta * 8.0)
 	
 	move_and_slide()
+	#endregion
+	
+	#region Interaction
+	seetext.hide()
+	if is_instance_valid(see_cast) and see_cast.is_colliding():
+		var target = see_cast.get_collider()
+		#print(target)
+		if target != null and target.is_in_group("interactable"): # OR MAKE A GROUP!
+			seetext.show()
+			#print("can see tutorial message!")
+			if Input.is_action_just_pressed("interact"):
+				target.interact.call()
+				print("DO STUFF!")
+		#else: seetext.hide()
+	#endregion
 
 func _headbob(time : float) -> Vector3:
 	var pos = Vector3.ZERO
