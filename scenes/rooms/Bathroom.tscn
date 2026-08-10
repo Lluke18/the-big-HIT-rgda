@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://oaehv5yiswn6" path="res://assets/Objects/floors/floor.tscn" id="1_dtlby"]
 [ext_resource type="PackedScene" uid="uid://ibxk3cfa0hi3" path="res://assets/Objects/walls/wall_medium.tscn" id="2_4c5wh"]
 [ext_resource type="PackedScene" uid="uid://fohfmpxuuyd1" path="res://assets/Objects/bathroom/stall.tscn" id="3_cdptk"]
+[ext_resource type="PackedScene" uid="uid://dahk83kgaclwp" path="res://scenes/interactables/VentEntrance.tscn" id="4_c3xo7"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_qbne8"]
 
@@ -157,6 +158,9 @@ mesh = SubResource("ArrayMesh_c3xo7")
 metadata/extras = {
 "ant_landscape": {}
 }
+
+[node name="VentEntrance" parent="." unique_id=1692385644 instance=ExtResource("4_c3xo7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.76284, 1.8184249, 0.48499995)
 
 [editable path="Stalls/Stall2"]
 [editable path="Stalls/Stall3"]

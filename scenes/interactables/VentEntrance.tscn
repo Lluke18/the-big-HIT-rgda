@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://dahk83kgaclwp"]
+
+[ext_resource type="Script" uid="uid://c47o1tiv2rcmr" path="res://scenes/interactables/vent_entrance.gd" id="1_51tit"]
+[ext_resource type="PackedScene" uid="uid://fcgvlib0016d" path="res://assets/Objects/vent.tscn" id="1_abvdc"]
+[ext_resource type="PackedScene" uid="uid://csvwgky3s6fcf" path="res://scenes/interactables/InteractableObject.tscn" id="2_nxlra"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nxlra"]
+size = Vector3(1.8830566, 2.0275574, 1.005127)
+
+[node name="VentEntrance" type="Node3D" unique_id=1692385644]
+script = ExtResource("1_51tit")
+
+[node name="Vent" parent="." unique_id=1594000245 instance=ExtResource("1_abvdc")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+
+[node name="Label3D" type="Label3D" parent="." unique_id=297284398]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3634024, 0)
+billboard = 1
+text = "Vent"
+font_size = 80
+
+[node name="InteractableObject" parent="." unique_id=216604155 instance=ExtResource("2_nxlra")]
+
+[node name="CollisionShape3D" parent="InteractableObject" index="0" unique_id=1785336431]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.006713867, 0.04664612, 0.53479004)
+shape = SubResource("BoxShape3D_nxlra")
+
+[editable path="InteractableObject"]

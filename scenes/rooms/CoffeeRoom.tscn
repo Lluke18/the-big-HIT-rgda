@@ -298,37 +298,43 @@ mesh = SubResource("ArrayMesh_olc60")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cooler_004/StaticBody3D" unique_id=519804755]
 shape = SubResource("ConvexPolygonShape3D_olc60")
 
+[node name="GarlicLabel3D" type="Label3D" parent="." unique_id=965400924]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.51603, 1.9352338, 7.9642572)
+billboard = 1
+text = "Garlic!!"
+font_size = 80
+
 [node name="Fruit_Plate2" parent="." unique_id=2128209626 instance=ExtResource("14_6bctx")]
 transform = Transform3D(3, 0, 0, 0, 1, 0, 0, 0, 3, 8.336813, 0.9430958, 7.989079)
 
-[node name="GarlicPile" type="Node3D" parent="." unique_id=129572030]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 8.160987, 1.0791335, 7.9642572)
+[node name="GarlicPile" type="Node3D" parent="Fruit_Plate2" unique_id=129572030]
+transform = Transform3D(3.3333335, 0, 0, 0, 10, 0, 0, 0, 3.3333335, -0.05860877, 0.1360377, -0.00827384)
 
-[node name="garlic01" parent="GarlicPile" unique_id=152333918 instance=ExtResource("15_h2ft2")]
+[node name="garlic01" parent="Fruit_Plate2/GarlicPile" unique_id=152333918 instance=ExtResource("15_h2ft2")]
 transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0, 0, 0.018669963)
 
-[node name="garlic02" parent="GarlicPile" unique_id=310581943 instance=ExtResource("15_h2ft2")]
+[node name="garlic02" parent="Fruit_Plate2/GarlicPile" unique_id=310581943 instance=ExtResource("15_h2ft2")]
 transform = Transform3D(0.94987535, 0.31262916, 0, -0.31262916, 0.94987535, 0, 0, 0, 1, 0.03182143, 0, 0.032217383)
 
-[node name="garlic03" parent="GarlicPile" unique_id=315860210 instance=ExtResource("15_h2ft2")]
+[node name="garlic03" parent="Fruit_Plate2/GarlicPile" unique_id=315860210 instance=ExtResource("15_h2ft2")]
 transform = Transform3D(0.974335, 0.21031463, 0.080244474, -0.22510314, 0.9103245, 0.34732968, 0, -0.35647878, 0.9343034, 0, 0, -0.013700604)
 
-[node name="garlic04" parent="GarlicPile" unique_id=1570872540 instance=ExtResource("15_h2ft2")]
+[node name="garlic04" parent="Fruit_Plate2/GarlicPile" unique_id=1570872540 instance=ExtResource("15_h2ft2")]
 transform = Transform3D(0.95904654, -0.28324878, 0, 0.27468187, 0.93004, -0.24408107, 0.069135666, 0.23408511, 0.9697548, 0.035095394, 0, -0.0027518272)
 
-[node name="garlic05" parent="GarlicPile" unique_id=1595502086 instance=ExtResource("16_kp7bg")]
+[node name="garlic05" parent="Fruit_Plate2/GarlicPile" unique_id=1595502086 instance=ExtResource("16_kp7bg")]
 transform = Transform3D(0.48186976, 0, 0.8762428, 0, 1, 0, -0.8762428, 0, 0.48186976, 0.04836005, -0.0024576783, 0.01629132)
 
-[node name="garlic06" parent="GarlicPile" unique_id=21771506 instance=ExtResource("16_kp7bg")]
+[node name="garlic06" parent="Fruit_Plate2/GarlicPile" unique_id=21771506 instance=ExtResource("16_kp7bg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.028080165, -0.0031461418, -0.018170595)
 
-[node name="garlic07" parent="GarlicPile" unique_id=1766148717 instance=ExtResource("16_kp7bg")]
+[node name="garlic07" parent="Fruit_Plate2/GarlicPile" unique_id=1766148717 instance=ExtResource("16_kp7bg")]
 transform = Transform3D(0.6581503, 0, 0.7528866, 0, 1, 0, -0.7528866, 0, 0.6581503, 0.02050364, -0.006693542, -0.028630555)
 
-[node name="garlic08" parent="GarlicPile" unique_id=334490163 instance=ExtResource("16_kp7bg")]
+[node name="garlic08" parent="Fruit_Plate2/GarlicPile" unique_id=334490163 instance=ExtResource("16_kp7bg")]
 transform = Transform3D(0.62317014, -0.15996577, -0.76555204, 0, 0.97885877, -0.20453723, 0.7820863, 0.1274615, 0.60999554, 0.04560274, -0.008251123, -0.019238055)
 
-[node name="AreaLight3D" type="AreaLight3D" parent="GarlicPile" unique_id=184315899]
+[node name="AreaLight3D" type="AreaLight3D" parent="Fruit_Plate2/GarlicPile" unique_id=184315899]
 transform = Transform3D(0.1, 0, 0, 0, 0.0020545304, -0.099978894, 0, 0.099978894, 0.0020545304, 0.020742834, -0.0045169443, 0)
 light_color = Color(18.892157, 0, 18.892157, 1)
 area_range = 0.296
@@ -337,34 +343,34 @@ area_size = Vector2(0.8364258, 1.3470144)
 [node name="Fruit_Plate3" parent="." unique_id=627157373 instance=ExtResource("14_6bctx")]
 transform = Transform3D(3, 0, 0, 0, 1, 0, 0, 0, 3, 10.7825365, 0.9430958, 7.989079)
 
-[node name="GarlicPile2" type="Node3D" parent="." unique_id=2109150079]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 10.60671, 1.0791335, 7.9642572)
+[node name="GarlicPile2" type="Node3D" parent="Fruit_Plate3" unique_id=2109150079]
+transform = Transform3D(3.3333335, 0, 0, 0, 10, 0, 0, 0, 3.3333335, -0.05860877, 0.1360377, -0.00827384)
 
-[node name="garlic01" parent="GarlicPile2" unique_id=2012800991 instance=ExtResource("15_h2ft2")]
+[node name="garlic01" parent="Fruit_Plate3/GarlicPile2" unique_id=2012800991 instance=ExtResource("15_h2ft2")]
 transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0, 0, 0.018669963)
 
-[node name="garlic02" parent="GarlicPile2" unique_id=868893252 instance=ExtResource("15_h2ft2")]
+[node name="garlic02" parent="Fruit_Plate3/GarlicPile2" unique_id=868893252 instance=ExtResource("15_h2ft2")]
 transform = Transform3D(0.94987535, 0.31262916, 0, -0.31262916, 0.94987535, 0, 0, 0, 1, 0.03182143, 0, 0.032217383)
 
-[node name="garlic03" parent="GarlicPile2" unique_id=1272363040 instance=ExtResource("15_h2ft2")]
+[node name="garlic03" parent="Fruit_Plate3/GarlicPile2" unique_id=1272363040 instance=ExtResource("15_h2ft2")]
 transform = Transform3D(0.974335, 0.21031463, 0.080244474, -0.22510314, 0.9103245, 0.34732968, 0, -0.35647878, 0.9343034, 0, 0, -0.013700604)
 
-[node name="garlic04" parent="GarlicPile2" unique_id=912372739 instance=ExtResource("15_h2ft2")]
+[node name="garlic04" parent="Fruit_Plate3/GarlicPile2" unique_id=912372739 instance=ExtResource("15_h2ft2")]
 transform = Transform3D(0.95904654, -0.28324878, 0, 0.27468187, 0.93004, -0.24408107, 0.069135666, 0.23408511, 0.9697548, 0.035095394, 0, -0.0027518272)
 
-[node name="garlic05" parent="GarlicPile2" unique_id=1875855655 instance=ExtResource("16_kp7bg")]
+[node name="garlic05" parent="Fruit_Plate3/GarlicPile2" unique_id=1875855655 instance=ExtResource("16_kp7bg")]
 transform = Transform3D(0.48186976, 0, 0.8762428, 0, 1, 0, -0.8762428, 0, 0.48186976, 0.04836005, -0.0024576783, 0.01629132)
 
-[node name="garlic06" parent="GarlicPile2" unique_id=1695293615 instance=ExtResource("16_kp7bg")]
+[node name="garlic06" parent="Fruit_Plate3/GarlicPile2" unique_id=1695293615 instance=ExtResource("16_kp7bg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.028080165, -0.0031461418, -0.018170595)
 
-[node name="garlic07" parent="GarlicPile2" unique_id=1919908150 instance=ExtResource("16_kp7bg")]
+[node name="garlic07" parent="Fruit_Plate3/GarlicPile2" unique_id=1919908150 instance=ExtResource("16_kp7bg")]
 transform = Transform3D(0.6581503, 0, 0.7528866, 0, 1, 0, -0.7528866, 0, 0.6581503, 0.02050364, -0.006693542, -0.028630555)
 
-[node name="garlic08" parent="GarlicPile2" unique_id=874868377 instance=ExtResource("16_kp7bg")]
+[node name="garlic08" parent="Fruit_Plate3/GarlicPile2" unique_id=874868377 instance=ExtResource("16_kp7bg")]
 transform = Transform3D(0.62317014, -0.15996577, -0.76555204, 0, 0.97885877, -0.20453723, 0.7820863, 0.1274615, 0.60999554, 0.04560274, -0.008251123, -0.019238055)
 
-[node name="AreaLight3D" type="AreaLight3D" parent="GarlicPile2" unique_id=1223180116]
+[node name="AreaLight3D" type="AreaLight3D" parent="Fruit_Plate3/GarlicPile2" unique_id=1223180116]
 transform = Transform3D(0.1, 0, 0, 0, 0.0020545304, -0.099978894, 0, 0.099978894, 0.0020545304, 0.020742834, -0.0045169443, 0)
 light_color = Color(18.892157, 0, 18.892157, 1)
 area_range = 0.296

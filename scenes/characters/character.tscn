@@ -25,10 +25,18 @@ properties/1/path = NodePath("InputSynchronizer:rotation_input")
 properties/1/spawn = true
 properties/1/replication_mode = 1
 
-[node name="Player" type="CharacterBody3D" unique_id=1744164533 node_paths=PackedStringArray("camera", "head") groups=["player"]]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_umu6e"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[node name="Player" type="CharacterBody3D" unique_id=1744164533 node_paths=PackedStringArray("camera", "head", "seetext") groups=["player"]]
 script = ExtResource("1_agfs1")
 camera = NodePath("head/SpringArm3D/Camera3D")
 head = NodePath("head")
+seetext = NodePath("CanvasLayer/Click to Interact")
 
 [node name="AnimatedCharacter" parent="." unique_id=797959439 instance=ExtResource("2_e22cc")]
 transform = Transform3D(-1, 0, 1.509958e-07, 0, 1, 0, -1.509958e-07, 0, -1, 0, 0, 0)
@@ -60,3 +68,35 @@ unique_name_in_owner = true
 replication_config = SubResource("SceneReplicationConfig_e22cc")
 script = ExtResource("2_1bdar")
 head = NodePath("../head")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1069358118]
+
+[node name="Panel" type="Panel" parent="CanvasLayer" unique_id=112433198]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_umu6e")
+
+[node name="Click to Interact" type="Label" parent="CanvasLayer" unique_id=260077523]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -61.0
+offset_top = 33.0
+offset_right = 61.0
+offset_bottom = 56.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Click to Interact"
