@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://smfksbdwdcsr" path="res://scripts/multiplayer_lobby.gd" id="1_6gqji"]
 [ext_resource type="Script" uid="uid://bspdmvrmr3dne" path="res://scripts/multiplayer/network_manager.gd" id="2_4ea5e"]
 
-[node name="Node2D" type="Control" unique_id=1482253729 node_paths=PackedStringArray("multiplayer_ui", "lobby_ui")]
+[node name="MultiplayerLobby" type="Control" unique_id=1482253729 node_paths=PackedStringArray("multiplayer_ui", "lobby_ui")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

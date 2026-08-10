@@ -1,9 +1,15 @@
 extends Control
+
+enum character_type{
+	VAMPIRE,
+	WEREWOLF
+}
+
 @onready var character_name: Label = $characterName
 @onready var multiplayer_synchronizer: MultiplayerSynchronizer = $MultiplayerSynchronizer
 
 @export var character_select: Array[String]
-@export var curr_selection: int = 0
+@export var curr_selection: character_type = character_type.VAMPIRE
 @export var player_id := 1:
 	set(id):
 		if player_id == id:
@@ -58,7 +64,7 @@ func _update_synchronizer_authority(auth_id: int) -> void:
 
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("ui_right"):
-		if  curr_selection >= 2: return
+		if  curr_selection >= 1: return
 		curr_selection += 1
 		update_text.rpc(curr_selection)
 
