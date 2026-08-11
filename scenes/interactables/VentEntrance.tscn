@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://c47o1tiv2rcmr" path="res://scenes/interactables/vent_entrance.gd" id="1_51tit"]
 [ext_resource type="PackedScene" uid="uid://fcgvlib0016d" path="res://assets/Objects/vent.tscn" id="1_abvdc"]
 [ext_resource type="PackedScene" uid="uid://csvwgky3s6fcf" path="res://scenes/interactables/InteractableObject.tscn" id="2_nxlra"]
+[ext_resource type="PackedScene" uid="uid://dl2yuch7k4ty" path="res://assets/characters/vampire_model.tscn" id="4_6wcmj"]
+[ext_resource type="PackedScene" uid="uid://c8ep6vaepb7dp" path="res://assets/characters/vampire_bat.tscn" id="5_0oojn"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nxlra"]
 size = Vector3(1.8830566, 2.0275574, 1.005127)
@@ -24,5 +26,16 @@ font_size = 80
 [node name="CollisionShape3D" parent="InteractableObject" index="0" unique_id=1785336431]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.006713867, 0.04664612, 0.53479004)
 shape = SubResource("BoxShape3D_nxlra")
+
+[node name="AnimatedCharacter" parent="." unique_id=1857893987 instance=ExtResource("4_6wcmj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 3)
+visible = false
+
+[node name="VampireBat" parent="." unique_id=1455070953 instance=ExtResource("5_0oojn")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 3)
+visible = false
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1233887778]
+transform = Transform3D(0.9183732, -0.19828993, 0.3424494, 0.047567923, 0.91443676, 0.4019236, -0.39284575, -0.3528263, 0.84922653, 1.3707618, 1.2599654, 5.1116467)
 
 [editable path="InteractableObject"]

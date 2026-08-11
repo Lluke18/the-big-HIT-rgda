@@ -66,10 +66,11 @@ target_position = Vector3(0, -2, 0)
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=553313842]
 replication_config = SubResource("SceneReplicationConfig_gs7cj")
 
-[node name="InputSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=1077715519]
+[node name="InputSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=1077715519 node_paths=PackedStringArray("head")]
 unique_name_in_owner = true
 replication_config = SubResource("SceneReplicationConfig_a3kqk")
 script = ExtResource("2_pajqt")
+head = NodePath("../head")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1571417538]
 
