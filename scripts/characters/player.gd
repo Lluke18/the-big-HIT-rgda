@@ -142,7 +142,7 @@ func _physics_process(delta: float) -> void:
 			seetext.show()
 			#print("can see tutorial message!")
 			if Input.is_action_just_pressed("interact"):
-				target.interact.call()
+				target.interact.call(self)
 				animated_character.play_interact_animation()
 				print("DO STUFF!")
 		#else: seetext.hide()

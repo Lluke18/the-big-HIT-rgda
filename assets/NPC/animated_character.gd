@@ -23,3 +23,6 @@ func play_interact_animation():
 	
 func play_jump_animation():
 	animation_player.play(jump_animation_name)
+
+func play_jump_animation_backwards():
+	animation_player.play_backwards(jump_animation_name)
