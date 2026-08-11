@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://diapgt6o0l0gu" path="res://scenes/characters/vampire.gd" id="1_m48pq"]
 [ext_resource type="PackedScene" uid="uid://dl2yuch7k4ty" path="res://assets/characters/vampire_model.tscn" id="2_m48pq"]
 [ext_resource type="Script" uid="uid://dkkxcbjegykti" path="res://scripts/characters/input_synchronizer.gd" id="3_bnap0"]
+[ext_resource type="PackedScene" uid="uid://ctkoxsltvebaw" path="res://scenes/UI/VentUI.tscn" id="4_bnap0"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_am7ow"]
 radius = 0.21972656
@@ -104,3 +105,6 @@ offset_bottom = 56.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Click to Interact"
+
+[node name="VentUI" parent="CanvasLayer" unique_id=1741107145 instance=ExtResource("4_bnap0")]
+visible = false

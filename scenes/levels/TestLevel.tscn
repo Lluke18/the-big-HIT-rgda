@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://oaehv5yiswn6" path="res://assets/Objects/floors/floor.tscn" id="6_buy1m"]
 [ext_resource type="PackedScene" uid="uid://ykjkvnw12pl5" path="res://assets/Objects/doors/double_doors.tscn" id="7_4unv2"]
 [ext_resource type="PackedScene" uid="uid://cxb14tpq7hda3" path="res://scenes/rooms/Bathroom.tscn" id="7_yynx6"]
+[ext_resource type="PackedScene" uid="uid://dahk83kgaclwp" path="res://scenes/interactables/VentEntrance.tscn" id="8_ktef7"]
 [ext_resource type="PackedScene" uid="uid://b3q827r7ufnby" path="res://scenes/rooms/CoffeeRoom.tscn" id="8_yynx6"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_yynx6"]
@@ -121,3 +122,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.230656, 0, -12.004653)
 
 [node name="Marker3D3" type="Marker3D" parent="NPCRoutes/Route1" unique_id=2144133129]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.265656, 0, -6.173477)
+
+[node name="Vents" type="Node3D" parent="." unique_id=1126513242]
+
+[node name="VentEntrance0" parent="Vents" unique_id=1692385644 instance=ExtResource("8_ktef7")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -20.091106, 1.5612478, -45.387676)
+
+[node name="VentEntrance1" parent="Vents" unique_id=454196193 instance=ExtResource("8_ktef7")]
+transform = Transform3D(1.1924881e-08, 0, 1, 0, 1, 0, -1, 0, 1.1924881e-08, -59.91026, 1.5612478, 4.5115824)
+index = 1

@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://ctkoxsltvebaw"]
+
+[ext_resource type="Script" uid="uid://c7li3rpxy5unb" path="res://scenes/UI/vent_ui.gd" id="1_1tk3t"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ragau"]
+font_size = 32
+
+[node name="VentUI" type="Control" unique_id=1741107145]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1tk3t")
+
+[node name="ExitButton" type="Button" parent="." unique_id=1644861019]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -156.0
+offset_top = -33.25
+offset_right = 156.0
+offset_bottom = 33.25
+grow_horizontal = 2
+grow_vertical = 2
+text = "Exit vent"
+
+[node name="PreviousButton" type="Button" parent="." unique_id=1651424060]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -27.0
+offset_right = -225.0
+offset_bottom = 27.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Previous
+<---------"
+
+[node name="NextButton" type="Button" parent="." unique_id=709935541]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 238.0
+offset_top = -27.0
+offset_right = 297.0
+offset_bottom = 27.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Next
+-------->"
+
+[node name="LocationLabel" type="Label" parent="." unique_id=1302365661]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -58.0
+offset_top = 96.0
+offset_right = 58.0
+offset_bottom = 119.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Bathroom Stall"
+label_settings = SubResource("LabelSettings_ragau")
+
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="PreviousButton" to="." method="_on_previous_button_pressed"]
+[connection signal="pressed" from="NextButton" to="." method="_on_next_button_pressed"]
