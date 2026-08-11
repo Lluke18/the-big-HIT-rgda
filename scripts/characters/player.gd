@@ -25,7 +25,7 @@ const FOV_CHANGE: float = 1.5
 @export var seetext : Label
 @onready var see_cast: RayCast3D = %SeeCast
 
-@onready var animated_mesh: AnimatedCharacter = $AnimatedCharacter
+@onready var animated_character: AnimatedCharacter = $AnimatedCharacter
 
 #@onready var footstep_player = $FootStepsPlayer
 var footstep_timer : float = 0.0
@@ -53,7 +53,7 @@ func _enter_tree() -> void:
 
 
 func _ready():
-	animated_mesh.play_idle_animation()
+	animated_character.play_idle_animation()
 	if is_multiplayer_authority():
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		camera.current = true
@@ -108,13 +108,13 @@ func _physics_process(delta: float) -> void:
 	if is_on_floor():
 		if direction:
 			if current_speed == SPRINT_SPEED:
-				animated_mesh.play_run_animation()
+				animated_character.play_run_animation()
 			else:
-				animated_mesh.play_walk_animation()
+				animated_character.play_walk_animation()
 			velocity.x = direction.x * current_speed  #RUUUUN 
 			velocity.z = direction.z * current_speed  #RUUUUN
 		else:
-			animated_mesh.play_idle_animation()
+			animated_character.play_idle_animation()
 			velocity.x = lerp(velocity.x, direction.x * current_speed, delta * 7.0)
 			velocity.z = lerp(velocity.z, direction.z * current_speed, delta * 7.0)
 	else:
@@ -143,6 +143,7 @@ func _physics_process(delta: float) -> void:
 			#print("can see tutorial message!")
 			if Input.is_action_just_pressed("interact"):
 				target.interact.call()
+				animated_character.play_interact_animation()
 				print("DO STUFF!")
 		#else: seetext.hide()
 	#endregion

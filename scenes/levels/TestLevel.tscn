@@ -92,7 +92,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 0, -20)
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -20, 0, -60)
 
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="." unique_id=1797761099]
-_spawnable_scenes = PackedStringArray("uid://deyqy5skl5ddn")
+_spawnable_scenes = PackedStringArray("uid://deyqy5skl5ddn", "uid://ci0vqs1r5hsdb", "uid://celjvlkqn1se3")
 spawn_path = NodePath("../Players")
 
 [node name="Players" type="Node3D" parent="." unique_id=57610433]
