@@ -36,7 +36,17 @@ func _spawn_single_player(peer_id: int) -> void:
 		if players_node.has_node(str(peer_id)):
 			return
 			
-		var player_scene = load("res://scenes/characters/character.tscn").instantiate()
+		var selected_character = MultiplayerManager.player_characters[peer_id]
+		
+		var player_scene
+		match selected_character:
+			MultiplayerManager.character_type.VAMPIRE:
+				player_scene = load("res://scenes/characters/Vampire.tscn").instantiate()
+			MultiplayerManager.character_type.WEREWOLF:
+				player_scene = load("res://scenes/characters/Werewolf.tscn").instantiate()
+			_:
+				player_scene = load("res://scenes/characters/character.tscn").instantiate()
+		
 		player_scene.name = str(peer_id)
 		
 		# Adăugăm jucătorul în nodul monitorizat de PlayerSpawner-ul din interiorul hărții

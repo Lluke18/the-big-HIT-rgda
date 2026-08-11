@@ -1,0 +1,105 @@
+[gd_scene format=3 uid="uid://celjvlkqn1se3"]
+
+[ext_resource type="PackedScene" uid="uid://bce361ng2syeo" path="res://assets/characters/werewolf_model.tscn" id="1_gbqi8"]
+[ext_resource type="Script" uid="uid://c4sjkxxg01dgw" path="res://scenes/characters/werewolf.gd" id="1_pajqt"]
+[ext_resource type="Script" uid="uid://dkkxcbjegykti" path="res://scripts/characters/input_synchronizer.gd" id="2_pajqt"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_k4pkd"]
+radius = 0.21972656
+
+[sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_tv6fu"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_gs7cj"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:rotation")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_a3kqk"]
+properties/0/path = NodePath("InputSynchronizer:input_dir")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath("InputSynchronizer:rotation_input")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xrgev"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[node name="Werewolf" type="CharacterBody3D" unique_id=1149247979 node_paths=PackedStringArray("camera", "canvas_layer", "head", "seetext") groups=["player"]]
+collision_layer = 513
+script = ExtResource("1_pajqt")
+camera = NodePath("head/SpringArm3D/Camera3D")
+canvas_layer = NodePath("CanvasLayer")
+head = NodePath("head")
+seetext = NodePath("CanvasLayer/Click to Interact")
+
+[node name="AnimatedCharacter" parent="." unique_id=1458199447 instance=ExtResource("1_gbqi8")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1845392848]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0126698, 0)
+shape = SubResource("CapsuleShape3D_k4pkd")
+
+[node name="head" type="Node3D" parent="." unique_id=963195018]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 1.6445591, -0.35546142)
+
+[node name="SpringArm3D" type="SpringArm3D" parent="head" unique_id=2050971821]
+transform = Transform3D(0.9999997, 0, 0, 0, 1, 0, 0, 0, 0.9999997, 0, 0, 0.01539427)
+shape = SubResource("SeparationRayShape3D_tv6fu")
+spring_length = 0.1
+
+[node name="Camera3D" type="Camera3D" parent="head/SpringArm3D" unique_id=1046958876]
+cull_mask = 1048063
+current = true
+
+[node name="SeeCast" type="RayCast3D" parent="head/SpringArm3D/Camera3D" unique_id=751365974]
+unique_name_in_owner = true
+transform = Transform3D(1.9106855e-15, -4.371139e-08, -1, -1, -4.371139e-08, 0, -4.371139e-08, 1, -4.371139e-08, 0, 0, -0.325)
+target_position = Vector3(0, -2, 0)
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=553313842]
+replication_config = SubResource("SceneReplicationConfig_gs7cj")
+
+[node name="InputSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=1077715519]
+unique_name_in_owner = true
+replication_config = SubResource("SceneReplicationConfig_a3kqk")
+script = ExtResource("2_pajqt")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1571417538]
+
+[node name="Panel" type="Panel" parent="CanvasLayer" unique_id=115712163]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xrgev")
+metadata/_edit_use_anchors_ = true
+
+[node name="Click to Interact" type="Label" parent="CanvasLayer" unique_id=335240011]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -61.0
+offset_top = 33.0
+offset_right = 61.0
+offset_bottom = 56.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Click to Interact"

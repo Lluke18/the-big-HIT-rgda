@@ -1,15 +1,12 @@
 extends Control
 
-enum character_type{
-	VAMPIRE,
-	WEREWOLF
-}
+
 
 @onready var character_name: Label = $characterName
 @onready var multiplayer_synchronizer: MultiplayerSynchronizer = $MultiplayerSynchronizer
 
 @export var character_select: Array[String]
-@export var curr_selection: character_type = character_type.VAMPIRE
+@export var curr_selection: MultiplayerManager.character_type = MultiplayerManager.character_type.VAMPIRE
 @export var player_id := 1:
 	set(id):
 		if player_id == id:

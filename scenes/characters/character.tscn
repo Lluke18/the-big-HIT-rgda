@@ -32,9 +32,10 @@ corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 
-[node name="Player" type="CharacterBody3D" unique_id=1744164533 node_paths=PackedStringArray("camera", "head", "seetext") groups=["player"]]
+[node name="Player" type="CharacterBody3D" unique_id=1744164533 node_paths=PackedStringArray("camera", "canvas_layer", "head", "seetext") groups=["player"]]
 script = ExtResource("1_agfs1")
 camera = NodePath("head/SpringArm3D/Camera3D")
+canvas_layer = NodePath("CanvasLayer")
 head = NodePath("head")
 seetext = NodePath("CanvasLayer/Click to Interact")
 
@@ -85,6 +86,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_umu6e")
+metadata/_edit_use_anchors_ = true
 
 [node name="Click to Interact" type="Label" parent="CanvasLayer" unique_id=260077523]
 visible = false
