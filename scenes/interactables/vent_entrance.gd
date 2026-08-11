@@ -1,5 +1,7 @@
 extends Node3D
 
+@export var index: int = 0
+
 @onready var interactable_object: InteractableObject = $InteractableObject
 @onready var vent: Node3D = $Vent
 
@@ -8,8 +10,19 @@ extends Node3D
 
 @onready var camera_3d: Camera3D = $Camera3D
 
+@onready var spawner_marker: Marker3D = $SpawnerMarker
+
 func _ready() -> void:
+	animated_character.visible = false
+	vampire_bat.visible = false
+	
 	interactable_object.interact = Callable(self, "on_vent_enter")
+	SignalBus.switch_to_vent.connect(on_switch_to_vent)
+	SignalBus.exit_vent.connect(on_vent_exit)
+	
+func on_switch_to_vent(vent_index: int):
+	if vent_index == index:
+		camera_3d.make_current()
 	
 func on_vent_enter(player: Player):
 	player.hide()
@@ -32,10 +45,14 @@ func on_vent_enter(player: Player):
 	vampire_bat.play_fly_in_animation(vent.global_position)
 	await vampire_bat.entered_vent
 	
-	camera_3d.clear_current()
+	SignalBus.enter_vent.emit(index)
 	
-func on_vent_exit(player: Player):
+func on_vent_exit(vent_index: int, player: Player):
+	if vent_index != index:
+		return
+		
 	player.hide()
+	player.global_position = spawner_marker.global_position
 	player.process_mode = Node.PROCESS_MODE_DISABLED
 	
 	camera_3d.make_current()
@@ -59,4 +76,4 @@ func on_vent_exit(player: Player):
 	player.process_mode = Node.PROCESS_MODE_INHERIT
 	player.show()
 	
-	camera_3d.clear_current()
+	player.camera.make_current()
