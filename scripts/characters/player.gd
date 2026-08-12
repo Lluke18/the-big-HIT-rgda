@@ -57,6 +57,8 @@ func _enter_tree() -> void:
 func _ready():
 	animated_character.play_idle_animation()
 	
+	player_tag.text = SteamManager.steam_username
+	
 	if is_multiplayer_authority():
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		camera.make_current()

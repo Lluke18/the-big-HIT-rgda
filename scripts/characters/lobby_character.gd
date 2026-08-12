@@ -3,6 +3,8 @@ extends Control
 
 
 @onready var character_name: Label = $characterName
+@onready var steam_name: Label = $SteamName
+
 @onready var multiplayer_synchronizer: MultiplayerSynchronizer = $MultiplayerSynchronizer
 
 @export var character_select: Array[String]
@@ -34,6 +36,8 @@ func _ready() -> void:
 	" authority=", get_multiplayer_authority())
 	if character_select.size() > 0:
 		character_name.text = character_select[curr_selection]
+	
+	steam_name.text = SteamManager.steam_username
 	
 	if  get_multiplayer_authority() != multiplayer.get_unique_id():
 		set_process(false)

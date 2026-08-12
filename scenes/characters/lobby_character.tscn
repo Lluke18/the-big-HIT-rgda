@@ -37,3 +37,18 @@ text = "VAMPIRE"
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=2026980388]
 replication_config = SubResource("SceneReplicationConfig_qqea1")
+
+[node name="SteamName" type="Label" parent="." unique_id=814632658]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -69.5
+offset_top = 166.0
+offset_right = 69.5
+offset_bottom = 189.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Non-Steam Player"
