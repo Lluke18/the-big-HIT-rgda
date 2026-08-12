@@ -40,6 +40,8 @@ signal clicked
 
 @onready var input_synchronizer: MultiplayerSynchronizer = %InputSynchronizer
 
+@onready var player_tag: Label3D = $PlayerTag
+
 #@export var player_id := 1:
 	#set(id):
 		#player_id = id
@@ -54,10 +56,14 @@ func _enter_tree() -> void:
 
 func _ready():
 	animated_character.play_idle_animation()
+	
 	if is_multiplayer_authority():
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-		camera.current = true
-	else: camera.current = false
+		camera.make_current()
+	else:
+		#Nu stiu daca asta ar fi solutia ideala
+		var new_camera = get_node("/root/Main/LevelContainer/TestLevel/Players/1/head/SpringArm3D/Camera3D")
+		new_camera.make_current()
 	
 	#Input.set_custom_mouse_cursor(cursor)
 	#Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -74,6 +80,8 @@ func set_footstep_sounds_random(sounds: Array[AudioStream]) -> void:
 	
 
 func _unhandled_input(event: InputEvent) -> void:
+	if not is_multiplayer_authority():
+		return
 	if event is InputEventMouseMotion:
 		var synced_rotation = input_synchronizer.rotation_input
 		

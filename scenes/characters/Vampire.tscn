@@ -17,6 +17,9 @@ properties/0/replication_mode = 1
 properties/1/path = NodePath(".:rotation")
 properties/1/spawn = true
 properties/1/replication_mode = 1
+properties/2/path = NodePath("AnimatedCharacter/AnimationPlayer:current_animation")
+properties/2/spawn = true
+properties/2/replication_mode = 1
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_b7ydn"]
 properties/0/path = NodePath("InputSynchronizer:input_dir")
@@ -48,7 +51,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0126698, 0)
 shape = SubResource("CapsuleShape3D_am7ow")
 
 [node name="head" type="Node3D" parent="." unique_id=194512346]
-transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 1.6445591, -0.35546142)
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 1.6445591, -0.12056309)
 
 [node name="SpringArm3D" type="SpringArm3D" parent="head" unique_id=1332666280]
 transform = Transform3D(0.9999997, 0, 0, 0, 1, 0, 0, 0, 0.9999997, 0, 0, 0.01539427)
@@ -108,3 +111,11 @@ text = "Click to Interact"
 
 [node name="VentUI" parent="CanvasLayer" unique_id=1741107145 instance=ExtResource("4_bnap0")]
 visible = false
+
+[node name="PlayerTag" type="Label3D" parent="." unique_id=350879227]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0490413, 0)
+billboard = 1
+text = "Player1"
+font_size = 48
+
+[editable path="AnimatedCharacter"]
