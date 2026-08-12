@@ -6209,6 +6209,11 @@ _subresources={
 "slice_99/start_frame": 0,
 "slices/amount": 0
 }
+},
+"nodes": {
+"PATH:Node/Skeleton3D/WadeWatts002": {
+"mesh_instance/layers": 257
+}
 }
 }
 gltf/naming_version=2

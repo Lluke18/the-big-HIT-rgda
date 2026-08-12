@@ -42,3 +42,4 @@ transform = Transform3D(0.9183732, -0.19828993, 0.3424494, 0.047567923, 0.914436
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.2330344)
 
 [editable path="InteractableObject"]
+[editable path="AnimatedCharacter"]
