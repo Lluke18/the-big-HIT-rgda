@@ -111,7 +111,7 @@ text = "Click to Interact"
 [node name="PlayerTag" type="Label3D" parent="." unique_id=2136461645]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0490413, 0)
 billboard = 1
-text = "Player1"
+text = "Werewolf"
 font_size = 48
 
 [editable path="AnimatedCharacter"]
