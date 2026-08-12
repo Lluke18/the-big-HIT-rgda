@@ -1,6 +1,7 @@
 extends Control
 
 @onready var settings: Control = $Settings
+@onready var test_level: Node3D = $"../.."
 
 func _ready() -> void:
 	hide()
@@ -29,4 +30,15 @@ func _on_settings_button_pressed() -> void:
 	pass # Replace with function body.
 
 func _on_exit_to_menu_button_pressed() -> void:
-	pass # Replace with function body.
+	var local_id = multiplayer.get_unique_id() 
+	if local_id != 1:
+		rpc_id(1,"go_back_to_lobby")
+	else:
+		go_back_to_lobby.rpc()
+
+@rpc("any_peer", "call_local", "reliable")
+func go_back_to_lobby():
+	var lobby_ui = get_node("/root/Main/Lobby")
+	if lobby_ui:
+		lobby_ui.show()
+	test_level.queue_free()
