@@ -7,7 +7,7 @@ var player = null
 var players: Array[Player]
 #maybe also add the suspicion mechanic here as vars
 #or a stats var like the player's
-#salutare dani
+
 @export var move_speed: float
 @export var route_locations: Array[Marker3D]
 var gravity = 9.8
