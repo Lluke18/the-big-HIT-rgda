@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://bfq0cqshrnqvo"]
+
+[ext_resource type="Script" uid="uid://c1v3nuhrgp8ub" path="res://scenes/UI/main_menu.gd" id="1_11hie"]
+[ext_resource type="PackedScene" uid="uid://bbbc124sp3tn6" path="res://scenes/UI/multiplayer_lobby.tscn" id="2_58fj5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ragau"]
+font_size = 48
+
+[node name="MainMenu" type="Control" unique_id=1711847682]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_11hie")
+
+[node name="Label" type="Label" parent="." unique_id=1030418866]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -124.5
+offset_top = -222.0
+offset_right = 124.5
+offset_bottom = -155.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Game Title"
+label_settings = SubResource("LabelSettings_ragau")
+
+[node name="PlayButton" type="Button" parent="." unique_id=1550467485]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -95.0
+offset_top = -40.0
+offset_right = 95.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Play"
+
+[node name="ExitButton" type="Button" parent="." unique_id=1685850010]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -95.0
+offset_top = 92.0
+offset_right = 95.0
+offset_bottom = 172.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Exit to Desktop"
+
+[node name="MultiplayerLobby" parent="." unique_id=1482253729 instance=ExtResource("2_58fj5")]
+visible = false
+layout_mode = 1
+
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="toggled" from="PlayButton" to="." method="_on_play_button_toggled"]

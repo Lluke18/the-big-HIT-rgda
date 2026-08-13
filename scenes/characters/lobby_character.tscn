@@ -9,6 +9,9 @@ properties/0/replication_mode = 1
 properties/1/path = NodePath(".:curr_selection")
 properties/1/spawn = true
 properties/1/replication_mode = 1
+properties/2/path = NodePath("SteamName:text")
+properties/2/spawn = true
+properties/2/replication_mode = 1
 
 [node name="LobbyCharacter" type="Control" unique_id=1491880909]
 layout_mode = 3
