@@ -9,6 +9,8 @@ var werewolf_scene := preload("res://scenes/characters/character.tscn")
 
 
 func _ready() -> void:
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	NetworkManager.return_to_menu.connect(_on_return_to_menu)
 	if SignalBus.steam_activated:
 		network_manager.active_network_type = network_manager.MULTIPLAYER_NETWORK_TYPE.STEAM
 	
@@ -33,3 +35,7 @@ func _ready() -> void:
 """if OS.has_feature("dedicated_server"):
 		print("Starting dedicated server...")
 		network_manager.become_host(true) """
+		
+func _on_return_to_menu():
+	get_tree().reload_current_scene()
+	
