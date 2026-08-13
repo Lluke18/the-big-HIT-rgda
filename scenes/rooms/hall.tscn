@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://6j1gtypn7xdo"]
+
+[ext_resource type="PackedScene" uid="uid://dkwek0egatwqi" path="res://assets/rooms/hall.glb" id="1_0bojo"]
+
+[node name="hall" unique_id=918156445 instance=ExtResource("1_0bojo")]

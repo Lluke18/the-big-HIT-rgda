@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://b3htxmmkp6okf"]
+
+[ext_resource type="PackedScene" uid="uid://vqas75yvho6r" path="res://assets/rooms/boss_room.glb" id="1_rmaf1"]
+
+[node name="boss_room" unique_id=1418459769 instance=ExtResource("1_rmaf1")]

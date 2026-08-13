@@ -11,7 +11,6 @@ func _ready() -> void:
 	#animated_character.play_walk_animation()
 
 func Enter():
-	#randomize_wander()
 	pick_new_location()
 
 func Physics_Update(delta: float):
@@ -27,10 +26,6 @@ func Physics_Update(delta: float):
 	if nav_agent.is_navigation_finished():
 		state_transition.emit(self, "Idle")
 
-func randomize_wander():
-	move_dir = Vector3(randf_range(-1,1), 
-	randf_range(-1,1), randf_range(-1,1)).normalized()
-	
 func pick_new_location():
 	var new_location = route_locations.pick_random()
 	while npc.global_position.is_equal_approx(new_location.global_position):

@@ -11,3 +11,4 @@ func _ready() -> void:
 
 func on_found_intruder():
 	fsm.force_change_state("Attack")
+#or just quit here

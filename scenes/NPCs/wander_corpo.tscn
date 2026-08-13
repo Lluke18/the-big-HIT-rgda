@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://byvfg0ibjqt5x" path="res://scripts/fsm scripts/idle.gd" id="3_i26ds"]
 [ext_resource type="Script" uid="uid://hs5y1th4s20b" path="res://scenes/NPCs/run_to_guard.gd" id="4_8wvx1"]
 [ext_resource type="PackedScene" uid="uid://csrj6j2v2bg0h" path="res://assets/NPC/corporatist.tscn" id="5_jgsgw"]
+[ext_resource type="Script" uid="uid://bw2nkbod1cyb" path="res://scripts/fsm scripts/wander.gd" id="5_pjg06"]
 [ext_resource type="PackedScene" uid="uid://oenhlr20lqb2" path="res://scenes/UI/SuspicionBar.tscn" id="6_8olvd"]
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_bjc1w"]
@@ -41,6 +42,7 @@ initial_state = NodePath("Idle")
 
 [node name="Idle" type="Node" parent="StateMachine" unique_id=1233826377 node_paths=PackedStringArray("suspicion_bar", "npc")]
 script = ExtResource("3_i26ds")
+wander_state_name = "Wander"
 suspicion_bar = NodePath("../../SubViewport/SuspicionBar")
 detected_state_name = "runtoguard"
 npc = NodePath("../..")
@@ -52,6 +54,11 @@ one_shot = true
 script = ExtResource("4_8wvx1")
 idle_state_name = "idle"
 guard_detection_area = NodePath("../../GuardDetectionArea")
+npc = NodePath("../..")
+
+[node name="Wander" type="Node" parent="StateMachine" unique_id=569105462 node_paths=PackedStringArray("nav_agent", "npc")]
+script = ExtResource("5_pjg06")
+nav_agent = NodePath("../../NavigationAgent3D")
 npc = NodePath("../..")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=838253104]
