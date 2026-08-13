@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://diapgt6o0l0gu" path="res://scenes/characters/vampire.gd" id="1_m48pq"]
 [ext_resource type="PackedScene" uid="uid://dl2yuch7k4ty" path="res://assets/characters/vampire_model.tscn" id="2_m48pq"]
 [ext_resource type="Script" uid="uid://dkkxcbjegykti" path="res://scripts/characters/input_synchronizer.gd" id="3_bnap0"]
+[ext_resource type="Script" uid="uid://c4ggjq2lmkfxy" path="res://scenes/characters/player_ui.gd" id="4_am7ow"]
 [ext_resource type="PackedScene" uid="uid://ctkoxsltvebaw" path="res://scenes/UI/VentUI.tscn" id="4_bnap0"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_am7ow"]
@@ -45,7 +46,7 @@ script = ExtResource("1_m48pq")
 camera = NodePath("head/SpringArm3D/Camera3D")
 canvas_layer = NodePath("CanvasLayer")
 head = NodePath("head")
-seetext = NodePath("CanvasLayer/Click to Interact")
+seetext = NodePath("CanvasLayer/SeeText")
 
 [node name="AnimatedCharacter" parent="." unique_id=1857893987 instance=ExtResource("2_m48pq")]
 
@@ -80,8 +81,9 @@ script = ExtResource("3_bnap0")
 head = NodePath("../head")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1488708023]
+script = ExtResource("4_am7ow")
 
-[node name="Panel" type="Panel" parent="CanvasLayer" unique_id=125715193]
+[node name="Crosshair" type="Panel" parent="CanvasLayer" unique_id=125715193]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -97,7 +99,7 @@ mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ikgop")
 metadata/_edit_use_anchors_ = true
 
-[node name="Click to Interact" type="Label" parent="CanvasLayer" unique_id=920653563]
+[node name="SeeText" type="Label" parent="CanvasLayer" unique_id=920653563]
 visible = false
 anchors_preset = 8
 anchor_left = 0.5

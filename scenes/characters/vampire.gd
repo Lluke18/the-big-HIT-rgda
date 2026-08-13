@@ -1,1 +1,24 @@
 extends Player
+class_name Vampire
+
+func _physics_process(delta: float) -> void:
+	super(delta)
+	
+	if not is_multiplayer_authority():
+		return
+	
+	#region Interaction
+	seetext.hide()
+	if is_instance_valid(see_cast) and see_cast.is_colliding():
+		var target = see_cast.get_collider()
+		#print(target)
+		if target != null and target.is_in_group("interactable"): # OR MAKE A GROUP!
+			seetext.text = target.vampire_interaction_text #Singura diferenta e aici
+			seetext.show()
+			#print("can see tutorial message!")
+			if Input.is_action_just_pressed("interact"):
+				target.interact.call(self)
+				animated_character.play_interact_animation()
+				print("DO STUFF!")
+		#else: seetext.hide()
+	#endregion

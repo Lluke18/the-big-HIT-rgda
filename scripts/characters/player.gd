@@ -143,12 +143,15 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	#endregion
 	
+	#Subclasele Vampire si Werewolf se ocupa de verificarea interactiunilor
+	"""
 	#region Interaction
 	seetext.hide()
 	if is_instance_valid(see_cast) and see_cast.is_colliding():
 		var target = see_cast.get_collider()
 		#print(target)
 		if target != null and target.is_in_group("interactable"): # OR MAKE A GROUP!
+			#seetext.text = target.interaction_text
 			seetext.show()
 			#print("can see tutorial message!")
 			if Input.is_action_just_pressed("interact"):
@@ -157,6 +160,7 @@ func _physics_process(delta: float) -> void:
 				print("DO STUFF!")
 		#else: seetext.hide()
 	#endregion
+	"""
 
 func _headbob(time : float) -> Vector3:
 	var pos = Vector3.ZERO

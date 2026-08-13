@@ -1,7 +1,6 @@
 extends Control
 
 @onready var settings: Control = $Settings
-@onready var test_level: Node3D = $"../.."
 
 func _ready() -> void:
 	hide()
