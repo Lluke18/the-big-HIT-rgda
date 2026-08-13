@@ -9,6 +9,8 @@ var enet_network_scene := preload("res://scenes/multiplayer/enet_network.tscn")
 var steam_network_scene := preload("res://scenes/multiplayer/steam_network.tscn")
 var active_network
 
+signal return_to_menu
+
 func _build_multiplayer_network():
 	if not active_network:
 		print("Setting active_network")
@@ -43,3 +45,36 @@ func join_as_client(lobby_id = 0):
 func list_lobbies():
 	_build_multiplayer_network()
 	active_network.list_lobbies()
+	
+func quit_lobby() -> void:
+	if multiplayer.is_server():
+		close_lobby.rpc()
+	else:
+		# Ask the server to end the session.
+		request_quit_lobby.rpc_id(1)
+
+@rpc("any_peer", "reliable")
+func request_quit_lobby() -> void:
+	if not multiplayer.is_server():
+		return
+
+	close_lobby.rpc()
+	
+@rpc("authority", "call_local", "reliable")
+func close_lobby() -> void:
+	# First leave the multiplayer session.
+	#if multiplayer.multiplayer_peer:
+		#multiplayer.multiplayer_peer.close()
+
+	# Then recreate Main.tscn.
+	#await get_tree().process_frame
+	#_cleanup_multiplayer()
+	return_to_menu.emit()
+	_cleanup_multiplayer()
+	#call_deferred("_cleanup_multiplayer")
+	
+func _cleanup_multiplayer() -> void:
+	if multiplayer.multiplayer_peer:
+		multiplayer.multiplayer_peer.close()
+
+	multiplayer.multiplayer_peer = OfflineMultiplayerPeer.new()
