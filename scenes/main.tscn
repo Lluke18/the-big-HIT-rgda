@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bspdmvrmr3dne" path="res://scripts/multiplayer/network_manager.gd" id="1_0wfyh"]
 [ext_resource type="Script" uid="uid://douif56hqpoxv" path="res://scripts/level/main.gd" id="1_tefeu"]
 [ext_resource type="Script" uid="uid://crxgo1vxodg8w" path="res://scenes/levels/level_container.gd" id="3_jyhfs"]
-[ext_resource type="PackedScene" uid="uid://bbbc124sp3tn6" path="res://scenes/UI/multiplayer_lobby.tscn" id="7_o6xl0"]
+[ext_resource type="PackedScene" uid="uid://bfq0cqshrnqvo" path="res://scenes/UI/MainMenu.tscn" id="3_tbgi4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_o5qli"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -46,7 +46,7 @@ spawn_path = NodePath("../LevelContainer")
 
 [node name="Map" type="Node3D" parent="." unique_id=1472576267]
 
-[node name="Lobby" parent="." unique_id=1482253729 instance=ExtResource("7_o6xl0")]
+[node name="MainMenu" parent="." unique_id=1711847682 instance=ExtResource("3_tbgi4")]
 
 [node name="LevelContainer" type="Node3D" parent="." unique_id=634637839]
 script = ExtResource("3_jyhfs")

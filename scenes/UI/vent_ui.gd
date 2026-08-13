@@ -14,8 +14,8 @@ func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	SignalBus.enter_vent.connect(open)
 	
-func open(current_vent_index: int):
-	current_vent_index = current_vent_index
+func open(target_vent_index: int):
+	current_vent_index = target_vent_index
 	location_label.text = LOCATION_NAMES[current_vent_index]
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	show()
