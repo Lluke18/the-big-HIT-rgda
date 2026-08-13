@@ -15,6 +15,14 @@ start_scene_path = "res://scenes/main.tscn"
 multiplayer_ui = NodePath("MultiplayerUI")
 lobby_ui = NodePath("LobbyUI")
 
+[node name="Panel" type="Panel" parent="." unique_id=1209198297]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="NetworkManager" type="Node" parent="." unique_id=286062784 node_paths=PackedStringArray("_players_spawn_node")]
 script = ExtResource("2_4ea5e")
 _players_spawn_node = NodePath("../Players/HBoxContainer")
