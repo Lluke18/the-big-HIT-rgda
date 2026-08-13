@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://dhi03rsdio7tc"]
+
+[ext_resource type="Script" uid="uid://ngvttrcsaptp" path="res://scenes/NPCs/npc_guard.gd" id="1_nnhgj"]
+[ext_resource type="Script" uid="uid://bkuygnj6nmexp" path="res://scripts/fsm scripts/fsm.gd" id="2_36iok"]
+[ext_resource type="Script" uid="uid://byvfg0ibjqt5x" path="res://scripts/fsm scripts/idle.gd" id="3_wt72j"]
+[ext_resource type="Script" uid="uid://cy14537pebee0" path="res://scripts/fsm scripts/guard_attack.gd" id="4_nnhgj"]
+[ext_resource type="PackedScene" uid="uid://bd1yqcw8cjnhm" path="res://assets/NPC/ActualGuard.tscn" id="6_nnhgj"]
+[ext_resource type="PackedScene" uid="uid://oenhlr20lqb2" path="res://scenes/UI/SuspicionBar.tscn" id="7_1gpve"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_bjc1w"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:rotation")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xrivr"]
+radius = 0.18066406
+height = 1.7868347
+
+[sub_resource type="FogMaterial" id="FogMaterial_2cktm"]
+density = 0.05
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_isfhd"]
+viewport_path = NodePath("SubViewport")
+
+[node name="NPC" type="CharacterBody3D" unique_id=399691295 node_paths=PackedStringArray("animated_character", "fsm") groups=["guard", "npc"]]
+collision_layer = 2
+script = ExtResource("1_nnhgj")
+animated_character = NodePath("ActualGuard")
+fsm = NodePath("StateMachine")
+move_speed = 3.5
+
+[node name="ActualGuard" parent="." unique_id=170206793 instance=ExtResource("6_nnhgj")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, -0.823, 0.11455035)
+
+[node name="StateMachine" type="Node" parent="." unique_id=470339980 node_paths=PackedStringArray("initial_state")]
+script = ExtResource("2_36iok")
+initial_state = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="StateMachine" unique_id=1233826377 node_paths=PackedStringArray("suspicion_bar", "npc")]
+script = ExtResource("3_wt72j")
+suspicion_bar = NodePath("../../SubViewport/SuspicionBar")
+detected_state_name = "attack"
+npc = NodePath("../..")
+
+[node name="IdleTimer" type="Timer" parent="StateMachine/Idle" unique_id=1932874965]
+one_shot = true
+
+[node name="Attack" type="Node" parent="StateMachine" unique_id=1979802122]
+script = ExtResource("4_nnhgj")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=838253104]
+
+[node name="SeeCast" type="RayCast3D" parent="." unique_id=833471495]
+transform = Transform3D(9.28867e-08, 2.125, -3.208661e-07, 2.125, -9.28867e-08, 0, -1.4025502e-14, -3.208661e-07, -2.125, 0, 0.7617147, 0)
+target_position = Vector3(0, 0, 3.47)
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=400696466]
+replication_config = SubResource("SceneReplicationConfig_bjc1w")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1175898848]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.01850912, 0.03996277, 0)
+shape = SubResource("CapsuleShape3D_xrivr")
+
+[node name="FogVolume" type="FogVolume" parent="." unique_id=818601699]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, -1.8171985)
+size = Vector3(2, 2, 4.131836)
+material = SubResource("FogMaterial_2cktm")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="FogVolume" unique_id=1315327744]
+transform = Transform3D(1, 0, 0, 0, -0.9008197, 0.43419334, 0, -0.43419334, -0.9008197, 0, 0.8461004, -1.6942955)
+light_color = Color(1, 0, 0, 1)
+light_energy = 16.0
+light_volumetric_fog_energy = 10.0
+spot_angle = 10.8
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=1333327056]
+disable_3d = true
+transparent_bg = true
+
+[node name="SuspicionBar" parent="SubViewport" unique_id=1428092685 instance=ExtResource("7_1gpve")]
+value = 50.0
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=153913080]
+billboard = 1
+texture = SubResource("ViewportTexture_isfhd")
+
+[connection signal="timeout" from="StateMachine/Idle/IdleTimer" to="StateMachine/Idle" method="_on_idle_timer_timeout"]

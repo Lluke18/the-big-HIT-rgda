@@ -37,6 +37,7 @@ enabled=PackedStringArray("res://addons/godotsteam/plugin.cfg")
 npc=""
 interactable=""
 player=""
+guard=""
 
 [input]
 
