@@ -17,6 +17,9 @@ func _ready() -> void:
 	vampire_bat.visible = false
 	
 	interactable_object.interact = Callable(self, "on_vent_enter")
+	interactable_object.vampire_interaction_text = "[Left Click] to go inside vent"
+	interactable_object.werewolf_interaction_text = "Can't go inside vents!"
+	
 	SignalBus.switch_to_vent.connect(on_switch_to_vent)
 	SignalBus.exit_vent.connect(on_vent_exit)
 	
@@ -25,6 +28,9 @@ func on_switch_to_vent(vent_index: int):
 		camera_3d.make_current()
 	
 func on_vent_enter(player: Player):
+	if player is Werewolf:
+		return
+		
 	player.hide()
 	player.process_mode = Node.PROCESS_MODE_DISABLED
 	

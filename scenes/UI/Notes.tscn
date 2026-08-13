@@ -1,0 +1,355 @@
+[gd_scene format=3 uid="uid://dgvgh5abs8c08"]
+
+[ext_resource type="Script" uid="uid://df5fkvj8wwn4j" path="res://scenes/UI/notes.gd" id="1_cnbn7"]
+[ext_resource type="Texture2D" uid="uid://br80olop47316" path="res://icon.svg" id="2_scjf0"]
+[ext_resource type="PackedScene" uid="uid://c64xhaavaxdp2" path="res://scenes/UI/MethodStep.tscn" id="3_8wb0d"]
+
+[node name="Notes" type="Control" unique_id=989044488]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_cnbn7")
+
+[node name="Icon" type="TextureRect" parent="." unique_id=1745085960]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 25.0
+offset_right = 181.0
+offset_bottom = 153.0
+texture = ExtResource("2_scjf0")
+
+[node name="IconLabel" type="Label" parent="Icon" unique_id=1140092763]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -73.5
+offset_top = 8.0
+offset_right = 73.5
+offset_bottom = 61.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "[Q] Hitman's Notes"
+
+[node name="Page" type="TextureRect" parent="." unique_id=1855447549]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -483.5
+offset_top = -282.5
+offset_right = 483.5
+offset_bottom = 282.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_scjf0")
+
+[node name="MethodStepsParent" type="Control" parent="Page" unique_id=854167755]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.5
+offset_top = 168.5
+offset_right = 3.5
+offset_bottom = 168.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MethodStep_0" parent="Page/MethodStepsParent" unique_id=1672172191 instance=ExtResource("3_8wb0d")]
+layout_mode = 0
+offset_left = 95.0
+offset_top = -60.0
+offset_right = 95.0
+offset_bottom = -60.0
+
+[node name="Label" type="Label" parent="Page/MethodStepsParent/MethodStep_0" unique_id=1749466950]
+layout_mode = 0
+offset_left = -25.0
+offset_top = -60.0
+offset_right = 119.0
+offset_bottom = -37.0
+text = "Vents..."
+
+[node name="MethodStep_1" parent="Page/MethodStepsParent" unique_id=1092903054 instance=ExtResource("3_8wb0d")]
+layout_mode = 0
+offset_left = 234.0
+offset_top = -61.0
+offset_right = 234.0
+offset_bottom = -61.0
+
+[node name="Label" type="Label" parent="Page/MethodStepsParent/MethodStep_1" unique_id=679410685]
+layout_mode = 0
+offset_left = -64.0
+offset_top = -65.0
+offset_right = 80.0
+offset_bottom = -42.0
+text = "The Storage Room"
+
+[node name="MethodStep_2" parent="Page/MethodStepsParent" unique_id=264426130 instance=ExtResource("3_8wb0d")]
+layout_mode = 0
+offset_left = 398.0
+offset_top = -58.0
+offset_right = 398.0
+offset_bottom = -58.0
+
+[node name="Label" type="Label" parent="Page/MethodStepsParent/MethodStep_2" unique_id=171257576]
+layout_mode = 0
+offset_left = -38.0
+offset_top = 40.0
+offset_right = 106.0
+offset_bottom = 63.0
+text = "Laxatives!"
+
+[node name="MethodStep_3" parent="Page/MethodStepsParent" unique_id=161228524 instance=ExtResource("3_8wb0d")]
+layout_mode = 0
+offset_left = 570.0
+offset_top = -55.0
+offset_right = 570.0
+offset_bottom = -55.0
+
+[node name="Label" type="Label" parent="Page/MethodStepsParent/MethodStep_3" unique_id=1013325808]
+layout_mode = 0
+offset_left = -62.0
+offset_top = -82.0
+offset_right = 82.0
+offset_bottom = -33.0
+text = "Boss needs to go
+to the bathroom"
+
+[node name="MethodStep_4" parent="Page/MethodStepsParent" unique_id=722583628 instance=ExtResource("3_8wb0d")]
+layout_mode = 0
+offset_left = 729.0
+offset_top = -58.0
+offset_right = 729.0
+offset_bottom = -58.0
+
+[node name="Label" type="Label" parent="Page/MethodStepsParent/MethodStep_4" unique_id=1240286161]
+layout_mode = 0
+offset_left = -53.00006
+offset_top = 33.0
+offset_right = 90.99994
+offset_bottom = 59.0
+text = "Kill method #1"
+
+[node name="MethodStep_5" parent="Page/MethodStepsParent" unique_id=2101131944 instance=ExtResource("3_8wb0d")]
+layout_mode = 0
+offset_left = 98.0
+offset_top = 66.0
+offset_right = 98.0
+offset_bottom = 66.0
+
+[node name="Label" type="Label" parent="Page/MethodStepsParent/MethodStep_5" unique_id=1058048691]
+layout_mode = 0
+offset_left = -82.0
+offset_top = 38.0
+offset_right = 62.0
+offset_bottom = 61.0
+text = "Cameras Disabled!"
+
+[node name="MethodStep_6" parent="Page/MethodStepsParent" unique_id=1315264600 instance=ExtResource("3_8wb0d")]
+layout_mode = 0
+offset_left = 233.0
+offset_top = 64.0
+offset_right = 233.0
+offset_bottom = 64.0
+
+[node name="Label" type="Label" parent="Page/MethodStepsParent/MethodStep_6" unique_id=64122411]
+layout_mode = 0
+offset_left = 43.0
+offset_top = -9.0
+offset_right = 187.0
+offset_bottom = 14.0
+text = "Boss Keys found!"
+
+[node name="MethodStep_7" parent="Page/MethodStepsParent" unique_id=997052802 instance=ExtResource("3_8wb0d")]
+layout_mode = 0
+offset_left = 732.0
+offset_top = 58.0
+offset_right = 732.0
+offset_bottom = 58.0
+
+[node name="Label" type="Label" parent="Page/MethodStepsParent/MethodStep_7" unique_id=1636057865]
+layout_mode = 0
+offset_left = -90.0
+offset_top = 33.0
+offset_right = 114.0
+offset_bottom = 82.0
+text = "The Boss is now
+ a vampire"
+
+[node name="MethodStep_8" parent="Page/MethodStepsParent" unique_id=1196979156 instance=ExtResource("3_8wb0d")]
+layout_mode = 0
+offset_left = 904.0
+offset_top = 120.0
+offset_right = 904.0
+offset_bottom = 120.0
+
+[node name="Label" type="Label" parent="Page/MethodStepsParent/MethodStep_8" unique_id=433586603]
+layout_mode = 0
+offset_left = -60.0
+offset_top = 34.0
+offset_right = 158.0
+offset_bottom = 63.0
+text = "Kill Method #2"
+
+[node name="MethodStep_9" parent="Page/MethodStepsParent" unique_id=80160026 instance=ExtResource("3_8wb0d")]
+layout_mode = 0
+offset_left = 93.0
+offset_top = 200.0
+offset_right = 93.0
+offset_bottom = 200.0
+
+[node name="Label" type="Label" parent="Page/MethodStepsParent/MethodStep_9" unique_id=804915205]
+layout_mode = 0
+offset_left = -72.0
+offset_top = 43.0
+offset_right = 72.0
+offset_bottom = 66.0
+text = "Tony is watching..."
+
+[node name="MethodStep_10" parent="Page/MethodStepsParent" unique_id=2087072612 instance=ExtResource("3_8wb0d")]
+layout_mode = 0
+offset_left = 236.0
+offset_top = 199.0
+offset_right = 236.0
+offset_bottom = 199.0
+
+[node name="Label" type="Label" parent="Page/MethodStepsParent/MethodStep_10" unique_id=1387163281]
+layout_mode = 0
+offset_left = -30.0
+offset_top = 51.0
+offset_right = 108.0
+offset_bottom = 74.0
+text = "The Office locker"
+
+[node name="MethodStep_11" parent="Page/MethodStepsParent" unique_id=663877992 instance=ExtResource("3_8wb0d")]
+layout_mode = 0
+offset_left = 417.0
+offset_top = 193.0
+offset_right = 417.0
+offset_bottom = 193.0
+
+[node name="Label" type="Label" parent="Page/MethodStepsParent/MethodStep_11" unique_id=699322285]
+layout_mode = 0
+offset_left = -62.0
+offset_top = 38.0
+offset_right = 156.0
+offset_bottom = 67.0
+text = "Kill Method #3"
+
+[node name="MethodStep_12" parent="Page/MethodStepsParent" unique_id=214520832 instance=ExtResource("3_8wb0d")]
+layout_mode = 0
+offset_left = 578.0
+offset_top = 193.0
+offset_right = 578.0
+offset_bottom = 193.0
+
+[node name="Label" type="Label" parent="Page/MethodStepsParent/MethodStep_12" unique_id=1308984794]
+layout_mode = 0
+offset_left = -65.0
+offset_top = 33.0
+offset_right = 153.0
+offset_bottom = 62.0
+text = "Found Garlic!"
+
+[node name="MethodStep_13" parent="Page/MethodStepsParent" unique_id=1173804483 instance=ExtResource("3_8wb0d")]
+layout_mode = 0
+offset_left = 724.0
+offset_top = 193.0
+offset_right = 724.0
+offset_bottom = 193.0
+
+[node name="Label" type="Label" parent="Page/MethodStepsParent/MethodStep_13" unique_id=1361702143]
+layout_mode = 0
+offset_left = -83.0
+offset_top = 34.0
+offset_right = 135.0
+offset_bottom = 63.0
+text = "Boss got garlic in sandwich"
+
+[node name="MethodStep_14" parent="Page/MethodStepsParent" unique_id=1577383060 instance=ExtResource("3_8wb0d")]
+layout_mode = 0
+offset_left = 89.0
+offset_top = 309.0
+offset_right = 89.0
+offset_bottom = 309.0
+
+[node name="Label" type="Label" parent="Page/MethodStepsParent/MethodStep_14" unique_id=224310529]
+layout_mode = 0
+offset_left = -33.0
+offset_top = 36.0
+offset_right = 111.0
+offset_bottom = 59.0
+text = "A wired phone"
+
+[node name="Lines" type="Control" parent="Page" unique_id=788798800]
+anchors_preset = 0
+offset_left = 3.5
+offset_top = 168.5
+offset_right = 43.5
+offset_bottom = 208.5
+
+[node name="Line2D" type="Line2D" parent="Page/Lines" unique_id=1621134993]
+points = PackedVector2Array(138, -55, 191, -55)
+
+[node name="Line2D2" type="Line2D" parent="Page/Lines" unique_id=1177951681]
+position = Vector2(150, 1)
+points = PackedVector2Array(138, -55, 191, -55)
+
+[node name="Line2D3" type="Line2D" parent="Page/Lines" unique_id=955233851]
+position = Vector2(320, 0)
+points = PackedVector2Array(138, -55, 191, -55)
+
+[node name="Line2D4" type="Line2D" parent="Page/Lines" unique_id=359040016]
+position = Vector2(486, -1)
+points = PackedVector2Array(138, -55, 191, -55)
+
+[node name="Line2D5" type="Line2D" parent="Page/Lines" unique_id=514727831]
+position = Vector2(487, 250)
+points = PackedVector2Array(138, -55, 191, -55)
+
+[node name="Line2D9" type="Line2D" parent="Page/Lines" unique_id=1623442018]
+position = Vector2(3, 251)
+points = PackedVector2Array(130, -51, 190, -51)
+
+[node name="Line2D6" type="Line2D" parent="Page/Lines" unique_id=1098924532]
+position = Vector2(-25, 46)
+points = PackedVector2Array(124, -64, 124, -20)
+
+[node name="Line2D7" type="Line2D" parent="Page/Lines" unique_id=1974525082]
+position = Vector2(109, 44)
+points = PackedVector2Array(124, -64, 124, -20)
+
+[node name="Line2D8" type="Line2D" parent="Page/Lines" unique_id=2015666165]
+position = Vector2(449, 58)
+points = PackedVector2Array(124, -64, 123, 4, 243, 3)
+
+[node name="Line2D10" type="Line2D" parent="Page/Lines" unique_id=1042021880]
+position = Vector2(648, 132)
+points = PackedVector2Array(124, -64, 208, -11, 128, 50)
+
+[node name="Line2D12" type="Line2D" parent="Page/Lines" unique_id=229042525]
+position = Vector2(648, 132)
+points = PackedVector2Array(124, -64, 208, -11, 128, 50)
+
+[node name="Line2D11" type="Line2D" parent="Page/Lines" unique_id=999522854]
+position = Vector2(87, 185)
+points = PackedVector2Array(150, -82, 150, -23)
+
+[node name="Line2D13" type="Line2D" parent="Page/Lines" unique_id=1455850626]
+position = Vector2(9, 328)
+points = PackedVector2Array(192, -91, 123, -20)
+
+[node name="Line2D14" type="Line2D" parent="Page/Lines" unique_id=427316894]
+position = Vector2(166, 257)
+points = PackedVector2Array(208, -55, 114, -55)

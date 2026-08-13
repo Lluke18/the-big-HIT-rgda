@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://c64xhaavaxdp2"]
+
+[ext_resource type="Texture2D" uid="uid://br80olop47316" path="res://icon.svg" id="1_2xod1"]
+[ext_resource type="Script" uid="uid://d0txkqmat8oaq" path="res://scenes/UI/method_step.gd" id="1_6mq82"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ragau"]
+
+[node name="MethodStep" type="Control" unique_id=264426130]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_6mq82")
+
+[node name="Circle" type="TextureRect" parent="." unique_id=238480862]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -29.274567
+offset_top = -29.673676
+offset_right = 29.274567
+offset_bottom = 29.673676
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_2xod1")
+expand_mode = 1
+
+[node name="Panel" type="Panel" parent="." unique_id=1925195159]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -29.0
+offset_top = -29.5
+offset_right = 29.0
+offset_bottom = 29.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_ragau")
+
+[connection signal="mouse_entered" from="Panel" to="." method="_on_panel_mouse_entered"]
+[connection signal="mouse_exited" from="Panel" to="." method="_on_panel_mouse_exited"]

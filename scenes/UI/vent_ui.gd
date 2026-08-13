@@ -2,6 +2,8 @@ extends Control
 
 @onready var location_label: Label = $LocationLabel
 
+@onready var canvas_layer: PlayerUI = $".."
+
 const NUMBER_OF_VENTS: int = 2
 const LOCATION_NAMES: Array[String] = [
 	"Bathroom Stall",
@@ -18,10 +20,12 @@ func open(target_vent_index: int):
 	current_vent_index = target_vent_index
 	location_label.text = LOCATION_NAMES[current_vent_index]
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	#canvas_layer.hide_indications()
 	show()
 
 func _on_exit_button_pressed() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	#canvas_layer.show_indications()
 	hide()
 	var player = get_parent().get_parent()
 	SignalBus.exit_vent.emit(current_vent_index, player)

@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://0lka2urij18c"]
+
+[ext_resource type="Script" uid="uid://d35i8mnu5c5sg" path="res://scenes/interactables/items/boss_keys.gd" id="1_tcf1p"]
+[ext_resource type="PackedScene" uid="uid://ribg2m4y7om1" path="res://assets/Objects/items/key_chain_model.tscn" id="1_wrm8h"]
+[ext_resource type="PackedScene" uid="uid://csvwgky3s6fcf" path="res://scenes/interactables/InteractableObject.tscn" id="2_tcf1p"]
+
+[node name="BossKeys" type="Node3D" unique_id=1903770464]
+script = ExtResource("1_tcf1p")
+
+[node name="KeyChain" parent="." unique_id=1980488216 instance=ExtResource("1_wrm8h")]
+transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 0, 0, 0)
+
+[node name="InteractableObject" parent="." unique_id=216604155 instance=ExtResource("2_tcf1p")]
+
+[node name="Label3D" type="Label3D" parent="." unique_id=1113652273]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.84128237, -0.060697794)
+billboard = 1
+text = "Boss Office Keys"
+font_size = 80

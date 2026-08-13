@@ -62,16 +62,8 @@ func request_quit_lobby() -> void:
 	
 @rpc("authority", "call_local", "reliable")
 func close_lobby() -> void:
-	# First leave the multiplayer session.
-	#if multiplayer.multiplayer_peer:
-		#multiplayer.multiplayer_peer.close()
-
-	# Then recreate Main.tscn.
-	#await get_tree().process_frame
-	#_cleanup_multiplayer()
 	return_to_menu.emit()
 	_cleanup_multiplayer()
-	#call_deferred("_cleanup_multiplayer")
 	
 func _cleanup_multiplayer() -> void:
 	if multiplayer.multiplayer_peer:

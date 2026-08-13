@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bce361ng2syeo" path="res://assets/characters/werewolf_model.tscn" id="1_gbqi8"]
 [ext_resource type="Script" uid="uid://c4sjkxxg01dgw" path="res://scenes/characters/werewolf.gd" id="1_pajqt"]
 [ext_resource type="Script" uid="uid://dkkxcbjegykti" path="res://scripts/characters/input_synchronizer.gd" id="2_pajqt"]
+[ext_resource type="Script" uid="uid://c4ggjq2lmkfxy" path="res://scenes/characters/player_ui.gd" id="4_k4pkd"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_k4pkd"]
 radius = 0.21972656
@@ -44,7 +45,7 @@ script = ExtResource("1_pajqt")
 camera = NodePath("head/SpringArm3D/Camera3D")
 canvas_layer = NodePath("CanvasLayer")
 head = NodePath("head")
-seetext = NodePath("CanvasLayer/Click to Interact")
+seetext = NodePath("CanvasLayer/SeeText")
 
 [node name="AnimatedCharacter" parent="." unique_id=1458199447 instance=ExtResource("1_gbqi8")]
 
@@ -79,8 +80,9 @@ script = ExtResource("2_pajqt")
 head = NodePath("../head")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1571417538]
+script = ExtResource("4_k4pkd")
 
-[node name="Panel" type="Panel" parent="CanvasLayer" unique_id=115712163]
+[node name="Crosshair" type="Panel" parent="CanvasLayer" unique_id=115712163]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -94,9 +96,8 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_xrgev")
-metadata/_edit_use_anchors_ = true
 
-[node name="Click to Interact" type="Label" parent="CanvasLayer" unique_id=335240011]
+[node name="SeeText" type="Label" parent="CanvasLayer" unique_id=335240011]
 visible = false
 anchors_preset = 8
 anchor_left = 0.5
