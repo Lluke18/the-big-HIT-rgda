@@ -1,0 +1,118 @@
+[gd_scene format=3 uid="uid://bd1yqcw8cjnhm"]
+
+[ext_resource type="PackedScene" uid="uid://dvi0h65eup41e" path="res://assets/NPC/Swat.glb" id="1_j1mq5"]
+[ext_resource type="Script" uid="uid://cnld6if5ieil6" path="res://assets/NPC/guard.gd" id="1_thadw"]
+[ext_resource type="PackedScene" uid="uid://cugik80esg2rh" path="res://assets/weapons_items/Revolver.glb" id="2_thadw"]
+[ext_resource type="AnimationLibrary" uid="uid://djrikd3ox6tg2" path="res://assets/animations/anim_pack.res" id="3_uw05b"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_8e45h"]
+properties/0/path = NodePath("GuardModelBase/AnimationPlayer:current_animation")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+
+[node name="ActualGuard" type="Node3D" unique_id=170206793 node_paths=PackedStringArray("weapon")]
+script = ExtResource("1_thadw")
+weapon = NodePath("GuardModelBase/RootNode/CharacterArmature/Skeleton3D/Index4_R/Revolver")
+
+[node name="GuardModelBase" parent="." unique_id=2107731969 instance=ExtResource("1_j1mq5")]
+
+[node name="Skeleton3D" parent="GuardModelBase/RootNode/CharacterArmature" parent_id_path=PackedInt32Array(2107731969, 940505727) index="0" unique_id=669031873]
+bones/1/position = Vector3(4.5321945e-06, 0.008289528, -0.00045605682)
+bones/1/rotation = Quaternion(-9.796605e-32, 0.23553042, 4.0423967e-31, 0.971867)
+bones/4/rotation = Quaternion(0.08546471, -0.23748347, 0.011578174, 0.96755534)
+bones/5/rotation = Quaternion(0.003636484, 2.2566837e-10, -2.1362876e-09, 0.99999344)
+bones/6/rotation = Quaternion(-0.009471053, 6.7798237e-07, -8.586012e-10, 0.9999552)
+bones/7/rotation = Quaternion(-0.0032956176, -0.00027553635, 1.6175476e-05, 0.99999464)
+bones/9/rotation = Quaternion(0.6651048, -0.4096444, -0.3845431, -0.49188787)
+bones/10/rotation = Quaternion(-0.13263866, -0.029502768, -0.18508977, 0.97328234)
+bones/11/rotation = Quaternion(0.011239725, 0.017744467, 0.010479184, 0.9997245)
+bones/13/rotation = Quaternion(-0.040890895, -0.032145623, 0.067043506, 0.99639344)
+bones/14/rotation = Quaternion(-0.07907354, 0.011655674, 0.025053127, 0.99648577)
+bones/15/rotation = Quaternion(-0.02987231, 0.0097807655, 0.004962078, 0.9994936)
+bones/17/rotation = Quaternion(-0.0899747, 0.025432596, -0.006153061, 0.9956003)
+bones/18/rotation = Quaternion(-0.120410144, 0.0062388834, -0.01884728, 0.9925257)
+bones/19/rotation = Quaternion(-0.019045563, 0.009171968, -0.011120979, 0.99971473)
+bones/21/rotation = Quaternion(-0.0819329, 0.16051696, -0.036554277, 0.9829472)
+bones/22/rotation = Quaternion(-0.11816423, 0.04022636, -0.04146295, 0.9913122)
+bones/23/rotation = Quaternion(-0.07517977, 0.03008512, -0.007480252, 0.996688)
+bones/29/rotation = Quaternion(0.04172777, -0.1220146, 0.08518156, 0.9879855)
+bones/30/rotation = Quaternion(-0.08858773, -0.055602815, 0.12199242, 0.9870048)
+bones/31/rotation = Quaternion(-0.47743234, 0.84600806, 0.037490796, 0.23435713)
+bones/32/rotation = Quaternion(-0.77728593, 0.17743704, -0.06910603, 0.5996392)
+bones/33/rotation = Quaternion(-0.018172786, 0.01114809, 0.21277574, 0.9768685)
+bones/34/rotation = Quaternion(0.010541511, -0.02121429, -0.039322168, 0.9989458)
+bones/36/rotation = Quaternion(0.091446236, 0.025758827, -0.052698314, 0.994081)
+bones/37/rotation = Quaternion(-0.08878325, -0.011361824, -0.024741499, 0.99567884)
+bones/38/rotation = Quaternion(-0.6215422, -0.017913917, 0.102678224, 0.77641577)
+bones/39/rotation = Quaternion(0.026605288, 0.019684125, -0.011435354, 0.9993868)
+bones/40/rotation = Quaternion(-0.091254465, -0.028162114, 0.010530712, 0.9953736)
+bones/41/rotation = Quaternion(-0.5782695, 0.10075097, -0.031262737, 0.8089971)
+bones/42/rotation = Quaternion(-0.64422995, -0.008643516, -0.09900489, 0.75834775)
+bones/43/rotation = Quaternion(0.0132245645, 0.05206189, -0.09541602, 0.9939872)
+bones/45/rotation = Quaternion(-0.43443716, -0.07714395, 0.23358253, 0.86645967)
+bones/46/rotation = Quaternion(-0.5581508, -0.01270806, 0.3020418, 0.77270764)
+bones/47/rotation = Quaternion(0.019410033, 0.07379481, -0.2027294, 0.9762573)
+bones/48/rotation = Quaternion(-0.12658867, -0.17958419, 0.16197224, 0.96202385)
+bones/49/rotation = Quaternion(-0.25037506, 0.047009207, 0.0880591, 0.96298915)
+bones/50/rotation = Quaternion(-0.529398, 0.052021414, 0.03642202, 0.8459935)
+bones/51/rotation = Quaternion(-0.0987528, -0.5473803, 0.34379673, 0.7565887)
+bones/52/rotation = Quaternion(-0.17650431, 0.17617433, -0.31690994, 0.91508305)
+bones/53/rotation = Quaternion(-0.08858774, 0.05560279, -0.12199231, 0.9870048)
+bones/54/rotation = Quaternion(-0.5356169, 0.021101318, 0.8356584, -0.119768016)
+bones/55/rotation = Quaternion(0.1868226, 0.68198025, -0.18682244, 0.6819807)
+bones/56/rotation = Quaternion(0.55498993, 0.12543508, 0.8048167, 0.1688854)
+bones/57/rotation = Quaternion(0.16754255, -0.686971, 0.16754244, 0.6869716)
+
+[node name="Head" parent="GuardModelBase/RootNode/CharacterArmature/Skeleton3D" index="0" unique_id=1160501658]
+transform = Transform3D(0.99998504, -0.0023862335, -0.004905293, -0.0051468136, -0.11475932, -0.9933797, 0.0018074947, 0.99339044, -0.11476992, 3.9038827e-05, -0.00093855703, 0.015470519)
+
+[node name="Index4_L" parent="GuardModelBase/RootNode/CharacterArmature/Skeleton3D" index="1" unique_id=1856909738]
+transform = Transform3D(-0.0643024, -0.17556143, 0.9823659, -0.99772817, 0.031101856, -0.059749573, -0.020063449, -0.9839766, -0.17716248, 0.002702511, -0.00054291287, 0.0080062095)
+
+[node name="Middle4_L" parent="GuardModelBase/RootNode/CharacterArmature/Skeleton3D" index="2" unique_id=1504915828]
+transform = Transform3D(-0.06897072, -0.26368007, 0.9621409, -0.99722457, -0.008853637, -0.07391201, 0.028007826, -0.9645695, -0.2623378, 0.0027398118, -0.00024723445, 0.007832363)
+
+[node name="Ring4_L" parent="GuardModelBase/RootNode/CharacterArmature/Skeleton3D" index="3" unique_id=382684471]
+transform = Transform3D(-0.34035796, -0.399473, 0.8512207, -0.93790627, 0.20872174, -0.27706686, -0.06698744, -0.892668, -0.44570845, 0.002681317, 0.00013595993, 0.008026684)
+
+[node name="Pinky4_L" parent="GuardModelBase/RootNode/CharacterArmature/Skeleton3D" index="4" unique_id=1914960739]
+transform = Transform3D(-0.041566256, -0.5092275, 0.8596271, -0.99235153, 0.12112781, 0.023770105, -0.11622884, -0.85206515, -0.51036805, 0.002647295, 0.00029368937, 0.008269391)
+
+[node name="Thumb3_L" parent="GuardModelBase/RootNode/CharacterArmature/Skeleton3D" index="5" unique_id=843241902]
+transform = Transform3D(-0.13189384, -0.032737955, 0.99072284, -0.9544572, -0.26562452, -0.13584329, 0.26760802, -0.96352005, 0.0037874132, 0.0025764748, -0.0009966574, 0.008925832)
+
+[node name="Index4_R" parent="GuardModelBase/RootNode/CharacterArmature/Skeleton3D" index="6" unique_id=1540108425]
+transform = Transform3D(-0.06158343, 0.9783828, -0.19741687, -0.17447329, -0.20529944, -0.9630208, -0.9827338, -0.024862453, 0.18334523, -0.0016276713, -0.0070084226, 0.01359908)
+
+[node name="Revolver" parent="GuardModelBase/RootNode/CharacterArmature/Skeleton3D/Index4_R" index="1" unique_id=1796601815 instance=ExtResource("2_thadw")]
+transform = Transform3D(-0.0014230128, -0.0036768387, -0.00024166943, -0.00081118615, 5.98866e-05, 0.0038653472, -0.0035943775, 0.0014421447, -0.0007766632, -0.00013526529, 0.00025075977, -0.0003975015)
+
+[node name="RayCast3D" type="RayCast3D" parent="GuardModelBase/RootNode/CharacterArmature/Skeleton3D/Index4_R/Revolver" unique_id=1688192728]
+transform = Transform3D(-5.606562e-06, 0.22981466, 0.9732344, -0.00021011251, 0.9732344, -0.22981465, -0.99999994, -0.00020577725, 4.2830186e-05, -0.21000272, 0.11832404, 0.00018042326)
+target_position = Vector3(0, 0, -0.7)
+
+[node name="Middle4_R" parent="GuardModelBase/RootNode/CharacterArmature/Skeleton3D" index="7" unique_id=1494825749]
+transform = Transform3D(-0.24814315, 0.36908102, 0.89565814, 0.11308347, 0.9292904, -0.35161048, -0.9620999, 0.014034048, -0.27233443, -0.001275573, -0.0068833455, 0.0132604195)
+
+[node name="Ring4_R" parent="GuardModelBase/RootNode/CharacterArmature/Skeleton3D" index="8" unique_id=1353342662]
+transform = Transform3D(0.37400153, 0.5879879, 0.7172116, -0.1991525, 0.80621094, -0.5571004, -0.9057929, 0.06552136, 0.41862345, -0.0013628943, -0.0068242685, 0.013043981)
+
+[node name="Pinky4_R" parent="GuardModelBase/RootNode/CharacterArmature/Skeleton3D" index="9" unique_id=1460023147]
+transform = Transform3D(-0.08284668, 0.9514889, 0.29631835, 0.058306195, 0.30145878, -0.951694, -0.994855, -0.06156797, -0.080452405, -0.0014853686, -0.0066905385, 0.01282199)
+
+[node name="Thumb3_R" parent="GuardModelBase/RootNode/CharacterArmature/Skeleton3D" index="10" unique_id=208171513]
+transform = Transform3D(-0.8648311, -0.031259812, -0.501088, 0.26740295, -0.8733978, -0.40702602, -0.42492583, -0.48600134, 0.76370156, -0.0011062326, -0.006102464, 0.013561989)
+
+[node name="LowerLeg_L" parent="GuardModelBase/RootNode/CharacterArmature/Skeleton3D" index="11" unique_id=1864074952]
+transform = Transform3D(0.60561866, -0.18755189, -0.773324, 0.7902645, 0.2553846, 0.5569802, 0.09302997, -0.94847333, 0.30288932, 0.0021645182, -0.00015790248, 0.0050753024)
+
+[node name="LowerLeg_R" parent="GuardModelBase/RootNode/CharacterArmature/Skeleton3D" index="12" unique_id=1927121041]
+transform = Transform3D(0.99323684, 0.00803533, -0.11560086, 0.114972785, 0.056021135, 0.99178725, 0.014445005, -0.99839705, 0.054719727, -0.0007261464, -0.0027460845, 0.00533047)
+
+[node name="AnimationPlayer" parent="GuardModelBase" index="1" unique_id=1347474869]
+libraries/ = ExtResource("3_uw05b")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=1300753281]
+replication_config = SubResource("SceneReplicationConfig_8e45h")
+
+[editable path="GuardModelBase"]

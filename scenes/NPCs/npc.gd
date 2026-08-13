@@ -2,13 +2,16 @@ extends CharacterBody3D
 class_name NPC #or human?
 
 @export var stats: NPCStats
+@export var animated_character: Node3D
+@export var fsm: FiniteStateMachine
 var player = null
 @export var players_spawn: Node3D
 var players: Array[Player]
 #maybe also add the suspicion mechanic here as vars
 #or a stats var like the player's
-#salutare dani
+
 @export var move_speed: float
+@export var run_speed: float = move_speed
 @export var route_locations: Array[Marker3D]
 var gravity = 9.8
 
@@ -16,6 +19,7 @@ var gravity = 9.8
 
 @onready var see_cast: RayCast3D = $SeeCast
 @onready var suspicion_bar: SuspicionBar = $SubViewport/SuspicionBar
+
 
 func _ready() -> void:
 	await get_tree().create_timer(1).timeout
@@ -40,7 +44,7 @@ func _physics_process(delta: float) -> void:
 			suspicion_bar.stop_increase()
 	else:
 		suspicion_bar.stop_increase()
-		
+	
 	
 	if !is_on_floor():
 		velocity.y -= gravity * delta

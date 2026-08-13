@@ -4,13 +4,15 @@ class_name FiniteStateMachine
 var states : Dictionary = {}
 var current_state : State
 @export var initial_state : State
-@export var animated_character: AnimatedCharacter
+#@export var animated_character: AnimatedCharacter
 
 func _ready() -> void:
 	for child in get_children():
 		if child is State:
 			states[child.name.to_lower()] = child
 			child.state_transition.connect(change_state)
+			print(child.name)
+	
 
 	if initial_state:
 		initial_state.Enter()

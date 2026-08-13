@@ -1,7 +1,7 @@
 extends Node3D
-class_name AnimatedCharacter
 
-@onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var animation_player: AnimationPlayer = $GuardModelBase/AnimationPlayer
+
 
 @export var weapon: Node3D
 
@@ -15,11 +15,9 @@ class_name AnimatedCharacter
 @export var shoot_animation_name: String = "CharacterArmature|Idle_Gun_Shoot"
 
 func _ready() -> void:
-	
 	if weapon:
 		print(name, "has a weapon!")
 		weapon.visible = false
-
 
 func play_idle_animation():
 	animation_player.play(idle_animation_name)
