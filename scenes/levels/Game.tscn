@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bahvlotytnq3l" path="res://scenes/NPCs/idle_corpo.tscn" id="3_4gy8a"]
 [ext_resource type="PackedScene" uid="uid://dhi03rsdio7tc" path="res://scenes/NPCs/idle_guard.tscn" id="4_fqm1f"]
 [ext_resource type="PackedScene" uid="uid://dfs5ox0pr2mlw" path="res://scenes/NPCs/wander_corpo.tscn" id="6_hqrlp"]
+[ext_resource type="PackedScene" uid="uid://cp7g153570ebb" path="res://scenes/NPCs/special_corpo.tscn" id="7_nxjv3"]
 
 [node name="Game" type="Node3D" unique_id=1889830372 node_paths=PackedStringArray("players_spawn")]
 script = ExtResource("1_7vga6")
@@ -41,6 +42,11 @@ transform = Transform3D(-0.3721515, 0, -0.928172, 0, 1, 0, 0.928172, 0, -0.37215
 players_spawn = NodePath("../../Players")
 route = NodePath("../../NPCRoutes/Route2")
 
+[node name="special_corpo" parent="NPCs" unique_id=746657997 node_paths=PackedStringArray("players_spawn", "route") instance=ExtResource("7_nxjv3")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 20.689098, 0.98870075, 37.609825)
+players_spawn = NodePath("../../Players")
+route = NodePath("../../NPCRoutes/BathRoute")
+
 [node name="NPCRoutes" type="Node3D" parent="." unique_id=270287974]
 
 [node name="Route1" type="Node3D" parent="NPCRoutes" unique_id=2117210748]
@@ -57,3 +63,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35035217, 0, -31.329914)
 
 [node name="Marker3D2" type="Marker3D" parent="NPCRoutes/Route2" unique_id=1611702998]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.387295, 0, -29.913239)
+
+[node name="BathRoute" type="Node3D" parent="NPCRoutes" unique_id=1216446529]
+
+[node name="BathDestination" type="Marker3D" parent="NPCRoutes/BathRoute" unique_id=1568653115]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.72004, -1.9073486e-06, 16.595818)
+
+[node name="Marker3D" type="Marker3D" parent="NPCRoutes/BathRoute" unique_id=870813971]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 20.689, 0, 37.61)
