@@ -69,6 +69,7 @@ current = true
 unique_name_in_owner = true
 transform = Transform3D(1.9106855e-15, -4.371139e-08, -1, -1, -4.371139e-08, 0, -4.371139e-08, 1, -4.371139e-08, 0, 0, -0.325)
 target_position = Vector3(0, -2, 0)
+collision_mask = 4
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=553313842]
 replication_config = SubResource("SceneReplicationConfig_gs7cj")

@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://dkkxcbjegykti" path="res://scripts/characters/input_synchronizer.gd" id="3_bnap0"]
 [ext_resource type="Script" uid="uid://c4ggjq2lmkfxy" path="res://scenes/characters/player_ui.gd" id="4_am7ow"]
 [ext_resource type="PackedScene" uid="uid://ctkoxsltvebaw" path="res://scenes/UI/VentUI.tscn" id="4_bnap0"]
+[ext_resource type="PackedScene" uid="uid://cqa7wrhwccnld" path="res://scenes/UI/GarlicMeter.tscn" id="6_th15p"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_am7ow"]
 radius = 0.21972656
@@ -40,6 +41,9 @@ corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_ragau"]
+size = Vector3(1, 1.8120728, 0.78601074)
+
 [node name="Vampire" type="CharacterBody3D" unique_id=767514929 node_paths=PackedStringArray("camera", "canvas_layer", "head", "seetext") groups=["player"]]
 collision_layer = 257
 script = ExtResource("1_m48pq")
@@ -70,6 +74,7 @@ current = true
 unique_name_in_owner = true
 transform = Transform3D(1.9106855e-15, -4.371139e-08, -1, -1, -4.371139e-08, 0, -4.371139e-08, 1, -4.371139e-08, 0, 0, -0.325)
 target_position = Vector3(0, -2, 0)
+collision_mask = 4
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=1966818808]
 replication_config = SubResource("SceneReplicationConfig_0hssf")
@@ -82,6 +87,9 @@ head = NodePath("../head")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1488708023]
 script = ExtResource("4_am7ow")
+
+[node name="VentUI" parent="CanvasLayer" unique_id=1741107145 instance=ExtResource("4_bnap0")]
+visible = false
 
 [node name="Crosshair" type="Panel" parent="CanvasLayer" unique_id=125715193]
 anchors_preset = 8
@@ -114,7 +122,7 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Click to Interact"
 
-[node name="VentUI" parent="CanvasLayer" unique_id=1741107145 instance=ExtResource("4_bnap0")]
+[node name="GarlicMeter" parent="CanvasLayer" unique_id=1866509356 instance=ExtResource("6_th15p")]
 visible = false
 
 [node name="PlayerTag" type="Label3D" parent="." unique_id=350879227]
@@ -122,5 +130,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0490413, 0)
 billboard = 1
 text = "Vampire"
 font_size = 48
+
+[node name="GarlicArea3D" type="Area3D" parent="." unique_id=360102412]
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GarlicArea3D" unique_id=151003236]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.94467163, -0.017150879)
+shape = SubResource("BoxShape3D_ragau")
+
+[connection signal="area_entered" from="GarlicArea3D" to="." method="_on_garlic_area_3d_area_entered"]
+[connection signal="area_exited" from="GarlicArea3D" to="." method="_on_garlic_area_3d_area_exited"]
 
 [editable path="AnimatedCharacter"]

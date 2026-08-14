@@ -4,10 +4,11 @@ extends Control
 
 @onready var canvas_layer: PlayerUI = $".."
 
-const NUMBER_OF_VENTS: int = 2
+const NUMBER_OF_VENTS: int = 3
 const LOCATION_NAMES: Array[String] = [
 	"Bathroom Stall",
-	"Storage Room"
+	"Storage Room",
+	"Whatever"
 ]
 var current_vent_index: int = 0
 

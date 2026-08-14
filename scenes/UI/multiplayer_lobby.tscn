@@ -169,4 +169,6 @@ text = "Leave Lobby"
 [connection signal="pressed" from="MultiplayerUI/becomehost" to="." method="_on_becomehost_pressed"]
 [connection signal="pressed" from="MultiplayerUI/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="MultiplayerUI/joinasclient" to="." method="_on_joinasclient_pressed"]
+[connection signal="pressed" from="MultiplayerUI/BackToMenu" to="." method="_on_back_to_menu_pressed"]
 [connection signal="pressed" from="LobbyUI/Start Game" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="LobbyUI/Leave Lobby" to="." method="_on_leave_lobby_pressed"]

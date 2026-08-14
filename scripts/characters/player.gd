@@ -42,6 +42,8 @@ signal clicked
 
 @onready var player_tag: Label3D = $PlayerTag
 
+var initial_position: Vector3 = Vector3.ZERO
+
 #@export var player_id := 1:
 	#set(id):
 		#player_id = id
@@ -55,7 +57,9 @@ func _enter_tree() -> void:
 
 
 func _ready():
+	initial_position = global_position
 	animated_character.play_idle_animation()
+	SignalBus.reset_level.connect(on_reset_players)
 	
 	player_tag.text = SteamManager.steam_username
 	
@@ -144,63 +148,27 @@ func _physics_process(delta: float) -> void:
 	#endregion
 	
 	#Subclasele Vampire si Werewolf se ocupa de verificarea interactiunilor
-	"""
-	#region Interaction
-	seetext.hide()
-	if is_instance_valid(see_cast) and see_cast.is_colliding():
-		var target = see_cast.get_collider()
-		#print(target)
-		if target != null and target.is_in_group("interactable"): # OR MAKE A GROUP!
-			#seetext.text = target.interaction_text
-			seetext.show()
-			#print("can see tutorial message!")
-			if Input.is_action_just_pressed("interact"):
-				target.interact.call(self)
-				animated_character.play_interact_animation()
-				print("DO STUFF!")
-		#else: seetext.hide()
-	#endregion
-	"""
 
 func _headbob(time : float) -> Vector3:
 	var pos = Vector3.ZERO
 	pos.y = sin(time * bob_freq) * bob_amp
 	pos.x = cos(time * bob_freq /2) * bob_amp
 	return pos
-
-
-"""
-	if is_on_floor() and velocity.length() > 0.1:
-		footstep_timer -= delta
-		if footstep_timer <= 0.0:
-			if current_footstep_sounds.size() > 0:
-				footstep_player.stream = current_footstep_sounds[randi() % current_footstep_sounds.size()]
-			footstep_player.pitch_scale = randf_range(0.9, 1.3)
-			footstep_player.play()
-			footstep_timer = FOOTSTEP_INTERVAL
+	
+func on_reset_players():
+	if multiplayer.is_server():
+		reset_position.rpc()
 	else:
-		footstep_timer = 0.0
-		"""
-"""
-func _physics_process(delta: float) -> void:
-	# Add the gravity.
-	if not is_on_floor():
-		velocity += get_gravity() * delta
+		# Ask the server to delete the keys
+		reset_position_for_everyone.rpc_id(1)
 
-	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var input_dir := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
-	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	if direction:
-		velocity.x = direction.x * SPEED
-		velocity.z = direction.z * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.z = move_toward(velocity.z, 0, SPEED)
-
-	move_and_slide()
-"""
+@rpc("any_peer", "reliable")
+func reset_position_for_everyone() -> void:
+	if not multiplayer.is_server():
+		return
+		
+	reset_position.rpc()
+	
+@rpc("any_peer", "call_local", "reliable")
+func reset_position():
+	global_position = initial_position 
