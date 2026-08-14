@@ -64,7 +64,7 @@ func _ready():
 		camera.make_current()
 	else:
 		#Nu stiu daca asta ar fi solutia ideala
-		var new_camera = get_node("/root/Main/LevelContainer/TestLevel/Players/1/head/SpringArm3D/Camera3D")
+		var new_camera = get_node("/root/Main/LevelContainer/Game/Players/1/head/SpringArm3D/Camera3D")
 		new_camera.make_current()
 	
 	#Input.set_custom_mouse_cursor(cursor)
