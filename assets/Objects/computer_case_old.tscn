@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dw4gfe1l8ux38"]
+
+[ext_resource type="PackedScene" uid="uid://d2q6a27rl6rgd" path="res://assets/OfficeFBX/Computer_Case_Old.fbx" id="1_tiqg3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6m3yq"]
+albedo_color = Color(0.21806103, 0.21806103, 0.21806103, 1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_wg1nl"]
+points = PackedVector3Array(0.082423516, 0.3697044, 0.18371616, 0.086073734, 0.39292172, 0.181094, -0.08048673, 0.3697044, 0.18371616, 0.082423516, 0.35495457, 0.18371616, 0.08934336, 0.39619943, 0.17782529, -0.08413695, 0.39292172, 0.181094, 0.086073734, 0.00080286735, 0.181094, -0.08048673, 0.35495457, 0.18371616, 0.07171508, 0.1936431, 0.18371616, 0.08934336, 0.39619943, -0.18324162, -0.08738927, 0.39619943, 0.17782529, 0.08934336, -0.0024358495, 0.17782529, -0.08413695, 0.00080286735, 0.181094, 0.07171508, 0.050632283, 0.1827463, -0.08048673, 0.18088333, 0.1827463, -0.069778286, 0.050632283, 0.1827463, 0.048966117, 0.1936431, 0.18371616, -0.08738927, 0.39619943, -0.18324162, 0.08934336, -0.0024358495, -0.18324162, -0.08738927, -0.0024358495, 0.17782529, -0.08738927, -0.0024358495, -0.18324162)
+
+[node name="Computer_Case_Old" unique_id=529187734 instance=ExtResource("1_tiqg3")]
+
+[node name="Computer_Case_Old" parent="." index="0" unique_id=1222237285]
+surface_material_override/0 = SubResource("StandardMaterial3D_6m3yq")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Computer_Case_Old" index="0" unique_id=1390876571]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Computer_Case_Old/StaticBody3D" index="0" unique_id=978613290]
+shape = SubResource("ConvexPolygonShape3D_wg1nl")

@@ -2,6 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://cs57rlel5h7eq" path="res://assets/OfficeFBX/Office_Desk_4_Two_Alt.fbx" id="1_uyubt"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_13qdw"]
+albedo_color = Color(0.12591085, 0.12591085, 0.12591082, 1)
+
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_26mb2"]
 points = PackedVector3Array(-0.19433177, 0.83324593, 0.40621912, -1.2180396, 0.77935076, -0.4019397, -1.1715, 0.7891476, 0.52379864, -1.2180396, 0.9948472, -0.4019397, -0.19433177, 0.77935076, -0.4019397, -0.19433177, 0.9948472, 0.40621912, -1.2180396, 0.9948472, 0.56788886, -0.19433177, 0.9948472, -0.4019397, -1.1287999, 0.7743672, 0.5903169, -0.40987557, 0.9948472, 0.56788886, -0.40987557, 0.83324593, 0.56788886, -0.19433177, 0.77935076, -0.24026996, -0.5851421, 0.7901862, 0.2768)
 
@@ -52,7 +55,10 @@ points = PackedVector3Array(-0.6253667, -0.028760612, -0.18642223, -0.5714873, 0
 
 [node name="Office_Desk_4_Two_Alt" unique_id=66908085 instance=ExtResource("1_uyubt")]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Office_Desk_4_Two_Alt" parent_id_path=PackedInt32Array(124042200) index="0" unique_id=1164396727]
+[node name="Office_Desk_4_Two_Alt" parent="." index="0" unique_id=124042200]
+surface_material_override/0 = SubResource("StandardMaterial3D_13qdw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Office_Desk_4_Two_Alt" index="0" unique_id=1164396727]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Office_Desk_4_Two_Alt/StaticBody3D" index="0" unique_id=470166547]
 shape = SubResource("ConvexPolygonShape3D_26mb2")

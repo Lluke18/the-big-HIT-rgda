@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://eaby3rwjvn48" path="res://assets/90's office pack/90s Office Pack_19.png" id="14_1o3nx"]
 [ext_resource type="PackedScene" uid="uid://bul11f4pn3fn4" path="res://assets/Objects/bin.tscn" id="15_g5ck3"]
 [ext_resource type="Texture2D" uid="uid://3sp218ytlnrw" path="res://assets/90's office pack/90s Office Pack_20.png" id="15_sijq3"]
+[ext_resource type="Texture2D" uid="uid://dvkxxn33d3c7t" path="res://assets/Textures/Rug_1.png" id="16_ho6um"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5fr50"]
 resource_name = "Plant Pot"
@@ -417,6 +418,44 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_vcmvt")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_odwac"]
+resource_name = "Rug"
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("16_ho6um")
+emission_enabled = true
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_vjx1m"]
+_surfaces = [{
+"aabb": AABB(-0.4728805, 0.0024656495, -0.25142655, 0.945761, 1e-05, 0.5028531),
+"format": 34359742465,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgADAAAA"),
+"name": "Rug",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("ZR3yPryWITv7uoC+ZR3yPryWITv7uoA+ZR3yvryWITv7uoA+ZR3yvryWITv7uoC+")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ub4eq"]
+resource_name = "Plane_001"
+_surfaces = [{
+"aabb": AABB(-0.4728805, 0.0024656495, -0.25142655, 0.945761, 1e-05, 0.5028531),
+"attribute_data": PackedByteArray("IZ4APwAAgD/31L8z//9/PwAAAAAAjmE9Ip4APwCOYT0="),
+"format": 34359742487,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgADAAAA"),
+"material": SubResource("StandardMaterial3D_odwac"),
+"name": "Rug",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("ZR3yPryWITv7uoC+ZR3yPryWITv7uoA+ZR3yvryWITv7uoA+ZR3yvryWITv7uoC+/3//////////f/////////9//////////3////////8=")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_vjx1m")
+
 [node name="hall" unique_id=918156445 instance=ExtResource("1_0bojo")]
 
 [node name="Plane_155" parent="." index="0" unique_id=571373953]
@@ -512,3 +551,7 @@ transform = Transform3D(0.86687446, 0, 0.49852654, 0, 1, 0, -0.49852654, 0, 0.86
 
 [node name="truebin2" parent="." index="16" unique_id=1727935598 instance=ExtResource("15_g5ck3")]
 transform = Transform3D(0.9654844, 0, -0.2604614, 0, 1, 0, 0.2604614, 0, 0.9654844, 2.121159, 0.006297469, -20.180012)
+
+[node name="Rug_A" type="MeshInstance3D" parent="truebin2" index="1" unique_id=530922087]
+transform = Transform3D(0.98913705, 0, -3.6915085, 0, 3.8217318, 0, 3.6915085, 0, 0.98913705, -0.46538544, 0, 6.553522)
+mesh = SubResource("ArrayMesh_ub4eq")
