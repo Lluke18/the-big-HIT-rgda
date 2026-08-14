@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bfercsevu31o2"]
+
+[ext_resource type="PackedScene" uid="uid://cdt64jut6xhrv" path="res://assets/OfficeFBX/WallShelf_Simple.fbx" id="1_crlhc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xrivr"]
+size = Vector3(1.0465088, 0.051513672, 0.2886963)
+
+[node name="WallShelf_Simple" unique_id=1491998710 instance=ExtResource("1_crlhc")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="WallShelf_Simple" parent_id_path=PackedInt32Array(1173637605) index="0" unique_id=2111843009]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WallShelf_Simple/StaticBody3D" index="0" unique_id=773644451]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.002746582, 0.019756213, 0.00091552734)
+shape = SubResource("BoxShape3D_xrivr")

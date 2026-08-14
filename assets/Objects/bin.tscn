@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bul11f4pn3fn4"]
+
+[ext_resource type="PackedScene" uid="uid://3vmxtvmn31ix" path="res://assets/OfficeFBX/TrashBin.fbx" id="1_0ua7s"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_upua1"]
+points = PackedVector3Array(-0.18213148, 0.62236106, -0.15858914, -0.11449181, 0.54562485, 0.13398825, 0.18213148, 0.62236106, -0.15858914, -0.11327951, -0.006297469, -0.10174589, -0.13249816, 0.54027116, 0.15426315, 0.11445616, 0.54562485, 0.13398825, 0.11324386, -0.006297469, -0.10174589, 0.13246252, 0.54027116, 0.15426315, -0.082401305, -0.006297469, 0.10088073, 0.08236565, -0.006297469, 0.10088073)
+
+[node name="TrashBin" unique_id=1988877608 instance=ExtResource("1_0ua7s")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="TrashBin" parent_id_path=PackedInt32Array(1154709275) index="0" unique_id=1835582627]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TrashBin/StaticBody3D" index="0" unique_id=690224911]
+shape = SubResource("ConvexPolygonShape3D_upua1")

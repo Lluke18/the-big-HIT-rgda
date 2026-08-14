@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dhxj25gdu6c84"]
+
+[ext_resource type="PackedScene" uid="uid://ce77cjrle2y4d" path="res://assets/OfficeFBX/Modern_Shelves_3.fbx" id="1_0mnew"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_f26hu"]
+points = PackedVector3Array(0.6224848, 0.13780807, 2.2890692, -0.6224847, 0.13780807, 2.2890692, 0.6224848, -0.13783504, 2.2890692, 0.6224848, 0.13780807, 0.031849895, -0.6224847, -0.13783504, 2.2890692, -0.6224847, 0.13780807, 0.031849895, 0.6224848, -0.13783504, 0.031849895, 0.5801978, 0.1086382, 0.002076, -0.6224847, -0.13783504, 0.031849895, -0.5803195, 0.1086382, 0.002076, 0.5801978, -0.108665176, 0.002076, -0.5803195, -0.108665176, 0.002076)
+
+[node name="Modern_Shelves_3" unique_id=1863982853 instance=ExtResource("1_0mnew")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Modern_Shelves_3" parent_id_path=PackedInt32Array(117337007) index="0" unique_id=1089065254]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Modern_Shelves_3/StaticBody3D" index="0" unique_id=903515766]
+shape = SubResource("ConvexPolygonShape3D_f26hu")
