@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://yxia3wsdthq1"]
+
+[ext_resource type="Script" uid="uid://de1sj1wnnkcq4" path="res://scenes/UI/defeat_screen.gd" id="1_0vqnf"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ragau"]
+font_size = 64
+
+[sub_resource type="LabelSettings" id="LabelSettings_umu6e"]
+font_size = 32
+
+[node name="DefeatScreen" type="Control" unique_id=962478225]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0vqnf")
+
+[node name="Panel" type="Panel" parent="." unique_id=1745987560]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -330.25
+offset_top = -186.75
+offset_right = 330.25
+offset_bottom = 186.75
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="." unique_id=1368618659]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -87.5
+offset_top = -152.0
+offset_right = 87.5
+offset_bottom = -85.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Busted!"
+label_settings = SubResource("LabelSettings_ragau")
+
+[node name="Description" type="Label" parent="." unique_id=1501343658]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -113.5
+offset_top = -32.0
+offset_right = 113.5
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "No description"
+label_settings = SubResource("LabelSettings_umu6e")
+
+[node name="ExitToMenu" type="Button" parent="." unique_id=805033676]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -258.0
+offset_top = 50.0
+offset_right = -44.0
+offset_bottom = 117.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Exit to Main Menu"
+
+[node name="TryAgain" type="Button" parent="." unique_id=1191271854]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 46.0
+offset_top = 50.0
+offset_right = 260.0
+offset_bottom = 117.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Try Again"
+
+[connection signal="pressed" from="ExitToMenu" to="." method="_on_exit_to_menu_pressed"]
+[connection signal="pressed" from="TryAgain" to="." method="_on_try_again_pressed"]
