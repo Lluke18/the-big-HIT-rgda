@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dlfhho50k62uh" path="res://scenes/rooms/storage_room.tscn" id="5_3ob56"]
 [ext_resource type="PackedScene" uid="uid://bb7osojlsdto1" path="res://scenes/rooms/meeting_room.tscn" id="6_4ftuy"]
 [ext_resource type="PackedScene" uid="uid://b3htxmmkp6okf" path="res://scenes/rooms/boss_room.tscn" id="7_lpsx7"]
+[ext_resource type="PackedScene" uid="uid://cyr3sk0flxvja" path="res://scenes/rooms/security_room.tscn" id="8_1jfvb"]
 [ext_resource type="PackedScene" uid="uid://ibxk3cfa0hi3" path="res://assets/Objects/walls/wall_medium.tscn" id="11_7432f"]
 [ext_resource type="PackedScene" uid="uid://ykjkvnw12pl5" path="res://assets/Objects/doors/double_doors.tscn" id="12_firti"]
 [ext_resource type="PackedScene" uid="uid://0lka2urij18c" path="res://scenes/interactables/items/BossKeys.tscn" id="13_wlxk1"]
@@ -34,25 +35,28 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 35.3
 [node name="cubicle_room_4doors" parent="NavigationRegion3D/Map" unique_id=639032188 instance=ExtResource("2_6syvk")]
 
 [node name="hall" parent="NavigationRegion3D/Map" unique_id=918156445 instance=ExtResource("3_yds1n")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -19.099564, -0.1988728, -1.1575565)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -19.1, 0, -1.158)
 
 [node name="CoffeeRoom" parent="NavigationRegion3D/Map" unique_id=538983221 instance=ExtResource("4_omf75")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.486076, 0, -11.187743)
 
 [node name="storage_room" parent="NavigationRegion3D/Map" unique_id=1382142323 instance=ExtResource("5_3ob56")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -17.194267, 0, 14.912144)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -17.194267, 0.11281347, 14.846817)
 
 [node name="meeting_room" parent="NavigationRegion3D/Map" unique_id=1522087648 instance=ExtResource("6_4ftuy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.08358, -0.5, 21.439976)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.084, -0.39335108, 21.664112)
 
 [node name="hall2" parent="NavigationRegion3D/Map" unique_id=626134290 instance=ExtResource("3_yds1n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.531, -0.247, 45.359)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.531, 0, 45.359)
 
 [node name="boss_room" parent="NavigationRegion3D/Map" unique_id=1418459769 instance=ExtResource("7_lpsx7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.533567, -0.21944952, 42.06613)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.534, 0, 42.066)
 
 [node name="hall3" parent="NavigationRegion3D/Map" unique_id=1000167129 instance=ExtResource("3_yds1n")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 27.631363, 0, -1.1102448)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 27.631363, -1.1920929e-07, -1.1102448)
+
+[node name="security_room" parent="NavigationRegion3D/Map" unique_id=549841313 instance=ExtResource("8_1jfvb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.313099, 0, 35.691803)
 
 [node name="ExitCorner" type="Node3D" parent="NavigationRegion3D" unique_id=75431785]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -11.571625)

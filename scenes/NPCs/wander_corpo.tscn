@@ -42,9 +42,11 @@ initial_state = NodePath("Idle")
 
 [node name="Idle" type="Node" parent="StateMachine" unique_id=1233826377 node_paths=PackedStringArray("suspicion_bar", "npc")]
 script = ExtResource("3_i26ds")
-wander_state_name = "Wander"
+wander_state_name = "RandomWander"
 suspicion_bar = NodePath("../../SubViewport/SuspicionBar")
 detected_state_name = "runtoguard"
+idle_time = 8.0
+idle_time_deviation = 5.0
 npc = NodePath("../..")
 
 [node name="IdleTimer" type="Timer" parent="StateMachine/Idle" unique_id=1932874965]
@@ -56,7 +58,7 @@ idle_state_name = "idle"
 guard_detection_area = NodePath("../../GuardDetectionArea")
 npc = NodePath("../..")
 
-[node name="Wander" type="Node" parent="StateMachine" unique_id=569105462 node_paths=PackedStringArray("nav_agent", "npc")]
+[node name="RandomWander" type="Node" parent="StateMachine" unique_id=569105462 node_paths=PackedStringArray("nav_agent", "npc")]
 script = ExtResource("5_pjg06")
 nav_agent = NodePath("../../NavigationAgent3D")
 npc = NodePath("../..")
@@ -93,9 +95,8 @@ spot_angle = 10.8
 disable_3d = true
 transparent_bg = true
 
-[node name="SuspicionBar" parent="SubViewport" unique_id=1428092685 node_paths=PackedStringArray("npc") instance=ExtResource("6_8olvd")]
+[node name="SuspicionBar" parent="SubViewport" unique_id=1428092685 instance=ExtResource("6_8olvd")]
 value = 50.0
-npc = NodePath("../..")
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=153913080]
 billboard = 1
