@@ -3,7 +3,9 @@ class_name NPC #or human?
 
 @export var stats: NPCStats
 @export var animated_character: Node3D
-@export var fsm: FiniteStateMachine
+
+@onready var fsm: FiniteStateMachine = $StateMachine
+
 var player = null
 @export var players_spawn: Node3D
 var players: Array[Player]
@@ -22,9 +24,14 @@ var gravity = 9.8
 @onready var see_cast: RayCast3D = $SeeCast
 @onready var suspicion_bar: SuspicionBar = $SubViewport/SuspicionBar
 
+var initial_position: Vector3
 
 func _ready() -> void:
+	SignalBus.disable_npcs.connect(disable)
+	
+	initial_position = global_position
 	await get_tree().create_timer(1).timeout
+	#players_spawn = get_node("/root/Main/LevelContainer/Game/Players")
 	if players_spawn:
 		for child in players_spawn.get_children():
 			print("i am a child of player spawn, name is: ", child.name)
@@ -52,3 +59,12 @@ func _physics_process(delta: float) -> void:
 		velocity.y -= gravity * delta
 	
 	move_and_slide()
+	
+func reset():
+	fsm.current_state = fsm.initial_state
+	global_position = initial_position
+	is_chasing = false
+	process_mode = Node.PROCESS_MODE_INHERIT
+	
+func disable():
+	process_mode = Node.PROCESS_MODE_DISABLED

@@ -18,4 +18,9 @@ enum step{
 	PHONE, #14
 }
 
+var steps_completed: Array[int] = []
+
 signal update_page(method_index: step)
+
+func reset_steps_progress():
+	steps_completed.clear()

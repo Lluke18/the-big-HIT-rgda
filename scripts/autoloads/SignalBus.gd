@@ -5,6 +5,8 @@ enum CLASS{VAMPIRE, DEVIL, WEREWOLF}
 var steam_activated: bool = false
 
 signal change_scene(new_scene_path: String)
+signal reset_level
+signal disable_npcs
 
 signal enter_vent(vent_index: int)
 signal switch_to_vent(vent_index: int)
