@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://cxb14tpq7hda3"]
 
+[ext_resource type="Script" uid="uid://c8ee371cce2cm" path="res://scenes/rooms/bathroom.gd" id="1_c3xo7"]
 [ext_resource type="PackedScene" uid="uid://oaehv5yiswn6" path="res://assets/Objects/floors/floor.tscn" id="1_dtlby"]
 [ext_resource type="PackedScene" uid="uid://ibxk3cfa0hi3" path="res://assets/Objects/walls/wall_medium.tscn" id="2_4c5wh"]
 [ext_resource type="PackedScene" uid="uid://fohfmpxuuyd1" path="res://assets/Objects/bathroom/stall.tscn" id="3_cdptk"]
@@ -48,6 +49,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_vkh0h")
 
 [node name="Bathroom" type="Node3D" unique_id=1405531023]
+script = ExtResource("1_c3xo7")
 
 [node name="Floor" parent="." unique_id=2031031718 instance=ExtResource("1_dtlby")]
 
@@ -64,10 +66,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 20)
 [node name="Stalls" type="Node3D" parent="." unique_id=904362252]
 
 [node name="Stall" parent="Stalls" unique_id=1656855432 instance=ExtResource("3_cdptk")]
-transform = Transform3D(-1.3113416e-07, 0, 5, 0, 2, 0, -3, 0, -2.1855695e-07, 9.409168, 0.0007373511, 6.8395295)
+transform = Transform3D(-1.3113416e-07, 0, 5, 0, 2, 0, -3, 0, -2.1855695e-07, 9.409168, 0.0007373511, 16.748112)
 
 [node name="Stall2" parent="Stalls" unique_id=654194848 instance=ExtResource("3_cdptk")]
-transform = Transform3D(-1.3113416e-07, 0, 5, 0, 2, 0, -3, 0, -2.1855695e-07, 9.409168, 0.0007373511, 5.129512)
+transform = Transform3D(-1.3113416e-07, 0, 5, 0, 2, 0, -3, 0, -2.1855695e-07, 9.409168, 0.0007373511, 15.0380945)
 
 [node name="Cube_006" parent="Stalls/Stall2" index="0" unique_id=2098856864]
 mesh = SubResource("ArrayMesh_qbne8")
@@ -76,7 +78,7 @@ mesh = SubResource("ArrayMesh_qbne8")
 visible = false
 
 [node name="Stall3" parent="Stalls" unique_id=1592048689 instance=ExtResource("3_cdptk")]
-transform = Transform3D(-1.3113416e-07, 0, 5, 0, 2, 0, -3, 0, -2.1855695e-07, 9.409168, 0.0007373511, 3.408873)
+transform = Transform3D(-1.3113416e-07, 0, 5, 0, 2, 0, -3, 0, -2.1855695e-07, 9.409168, 0.0007373511, 13.317455)
 
 [node name="Cube_006" parent="Stalls/Stall3" index="0" unique_id=2098856864]
 mesh = SubResource("ArrayMesh_qbne8")
@@ -85,7 +87,7 @@ mesh = SubResource("ArrayMesh_qbne8")
 visible = false
 
 [node name="Stall4" parent="Stalls" unique_id=1152204317 instance=ExtResource("3_cdptk")]
-transform = Transform3D(-1.3113416e-07, 0, 5.000001, 0, 2, 0, -3, 0, -2.1855703e-07, 9.409168, 0.0007373511, 1.5987377)
+transform = Transform3D(-1.3113416e-07, 0, 5.000001, 0, 2, 0, -3, 0, -2.1855703e-07, 9.409168, 0.0007373511, 11.50732)
 
 [node name="Cube_006" parent="Stalls/Stall4" index="0" unique_id=2098856864]
 mesh = SubResource("ArrayMesh_qbne8")
@@ -94,7 +96,7 @@ mesh = SubResource("ArrayMesh_qbne8")
 visible = false
 
 [node name="Stall5" parent="Stalls" unique_id=1243650826 instance=ExtResource("3_cdptk")]
-transform = Transform3D(-1.3113416e-07, 0, 5.000001, 0, 2, 0, -3, 0, -2.1855703e-07, 9.409168, 0.0007373511, -0.17030132)
+transform = Transform3D(-1.3113416e-07, 0, 5.000001, 0, 2, 0, -3, 0, -2.1855703e-07, 9.409168, 0.0007373511, 9.738281)
 
 [node name="Cube_006" parent="Stalls/Stall5" index="0" unique_id=2098856864]
 mesh = SubResource("ArrayMesh_qbne8")
@@ -102,11 +104,11 @@ mesh = SubResource("ArrayMesh_qbne8")
 [node name="Cube_018" parent="Stalls/Stall5" index="1" unique_id=137471827]
 visible = false
 
-[node name="Stall6" parent="Stalls" unique_id=1711549141 instance=ExtResource("3_cdptk")]
-transform = Transform3D(-1.3113416e-07, 0, 5, 0, 2, 0, -3, 0, -2.1855695e-07, 9.409168, 0.0007373511, 16.822456)
+[node name="Stall6(Middle)" parent="Stalls" unique_id=1711549141 instance=ExtResource("3_cdptk")]
+transform = Transform3D(-1.3113416e-07, 0, 5, 0, 2, 0, -3, 0, -2.1855695e-07, 9.409168, 0.0007373511, 7.913231)
 
 [node name="Stall7" parent="Stalls" unique_id=123582187 instance=ExtResource("3_cdptk")]
-transform = Transform3D(-1.3113416e-07, 0, 5, 0, 2, 0, -3, 0, -2.1855695e-07, 9.409168, 0.0007373511, 15.112439)
+transform = Transform3D(-1.3113416e-07, 0, 5, 0, 2, 0, -3, 0, -2.1855695e-07, 9.409168, 0.0007373511, 6.2032137)
 
 [node name="Cube_006" parent="Stalls/Stall7" index="0" unique_id=2098856864]
 mesh = SubResource("ArrayMesh_qbne8")
@@ -115,7 +117,7 @@ mesh = SubResource("ArrayMesh_qbne8")
 visible = false
 
 [node name="Stall8" parent="Stalls" unique_id=1377141432 instance=ExtResource("3_cdptk")]
-transform = Transform3D(-1.3113416e-07, 0, 5, 0, 2, 0, -3, 0, -2.1855695e-07, 9.409168, 0.0007373511, 13.391801)
+transform = Transform3D(-1.3113416e-07, 0, 5, 0, 2, 0, -3, 0, -2.1855695e-07, 9.409168, 0.0007373511, 4.4825754)
 
 [node name="Cube_006" parent="Stalls/Stall8" index="0" unique_id=2098856864]
 mesh = SubResource("ArrayMesh_qbne8")
@@ -124,7 +126,7 @@ mesh = SubResource("ArrayMesh_qbne8")
 visible = false
 
 [node name="Stall9" parent="Stalls" unique_id=2100521494 instance=ExtResource("3_cdptk")]
-transform = Transform3D(-1.3113416e-07, 0, 5, 0, 2, 0, -3, 0, -2.1855695e-07, 9.409168, 0.0007373511, 11.6550865)
+transform = Transform3D(-1.3113416e-07, 0, 5, 0, 2, 0, -3, 0, -2.1855695e-07, 9.409168, 0.0007373511, 2.745861)
 
 [node name="Cube_006" parent="Stalls/Stall9" index="0" unique_id=2098856864]
 mesh = SubResource("ArrayMesh_qbne8")
@@ -133,7 +135,7 @@ mesh = SubResource("ArrayMesh_qbne8")
 visible = false
 
 [node name="Stall10" parent="Stalls" unique_id=1062129120 instance=ExtResource("3_cdptk")]
-transform = Transform3D(-1.3113416e-07, 0, 5, 0, 2, 0, -3, 0, -2.1855695e-07, 9.409168, 0.0007373511, 9.934448)
+transform = Transform3D(-1.3113416e-07, 0, 5, 0, 2, 0, -3, 0, -2.1855695e-07, 9.409168, 0.0007373511, 1.0252228)
 
 [node name="Cube_006" parent="Stalls/Stall10" index="0" unique_id=2098856864]
 mesh = SubResource("ArrayMesh_qbne8")
@@ -141,15 +143,17 @@ mesh = SubResource("ArrayMesh_qbne8")
 [node name="Cube_018" parent="Stalls/Stall10" index="1" unique_id=137471827]
 visible = false
 
-[node name="Cube_017" type="MeshInstance3D" parent="Stalls" unique_id=539628258]
-transform = Transform3D(-1.5298985e-08, 0, 0.1, 0, 0.1, 0, -0.35, 0, -4.371139e-09, 4.8216753, 2.5855198, 14.756105)
-mesh = SubResource("ArrayMesh_c3xo7")
-metadata/extras = {
-"ant_landscape": {}
-}
+[node name="Stall11" parent="Stalls" unique_id=536331136 instance=ExtResource("3_cdptk")]
+transform = Transform3D(-1.3113416e-07, 0, 5, 0, 2, 0, -3, 0, -2.1855695e-07, 9.409168, 0.0007373511, -0.70633245)
 
-[node name="Cube_018" type="MeshInstance3D" parent="Stalls" unique_id=1869574703]
-transform = Transform3D(-1.5298985e-08, 0, 0.1, 0, 0.1, 0, -0.35, 0, -4.371139e-09, 4.8216753, 2.5855198, 4.749511)
+[node name="Cube_006" parent="Stalls/Stall11" index="0" unique_id=2098856864]
+mesh = SubResource("ArrayMesh_qbne8")
+
+[node name="Cube_018" parent="Stalls/Stall11" index="1" unique_id=137471827]
+visible = false
+
+[node name="Cube_017" type="MeshInstance3D" parent="Stalls" unique_id=539628258]
+transform = Transform3D(-3.059797e-08, 0, 0.1, 0, 0.1, 0, -0.7, 0, -4.371139e-09, 4.8216753, 2.5855198, 9.423496)
 mesh = SubResource("ArrayMesh_c3xo7")
 metadata/extras = {
 "ant_landscape": {}
@@ -163,3 +167,4 @@ metadata/extras = {
 [editable path="Stalls/Stall8"]
 [editable path="Stalls/Stall9"]
 [editable path="Stalls/Stall10"]
+[editable path="Stalls/Stall11"]
