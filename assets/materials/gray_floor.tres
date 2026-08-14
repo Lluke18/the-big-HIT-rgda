@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cajysesi2alfn"]
+
+[resource]
+albedo_color = Color(0.4724152, 0.47241515, 0.47241515, 1)
+rim_enabled = true
+rim = 0.03

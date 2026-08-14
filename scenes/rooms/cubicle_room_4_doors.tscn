@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://vf57bryaqfvq"]
 
 [ext_resource type="PackedScene" uid="uid://ddv174co0bndv" path="res://assets/rooms/cubicle_room_4doors.glb" id="1_8mhyf"]
+[ext_resource type="Material" uid="uid://cajysesi2alfn" path="res://assets/materials/gray_floor.tres" id="2_5td61"]
+[ext_resource type="Material" uid="uid://hijxja5obnwr" path="res://assets/materials/gray_noise.tres" id="2_pw7c0"]
+[ext_resource type="Material" uid="uid://6lvovtvcxqlo" path="res://assets/materials/light_emission.tres" id="3_pw7c0"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_8mhyf"]
 points = PackedVector3Array(8.185955, 0, 31.746487, -8.185955, 0, 31.746487, 8.185955, 0, -14.183524, -8.185955, 0, -14.183524)
@@ -46,30 +49,50 @@ visible = false
 [node name="Mug 1_001" parent="." index="61" unique_id=419474103]
 visible = false
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Plane" parent_id_path=PackedInt32Array(1479337837) index="0" unique_id=1257561150]
+[node name="Plane" parent="." index="237" unique_id=1479337837]
+material_override = ExtResource("2_pw7c0")
+surface_material_override/0 = ExtResource("2_5td61")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Plane" index="0" unique_id=1257561150]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Plane/StaticBody3D" index="0" unique_id=910921922]
 shape = SubResource("ConvexPolygonShape3D_8mhyf")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Plane_145" parent_id_path=PackedInt32Array(1927191800) index="0" unique_id=1966033875]
+[node name="Plane_145" parent="." index="238" unique_id=1927191800]
+material_override = ExtResource("2_5td61")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Plane_145" index="0" unique_id=1966033875]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Plane_145/StaticBody3D" index="0" unique_id=1560653964]
 shape = SubResource("ConcavePolygonShape3D_1fxcp")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Plane_146" parent_id_path=PackedInt32Array(494069740) index="0" unique_id=783880723]
+[node name="Plane_146" parent="." index="239" unique_id=494069740]
+material_override = ExtResource("2_5td61")
+surface_material_override/0 = ExtResource("2_pw7c0")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Plane_146" index="0" unique_id=783880723]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Plane_146/StaticBody3D" index="0" unique_id=1320981865]
 shape = SubResource("ConcavePolygonShape3D_5td61")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Plane_147" parent_id_path=PackedInt32Array(82075997) index="0" unique_id=1789088978]
+[node name="Plane_147" parent="." index="240" unique_id=82075997]
+material_override = ExtResource("2_5td61")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Plane_147" index="0" unique_id=1789088978]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Plane_147/StaticBody3D" index="0" unique_id=1459424440]
 shape = SubResource("ConcavePolygonShape3D_pw7c0")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Plane_148" parent_id_path=PackedInt32Array(525602091) index="0" unique_id=206047091]
+[node name="Plane_148" parent="." index="241" unique_id=525602091]
+material_override = ExtResource("2_5td61")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Plane_148" index="0" unique_id=206047091]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Plane_148/StaticBody3D" index="0" unique_id=1144314184]
 shape = SubResource("ConcavePolygonShape3D_8e31y")
+
+[node name="Cube_227" parent="." index="243" unique_id=1743431142]
+surface_material_override/0 = ExtResource("3_pw7c0")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="244" unique_id=199382352]
 
