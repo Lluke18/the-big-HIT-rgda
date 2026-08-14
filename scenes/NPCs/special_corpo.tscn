@@ -1,11 +1,12 @@
-[gd_scene format=3 uid="uid://bahvlotytnq3l"]
+[gd_scene format=3 uid="uid://cp7g153570ebb"]
 
-[ext_resource type="Script" uid="uid://bu1e7dtww230r" path="res://scenes/NPCs/npc.gd" id="1_0j446"]
-[ext_resource type="Script" uid="uid://bkuygnj6nmexp" path="res://scripts/fsm scripts/fsm.gd" id="2_lf74t"]
-[ext_resource type="Script" uid="uid://byvfg0ibjqt5x" path="res://scripts/fsm scripts/idle.gd" id="3_bflkj"]
-[ext_resource type="Script" uid="uid://hs5y1th4s20b" path="res://scenes/NPCs/run_to_guard.gd" id="4_f5ovy"]
-[ext_resource type="PackedScene" uid="uid://csrj6j2v2bg0h" path="res://assets/NPC/corporatist.tscn" id="6_5llrb"]
-[ext_resource type="PackedScene" uid="uid://oenhlr20lqb2" path="res://scenes/UI/SuspicionBar.tscn" id="7_omdk7"]
+[ext_resource type="Script" uid="uid://bu1e7dtww230r" path="res://scenes/NPCs/npc.gd" id="1_cqk4r"]
+[ext_resource type="Script" uid="uid://bkuygnj6nmexp" path="res://scripts/fsm scripts/fsm.gd" id="2_0fwaf"]
+[ext_resource type="Script" uid="uid://byvfg0ibjqt5x" path="res://scripts/fsm scripts/idle.gd" id="3_osx1a"]
+[ext_resource type="Script" uid="uid://hs5y1th4s20b" path="res://scenes/NPCs/run_to_guard.gd" id="4_ai6p6"]
+[ext_resource type="Script" uid="uid://ccwhk7dfpxofr" path="res://scripts/fsm scripts/go_to_location.gd" id="5_cqk4r"]
+[ext_resource type="PackedScene" uid="uid://csrj6j2v2bg0h" path="res://assets/NPC/corporatist.tscn" id="6_f8pac"]
+[ext_resource type="PackedScene" uid="uid://oenhlr20lqb2" path="res://scenes/UI/SuspicionBar.tscn" id="7_5rld6"]
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_bjc1w"]
 properties/0/path = NodePath(".:position")
@@ -30,29 +31,43 @@ radius = 3.2732813
 
 [node name="NPC" type="CharacterBody3D" unique_id=399691295 node_paths=PackedStringArray("animated_character") groups=["npc"]]
 collision_layer = 2
-script = ExtResource("1_0j446")
+script = ExtResource("1_cqk4r")
 animated_character = NodePath("AnimatedCharacter")
-move_speed = 3.0
+move_speed = 2.2
 run_speed = 5.0
 
 [node name="StateMachine" type="Node" parent="." unique_id=470339980 node_paths=PackedStringArray("initial_state")]
-script = ExtResource("2_lf74t")
+script = ExtResource("2_0fwaf")
 initial_state = NodePath("Idle")
 
 [node name="Idle" type="Node" parent="StateMachine" unique_id=1233826377 node_paths=PackedStringArray("suspicion_bar", "npc")]
-script = ExtResource("3_bflkj")
+script = ExtResource("3_osx1a")
+wander_state_name = "GoToLocation"
 suspicion_bar = NodePath("../../SubViewport/SuspicionBar")
 detected_state_name = "runtoguard"
+idle_time = 8.0
+idle_time_deviation = 5.0
 npc = NodePath("../..")
 
 [node name="IdleTimer" type="Timer" parent="StateMachine/Idle" unique_id=1932874965]
 one_shot = true
 
 [node name="RunToGuard" type="Node" parent="StateMachine" unique_id=1696750292 node_paths=PackedStringArray("guard_detection_area", "npc")]
-script = ExtResource("4_f5ovy")
+script = ExtResource("4_ai6p6")
 idle_state_name = "idle"
 guard_detection_area = NodePath("../../GuardDetectionArea")
 npc = NodePath("../..")
+
+[node name="GoToLocation" type="Node" parent="StateMachine" unique_id=569105462 node_paths=PackedStringArray("suspicion_bar", "nav_agent", "wait_timer", "npc")]
+script = ExtResource("5_cqk4r")
+suspicion_bar = NodePath("../../SubViewport/SuspicionBar")
+nav_agent = NodePath("../../NavigationAgent3D")
+wait_timer = NodePath("wait_at_location")
+npc = NodePath("../..")
+
+[node name="wait_at_location" type="Timer" parent="StateMachine/GoToLocation" unique_id=1846679263]
+wait_time = 5.0
+one_shot = true
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=838253104]
 
@@ -63,7 +78,7 @@ target_position = Vector3(0, 0, 3.47)
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=400696466]
 replication_config = SubResource("SceneReplicationConfig_bjc1w")
 
-[node name="AnimatedCharacter" parent="." unique_id=797959439 instance=ExtResource("6_5llrb")]
+[node name="AnimatedCharacter" parent="." unique_id=797959439 instance=ExtResource("6_f8pac")]
 transform = Transform3D(-1, 0, 1.509958e-07, 0, 1, 0, -1.509958e-07, 0, -1, 0, -0.82309425, 0.09335184)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1175898848]
@@ -80,15 +95,15 @@ transform = Transform3D(1, 0, 0, 0, -0.9008197, 0.43419334, 0, -0.43419334, -0.9
 light_color = Color(1, 0, 0, 1)
 light_energy = 16.0
 light_volumetric_fog_energy = 10.0
+spot_range = 10.0
 spot_angle = 10.8
 
 [node name="SubViewport" type="SubViewport" parent="." unique_id=1333327056]
 disable_3d = true
 transparent_bg = true
 
-[node name="SuspicionBar" parent="SubViewport" unique_id=1428092685 instance=ExtResource("7_omdk7")]
+[node name="SuspicionBar" parent="SubViewport" unique_id=1428092685 instance=ExtResource("7_5rld6")]
 value = 50.0
-increase_rate = 0.2
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=153913080]
 billboard = 1
@@ -101,3 +116,4 @@ collision_mask = 3
 shape = SubResource("SphereShape3D_xrivr")
 
 [connection signal="timeout" from="StateMachine/Idle/IdleTimer" to="StateMachine/Idle" method="_on_idle_timer_timeout"]
+[connection signal="timeout" from="StateMachine/GoToLocation/wait_at_location" to="StateMachine/GoToLocation" method="_on_wait_at_location_timeout"]
