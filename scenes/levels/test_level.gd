@@ -1,10 +1,15 @@
 extends Node3D
 
-
 @export var players_spawn: Node3D
 
+var game_level_scene = preload("res://scenes/levels/GameLevel.tscn")
+@onready var current_game_level: Node3D = $GameLevel
+
+@onready var npcs_parent: Node3D = $NPCs
 
 func _ready() -> void:
+	SignalBus.reset_level.connect(_on_level_reset_requested)
+	
 	var main_menu = get_node("/root/Main/MainMenu")
 	var lobby = get_node("/root/Main/MainMenu/MultiplayerLobby")
 	if main_menu:
@@ -35,3 +40,25 @@ func request_spawn_on_server(peer_id: int) -> void:
 	var level_container = get_node_or_null("/root/Main/LevelContainer")
 	if level_container:
 		level_container._spawn_single_player(peer_id)
+		
+func _on_level_reset_requested():
+	if not multiplayer.is_server():
+		return
+	
+	restart_level_rpc.rpc()
+	
+@rpc("authority", "call_local", "reliable")
+func restart_level_rpc() -> void:
+	reset_level()
+	
+func reset_level():
+	for npc in npcs_parent.get_children():
+		if npc is NPC:
+			npc.reset()
+	
+	var new_game_level = game_level_scene.instantiate()
+	current_game_level.queue_free()
+	await get_tree().process_frame
+	add_child(new_game_level)
+	current_game_level = new_game_level
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
