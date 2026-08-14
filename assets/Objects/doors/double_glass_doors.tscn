@@ -1,22 +1,100 @@
 [gd_scene format=3 uid="uid://ch3va1th02ful"]
 
+[ext_resource type="Script" uid="uid://bb0sj5gh0t6o2" path="res://assets/Objects/doors/double_glass_doors.gd" id="1_648bn"]
 [ext_resource type="PackedScene" uid="uid://vvvv1nolqbni" path="res://assets/Objects/doors/door_frame.tscn" id="1_l5pqv"]
 [ext_resource type="PackedScene" uid="uid://yqkbnrjlpke2" path="res://assets/Objects/doors/glass_door.tscn" id="2_648bn"]
+[ext_resource type="PackedScene" uid="uid://csvwgky3s6fcf" path="res://scenes/interactables/InteractableObject.tscn" id="2_qsqac"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qn8k1"]
+size = Vector3(2.8623047, 2.64563, 1.8240967)
+
+[sub_resource type="Animation" id="Animation_648bn"]
+resource_name = "OpenDoor"
+length = 1.3666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DoorRight:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -1.5707964, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DoorLeft:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 3.1415927, 0), Vector3(0, 4.712389, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_qsqac"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DoorRight:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DoorLeft:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -3.1415925, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qn8k1"]
+_data = {
+&"OpenDoor": SubResource("Animation_648bn"),
+&"RESET": SubResource("Animation_qsqac")
+}
 
 [node name="DoubleGlassDoors" type="Node3D" unique_id=358607124]
 transform = Transform3D(1, 0, 0, 0, 1.2, 0, 0, 0, 1, 0, 0, 0)
+script = ExtResource("1_648bn")
+
+[node name="InteractableObject" parent="." unique_id=216604155 instance=ExtResource("2_qsqac")]
+
+[node name="CollisionShape3D" parent="InteractableObject" index="0" unique_id=1785336431]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.93115234, 0.82281494, -0.05279541)
+shape = SubResource("BoxShape3D_qn8k1")
 
 [node name="Door_Frame" parent="." unique_id=1959880357 instance=ExtResource("1_l5pqv")]
 transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="DoorLeft" type="Node3D" parent="." unique_id=1075732227]
-transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, 0, 0, 0)
+transform = Transform3D(-0.9999998, 0, -1.5099577e-07, 0, 1, 0, 1.5099577e-07, 0, -0.9999998, 0.051891327, 0, 0)
 
 [node name="Door_C_Left" parent="DoorLeft" unique_id=1526314609 instance=ExtResource("2_648bn")]
-transform = Transform3D(1, 0, -1.0658141e-14, 0, 1.0000002, 0, 1.0658141e-14, 0, 1, 0.099999964, 0, -3.9340236e-08)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1.0000002, 0, 8.742278e-08, 0, -1, 0.099999964, 0, -3.9340236e-08)
 
 [node name="DoorRight" type="Node3D" parent="." unique_id=2140891874]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 2, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
 
 [node name="Door_C_Right" parent="DoorRight" unique_id=1967383213 instance=ExtResource("2_648bn")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.1, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=508201684]
+libraries/ = SubResource("AnimationLibrary_qn8k1")
+
+[editable path="InteractableObject"]

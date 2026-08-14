@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://oaehv5yiswn6" path="res://assets/Objects/floors/floor.tscn" id="1_xdpj6"]
 [ext_resource type="PackedScene" uid="uid://eeo5mgumr86u" path="res://assets/Objects/walls/wall_windows.tscn" id="2_rh1wt"]
-[ext_resource type="PackedScene" uid="uid://bclevbabhc5qa" path="res://assets/Objects/walls/wall_windows_door.tscn" id="3_wabl4"]
+[ext_resource type="PackedScene" uid="uid://fimtdy10med6" path="res://assets/Objects/walls/wall_doors.tscn" id="3_6bctx"]
 [ext_resource type="PackedScene" uid="uid://jjrjwo86m4m7" path="res://assets/Objects/chairs/chair_2.tscn" id="5_6bctx"]
 [ext_resource type="PackedScene" uid="uid://ducil1yu42wjb" path="res://assets/Objects/tables/table.tscn" id="5_pxx1w"]
 [ext_resource type="PackedScene" uid="uid://cxqchibf80sga" path="res://assets/Objects/tables/counter_1.tscn" id="6_86fu6"]
@@ -145,6 +145,9 @@ points = PackedVector3Array(19.19138, 0, -36.430813, 18.49102, -7.463723, -36.43
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_olc60"]
 points = PackedVector3Array(19.19138, 0, -36.430813, 18.49102, -7.463723, -36.430813, 19.19138, 0, -39.655693, 18.49102, 7.4604073, -36.430813, 16.941742, 14.300495, -7.6293945e-06, 16.941742, -14.303812, -7.6293945e-06, 18.49102, -7.463723, -39.655693, 18.49102, 7.4604073, -39.655693, 16.941742, -14.303812, -82.93291, 16.941742, 14.300495, -82.93291, 14.299479, 16.944311, -7.6293945e-06, 14.299479, -16.944311, -7.6293945e-06, 14.299479, -16.944311, -82.93291, 10.564232, -14.303812, -85.57144, 14.299479, -10.565315, -85.57144, 14.299479, 10.561998, -85.57144, 10.564232, 14.300495, -85.57144, 14.299479, 16.944311, -82.93291, -14.305576, 16.944311, -7.6293945e-06, -14.305576, -16.944311, -7.6293945e-06, -14.305576, -16.944311, -82.93291, -10.5667925, -14.303812, -85.57144, 7.027067, -9.891922, -88.089264, 9.888634, -7.029169, -88.089264, 9.888634, 7.025852, -88.089264, 7.027067, 9.888605, -88.089264, -10.5667925, 14.300495, -85.57144, -14.305576, 16.944311, -82.93291, -16.944302, 14.300495, -7.6293945e-06, -16.944302, -14.303812, -7.6293945e-06, -16.944302, -14.303812, -82.93291, -14.305576, -10.565315, -85.57144, -7.029628, -9.891922, -88.089264, -7.029628, 9.888605, -88.089264, -14.305576, 10.561998, -85.57144, -16.944302, 14.300495, -82.93291, -9.891194, -7.029169, -88.089264, -9.891194, 7.025852, -88.089264)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_ragau"]
+size = Vector3(19.445557, 5.7960205, 19.508026)
+
 [node name="CoffeeRoom" type="Node3D" unique_id=538983221]
 
 [node name="Floor" parent="." unique_id=2031031718 instance=ExtResource("1_xdpj6")]
@@ -156,10 +159,17 @@ points = PackedVector3Array(19.19138, 0, -36.430813, 18.49102, -7.463723, -36.43
 [node name="WallWindows2" parent="Walls" unique_id=692367103 instance=ExtResource("2_rh1wt")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
 
-[node name="WallWindowsDoor" parent="Walls" unique_id=2060587920 instance=ExtResource("3_wabl4")]
-transform = Transform3D(-0.99999994, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0, -0.99999994, 20, 0, 20)
+[node name="WallDoors" parent="Walls" unique_id=214762846 instance=ExtResource("3_6bctx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 20)
 
-[node name="WallWindowsDoor2" parent="Walls" unique_id=1722862039 instance=ExtResource("3_wabl4")]
+[node name="DoubleGlassDoors" parent="Walls/WallDoors" index="0" unique_id=358607124]
+transform = Transform3D(1, 0, 0, 0, 1.06, 0, 0, 0, 1, 8.914108, 0, 0)
+is_interactable = true
+
+[node name="Wall_Medium9" parent="Walls/WallDoors" index="3" unique_id=2051108434]
+transform = Transform3D(0.115, 0, 0, 0, 0.56, 0, 0, 0, 3, 8.767693, 2.2222497, 0)
+
+[node name="WallDoors2" parent="Walls" unique_id=688953168 instance=ExtResource("3_6bctx")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 20, 0, 0)
 
 [node name="Tables" type="Node3D" parent="." unique_id=1984840031]
@@ -378,3 +388,13 @@ area_size = Vector2(0.8364258, 1.3470144)
 
 [node name="Coffee_Table2" parent="." unique_id=1324090835 instance=ExtResource("17_6bctx")]
 transform = Transform3D(3, 0, 0, 0, 2.5, 0, 0, 0, 3, 9.518614, 9.93021e-07, 8.145454)
+
+[node name="GarlicArea3D" type="Area3D" parent="." unique_id=1660038331]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GarlicArea3D" unique_id=2025017281]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.917358, 2.3980103, 10.100906)
+shape = SubResource("BoxShape3D_ragau")
+
+[editable path="Walls/WallDoors"]

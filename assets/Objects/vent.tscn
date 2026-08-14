@@ -2,12 +2,4 @@
 
 [ext_resource type="PackedScene" uid="uid://jnmypda12bh7" path="res://assets/OfficeFBX/Vent.fbx" id="1_btyy1"]
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ynrdb"]
-points = PackedVector3Array(-0.30250818, -0.030445475, -0.30243117, -0.30250818, -0.030445475, 0.29128665, -0.30250818, 0.024146535, -0.30243117, 0.302509, -0.030445475, -0.30243117, -0.30250818, 0.02415188, 0.29128665, 0.302509, -0.030445475, 0.29128665, -0.28237253, 0.02415188, 0.2711202, 0.302509, 0.024146535, -0.30243117, 0.302509, 0.02415188, 0.29128665, 0.28231412, 0.02415188, 0.2711202)
-
 [node name="Vent" unique_id=1594000245 instance=ExtResource("1_btyy1")]
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Vent_004" parent_id_path=PackedInt32Array(1444354886) index="0" unique_id=1331608773]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Vent_004/StaticBody3D" index="0" unique_id=343772719]
-shape = SubResource("ConvexPolygonShape3D_ynrdb")

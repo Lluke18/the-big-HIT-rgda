@@ -104,3 +104,12 @@ func _on_start_game_pressed() -> void:
 	
 	#loads the main scene with all the players and their coresponding characters
 	
+func _on_back_to_menu_pressed() -> void:
+	pass # Replace with function body.
+	
+
+func _on_leave_lobby_pressed() -> void:
+	NetworkManager.quit_lobby()
+	multiplayer_ui.show()
+	lobby_ui.hide()
+	

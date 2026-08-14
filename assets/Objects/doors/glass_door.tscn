@@ -5,20 +5,20 @@
 [ext_resource type="Script" uid="uid://cvp0lj40vy3nm" path="res://assets/Objects/doors/measure_script.gd" id="2_v2sdd"]
 [ext_resource type="Material" uid="uid://0wowd82o4o0x" path="res://assets/materials/GlassMaterial.tres" id="3_v2sdd"]
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_md23c"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_v2sdd"]
 points = PackedVector3Array(0, -0.0045395494, -0.04353879, 0.9657129, -0.0045395494, -0.04353879, 0, -0.0045395494, 0.04353879, 0, 2.020341, -0.04353879, 0.9657129, -0.0045395494, 0.04353879, 0.9657129, 2.020341, -0.04353879, 0, 2.020341, 0.04353879, 0.9657129, 2.020341, 0.04353879)
 
 [sub_resource type="BoxMesh" id="BoxMesh_ragau"]
 
 [node name="Door_C" unique_id=1526314609 instance=ExtResource("1_org07")]
 
-[node name="Door_C" parent="." index="0" unique_id=1595258382]
+[node name="Door_C" parent="." index="0" unique_id=1192421244]
 script = ExtResource("2_v2sdd")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Door_C" index="0" unique_id=521429114]
+[node name="StaticBody3D" type="StaticBody3D" parent="Door_C" index="0" unique_id=776799684]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Door_C/StaticBody3D" index="0" unique_id=627327609]
-shape = SubResource("ConvexPolygonShape3D_md23c")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Door_C/StaticBody3D" index="0" unique_id=1237796674]
+shape = SubResource("ConvexPolygonShape3D_v2sdd")
 
 [node name="Door_Handle_1" parent="." index="1" unique_id=470311168 instance=ExtResource("2_md23c")]
 transform = Transform3D(-1, -8.742278e-08, 0, 8.742278e-08, -1, 0, 0, 0, 1, 0.069248796, 0.84419584, 0.058871582)

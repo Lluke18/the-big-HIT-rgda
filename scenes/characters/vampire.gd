@@ -1,6 +1,8 @@
 extends Player
 class_name Vampire
 
+@onready var garlic_meter: GarlicMeter = $CanvasLayer/GarlicMeter
+
 func _physics_process(delta: float) -> void:
 	super(delta)
 	
@@ -22,3 +24,11 @@ func _physics_process(delta: float) -> void:
 				print("DO STUFF!")
 		#else: seetext.hide()
 	#endregion
+
+func _on_garlic_area_3d_area_entered(area: Area3D) -> void:
+	if is_multiplayer_authority():
+		garlic_meter.start_increase()
+
+func _on_garlic_area_3d_area_exited(area: Area3D) -> void:
+	if is_multiplayer_authority():
+		garlic_meter.stop_increase()
