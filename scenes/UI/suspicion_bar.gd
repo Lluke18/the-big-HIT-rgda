@@ -4,7 +4,7 @@ class_name SuspicionBar
 var is_increasing: bool = false
 @export var increase_rate: float = 0.1
 signal detected_player
-
+#@export var npc: NPC
 
 func _ready() -> void:
 	is_increasing = false
@@ -14,7 +14,7 @@ func _process(delta: float) -> void:
 	if not is_increasing:
 		value -= increase_rate
 	else:
-		value += increase_rate
+		value += increase_rate 
 		if value == max_value:
 			print("DETECTED INTRUDER!")
 			detected_player.emit()

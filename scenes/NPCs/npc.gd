@@ -13,6 +13,8 @@ var players: Array[Player]
 @export var move_speed: float
 @export var run_speed: float = move_speed
 @export var route_locations: Array[Marker3D]
+@export var sus_multiplier: float = 1.0
+var is_chasing: bool = false
 var gravity = 9.8
 
 @onready var nav_agent: NavigationAgent3D = $NavigationAgent3D
