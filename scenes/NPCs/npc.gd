@@ -50,8 +50,8 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	if !multiplayer.is_server():
-		return
-		#pass
+		#return
+		pass
 	
 	
 	if check_for_players(players):
