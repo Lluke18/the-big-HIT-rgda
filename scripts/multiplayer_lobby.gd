@@ -7,7 +7,7 @@ extends Control
 @export var lobby_ui: Control
 @onready var h_box_container: HBoxContainer = $Players/HBoxContainer
 
-@onready var test_level_scene_path : String = "res://scenes/levels/TestLevel.tscn"
+@onready var game_scene_path : String = "res://scenes/levels/Game.tscn"
 
 #enum player_select{VAMPIRE, DEVIL, WEREWOLF} useless
 
@@ -100,7 +100,7 @@ func _on_start_game_pressed() -> void:
 		return
 	
 	#MultiplayerManager.change_scene_to_everyone.rpc(start_scene_path)
-	SignalBus.change_scene.emit(test_level_scene_path)
+	SignalBus.change_scene.emit(game_scene_path)
 	
 	#loads the main scene with all the players and their coresponding characters
 	

@@ -33,6 +33,35 @@ size = Vector3(3.414917, 2.7495117, 12.962212)
 
 [node name="cubicle_room_3doors" unique_id=1262223568 instance=ExtResource("1_ryfob")]
 
+[node name="Desk_004" parent="." index="13" unique_id=543329241]
+transform = Transform3D(-6.556706e-12, -2.2649368e-11, -0.00014999999, 0, -0.00014999998, 2.2649367e-11, -0.00014999993, 9.900353e-19, 6.5567074e-12, -4.3492765, 0.33297086, 2.2801428)
+
+[node name="Pen Holder_001" parent="." index="17" unique_id=2002265059]
+transform = Transform3D(-6.556708e-10, 0.015, 0, 0, 0, -0.015, -0.015, -6.556708e-10, 0, -2.519581, 0.95812523, 1.528239)
+visible = false
+
+[node name="Mug 4_001" parent="." index="22" unique_id=1508458243]
+transform = Transform3D(-6.556708e-10, 0.015, 0, 0, 0, -0.015, -0.015, -6.556708e-10, 0, -2.809191, 0.9378562, 1.5448205)
+visible = false
+
+[node name="Top_Drawer_003" parent="." index="24" unique_id=1050281676]
+transform = Transform3D(-6.556706e-12, -2.2649368e-11, -0.00014999999, 0, -0.00014999998, 2.2649367e-11, -0.00014999993, 9.900353e-19, 6.5567074e-12, -4.8502126, 0.7099787, 1.7614498)
+
+[node name="Mug 3_001" parent="." index="27" unique_id=330196467]
+transform = Transform3D(-6.556708e-10, 0.015, 0, 0, 0, -0.015, -0.015, -6.556708e-10, 0, -3.030975, 0.94932306, 1.5493667)
+visible = false
+
+[node name="Mug 2_001" parent="." index="32" unique_id=2023696949]
+transform = Transform3D(-6.556708e-10, 0.015, 0, 0, 0, -0.015, -0.015, -6.556708e-10, 0, -3.2694962, 0.9378562, 1.5448205)
+visible = false
+
+[node name="Bottom_Drawer_003" parent="." index="58" unique_id=1662136041]
+transform = Transform3D(-6.556706e-12, -2.2649368e-11, -0.00014999999, 0, -0.00014999998, 2.2649367e-11, -0.00014999993, 9.900353e-19, 6.5567074e-12, -4.8510547, 0.4080028, 1.9242)
+
+[node name="Mug 1_001" parent="." index="62" unique_id=1870997172]
+transform = Transform3D(-2.9494792e-11, 0.0006747622, 0, 0, 0, -0.0008795097, -0.0006747622, -2.9494792e-11, 0, -3.5139334, 0.94932306, 1.5493667)
+visible = false
+
 [node name="Plane" parent="." index="238" unique_id=571277639]
 surface_material_override/0 = SubResource("StandardMaterial3D_5ou8m")
 

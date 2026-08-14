@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://cyr3sk0flxvja"]
+
+[ext_resource type="PackedScene" uid="uid://isyhyrtx1uh6" path="res://assets/rooms/security_room.glb" id="1_i2sxa"]
+
+[node name="security_room" unique_id=549841313 instance=ExtResource("1_i2sxa")]

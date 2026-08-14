@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://dlfhho50k62uh"]
+
+[ext_resource type="PackedScene" uid="uid://dtr0y5vp40wy8" path="res://assets/rooms/storage_room.glb" id="1_87y5h"]
+
+[node name="storage_room" unique_id=1382142323 instance=ExtResource("1_87y5h")]
