@@ -66,4 +66,4 @@ visible = false
 layout_mode = 1
 
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
-[connection signal="toggled" from="PlayButton" to="." method="_on_play_button_toggled"]
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]

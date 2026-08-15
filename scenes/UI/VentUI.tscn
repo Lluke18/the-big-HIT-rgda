@@ -78,6 +78,53 @@ grow_vertical = 2
 text = "Bathroom Stall"
 label_settings = SubResource("LabelSettings_ragau")
 
+[node name="KillUI" type="Control" parent="." unique_id=1232773308]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="KillButton" type="Button" parent="KillUI" unique_id=1151889277]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -340.0
+offset_top = 155.0
+offset_right = -153.0
+offset_bottom = 213.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Kill"
+
+[node name="BiteButton" type="Button" parent="KillUI" unique_id=56580758]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 166.0
+offset_top = 155.0
+offset_right = 353.0
+offset_bottom = 213.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Bite"
+
 [connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="pressed" from="PreviousButton" to="." method="_on_previous_button_pressed"]
 [connection signal="pressed" from="NextButton" to="." method="_on_next_button_pressed"]
+[connection signal="pressed" from="KillUI/KillButton" to="." method="_on_kill_button_pressed"]
+[connection signal="pressed" from="KillUI/BiteButton" to="." method="_on_bite_button_pressed"]

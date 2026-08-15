@@ -15,3 +15,5 @@ signal enter_vent(vent_index: int)
 signal switch_to_vent(vent_index: int)
 signal exit_vent(vent_index: int, player: Player)
 signal found_intruder(intruder_position: Vector3)
+
+signal boss_pooping_update(is_pooping: bool)

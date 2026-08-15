@@ -22,6 +22,7 @@ var t_bob : float = 0.0
 const BASE_FOV: float = 75.0
 const FOV_CHANGE: float = 1.5
 
+@onready var crosshair: Panel = $CanvasLayer/Crosshair
 @export var seetext : Label
 @onready var see_cast: RayCast3D = %SeeCast
 
@@ -54,7 +55,14 @@ func _enter_tree() -> void:
 	# Set authority for both the player and the input synchronizer
 	set_multiplayer_authority(name.to_int())
 	%InputSynchronizer.set_multiplayer_authority(name.to_int())
-
+	
+func hide_crosshair():
+	crosshair.hide()
+	seetext.hide()
+	
+func show_crosshair():
+	crosshair.show()
+	seetext.show()
 
 func _ready():
 	initial_position = global_position

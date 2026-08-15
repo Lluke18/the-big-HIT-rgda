@@ -30,7 +30,7 @@ properties/5/replication_mode = 1
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xrivr"]
 radius = 0.18066406
-height = 1.7868347
+height = 1.3084564
 
 [sub_resource type="FogMaterial" id="FogMaterial_2cktm"]
 density = 0.05
@@ -81,7 +81,7 @@ replication_config = SubResource("SceneReplicationConfig_bjc1w")
 transform = Transform3D(-1, 0, 1.509958e-07, 0, 1, 0, -1.509958e-07, 0, -1, 0, -0.82309425, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1175898848]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.01850912, 0.03996277, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.01850912, -0.19922638, 0)
 shape = SubResource("CapsuleShape3D_xrivr")
 
 [node name="FogVolume" type="FogVolume" parent="." unique_id=818601699]

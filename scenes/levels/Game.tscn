@@ -25,10 +25,10 @@ spawn_limit = 2
 [node name="NPCs" type="Node3D" parent="." unique_id=2134876013]
 
 [node name="NPC" parent="NPCs" unique_id=399691295 node_paths=PackedStringArray("players_spawn", "route") instance=ExtResource("2_vou6s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.64176, 1.0213647, 21.53727)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.50933, 1.0213647, 16.297651)
 players_spawn = NodePath("../../Players")
 run_speed = 3.0
-route = NodePath("../../NPCRoutes/Route1")
+route = NodePath("../../NPCRoutes/BathRoute")
 
 [node name="idle_corpo_test" parent="NPCs" unique_id=1508298263 node_paths=PackedStringArray("players_spawn") instance=ExtResource("3_4gy8a")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.7007618, 0.82329667, 8.939789)
@@ -44,17 +44,19 @@ players_spawn = NodePath("../../Players")
 route = NodePath("../../NPCRoutes/Route2")
 
 [node name="special_corpo" parent="NPCs" unique_id=746657997 node_paths=PackedStringArray("players_spawn", "route") instance=ExtResource("7_nxjv3")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 20.689098, 0.98870075, 37.609825)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 19.919338, 0.98870075, 37.29141)
 players_spawn = NodePath("../../Players")
-route = NodePath("../../NPCRoutes/BathRoute")
+route = NodePath("../../NPCRoutes/Route1")
 
 [node name="NPCRoutes" type="Node3D" parent="." unique_id=270287974]
 
 [node name="Route1" type="Node3D" parent="NPCRoutes" unique_id=2117210748]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.579607, 0, 17.42188)
 
 [node name="Marker3D3" type="Marker3D" parent="NPCRoutes/Route1" unique_id=1841611021]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.265656, 0, -6.173477)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.101145, 0, -8.544975)
+
+[node name="Marker3D4" type="Marker3D" parent="NPCRoutes/Route1" unique_id=660606793]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.096487, 0, 36.8285)
 
 [node name="Route2" type="Node3D" parent="NPCRoutes" unique_id=825274622]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8827437, 0, 29.602005)
@@ -68,7 +70,7 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.3
 [node name="BathRoute" type="Node3D" parent="NPCRoutes" unique_id=1216446529]
 
 [node name="BathDestination" type="Marker3D" parent="NPCRoutes/BathRoute" unique_id=1568653115]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.72004, -1.9073486e-06, 16.595818)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.689457, -1.9073486e-06, 16.595818)
 
 [node name="Marker3D" type="Marker3D" parent="NPCRoutes/BathRoute" unique_id=870813971]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 20.689, 0, 37.61)
