@@ -5,7 +5,6 @@ class_name AnimatedCharacter
 
 @export var weapon: Node3D
 
-
 @export var idle_animation_name: String = "CharacterArmature|Idle"
 @export var walk_animation_name: String = "CharacterArmature|Walk"
 @export var run_animation_name: String = "CharacterArmature|Run"

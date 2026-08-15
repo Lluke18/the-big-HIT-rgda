@@ -27,15 +27,13 @@ navigation_mesh = SubResource("NavigationMesh_yynx6")
 
 [node name="NPCs" type="Node3D" parent="NavigationRegion3D" unique_id=91423297]
 
-[node name="NPC" parent="NavigationRegion3D/NPCs" unique_id=399691295 node_paths=PackedStringArray("players_spawn", "route_locations") instance=ExtResource("4_4unv2")]
+[node name="NPC" parent="NavigationRegion3D/NPCs" unique_id=399691295 node_paths=PackedStringArray("players_spawn") instance=ExtResource("4_4unv2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.645775, 1.0213647, 8.215199)
 players_spawn = NodePath("../../../Players")
-route_locations = [NodePath("../../../NPCRoutes/Route1/Marker3D"), NodePath("../../../NPCRoutes/Route1/Marker3D2"), NodePath("../../../NPCRoutes/Route1/Marker3D3")]
 
-[node name="NPC2" parent="NavigationRegion3D/NPCs" unique_id=576258027 node_paths=PackedStringArray("players_spawn", "route_locations") instance=ExtResource("4_4unv2")]
+[node name="NPC2" parent="NavigationRegion3D/NPCs" unique_id=576258027 node_paths=PackedStringArray("players_spawn") instance=ExtResource("4_4unv2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.686028, 1.0213647, -7.1005106)
 players_spawn = NodePath("../../../Players")
-route_locations = [NodePath("../../../NPCRoutes/Route1/Marker3D"), NodePath("../../../NPCRoutes/Route1/Marker3D2"), NodePath("../../../NPCRoutes/Route1/Marker3D3")]
 
 [node name="idle_corpo_test" parent="NavigationRegion3D/NPCs" unique_id=517652295 instance=ExtResource("8_l1je0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7007618, 0.82329667, 8.939789)
