@@ -80,7 +80,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.096487, 0, 36.8285)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8827437, 0, 29.602005)
 
 [node name="Marker3D" type="Marker3D" parent="NPCRoutes/Route2" unique_id=2105459853]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35035217, 0, -31.329914)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5775564, 0, -31.329914)
 
 [node name="Marker3D2" type="Marker3D" parent="NPCRoutes/Route2" unique_id=1611702998]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.387295, 0, -29.913239)

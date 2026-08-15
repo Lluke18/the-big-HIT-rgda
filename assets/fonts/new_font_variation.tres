@@ -1,0 +1,6 @@
+[gd_resource type="FontVariation" format=3 uid="uid://csqstueilgont"]
+
+[ext_resource type="FontFile" uid="uid://i6xtwir187ly" path="res://assets/fonts/HeistItalic-3zMRz.ttf" id="1_r8544"]
+
+[resource]
+base_font = ExtResource("1_r8544")
