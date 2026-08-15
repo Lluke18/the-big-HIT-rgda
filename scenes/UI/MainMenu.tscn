@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c1v3nuhrgp8ub" path="res://scenes/UI/main_menu.gd" id="1_11hie"]
 [ext_resource type="PackedScene" uid="uid://bbbc124sp3tn6" path="res://scenes/UI/multiplayer_lobby.tscn" id="2_58fj5"]
+[ext_resource type="Texture2D" uid="uid://y4d54gc6ym8h" path="res://assets/characters/MainMenu.png" id="3_3h7gc"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ragau"]
 font_size = 48
@@ -15,7 +16,19 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_11hie")
 
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1799776975]
+z_index = -2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_3h7gc")
+expand_mode = 5
+
 [node name="Label" type="Label" parent="." unique_id=1030418866]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -38,10 +51,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -95.0
-offset_top = -40.0
-offset_right = 95.0
-offset_bottom = 40.0
+offset_left = -34.0
+offset_top = -133.0
+offset_right = 156.0
+offset_bottom = -53.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Play"
@@ -53,10 +66,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -95.0
-offset_top = 92.0
-offset_right = 95.0
-offset_bottom = 172.0
+offset_left = -29.0
+offset_top = 7.0
+offset_right = 161.0
+offset_bottom = 87.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Exit to Desktop"
@@ -67,3 +80,5 @@ layout_mode = 1
 
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]
+
+[editable path="MultiplayerLobby"]

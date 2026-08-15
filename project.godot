@@ -46,6 +46,10 @@ interactable=""
 player=""
 guard=""
 
+[gui]
+
+theme/custom_font="uid://bpcoa658brbmg"
+
 [input]
 
 jump={
