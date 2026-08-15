@@ -5,7 +5,7 @@
 [node name="SittingCorporatistAlt" unique_id=408015881 instance=ExtResource("1_od4tr")]
 transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
 
-[node name="Skeleton3D" parent="." index="0" unique_id=473706481]
+[node name="Skeleton3D" parent="." index="0" unique_id=1934826168]
 bones/0/position = Vector3(4.4217883e-05, 0.006168479, -0.0024954537)
 bones/0/rotation = Quaternion(-0.21483262, -0.045553595, 0.015710067, 0.97546154)
 bones/1/rotation = Quaternion(0.119661644, 0.030744335, -0.017212197, 0.99218935)

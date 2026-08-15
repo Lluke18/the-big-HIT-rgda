@@ -31,6 +31,8 @@ func on_vent_enter(player: Player):
 	if player is Werewolf:
 		return
 		
+	player.hide_crosshair()
+		
 	player.hide()
 	player.process_mode = Node.PROCESS_MODE_DISABLED
 	
@@ -83,3 +85,5 @@ func on_vent_exit(vent_index: int, player: Player):
 	player.show()
 	
 	player.camera.make_current()
+	
+	player.show_crosshair()

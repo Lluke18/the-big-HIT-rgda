@@ -5,5 +5,5 @@ extends Control
 func _on_play_button_pressed() -> void:
 	multiplayer_lobby.show()
 
-func _on_play_button_toggled(toggled_on: bool) -> void:
+func _on_exit_button_pressed() -> void:
 	get_tree().quit()

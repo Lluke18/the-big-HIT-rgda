@@ -9,6 +9,8 @@ func _ready() -> void:
 	if not is_interactable:
 		interactable_object.remove_from_group("interactable")
 		animation_player.play("OpenDoor")
+	else:
+		animation_player.play_backwards("OpenDoor")
 	
 	interactable_object.interact = Callable(self, "unlock_door")
 	interactable_object.vampire_interaction_text = "[Left Click] Unlock door (requires keys)"
@@ -32,4 +34,4 @@ func setup_doors_for_everyone() -> void:
 func open_door() -> void:
 	if InventoryManager.obtained_items.has(InventoryManager.BOSS_KEYS):
 		animation_player.play("OpenDoor")
- 
+		interactable_object.remove_from_group("interactable")

@@ -8,9 +8,11 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_qn8k1"]
 size = Vector3(2.8623047, 2.64563, 1.8240967)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_ragau"]
+size = Vector3(2.41568, 2.6776123, 0.2626953)
+
 [sub_resource type="Animation" id="Animation_648bn"]
 resource_name = "OpenDoor"
-length = 1.3666667
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -34,6 +36,18 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(0, 3.1415927, 0), Vector3(0, 4.712389, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("StaticBody3D/CollisionShape3D:shape")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [SubResource("BoxShape3D_ragau"), null]
 }
 
 [sub_resource type="Animation" id="Animation_qsqac"]
@@ -61,6 +75,18 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector3(0, -3.1415925, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("StaticBody3D/CollisionShape3D:shape")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [null]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qn8k1"]
@@ -96,5 +122,10 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=508201684]
 libraries/ = SubResource("AnimationLibrary_qn8k1")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1595694697]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1481733523]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0257721, 0.8388062, 0.03173828)
 
 [editable path="InteractableObject"]
