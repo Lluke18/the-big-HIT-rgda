@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://fimtdy10med6"]
 
 [ext_resource type="PackedScene" uid="uid://ibxk3cfa0hi3" path="res://assets/Objects/walls/wall_medium.tscn" id="1_pg7mp"]
-[ext_resource type="PackedScene" uid="uid://ch3va1th02ful" path="res://assets/Objects/doors/double_glass_doors.tscn" id="2_pg7mp"]
 
 [node name="WallDoors" type="Node3D" unique_id=214762846]
 
@@ -13,6 +12,3 @@ transform = Transform3D(-0.45, 0, -3.774895e-07, 0, 1, 0, 6.794811e-08, 0, -2.5,
 
 [node name="Wall_Medium9" parent="." unique_id=2051108434 instance=ExtResource("1_pg7mp")]
 transform = Transform3D(0.115, 0, 0, 0, 0.5, 0, 0, 0, 3, 8.767693, 2.5056784, 0)
-
-[node name="DoubleGlassDoors" parent="." unique_id=358607124 instance=ExtResource("2_pg7mp")]
-transform = Transform3D(1, 0, 0, 0, 1.2, 0, 0, 0, 1, 8.929353, 2.3841858e-07, -0.0038261414)

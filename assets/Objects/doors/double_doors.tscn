@@ -3,6 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://vvvv1nolqbni" path="res://assets/Objects/doors/door_frame.tscn" id="1_m2iwn"]
 [ext_resource type="PackedScene" uid="uid://1b5sk0phnrvl" path="res://assets/Objects/doors/door_a.tscn" id="2_kt2v8"]
 
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_y4jiu"]
+points = PackedVector3Array(0, -0.0045395494, -0.04353879, 0, -0.0045395494, 0.04353879, 0, 2.020341, -0.04353879, 0.9657129, -0.0045395494, -0.04353879, 0.9657129, -0.0045395494, 0.04353879, 0, 2.020341, 0.04353879, 0.9657129, 2.020341, -0.04353879, 0.9657129, 2.020341, 0.04353879)
+
 [node name="DoubleDoors" type="Node3D" unique_id=1955729017]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1.2, 0, -8.742278e-08, 0, -1, 0, 0, 0)
 
@@ -17,5 +20,10 @@ transform = Transform3D(-1, 8.742278e-08, 0, 8.742278e-08, 1, -8.742278e-08, -7.
 
 [node name="Door_A2" parent="." unique_id=372459484 instance=ExtResource("2_kt2v8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Door_A2" unique_id=229304641]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Door_A2/StaticBody3D" unique_id=75528595]
+shape = SubResource("ConvexPolygonShape3D_y4jiu")
 
 [editable path="Door_A"]
