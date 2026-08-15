@@ -66,7 +66,7 @@ func reset_level():
 	await get_tree().process_frame
 	add_child(new_game_level)
 	current_game_level = new_game_level
-	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 
 func _on_idle_guard_play_alarm() -> void:

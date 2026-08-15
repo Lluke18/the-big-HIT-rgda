@@ -5,7 +5,7 @@ var multiplayer_peer: SteamMultiplayerPeer = SteamMultiplayerPeer.new()
 var _players_spawn_node
 var _hosted_lobby_id = 0
 
-const LOBBY_NAME = "BAD"
+const LOBBY_NAME = "HIT Lobby"
 const LOBBY_MODE = "CoOP"
 
 func  _ready():
@@ -36,6 +36,7 @@ func _on_lobby_created(connect_status: int, lobby_id):
 		Steam.setLobbyJoinable(_hosted_lobby_id, true)
 		
 		Steam.setLobbyData(_hosted_lobby_id, "name", LOBBY_NAME)
+		#Steam.setLobbyData(_hosted_lobby_id, "name", SteamManager.name)
 		Steam.setLobbyData(_hosted_lobby_id, "mode", LOBBY_MODE)
 
 func join_as_client(lobby_id):
@@ -55,7 +56,9 @@ func list_lobbies():
 	Steam.addRequestLobbyListDistanceFilter(Steam.LOBBY_DISTANCE_FILTER_WORLDWIDE)
 	# NOTE: If you are using the test app id, you will need to apply a filter on your game name
 	# Otherwise, it may not show up in the lobby list of your clients
-	Steam.addRequestLobbyListStringFilter("name", "BAD", Steam.LOBBY_COMPARISON_EQUAL)
+	
+	#Steam.addRequestLobbyListStringFilter("name", "BAD", Steam.LOBBY_COMPARISON_EQUAL)
+	Steam.addRequestLobbyListStringFilter("name", "HIT Lobby", Steam.LOBBY_COMPARISON_EQUAL)
 	Steam.requestLobbyList()
 
 func _add_player_to_game(id: int):

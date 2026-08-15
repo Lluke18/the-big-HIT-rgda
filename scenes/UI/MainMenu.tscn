@@ -3,9 +3,16 @@
 [ext_resource type="Script" uid="uid://c1v3nuhrgp8ub" path="res://scenes/UI/main_menu.gd" id="1_11hie"]
 [ext_resource type="PackedScene" uid="uid://bbbc124sp3tn6" path="res://scenes/UI/multiplayer_lobby.tscn" id="2_58fj5"]
 [ext_resource type="Texture2D" uid="uid://y4d54gc6ym8h" path="res://assets/characters/MainMenu.png" id="3_3h7gc"]
+[ext_resource type="PackedScene" uid="uid://xhbnsy4gqo1j" path="res://scenes/UI/ResizableButton.tscn" id="3_4vh8y"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ragau"]
 font_size = 48
+
+[sub_resource type="LabelSettings" id="LabelSettings_4vh8y"]
+font_size = 48
+
+[sub_resource type="LabelSettings" id="LabelSettings_b1p1q"]
+font_size = 32
 
 [node name="MainMenu" type="Control" unique_id=1711847682]
 layout_mode = 3
@@ -44,39 +51,78 @@ grow_vertical = 2
 text = "Game Title"
 label_settings = SubResource("LabelSettings_ragau")
 
-[node name="PlayButton" type="Button" parent="." unique_id=1550467485]
+[node name="PlayButton" parent="." unique_id=203274285 instance=ExtResource("3_4vh8y")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.47200003
+anchor_top = 0.31100002
+anchor_right = 0.47200003
+anchor_bottom = 0.31100002
+offset_left = -0.24005127
+offset_top = 0.1199646
+offset_right = 304.32635
+offset_bottom = 104.92224
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.020378409
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="PlayButton" unique_id=1769944197]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -34.0
-offset_top = -133.0
-offset_right = 156.0
-offset_bottom = -53.0
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 text = "Play"
+label_settings = SubResource("LabelSettings_4vh8y")
 
-[node name="ExitButton" type="Button" parent="." unique_id=1685850010]
+[node name="ExitButton" parent="." unique_id=1579488803 instance=ExtResource("3_4vh8y")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.47200003
+anchor_top = 0.535
+anchor_right = 0.47200003
+anchor_bottom = 0.535
+offset_left = 0.74823
+offset_top = 0.48199463
+offset_right = 309.65204
+offset_bottom = 108.06445
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.016288288
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="ExitButton" unique_id=1030502698]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -29.0
-offset_top = 7.0
-offset_right = 161.0
-offset_bottom = 87.0
+offset_left = -58.5
+offset_top = -11.5
+offset_right = 58.5
+offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 text = "Exit to Desktop"
+label_settings = SubResource("LabelSettings_b1p1q")
 
 [node name="MultiplayerLobby" parent="." unique_id=1482253729 instance=ExtResource("2_58fj5")]
 visible = false
 layout_mode = 1
+
+[node name="LobbyUI" parent="MultiplayerLobby" index="6" unique_id=456822598]
+visible = false
 
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]

@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://xhbnsy4gqo1j"]
+
+[ext_resource type="Texture2D" uid="uid://v2ikufv36gn2" path="res://sprites/Button.png" id="1_q2v81"]
+[ext_resource type="Texture2D" uid="uid://3j7b81s4ioa4" path="res://sprites/ButtonHover.png" id="2_a8vol"]
+[ext_resource type="Texture2D" uid="uid://drtrpp588123n" path="res://sprites/ButtonDisabled.png" id="3_0hjp0"]
+[ext_resource type="Script" uid="uid://ca0auj4wcldjp" path="res://scenes/UI/resizable_button.gd" id="4_a8vol"]
+
+[node name="ResizableButton" type="TextureButton" unique_id=203274285]
+texture_filter = 1
+offset_right = 202.0
+offset_bottom = 102.0
+texture_normal = ExtResource("1_q2v81")
+texture_hover = ExtResource("2_a8vol")
+texture_disabled = ExtResource("3_0hjp0")
+script = ExtResource("4_a8vol")

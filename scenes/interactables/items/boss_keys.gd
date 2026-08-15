@@ -24,4 +24,5 @@ func delete_keys_for_everyone() -> void:
 @rpc("authority", "call_local", "reliable")
 func delete_keys() -> void:
 	InventoryManager.add_item(InventoryManager.BOSS_KEYS)
+	NotesManager.try_to_update_step(NotesManager.step.KEYS)
 	queue_free()

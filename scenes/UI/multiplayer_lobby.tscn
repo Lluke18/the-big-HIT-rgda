@@ -2,6 +2,22 @@
 
 [ext_resource type="Script" uid="uid://smfksbdwdcsr" path="res://scripts/multiplayer_lobby.gd" id="1_6gqji"]
 [ext_resource type="Script" uid="uid://bspdmvrmr3dne" path="res://scripts/multiplayer/network_manager.gd" id="2_4ea5e"]
+[ext_resource type="PackedScene" uid="uid://xhbnsy4gqo1j" path="res://scenes/UI/ResizableButton.tscn" id="3_uvkrb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6gqji"]
+bg_color = Color(0, 0, 0, 0.627451)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ragau"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_6tjod"]
+font_size = 64
+
+[sub_resource type="LabelSettings" id="LabelSettings_umu6e"]
+font_size = 48
+
+[sub_resource type="LabelSettings" id="LabelSettings_n6yxf"]
+font_size = 32
 
 [node name="MultiplayerLobby" type="Control" unique_id=1482253729 node_paths=PackedStringArray("multiplayer_ui", "lobby_ui")]
 layout_mode = 3
@@ -22,10 +38,286 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_6gqji")
 
 [node name="NetworkManager" type="Node" parent="." unique_id=286062784 node_paths=PackedStringArray("_players_spawn_node")]
 script = ExtResource("2_4ea5e")
 _players_spawn_node = NodePath("../Players/HBoxContainer")
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="." unique_id=173436829]
+_spawnable_scenes = PackedStringArray("uid://dutrwh3b8a48c")
+spawn_path = NodePath("../Players/HBoxContainer")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1417549646]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 687.0
+offset_top = -376.0
+offset_right = 727.0
+offset_bottom = -336.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 100
+
+[node name="MultiplayerUI" type="Control" parent="." unique_id=1217367557]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="becomehost" parent="MultiplayerUI" unique_id=158251302 instance=ExtResource("3_uvkrb")]
+layout_mode = 0
+offset_left = 114.0
+offset_top = 395.0
+offset_right = 514.0
+offset_bottom = 595.0
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="MultiplayerUI/becomehost" unique_id=1225735179]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Become Host"
+label_settings = SubResource("LabelSettings_ragau")
+
+[node name="joinasclient" parent="MultiplayerUI" unique_id=1430996623 instance=ExtResource("3_uvkrb")]
+layout_mode = 0
+offset_left = 114.0
+offset_top = 625.0
+offset_right = 514.0
+offset_bottom = 825.0
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="MultiplayerUI/joinasclient" unique_id=1750731900]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Join as client"
+label_settings = SubResource("LabelSettings_ragau")
+
+[node name="usesteam" parent="MultiplayerUI" unique_id=203274285 instance=ExtResource("3_uvkrb")]
+layout_mode = 0
+offset_left = 1000.0
+offset_top = 159.0
+offset_right = 1400.0
+offset_bottom = 359.0
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="MultiplayerUI/usesteam" unique_id=776204325]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Use Steam"
+label_settings = SubResource("LabelSettings_ragau")
+
+[node name="listlobbies" parent="MultiplayerUI" unique_id=2102845202 instance=ExtResource("3_uvkrb")]
+layout_mode = 0
+offset_left = 1000.0
+offset_top = 379.0
+offset_right = 1400.0
+offset_bottom = 579.0
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="MultiplayerUI/listlobbies" unique_id=1384797092]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "List Lobbies"
+label_settings = SubResource("LabelSettings_ragau")
+
+[node name="becomehoststeam" parent="MultiplayerUI" unique_id=1752402000 instance=ExtResource("3_uvkrb")]
+layout_mode = 0
+offset_left = 1000.0
+offset_top = 608.0
+offset_right = 1400.0
+offset_bottom = 808.0
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="MultiplayerUI/becomehoststeam" unique_id=62915619]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Become Host"
+label_settings = SubResource("LabelSettings_ragau")
+
+[node name="BackToMenu" parent="MultiplayerUI" unique_id=1392986126 instance=ExtResource("3_uvkrb")]
+layout_mode = 0
+offset_left = 615.0
+offset_top = 892.0
+offset_right = 915.0
+offset_bottom = 1042.0
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="MultiplayerUI/BackToMenu" unique_id=2000630204]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Back to Menu"
+label_settings = SubResource("LabelSettings_ragau")
+
+[node name="SamePC" type="Label" parent="MultiplayerUI" unique_id=113230066]
+layout_mode = 0
+offset_left = 58.0
+offset_top = 139.0
+offset_right = 793.0
+offset_bottom = 318.0
+text = "Run 2 instances 
+on the same PC"
+label_settings = SubResource("LabelSettings_6tjod")
+
+[node name="Or" type="Label" parent="MultiplayerUI" unique_id=550977579]
+layout_mode = 0
+offset_left = 709.0
+offset_top = 314.0
+offset_right = 787.0
+offset_bottom = 402.0
+text = "OR"
+label_settings = SubResource("LabelSettings_6tjod")
+
+[node name="Steam" type="Label" parent="MultiplayerUI" unique_id=1550422268]
+layout_mode = 0
+offset_left = 943.0
+offset_top = 51.0
+offset_right = 1510.0
+offset_bottom = 139.0
+text = "Steam Multiplayer"
+label_settings = SubResource("LabelSettings_6tjod")
+
+[node name="LobbyUI" type="Control" parent="." unique_id=456822598]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Start Game" parent="LobbyUI" unique_id=1396424465 instance=ExtResource("3_uvkrb")]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -259.0
+offset_right = 200.0
+offset_bottom = -59.0
+grow_horizontal = 2
+grow_vertical = 0
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="LobbyUI/Start Game" unique_id=1160662681]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Start Game"
+label_settings = SubResource("LabelSettings_umu6e")
+
+[node name="Leave Lobby" parent="LobbyUI" unique_id=1550107645 instance=ExtResource("3_uvkrb")]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -335.0
+offset_top = -201.0
+offset_right = -35.0
+offset_bottom = -51.0
+grow_horizontal = 0
+grow_vertical = 0
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="LobbyUI/Leave Lobby" unique_id=486169906]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.5
+offset_top = -11.5
+offset_right = 48.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Leave Lobby"
+label_settings = SubResource("LabelSettings_n6yxf")
 
 [node name="Players" type="Control" parent="." unique_id=948891525]
 layout_mode = 1
@@ -34,6 +326,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Players" unique_id=1537976398]
 layout_mode = 1
@@ -48,127 +341,13 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 300
+theme_override_constants/separation = 1000
 
-[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="." unique_id=173436829]
-_spawnable_scenes = PackedStringArray("uid://dutrwh3b8a48c")
-spawn_path = NodePath("../Players/HBoxContainer")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1417549646]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -202.0
-offset_top = 75.0
-offset_right = -162.0
-offset_bottom = 115.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 300
-
-[node name="MultiplayerUI" type="Control" parent="." unique_id=1217367557]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="listlobbies" type="Button" parent="MultiplayerUI" unique_id=674275193]
-layout_mode = 0
-offset_left = 116.0
-offset_top = 319.0
-offset_right = 207.0
-offset_bottom = 350.0
-text = "list lobbies"
-
-[node name="becomehost" type="Button" parent="MultiplayerUI" unique_id=1712485091]
-layout_mode = 0
-offset_left = 66.0
-offset_top = 164.0
-offset_right = 328.0
-offset_bottom = 221.0
-text = "become host"
-
-[node name="Button" type="Button" parent="MultiplayerUI" unique_id=655515963]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 40.0
-offset_top = 35.0
-offset_right = 128.0
-offset_bottom = 66.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "use steam"
-
-[node name="joinasclient" type="Button" parent="MultiplayerUI" unique_id=527190238]
-layout_mode = 0
-offset_left = 107.0
-offset_top = 258.0
-offset_right = 212.0
-offset_bottom = 289.0
-text = "join as client"
-
-[node name="BackToMenu" type="Button" parent="MultiplayerUI" unique_id=1910403860]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 928.0
-offset_top = 553.0
-offset_right = 1042.0
-offset_bottom = 584.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Back to Menu"
-
-[node name="LobbyUI" type="Control" parent="." unique_id=456822598]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Start Game" type="Button" parent="LobbyUI" unique_id=1030180200]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -4.0
-offset_top = -8.0
-offset_right = 4.0
-grow_horizontal = 2
-grow_vertical = 0
-text = "START GAME"
-
-[node name="Leave Lobby" type="Button" parent="LobbyUI" unique_id=444240625]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 377.0
-offset_top = 247.0
-offset_right = 482.0
-offset_bottom = 278.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Leave Lobby"
-
-[connection signal="pressed" from="MultiplayerUI/listlobbies" to="." method="_on_listlobbies_pressed"]
 [connection signal="pressed" from="MultiplayerUI/becomehost" to="." method="_on_becomehost_pressed"]
-[connection signal="pressed" from="MultiplayerUI/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="MultiplayerUI/joinasclient" to="." method="_on_joinasclient_pressed"]
+[connection signal="pressed" from="MultiplayerUI/usesteam" to="." method="_on_usesteam_pressed"]
+[connection signal="pressed" from="MultiplayerUI/listlobbies" to="." method="_on_listlobbies_pressed"]
+[connection signal="pressed" from="MultiplayerUI/becomehoststeam" to="." method="_on_becomehoststeam_pressed"]
 [connection signal="pressed" from="MultiplayerUI/BackToMenu" to="." method="_on_back_to_menu_pressed"]
 [connection signal="pressed" from="LobbyUI/Start Game" to="." method="_on_start_game_pressed"]
 [connection signal="pressed" from="LobbyUI/Leave Lobby" to="." method="_on_leave_lobby_pressed"]
