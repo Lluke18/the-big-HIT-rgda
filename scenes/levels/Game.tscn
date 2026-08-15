@@ -109,6 +109,11 @@ fov = 100.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.741301, 1, 60.25077)
 players_spawn = NodePath("../../Players")
 
+[node name="wanderc_3c_room" parent="NPCs" unique_id=1796978680 node_paths=PackedStringArray("players_spawn", "route") instance=ExtResource("6_hqrlp")]
+transform = Transform3D(0.92842495, 0, 0.37152007, 0, 1, 0, -0.37152007, 0, 0.92842495, 19.691902, 0.75644857, -1.7111456)
+players_spawn = NodePath("../../Players")
+route = NodePath("../../NPCRoutes/c3_route")
+
 [node name="NPCRoutes" type="Node3D" parent="." unique_id=270287974]
 
 [node name="Route1" type="Node3D" parent="NPCRoutes" unique_id=2117210748]
@@ -164,6 +169,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.443836, 0, 59.43819)
 [node name="Marker3D5" type="Marker3D" parent="NPCRoutes/StorageRoute2" unique_id=1095931747]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.558826, 0, 59.43819)
 
+[node name="c3_route" type="Node3D" parent="NPCRoutes" unique_id=1602167659]
+
+[node name="Marker3D" type="Marker3D" parent="NPCRoutes/c3_route" unique_id=716798570]
+transform = Transform3D(0.92842495, 0, 0.37152007, 0, 1, 0, -0.37152007, 0, 0.92842495, 19.692, 0, -1.9368718)
+
+[node name="Marker3D2" type="Marker3D" parent="NPCRoutes/c3_route" unique_id=1479618439]
+transform = Transform3D(0.92842495, 0, 0.37152007, 0, 1, 0, -0.37152007, 0, 0.92842495, 18.586718, 0, -6.6517887)
+
+[node name="Marker3D3" type="Marker3D" parent="NPCRoutes/c3_route" unique_id=153324844]
+transform = Transform3D(0.92842495, 0, 0.37152007, 0, 1, 0, -0.37152007, 0, 0.92842495, 13.500306, 0, 23.092913)
+
 [node name="SecurityCams" type="Node3D" parent="." unique_id=1242907450]
 
 [node name="SecurityCam" parent="SecurityCams" unique_id=1970247811 instance=ExtResource("8_ee3lx")]
@@ -174,7 +190,6 @@ transform = Transform3D(0.2153889, 0, 0, 0, 0.2153889, 0, 0, 0, 0.2153889, -16.6
 
 [node name="SecurityCam3" parent="SecurityCams" unique_id=793765677 instance=ExtResource("8_ee3lx")]
 transform = Transform3D(-9.414948e-09, 0, 0.2153889, 0, 0.2153889, 0, -0.2153889, 0, -9.414948e-09, 23.181768, 3.3435204, 16.806732)
-vision_range = 15.0
 
 [node name="Audio" type="Node3D" parent="." unique_id=1850932779]
 
