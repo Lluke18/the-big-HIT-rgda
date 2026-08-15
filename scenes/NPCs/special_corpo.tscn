@@ -44,6 +44,7 @@ script = ExtResource("1_cqk4r")
 animated_character = NodePath("AnimatedCharacter")
 move_speed = 2.2
 run_speed = 5.0
+location_wait_time = 5.0
 
 [node name="StateMachine" type="Node" parent="." unique_id=470339980 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("2_0fwaf")

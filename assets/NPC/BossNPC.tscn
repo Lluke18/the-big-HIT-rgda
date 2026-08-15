@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://benv65o4k44ph"]
+
+[ext_resource type="PackedScene" uid="uid://cy5pyc5ht1x87" path="res://assets/NPC/Business Man.glb" id="1_jb705"]
+[ext_resource type="Script" uid="uid://8du4hgdpbreo" path="res://assets/NPC/animated_character.gd" id="2_wbkv3"]
+
+[node name="Boss" unique_id=237304749 instance=ExtResource("1_jb705")]
+script = ExtResource("2_wbkv3")

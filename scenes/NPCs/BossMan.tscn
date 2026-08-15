@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://bkuygnj6nmexp" path="res://scripts/fsm scripts/fsm.gd" id="2_sm1ty"]
 [ext_resource type="Script" uid="uid://byvfg0ibjqt5x" path="res://scripts/fsm scripts/idle.gd" id="3_ncga6"]
 [ext_resource type="Script" uid="uid://hs5y1th4s20b" path="res://scenes/NPCs/run_to_guard.gd" id="4_37li2"]
-[ext_resource type="PackedScene" uid="uid://c68lfmifq3y2n" path="res://assets/NPC/BussinessMan.tscn" id="6_77xen"]
+[ext_resource type="PackedScene" uid="uid://benv65o4k44ph" path="res://assets/NPC/BossNPC.tscn" id="5_hexoh"]
 [ext_resource type="PackedScene" uid="uid://oenhlr20lqb2" path="res://scenes/UI/SuspicionBar.tscn" id="7_sjxin"]
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_bjc1w"]
@@ -40,7 +40,7 @@ radius = 3.2732813
 [node name="NPC" type="CharacterBody3D" unique_id=399691295 node_paths=PackedStringArray("animated_character") groups=["npc"]]
 collision_layer = 2
 script = ExtResource("1_77xen")
-animated_character = NodePath("BussinessMan")
+animated_character = NodePath("Boss")
 move_speed = 2.2
 run_speed = 5.0
 
@@ -50,7 +50,6 @@ initial_state = NodePath("Idle")
 
 [node name="Idle" type="Node" parent="StateMachine" unique_id=1233826377 node_paths=PackedStringArray("suspicion_bar", "npc")]
 script = ExtResource("3_ncga6")
-wander_state_name = "GoToLocation"
 suspicion_bar = NodePath("../../SubViewport/SuspicionBar")
 detected_state_name = "runtoguard"
 idle_time = 8.0
@@ -66,8 +65,8 @@ idle_state_name = "idle"
 guard_detection_area = NodePath("../../GuardDetectionArea")
 npc = NodePath("../..")
 
-[node name="BussinessMan" parent="." unique_id=843082292 instance=ExtResource("6_77xen")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, -0.823, 0.093)
+[node name="Boss" parent="." unique_id=237304749 instance=ExtResource("5_hexoh")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, -0.8359131, 0.077668786)
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=838253104]
 
