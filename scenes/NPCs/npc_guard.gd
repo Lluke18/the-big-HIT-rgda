@@ -3,7 +3,7 @@ class_name Guard
 
 var bullet = preload("res://scenes/NPCs/misc/bullet.tscn")
 var bullet_instance 
-
+signal play_alarm
 
 
 func _ready() -> void:

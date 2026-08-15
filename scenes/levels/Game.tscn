@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" uid="uid://de64ajertuip3" path="res://scenes/levels/test_level.gd" id="1_7vga6"]
 [ext_resource type="PackedScene" uid="uid://cs7bl03qtcigb" path="res://scenes/levels/GameLevel.tscn" id="2_q0c2a"]
-[ext_resource type="PackedScene" uid="uid://1s24sdpuq1tu" path="res://scenes/NPCs/npc.tscn" id="2_vou6s"]
 [ext_resource type="PackedScene" uid="uid://bahvlotytnq3l" path="res://scenes/NPCs/idle_corpo.tscn" id="3_4gy8a"]
 [ext_resource type="PackedScene" uid="uid://dhi03rsdio7tc" path="res://scenes/NPCs/idle_guard.tscn" id="4_fqm1f"]
 [ext_resource type="PackedScene" uid="uid://dfs5ox0pr2mlw" path="res://scenes/NPCs/wander_corpo.tscn" id="6_hqrlp"]
 [ext_resource type="PackedScene" uid="uid://cp7g153570ebb" path="res://scenes/NPCs/special_corpo.tscn" id="7_nxjv3"]
 [ext_resource type="PackedScene" uid="uid://cmjtrcpuihtvm" path="res://assets/Objects/security_cam.tscn" id="8_ee3lx"]
+[ext_resource type="AudioStream" uid="uid://dt2xdkum8uwfj" path="res://audio/jeremayjimenez-greece-eas-alarm-451404.mp3" id="8_hcw8b"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ee3lx"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -47,12 +47,6 @@ spawn_limit = 2
 [node name="Players" type="Node3D" parent="." unique_id=57610433]
 
 [node name="NPCs" type="Node3D" parent="." unique_id=2134876013]
-
-[node name="NPC" parent="NPCs" unique_id=399691295 node_paths=PackedStringArray("players_spawn", "route") instance=ExtResource("2_vou6s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.50933, 1.0213647, 16.297651)
-players_spawn = NodePath("../../Players")
-run_speed = 3.0
-route = NodePath("../../NPCRoutes/BathRoute")
 
 [node name="idle_corpo_test" parent="NPCs" unique_id=1508298263 node_paths=PackedStringArray("players_spawn") instance=ExtResource("3_4gy8a")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.7007618, 0.82329667, 8.939789)
@@ -103,3 +97,10 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 20.6
 
 [node name="SecurityCam" parent="SecurityCams" unique_id=1970247811 instance=ExtResource("8_ee3lx")]
 transform = Transform3D(-3.7252903e-09, 0, -0.2153889, 0, 0.2153889, 0, 0.2153889, 0, -3.7252903e-09, -7.9242516, 3.8383875, 27.272316)
+
+[node name="Audio" type="Node3D" parent="." unique_id=1850932779]
+
+[node name="alarm" type="AudioStreamPlayer" parent="Audio" unique_id=673727869]
+stream = ExtResource("8_hcw8b")
+
+[connection signal="play_alarm" from="NPCs/idle_guard" to="." method="_on_idle_guard_play_alarm"]
