@@ -17,30 +17,17 @@ func _ready() -> void:
 		network_manager.become_host(true)
 	lobby_ui.hide()
 
-
-func _on_button_pressed() -> void: #use steam btn
-	SignalBus.steam_activated = true
-	print("using steam...")
-	SteamManager.initialize_steam()
-	Steam.lobby_match_list.connect(_on_lobby_match_list)
-	network_manager.active_network_type = network_manager.MULTIPLAYER_NETWORK_TYPE.STEAM
-
-
-
-
 func _on_becomehost_pressed() -> void:
 	print("become host pressed")
 	network_manager.become_host()
 	multiplayer_ui.hide()
 	lobby_ui.show()
 
-
 func _on_joinasclient_pressed() -> void:
 	print("Join as player 2")
 	join_lobby()
 	multiplayer_ui.hide()
 	lobby_ui.show()
-
 
 func _on_listlobbies_pressed() -> void: #LIST STEAM LOBBIES!
 	print("listing steam lobbies")
@@ -51,7 +38,6 @@ func join_lobby(lobby_id = 0):
 	network_manager.join_as_client(lobby_id)
 	multiplayer_ui.hide()
 	lobby_ui.show()
-
 
 func _on_lobby_match_list(lobbies: Array):
 	print("On lobby match list")
@@ -66,8 +52,10 @@ func _on_lobby_match_list(lobbies: Array):
 			
 			var lobby_button: Button = Button.new()
 			lobby_button.set_text(lobby_name + " | " + lobby_mode)
-			lobby_button.set_size(Vector2(100, 30))
-			lobby_button.add_theme_font_size_override("font_size", 8)
+			#lobby_button.set_size(Vector2(100, 30))
+			lobby_button.set_size(Vector2(400, 100))
+			#lobby_button.add_theme_font_size_override("font_size", 8)
+			lobby_button.add_theme_font_size_override("font_size", 64)
 			
 			lobby_button.set_name("lobby_%s" % lobby)
 			lobby_button.alignment = HORIZONTAL_ALIGNMENT_LEFT
@@ -106,11 +94,22 @@ func _on_start_game_pressed() -> void:
 	#loads the main scene with all the players and their coresponding characters
 	
 func _on_back_to_menu_pressed() -> void:
-	pass # Replace with function body.
-	
+	hide()
 
 func _on_leave_lobby_pressed() -> void:
 	NetworkManager.quit_lobby()
 	multiplayer_ui.show()
 	lobby_ui.hide()
 	
+func _on_usesteam_pressed() -> void:
+	SignalBus.steam_activated = true
+	print("using steam...")
+	SteamManager.initialize_steam()
+	Steam.lobby_match_list.connect(_on_lobby_match_list)
+	network_manager.active_network_type = network_manager.MULTIPLAYER_NETWORK_TYPE.STEAM
+
+func _on_becomehoststeam_pressed() -> void:
+	print("become host pressed")
+	network_manager.become_host()
+	multiplayer_ui.hide()
+	lobby_ui.show()

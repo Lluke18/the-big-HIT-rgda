@@ -1,9 +1,9 @@
 extends Control
 
-@onready var location_label: Label = $LocationLabel
+@onready var location_label: Label = $LocationBorder/LocationLabel
 @onready var canvas_layer: PlayerUI = $".."
 @onready var kill_ui: Control = $KillUI
-@onready var exit_button: Button = $ExitButton
+@onready var exit_button: TextureButton = $ExitButton
 
 const NUMBER_OF_VENTS: int = 3
 const LOCATION_NAMES: Array[String] = [
@@ -11,7 +11,7 @@ const LOCATION_NAMES: Array[String] = [
 	"Storage Room",
 	"Whatever"
 ]
-var current_vent_index: int = 0
+var current_vent_index: int = 1
 
 var boss_pooping: bool = false
 
@@ -81,7 +81,23 @@ func _on_next_button_pressed() -> void:
 		exit_button.show()
 		
 func _on_kill_button_pressed() -> void:
-	pass # Replace with function body.
+	if multiplayer.is_server():
+		win_game.rpc()
+	else:
+		# Ask the server to delete the keys
+		win_game_for_everyone.rpc_id(1)
+
+@rpc("any_peer", "reliable")
+func win_game_for_everyone() -> void:
+	if not multiplayer.is_server():
+		return
+		
+	win_game.rpc()
+	
+@rpc("authority", "call_local", "reliable")
+func win_game():
+	NotesManager.try_to_update_step(NotesManager.step.KILL_1)
+	SignalBus.game_won.emit()
 
 func _on_bite_button_pressed() -> void:
 	pass # Replace with function body.

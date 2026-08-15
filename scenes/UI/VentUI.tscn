@@ -1,9 +1,18 @@
 [gd_scene format=3 uid="uid://ctkoxsltvebaw"]
 
 [ext_resource type="Script" uid="uid://c7li3rpxy5unb" path="res://scenes/UI/vent_ui.gd" id="1_1tk3t"]
+[ext_resource type="PackedScene" uid="uid://xhbnsy4gqo1j" path="res://scenes/UI/ResizableButton.tscn" id="2_cxjsk"]
+[ext_resource type="PackedScene" uid="uid://01tbmxv8m1f4" path="res://scenes/UI/ResizableButtonArrow.tscn" id="3_hx20u"]
+[ext_resource type="Texture2D" uid="uid://drtrpp588123n" path="res://sprites/ButtonDisabled.png" id="4_hx20u"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_umu6e"]
+font_size = 48
 
 [sub_resource type="LabelSettings" id="LabelSettings_ragau"]
 font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_n6yxf"]
+font_size = 64
 
 [node name="VentUI" type="Control" unique_id=1741107145]
 process_mode = 3
@@ -15,64 +24,100 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_1tk3t")
 
-[node name="ExitButton" type="Button" parent="." unique_id=1644861019]
+[node name="ExitButton" parent="." unique_id=203274285 instance=ExtResource("2_cxjsk")]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -156.0
-offset_top = -33.25
-offset_right = 156.0
-offset_bottom = 33.25
+offset_left = -151.5
+offset_top = -78.0
+offset_right = 151.5
+offset_bottom = 78.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Exit vent"
+ignore_texture_size = true
+stretch_mode = 5
 
-[node name="PreviousButton" type="Button" parent="." unique_id=1651424060]
+[node name="Label" type="Label" parent="ExitButton" unique_id=122262683]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -300.0
-offset_top = -27.0
-offset_right = -225.0
-offset_bottom = 27.0
+offset_left = -38.5
+offset_top = -11.5
+offset_right = 38.5
+offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "Previous
-<---------"
+text = "Exit Vent"
+label_settings = SubResource("LabelSettings_umu6e")
 
-[node name="NextButton" type="Button" parent="." unique_id=709935541]
+[node name="PreviousButton" parent="." unique_id=156648149 instance=ExtResource("3_hx20u")]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 238.0
-offset_top = -27.0
-offset_right = 297.0
-offset_bottom = 27.0
+offset_left = -345.0
+offset_top = -75.5
+offset_right = -195.0
+offset_bottom = 75.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "Next
--------->"
+ignore_texture_size = true
+stretch_mode = 5
+flip_h = true
 
-[node name="LocationLabel" type="Label" parent="." unique_id=1302365661]
+[node name="NextButton" parent="." unique_id=1407924774 instance=ExtResource("3_hx20u")]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -58.0
-offset_top = 96.0
-offset_right = 58.0
-offset_bottom = 119.0
+offset_left = 202.0
+offset_top = -75.5
+offset_right = 352.0
+offset_bottom = 75.5
+grow_horizontal = 2
+grow_vertical = 2
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="LocationBorder" type="TextureRect" parent="." unique_id=1567203967]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -177.0
+offset_top = -520.0
+offset_right = 177.0
+offset_bottom = -339.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_hx20u")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="LocationLabel" type="Label" parent="LocationBorder" unique_id=1302365661]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -130.0
+offset_top = -22.0
+offset_right = 130.0
+offset_bottom = 22.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Bathroom Stall"
@@ -93,35 +138,69 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="KillButton" type="Button" parent="KillUI" unique_id=1151889277]
+[node name="KillButton" parent="KillUI" unique_id=1623214693 instance=ExtResource("2_cxjsk")]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -340.0
-offset_top = 155.0
-offset_right = -153.0
-offset_bottom = 213.0
+offset_left = -727.0
+offset_top = 173.0
+offset_right = -308.0
+offset_bottom = 387.0
+grow_horizontal = 2
+grow_vertical = 2
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="KillUI/KillButton" unique_id=1473358230]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 text = "Kill"
+label_settings = SubResource("LabelSettings_n6yxf")
 
-[node name="BiteButton" type="Button" parent="KillUI" unique_id=56580758]
+[node name="BiteButton" parent="KillUI" unique_id=1387672189 instance=ExtResource("2_cxjsk")]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 166.0
-offset_top = 155.0
-offset_right = 353.0
-offset_bottom = 213.0
+offset_left = 318.0
+offset_top = 173.0
+offset_right = 737.0
+offset_bottom = 387.0
+grow_horizontal = 2
+grow_vertical = 2
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="KillUI/BiteButton" unique_id=1647830183]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 text = "Bite"
+label_settings = SubResource("LabelSettings_n6yxf")
 
 [connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="pressed" from="PreviousButton" to="." method="_on_previous_button_pressed"]

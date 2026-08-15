@@ -1,0 +1,161 @@
+[gd_scene format=3 uid="uid://b74tpyp7xcsu2"]
+
+[ext_resource type="Script" uid="uid://d4i5jvljiucq8" path="res://scenes/UI/victory_screen.gd" id="1_aje4w"]
+[ext_resource type="Texture2D" uid="uid://drtrpp588123n" path="res://sprites/ButtonDisabled.png" id="2_e2655"]
+[ext_resource type="PackedScene" uid="uid://xhbnsy4gqo1j" path="res://scenes/UI/ResizableButton.tscn" id="3_evuln"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_qffkq"]
+font_size = 96
+font_color = Color(4.235506e-06, 0.724946, 0.61172605, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_m1i3h"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_p7mif"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_gjgpg"]
+font_size = 40
+
+[node name="VictoryScreen" type="Control" unique_id=319326158]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_aje4w")
+
+[node name="Background" type="TextureRect" parent="." unique_id=914915729]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -587.5
+offset_top = -302.25
+offset_right = 587.5
+offset_bottom = 302.25
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_e2655")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Title" type="Label" parent="." unique_id=1238763773]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -112.0
+offset_top = -220.0
+offset_right = 112.0
+offset_bottom = -133.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Mission Complete!"
+label_settings = SubResource("LabelSettings_qffkq")
+
+[node name="Description1" type="Label" parent="." unique_id=2086327296]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -380.0
+offset_top = -108.0
+offset_right = 380.0
+offset_bottom = -63.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "You have 2 more methods to kill your target"
+label_settings = SubResource("LabelSettings_m1i3h")
+horizontal_alignment = 1
+
+[node name="Description2" type="Label" parent="." unique_id=913292847]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -263.5
+offset_top = -49.0
+offset_right = 263.5
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_m1i3h")
+horizontal_alignment = 1
+
+[node name="ExitToMenu" parent="." unique_id=203274285 instance=ExtResource("3_evuln")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -434.0
+offset_top = 27.0
+offset_right = -83.0
+offset_bottom = 204.0
+grow_horizontal = 2
+grow_vertical = 2
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="ExitToMenu" unique_id=1615131656]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Exit To Main Menu"
+label_settings = SubResource("LabelSettings_p7mif")
+
+[node name="TryAgain" parent="." unique_id=386316256 instance=ExtResource("3_evuln")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 75.0
+offset_top = 27.0
+offset_right = 426.0
+offset_bottom = 204.0
+grow_horizontal = 2
+grow_vertical = 2
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="TryAgain" unique_id=419989738]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Repeat Mission"
+label_settings = SubResource("LabelSettings_gjgpg")
+
+[connection signal="pressed" from="ExitToMenu" to="." method="_on_exit_to_menu_pressed"]
+[connection signal="pressed" from="TryAgain" to="." method="_on_try_again_pressed"]

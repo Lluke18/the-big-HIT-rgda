@@ -4,7 +4,6 @@
 [ext_resource type="Script" uid="uid://bkuygnj6nmexp" path="res://scripts/fsm scripts/fsm.gd" id="2_sm1ty"]
 [ext_resource type="Script" uid="uid://byvfg0ibjqt5x" path="res://scripts/fsm scripts/idle.gd" id="3_ncga6"]
 [ext_resource type="Script" uid="uid://hs5y1th4s20b" path="res://scenes/NPCs/run_to_guard.gd" id="4_37li2"]
-[ext_resource type="Script" uid="uid://ccwhk7dfpxofr" path="res://scripts/fsm scripts/go_to_location.gd" id="5_tu2as"]
 [ext_resource type="PackedScene" uid="uid://c68lfmifq3y2n" path="res://assets/NPC/BussinessMan.tscn" id="6_77xen"]
 [ext_resource type="PackedScene" uid="uid://oenhlr20lqb2" path="res://scenes/UI/SuspicionBar.tscn" id="7_sjxin"]
 
@@ -64,16 +63,6 @@ idle_state_name = "idle"
 guard_detection_area = NodePath("../../GuardDetectionArea")
 npc = NodePath("../..")
 
-[node name="GoToLocation" type="Node" parent="StateMachine" unique_id=569105462 node_paths=PackedStringArray("nav_agent", "wait_timer", "npc")]
-script = ExtResource("5_tu2as")
-nav_agent = NodePath("../../NavigationAgent3D")
-wait_timer = NodePath("wait_at_location")
-npc = NodePath("../..")
-
-[node name="wait_at_location" type="Timer" parent="StateMachine/GoToLocation" unique_id=1846679263]
-wait_time = 5.0
-one_shot = true
-
 [node name="BussinessMan" parent="." unique_id=843082292 instance=ExtResource("6_77xen")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, -0.823, 0.093)
 
@@ -121,4 +110,3 @@ collision_mask = 3
 shape = SubResource("SphereShape3D_xrivr")
 
 [connection signal="timeout" from="StateMachine/Idle/IdleTimer" to="StateMachine/Idle" method="_on_idle_timer_timeout"]
-[connection signal="timeout" from="StateMachine/GoToLocation/wait_at_location" to="StateMachine/GoToLocation" method="_on_wait_at_location_timeout"]

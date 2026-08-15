@@ -2,13 +2,14 @@ extends Control
 
 @onready var page: TextureRect = $Page
 @onready var icon_label: Label = $Icon/IconLabel
+@onready var update_mark: TextureRect = $Icon/UpdateMark
 
 var initial_icon_text: String = "[Q] Hitman's Notes"
 var updated_icon_text: String = "[Q] Hitman's Notes [Updated!]"
 
-@onready var method_steps_parent: Control = $Page/MethodStepsParent
-var method_steps: Array[MethodStep] = []
-const TOTAL_METHODS = 15
+@export var method_steps: Array[MethodStep] = []
+
+@onready var lines: Control = $Page/Lines
 
 enum step{
 	VENTS, #0
@@ -29,27 +30,40 @@ enum step{
 }
 
 func _ready() -> void:
-	initialize_array()
+	update_page()
 	NotesManager.update_page.connect(_on_update_page)
 	page.hide()
-	InventoryManager.inventory_modified.connect(_add_update_mark)
 	icon_label.text = initial_icon_text
+	update_mark.hide()
+	hide_lines()
 
-func initialize_array():
-	method_steps.resize(15)
-	for method_step in method_steps_parent.get_children():
-		method_steps.append(method_step)
+func hide_lines():
+	for line in lines.get_children():
+		line.hide()
+
+func update_page():
+	for method_step_index in range(0, NotesManager.TOTAL_STEPS):
+		if NotesManager.steps_completed[method_step_index] == true:
+			method_steps[method_step_index].unlock()
 	
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("open_notes"):
+		if page.visible:
+			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		else:
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		
 		page.visible = !page.visible
-		_remove_update_mark()
+		remove_update_mark()
 		
 func _on_update_page(method_index: int):
 	method_steps[method_index].unlock()
+	add_update_mark()
 
-func _add_update_mark():
+func add_update_mark():
 	icon_label.text = updated_icon_text
+	update_mark.show()
 	
-func _remove_update_mark():
+func remove_update_mark():
 	icon_label.text = initial_icon_text
+	update_mark.hide()

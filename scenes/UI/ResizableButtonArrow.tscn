@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://01tbmxv8m1f4"]
+
+[ext_resource type="Texture2D" uid="uid://b5okb4qyjg0ox" path="res://sprites/ArrowButton.png" id="1_onan7"]
+[ext_resource type="Texture2D" uid="uid://cg76ce5nck7r1" path="res://sprites/ArrowButtonHover.png" id="2_kknn0"]
+[ext_resource type="Texture2D" uid="uid://b2owggt0r8iqo" path="res://sprites/ArrowButtonDisabled.png" id="3_btqs0"]
+[ext_resource type="Script" uid="uid://ca0auj4wcldjp" path="res://scenes/UI/resizable_button.gd" id="4_oodmd"]
+
+[node name="ResizableButtonArrow" type="TextureButton" unique_id=156648149]
+texture_filter = 1
+texture_normal = ExtResource("1_onan7")
+texture_hover = ExtResource("2_kknn0")
+texture_disabled = ExtResource("3_btqs0")
+script = ExtResource("4_oodmd")

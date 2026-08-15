@@ -1,12 +1,21 @@
 [gd_scene format=3 uid="uid://yxia3wsdthq1"]
 
 [ext_resource type="Script" uid="uid://de1sj1wnnkcq4" path="res://scenes/UI/defeat_screen.gd" id="1_0vqnf"]
+[ext_resource type="Texture2D" uid="uid://drtrpp588123n" path="res://sprites/ButtonDisabled.png" id="2_lgkil"]
+[ext_resource type="PackedScene" uid="uid://xhbnsy4gqo1j" path="res://scenes/UI/ResizableButton.tscn" id="3_cf5ru"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ragau"]
-font_size = 64
+font_size = 96
+font_color = Color(1, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_umu6e"]
 font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_n6yxf"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_6yb6h"]
+font_size = 64
 
 [node name="DefeatScreen" type="Control" unique_id=962478225]
 layout_mode = 3
@@ -17,19 +26,23 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_0vqnf")
 
-[node name="Panel" type="Panel" parent="." unique_id=1745987560]
+[node name="Background" type="TextureRect" parent="." unique_id=1228513553]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -330.25
-offset_top = -186.75
-offset_right = 330.25
-offset_bottom = 186.75
+offset_left = -587.5
+offset_top = -302.25
+offset_right = 587.5
+offset_bottom = 302.25
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("2_lgkil")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="Title" type="Label" parent="." unique_id=1368618659]
 layout_mode = 1
@@ -38,10 +51,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -87.5
-offset_top = -152.0
-offset_right = 87.5
-offset_bottom = -85.0
+offset_left = -112.0
+offset_top = -220.0
+offset_right = 112.0
+offset_bottom = -133.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Busted!"
@@ -54,44 +67,79 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -113.5
-offset_top = -32.0
-offset_right = 113.5
-offset_bottom = 13.0
+offset_left = -486.0
+offset_top = -100.0
+offset_right = 486.0
+offset_bottom = -55.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "No description"
 label_settings = SubResource("LabelSettings_umu6e")
+horizontal_alignment = 1
 
-[node name="ExitToMenu" type="Button" parent="." unique_id=805033676]
+[node name="ExitToMenu" parent="." unique_id=203274285 instance=ExtResource("3_cf5ru")]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -258.0
-offset_top = 50.0
-offset_right = -44.0
-offset_bottom = 117.5
+offset_left = -434.0
+offset_top = 27.0
+offset_right = -83.0
+offset_bottom = 204.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Exit to Main Menu"
+ignore_texture_size = true
+stretch_mode = 5
 
-[node name="TryAgain" type="Button" parent="." unique_id=1191271854]
+[node name="Label" type="Label" parent="ExitToMenu" unique_id=2084135354]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 46.0
-offset_top = 50.0
-offset_right = 260.0
-offset_bottom = 117.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Exit To Main Menu"
+label_settings = SubResource("LabelSettings_n6yxf")
+
+[node name="TryAgain" parent="." unique_id=1814830057 instance=ExtResource("3_cf5ru")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 75.0
+offset_top = 27.0
+offset_right = 426.0
+offset_bottom = 204.0
+grow_horizontal = 2
+grow_vertical = 2
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="TryAgain" unique_id=1791348653]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 text = "Try Again"
+label_settings = SubResource("LabelSettings_6yb6h")
 
 [connection signal="pressed" from="ExitToMenu" to="." method="_on_exit_to_menu_pressed"]
 [connection signal="pressed" from="TryAgain" to="." method="_on_try_again_pressed"]

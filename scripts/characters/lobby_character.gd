@@ -1,8 +1,13 @@
 extends Control
 
+@onready var resizable_button_arrow_left: TextureButton = $ResizableButtonArrowLeft
+@onready var resizable_button_arrow_right: TextureButton = $ResizableButtonArrowRight
 
+@onready var vampire_image: TextureRect = $VampireImage
+@onready var werewolf_image: TextureRect = $WerewolfImage
 
-@onready var character_name: Label = $characterName
+@onready var character_name: Label = $CharacterBorder/characterName
+
 @onready var steam_name: Label = $SteamName
 
 @onready var multiplayer_synchronizer: MultiplayerSynchronizer = $MultiplayerSynchronizer
@@ -30,6 +35,11 @@ func _enter_tree() -> void:
 
 
 func _ready() -> void:
+	resizable_button_arrow_left.disabled = true
+	resizable_button_arrow_right.disabled = false
+	vampire_image.show()
+	werewolf_image.hide()
+	
 	_apply_authority_from_name()
 	
 	print("peer=", multiplayer.get_unique_id(), 
@@ -65,16 +75,46 @@ func _update_synchronizer_authority(auth_id: int) -> void:
 
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("ui_right"):
-		if  curr_selection >= 1: return
+		pass
+		"""
+		if curr_selection >= 1: return
 		curr_selection += 1
 		update_text.rpc(curr_selection)
+		"""
 
 	if Input.is_action_just_pressed("ui_left"):
+		pass
+		"""
 		if curr_selection <= 0: return
 		curr_selection -= 1
 		update_text.rpc(curr_selection)
+		"""
 	
 @rpc("any_peer", "call_local", "reliable")
 func update_text(new_selection: int):
 	curr_selection = new_selection
 	character_name.text = character_select[curr_selection]
+
+func _on_resizable_button_arrow_left_pressed() -> void:
+	if not is_multiplayer_authority():
+		return
+	if curr_selection <= 0: return
+	curr_selection -= 1
+	update_text.rpc(curr_selection)
+	
+	resizable_button_arrow_left.disabled = true
+	resizable_button_arrow_right.disabled = false
+	vampire_image.show()
+	werewolf_image.hide()
+
+func _on_resizable_button_arrow_right_pressed() -> void:
+	if not is_multiplayer_authority():
+		return
+	if curr_selection >= 1: return
+	curr_selection += 1
+	update_text.rpc(curr_selection)
+	
+	resizable_button_arrow_left.disabled = false
+	resizable_button_arrow_right.disabled = true
+	vampire_image.hide()
+	werewolf_image.show()

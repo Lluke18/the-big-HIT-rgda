@@ -18,9 +18,20 @@ enum step{
 	PHONE, #14
 }
 
-var steps_completed: Array[int] = []
+const TOTAL_STEPS = 15
+
+var steps_completed: Array[bool] = []
 
 signal update_page(method_index: step)
 
+func _ready() -> void:
+	steps_completed.resize(TOTAL_STEPS)
+	reset_steps_progress()
+
 func reset_steps_progress():
-	steps_completed.clear()
+	steps_completed.fill(false)
+	
+func try_to_update_step(method_index: step):
+	if steps_completed[method_index] == false:
+		steps_completed[method_index] = true
+		update_page.emit(method_index)
