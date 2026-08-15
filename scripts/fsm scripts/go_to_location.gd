@@ -1,5 +1,7 @@
 extends State
 
+
+@export var detected_state_name: String
 @onready var suspicion_bar: SuspicionBar = $"../../SubViewport/SuspicionBar"
 @export var nav_agent: NavigationAgent3D
 @export var wait_timer: Timer
@@ -16,8 +18,11 @@ func _ready() -> void:
 	if is_instance_valid(npc.route):
 		for marker in npc.route.get_children():
 			position_arr.append(marker.global_position)
+	wait_timer.wait_time = npc.location_wait_time
 
 func Enter():
+	if !wait_timer.timeout.is_connected(_on_wait_at_location_timeout):
+		wait_timer.timeout.connect(_on_wait_at_location_timeout)
 	is_waiting = false
 	nav_agent.set_target_position(position_arr[curr_pos_index])
 	
@@ -41,6 +46,18 @@ func Physics_Update(delta: float):
 		npc.velocity = Vector3.ZERO
 		is_waiting = true
 		npc.animated_character.play_idle_animation()
+		
+		#LOOK AT NEXT MARKER LOGIC
+		var next = curr_pos_index + 1
+		if next >= position_arr.size():
+			next = 0
+		var next_pos = position_arr[next]
+		var next_target = Vector3(next_pos.x, npc.global_position.y, next_pos.z)
+		
+		if !npc.global_position.is_equal_approx(next_target):
+			npc.look_at(next_target)
+		
+		
 		wait_timer.start()
 		return
 
@@ -54,8 +71,8 @@ func _on_wait_at_location_timeout() -> void:
 	if curr_pos_index >= position_arr.size():
 		curr_pos_index = 0
 		state_transition.emit(self, "Idle")
-	else: state_transition.emit(self, "GoToLocation")
+	else: Enter()
 
 
 func on_player_detected():
-	state_transition.emit(self, "RunToGuard")
+	state_transition.emit(self, detected_state_name)

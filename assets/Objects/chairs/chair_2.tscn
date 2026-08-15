@@ -7,7 +7,7 @@ points = PackedVector3Array(0, -0.2996958, 0.61119014, 0.17489225, -0.29512817, 
 
 [node name="Chair_2" unique_id=321195635 instance=ExtResource("1_fsnfs")]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Chair_2" parent_id_path=PackedInt32Array(1205478439) index="0" unique_id=1101439404]
+[node name="StaticBody3D" type="StaticBody3D" parent="Chair_2" parent_id_path=PackedInt32Array(1762057626) index="0" unique_id=1101439404]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Chair_2/StaticBody3D" index="0" unique_id=1593520234]
 shape = SubResource("ConvexPolygonShape3D_1idtu")

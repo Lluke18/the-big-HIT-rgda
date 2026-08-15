@@ -5,7 +5,13 @@
 [ext_resource type="PackedScene" uid="uid://ibxk3cfa0hi3" path="res://assets/Objects/walls/wall_medium.tscn" id="2_4c5wh"]
 [ext_resource type="PackedScene" uid="uid://fimtdy10med6" path="res://assets/Objects/walls/wall_doors.tscn" id="3_by0xd"]
 [ext_resource type="PackedScene" uid="uid://fohfmpxuuyd1" path="res://assets/Objects/bathroom/stall.tscn" id="3_cdptk"]
+[ext_resource type="Material" uid="uid://yjcxdu86s4df" path="res://assets/materials/bathroom_blue.tres" id="4_ep0xk"]
 [ext_resource type="PackedScene" uid="uid://b5b2120oq7ar6" path="res://assets/NPC/sitting_boss.tscn" id="6_by0xd"]
+[ext_resource type="Material" uid="uid://0wowd82o4o0x" path="res://assets/materials/GlassMaterial.tres" id="8_yj5xk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_afvfr"]
+albedo_color = Color(0.17971933, 0.46859646, 0.55562884, 1)
+roughness = 0.47
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_qbne8"]
 
@@ -257,14 +263,32 @@ transform = Transform3D(-0.6, 8.742278e-08, 0, -5.2453668e-08, -1, 0, 0, 0, 1, 1
 [node name="WallDoors" parent="Walls" unique_id=214762846 instance=ExtResource("3_by0xd")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 11.877117, 0, -0.00028324127)
 
+[node name="Wall_Medium" parent="Walls/WallDoors/Wall_Medium4" parent_id_path=PackedInt32Array(214762846, 2137611996) index="0" unique_id=1511786428]
+material_override = ExtResource("4_ep0xk")
+
+[node name="Wall_Medium" parent="Walls/WallDoors/Wall_Medium5" parent_id_path=PackedInt32Array(214762846, 263495066) index="0" unique_id=1511786428]
+material_override = ExtResource("4_ep0xk")
+
+[node name="Wall_Medium" parent="Walls/WallDoors/Wall_Medium9" parent_id_path=PackedInt32Array(214762846, 2051108434) index="0" unique_id=1511786428]
+surface_material_override/0 = SubResource("StandardMaterial3D_afvfr")
+
 [node name="Wall_Medium" parent="Walls" unique_id=2137611996 instance=ExtResource("2_4c5wh")]
 transform = Transform3D(0.6, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Wall_Medium" parent="Walls/Wall_Medium" index="0" unique_id=1511786428]
+surface_material_override/0 = ExtResource("4_ep0xk")
 
 [node name="Wall_Medium2" parent="Walls" unique_id=2078198500 instance=ExtResource("2_4c5wh")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
 
+[node name="Wall_Medium" parent="Walls/Wall_Medium2" index="0" unique_id=1511786428]
+surface_material_override/0 = ExtResource("4_ep0xk")
+
 [node name="Wall_Medium3" parent="Walls" unique_id=493516549 instance=ExtResource("2_4c5wh")]
 transform = Transform3D(0.6, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 20)
+
+[node name="Wall_Medium" parent="Walls/Wall_Medium3" index="0" unique_id=1511786428]
+surface_material_override/0 = ExtResource("4_ep0xk")
 
 [node name="Stalls" type="Node3D" parent="." unique_id=904362252]
 transform = Transform3D(0.6, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -389,6 +413,7 @@ metadata/extras = {
 [node name="Cube_004" type="MeshInstance3D" parent="." unique_id=1405767121]
 transform = Transform3D(-5.9604645e-08, -0.030176222, 1.5893253e-08, -1, 1.798643e-09, -3.5527137e-15, 2.6054022e-15, -4.7959847e-10, -1, 11.79442, 1.691684, 1.565839)
 mesh = SubResource("ArrayMesh_afvfr")
+surface_material_override/0 = ExtResource("8_yj5xk")
 metadata/extras = {
 "ant_landscape": {}
 }
@@ -410,6 +435,7 @@ metadata/extras = {
 [node name="Cube_009" type="MeshInstance3D" parent="." unique_id=1357488247]
 transform = Transform3D(-5.9604645e-08, -0.030176222, 1.5893253e-08, -1, 1.798643e-09, -3.5527137e-15, 2.6054022e-15, -4.7959847e-10, -1, 11.79442, 1.691684, 3.865839)
 mesh = SubResource("ArrayMesh_afvfr")
+surface_material_override/0 = ExtResource("8_yj5xk")
 metadata/extras = {
 "ant_landscape": {}
 }
@@ -431,6 +457,7 @@ metadata/extras = {
 [node name="Cube_012" type="MeshInstance3D" parent="." unique_id=1608585377]
 transform = Transform3D(-5.9604645e-08, -0.030176222, 1.5893253e-08, -1, 1.798643e-09, -3.5527137e-15, 2.6054022e-15, -4.7959847e-10, -1, 11.79442, 1.691684, 6.165839)
 mesh = SubResource("ArrayMesh_afvfr")
+surface_material_override/0 = ExtResource("8_yj5xk")
 metadata/extras = {
 "ant_landscape": {}
 }
@@ -452,6 +479,7 @@ metadata/extras = {
 [node name="Cube_015" type="MeshInstance3D" parent="." unique_id=976008862]
 transform = Transform3D(-5.9604645e-08, -0.030176222, 1.5893253e-08, -1, 1.798643e-09, -3.5527137e-15, 2.6054022e-15, -4.7959847e-10, -1, 11.79442, 1.691684, 12.865839)
 mesh = SubResource("ArrayMesh_afvfr")
+surface_material_override/0 = ExtResource("8_yj5xk")
 metadata/extras = {
 "ant_landscape": {}
 }
@@ -473,6 +501,7 @@ metadata/extras = {
 [node name="Cube_018" type="MeshInstance3D" parent="." unique_id=1560448761]
 transform = Transform3D(-5.9604645e-08, -0.030176222, 1.5893253e-08, -1, 1.798643e-09, -3.5527137e-15, 2.6054022e-15, -4.7959847e-10, -1, 11.79442, 1.691684, 15.365839)
 mesh = SubResource("ArrayMesh_afvfr")
+surface_material_override/0 = ExtResource("8_yj5xk")
 metadata/extras = {
 "ant_landscape": {}
 }
@@ -494,12 +523,20 @@ metadata/extras = {
 [node name="Cube_021" type="MeshInstance3D" parent="." unique_id=1547226024]
 transform = Transform3D(-5.9604645e-08, -0.030176222, 1.5893253e-08, -1, 1.798643e-09, -3.5527137e-15, 2.6054022e-15, -4.7959847e-10, -1, 11.79442, 1.691684, 17.665838)
 mesh = SubResource("ArrayMesh_afvfr")
+surface_material_override/0 = ExtResource("8_yj5xk")
 metadata/extras = {
 "ant_landscape": {}
 }
 
 [connection signal="body_entered" from="PoopZone" to="." method="_on_poop_zone_body_entered"]
 
+[editable path="Walls/WallDoors"]
+[editable path="Walls/WallDoors/Wall_Medium4"]
+[editable path="Walls/WallDoors/Wall_Medium5"]
+[editable path="Walls/WallDoors/Wall_Medium9"]
+[editable path="Walls/Wall_Medium"]
+[editable path="Walls/Wall_Medium2"]
+[editable path="Walls/Wall_Medium3"]
 [editable path="Stalls/Stall2"]
 [editable path="Stalls/Stall3"]
 [editable path="Stalls/Stall4"]

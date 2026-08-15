@@ -3,10 +3,15 @@ extends State
 var has_target: bool = false
 var target: Player
 @export var attack_range: Area3D
+var emitted_alarm: bool = false
 
 func Enter():
 	npc.is_chasing = true
 	print("entered chase state")
+	#SignalBus.emit_signal("found_intruder")
+	if !emitted_alarm:
+		emitted_alarm = true
+		SignalBus.emit_signal("found_intruder")
 	if npc.name == "idle_guard":
 		npc.play_alarm.emit()
 	#maybe freeze the bar and lock it and 100%

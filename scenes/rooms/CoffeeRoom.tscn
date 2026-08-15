@@ -18,6 +18,20 @@
 [ext_resource type="PackedScene" uid="uid://k1meyy27qs74" path="res://assets/fruitsandvegetables/garlic02.fbx" id="16_kp7bg"]
 [ext_resource type="PackedScene" uid="uid://ck5026ivujci0" path="res://assets/Objects/tables/coffee_table.tscn" id="17_6bctx"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b1lj4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_njqwk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6bctx"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h2ft2"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xrivr"]
+size = Vector3(20.555725, 5.5913086, 0.6113281)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_13qdw"]
+size = Vector3(1, 5.5810547, 20.627197)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5b3ge"]
 resource_name = "Mug 2"
 vertex_color_use_as_albedo = true
@@ -94,6 +108,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_smgjp")
 
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_vyhko"]
+points = PackedVector3Array(-0.2179833, 0, -0.17057543, -0.23327704, 0.020931346, -0.14976329, -0.23179848, 0.020931346, -0.16307262, -0.22740905, 0.020931346, -0.17566429, -0.22029354, 0.020931346, -0.18695113, -0.13019449, 0.020931346, -0.29603547, 0.22340961, 0, -0.17057543, -0.2179833, 0, 0.1763154, -0.23327704, 0.5285631, -0.14976329, -0.23327704, 0.020931346, 0.19901955, -0.23179848, 0.5285631, -0.16307262, -0.22740905, 0.5285631, -0.17566429, -0.22029354, 0.5285631, -0.18695113, -0.13019449, 0.4333472, -0.29603547, 0.13562079, 0.020931346, -0.29603547, 0.22571982, 0.020931346, -0.18695113, 0.23283534, 0.020931346, -0.17566429, 0.23722477, 0.020931346, -0.16307262, 0.23874955, 0.020931346, -0.14976329, 0.22340961, 0, 0.1763154, -0.20065656, 0.064781584, 0.34052908, -0.13499978, 0.6345241, -0.07140784, -0.23327704, 0.5285631, 0.19901955, -0.20065656, 0.18726411, 0.37047505, -0.13499978, 0.63185334, -0.08797927, -0.21082158, 0.5285631, -0.19641119, -0.13499978, 0.62427586, -0.1028544, -0.1274684, 0.4398688, -0.29336056, 0.13562079, 0.4333472, -0.29603547, -0.19950145, 0.5285631, -0.20352256, 0.22571982, 0.5285631, -0.18695113, 0.23283534, 0.5285631, -0.17566429, 0.23722477, 0.5285631, -0.16307262, 0.23874955, 0.5285631, -0.14976329, 0.23874955, 0.020931346, 0.19901955, 0.20608287, 0.064781584, 0.34052908, 0.14042605, 0.6345241, -0.07140784, -0.13499978, 0.6345241, 0.14963147, -0.09073573, 0.58266157, 0.31338847, 0.20608287, 0.18726411, 0.37047505, 0.14042605, 0.63185334, -0.08797927, -0.090088874, 0.5285631, -0.2290321, -0.18688758, 0.5285631, -0.207959, 0.14042605, 0.62427586, -0.1028544, 0.13289471, 0.4398688, -0.29336056, 0.20492776, 0.5285631, -0.20352256, 0.21624787, 0.5285631, -0.19641119, 0.23874955, 0.5285631, 0.19901955, 0.14042605, 0.6345241, 0.14963147, 0.096162036, 0.58266157, 0.31338847, 0.09551515, 0.5285631, -0.2290321, 0.19231386, 0.5285631, -0.207959)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bouyc"]
 resource_name = "Cooler"
 vertex_color_use_as_albedo = true
@@ -159,8 +176,20 @@ transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 5
 
 [node name="WallWindows" parent="Walls" unique_id=376110060 instance=ExtResource("2_rh1wt")]
 
+[node name="Wall_Medium" parent="Walls/WallWindows/Wall_Medium2" parent_id_path=PackedInt32Array(376110060, 2137611996) index="0" unique_id=1511786428]
+surface_material_override/0 = SubResource("StandardMaterial3D_b1lj4")
+
+[node name="Wall_Medium" parent="Walls/WallWindows/Wall_Medium3" parent_id_path=PackedInt32Array(376110060, 62503023) index="0" unique_id=1511786428]
+surface_material_override/0 = SubResource("StandardMaterial3D_njqwk")
+
 [node name="WallWindows2" parent="Walls" unique_id=692367103 instance=ExtResource("2_rh1wt")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Wall_Medium" parent="Walls/WallWindows2/Wall_Medium2" parent_id_path=PackedInt32Array(692367103, 2137611996) index="0" unique_id=1511786428]
+surface_material_override/0 = SubResource("StandardMaterial3D_6bctx")
+
+[node name="Wall_Medium" parent="Walls/WallWindows2/Wall_Medium3" parent_id_path=PackedInt32Array(692367103, 62503023) index="0" unique_id=1511786428]
+surface_material_override/0 = SubResource("StandardMaterial3D_h2ft2")
 
 [node name="WallDoors" parent="Walls" unique_id=214762846 instance=ExtResource("3_6bctx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 20)
@@ -174,6 +203,18 @@ transform = Transform3D(0.115, 0, 0, 0, 0.56, 0, 0, 0, 3, 8.767693, 2.2222497, 0
 
 [node name="WallDoors2" parent="Walls" unique_id=688953168 instance=ExtResource("3_6bctx")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 20, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Walls" unique_id=116690867]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/StaticBody3D" unique_id=1380833155]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.777863, 2.2956543, -0.19433594)
+shape = SubResource("BoxShape3D_xrivr")
+debug_color = Color(1, 0.25219828, 0.80012125, 1)
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Walls/StaticBody3D" unique_id=1960221502]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2905273, 9.813599)
+shape = SubResource("BoxShape3D_13qdw")
+debug_color = Color(3.85046e-06, 0.79499024, 0.46641773, 1)
 
 [node name="Tables" type="Node3D" parent="." unique_id=1984840031]
 
@@ -290,6 +331,11 @@ mesh = SubResource("ArrayMesh_kp7bg")
 [node name="CoffeeMachine" parent="." unique_id=740283531 instance=ExtResource("11_ognue")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 5.9024377, 1.1388121, 0.71552444)
 
+[node name="StaticBody3D" type="StaticBody3D" parent="CoffeeMachine/CoffeeMachine" parent_id_path=PackedInt32Array(740283531, 1450685791) index="0" unique_id=208890539]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CoffeeMachine/CoffeeMachine/StaticBody3D" unique_id=1162348917]
+shape = SubResource("ConvexPolygonShape3D_vyhko")
+
 [node name="CoffeeMachine2" parent="." unique_id=875272550 instance=ExtResource("11_ognue")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 14.110779, 1.1388121, 0.71552444)
 
@@ -400,4 +446,12 @@ collision_mask = 0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.917358, 2.3980103, 10.100906)
 shape = SubResource("BoxShape3D_ragau")
 
+[editable path="Walls/WallWindows"]
+[editable path="Walls/WallWindows/Wall_Medium2"]
+[editable path="Walls/WallWindows/Wall_Medium3"]
+[editable path="Walls/WallWindows2"]
+[editable path="Walls/WallWindows2/Wall_Medium2"]
+[editable path="Walls/WallWindows2/Wall_Medium3"]
+[editable path="Walls/WallWindows2/Wall_Medium4"]
 [editable path="Walls/WallDoors"]
+[editable path="CoffeeMachine"]
