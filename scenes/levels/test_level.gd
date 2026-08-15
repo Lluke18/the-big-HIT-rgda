@@ -27,7 +27,7 @@ func _ready() -> void:
 	if local_id != 1:
 		rpc_id(1, "request_spawn_on_server", local_id)
 	
-	AudioManager.play_music(discount)
+	#AudioManager.play_music(discount)
 	await get_tree().create_timer(2).timeout
 	for player in get_node("Players").get_children():
 		player.add_to_group("Player")
