@@ -11,6 +11,9 @@ func _ready() -> void:
 	value = min_value
 
 func _process(delta: float) -> void:
+	if !multiplayer.is_server():
+		return
+	
 	if not is_increasing:
 		value -= increase_rate
 	else:
