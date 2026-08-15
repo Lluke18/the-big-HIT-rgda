@@ -2,6 +2,7 @@ extends Node3D
 
 @export var network_manager: Node
 @export var players_spawn: Node3D
+@export var menu_theme: AudioStream
 
 var vampire_scene := preload("res://scenes/characters/character.tscn")
 var devil_scene := preload("res://scenes/characters/character.tscn")
@@ -10,6 +11,7 @@ var werewolf_scene := preload("res://scenes/characters/character.tscn")
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	AudioManager.play_music(menu_theme)
 	NetworkManager.return_to_menu.connect(_on_return_to_menu)
 	if SignalBus.steam_activated:
 		network_manager.active_network_type = network_manager.MULTIPLAYER_NETWORK_TYPE.STEAM

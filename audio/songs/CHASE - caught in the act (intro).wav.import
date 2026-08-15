@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://djenpmnibbixb"
+path="res://.godot/imported/CHASE - caught in the act (intro).wav-aa674cbf248fbfbfebb61f8f695ce103.sample"
+
+[deps]
+
+source_file="res://audio/songs/CHASE - caught in the act (intro).wav"
+dest_files=["res://.godot/imported/CHASE - caught in the act (intro).wav-aa674cbf248fbfbfebb61f8f695ce103.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

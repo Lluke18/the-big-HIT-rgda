@@ -100,6 +100,7 @@ func _on_start_game_pressed() -> void:
 		return
 	
 	#MultiplayerManager.change_scene_to_everyone.rpc(start_scene_path)
+	AudioManager.stop_music()
 	SignalBus.change_scene.emit(game_scene_path)
 	
 	#loads the main scene with all the players and their coresponding characters

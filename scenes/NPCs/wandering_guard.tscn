@@ -1,13 +1,14 @@
-[gd_scene format=3 uid="uid://dhi03rsdio7tc"]
+[gd_scene format=3 uid="uid://bccrbgqnnhsya"]
 
-[ext_resource type="Script" uid="uid://ngvttrcsaptp" path="res://scenes/NPCs/npc_guard.gd" id="1_nnhgj"]
-[ext_resource type="Script" uid="uid://bkuygnj6nmexp" path="res://scripts/fsm scripts/fsm.gd" id="2_36iok"]
-[ext_resource type="Script" uid="uid://byvfg0ibjqt5x" path="res://scripts/fsm scripts/idle.gd" id="3_wt72j"]
-[ext_resource type="Script" uid="uid://cy14537pebee0" path="res://scripts/fsm scripts/guard_attack.gd" id="4_nnhgj"]
-[ext_resource type="Script" uid="uid://be2vkrgly3wld" path="res://scripts/fsm scripts/infinite_follow.gd" id="6_2uld6"]
-[ext_resource type="PackedScene" uid="uid://bd1yqcw8cjnhm" path="res://assets/NPC/ActualGuard.tscn" id="6_nnhgj"]
-[ext_resource type="PackedScene" uid="uid://oenhlr20lqb2" path="res://scenes/UI/SuspicionBar.tscn" id="7_1gpve"]
-[ext_resource type="AudioStream" uid="uid://b833geojx8317" path="res://audio/Revolver shoot - Sound effect (HD).mp3" id="8_36iok"]
+[ext_resource type="Script" uid="uid://ngvttrcsaptp" path="res://scenes/NPCs/npc_guard.gd" id="1_34dhy"]
+[ext_resource type="PackedScene" uid="uid://bd1yqcw8cjnhm" path="res://assets/NPC/ActualGuard.tscn" id="2_l12ue"]
+[ext_resource type="Script" uid="uid://bkuygnj6nmexp" path="res://scripts/fsm scripts/fsm.gd" id="3_tyggj"]
+[ext_resource type="Script" uid="uid://byvfg0ibjqt5x" path="res://scripts/fsm scripts/idle.gd" id="4_lme3n"]
+[ext_resource type="Script" uid="uid://cy14537pebee0" path="res://scripts/fsm scripts/guard_attack.gd" id="5_hrctl"]
+[ext_resource type="Script" uid="uid://be2vkrgly3wld" path="res://scripts/fsm scripts/infinite_follow.gd" id="6_nwsro"]
+[ext_resource type="PackedScene" uid="uid://oenhlr20lqb2" path="res://scenes/UI/SuspicionBar.tscn" id="7_l1g45"]
+[ext_resource type="Script" uid="uid://ccwhk7dfpxofr" path="res://scripts/fsm scripts/go_to_location.gd" id="7_l12ue"]
+[ext_resource type="AudioStream" uid="uid://b833geojx8317" path="res://audio/Revolver shoot - Sound effect (HD).mp3" id="8_fjb2t"]
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_bjc1w"]
 properties/0/path = NodePath(".:position")
@@ -38,20 +39,21 @@ radius = 3.6341572
 
 [node name="NPC" type="CharacterBody3D" unique_id=399691295 node_paths=PackedStringArray("animated_character") groups=["guard", "npc"]]
 collision_layer = 2
-script = ExtResource("1_nnhgj")
+script = ExtResource("1_34dhy")
 animated_character = NodePath("ActualGuard")
-move_speed = 3.5
-run_speed = 5.0
+move_speed = 2.7
+run_speed = 5.5
 
-[node name="ActualGuard" parent="." unique_id=170206793 instance=ExtResource("6_nnhgj")]
+[node name="ActualGuard" parent="." unique_id=170206793 instance=ExtResource("2_l12ue")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, -0.823, 0.11455035)
 
 [node name="StateMachine" type="Node" parent="." unique_id=470339980 node_paths=PackedStringArray("initial_state")]
-script = ExtResource("2_36iok")
+script = ExtResource("3_tyggj")
 initial_state = NodePath("Idle")
 
 [node name="Idle" type="Node" parent="StateMachine" unique_id=1233826377 node_paths=PackedStringArray("suspicion_bar", "npc")]
-script = ExtResource("3_wt72j")
+script = ExtResource("4_lme3n")
+wander_state_name = "GoToLocation"
 suspicion_bar = NodePath("../../SubViewport/SuspicionBar")
 detected_state_name = "chaseplayer"
 idle_time = 5.0
@@ -62,13 +64,24 @@ npc = NodePath("../..")
 one_shot = true
 
 [node name="Attack" type="Node" parent="StateMachine" unique_id=1979802122 node_paths=PackedStringArray("npc")]
-script = ExtResource("4_nnhgj")
+script = ExtResource("5_hrctl")
 npc = NodePath("../..")
 
 [node name="ChasePlayer" type="Node" parent="StateMachine" unique_id=382168869 node_paths=PackedStringArray("attack_range", "npc")]
-script = ExtResource("6_2uld6")
+script = ExtResource("6_nwsro")
 attack_range = NodePath("../../AttackRange")
 npc = NodePath("../..")
+
+[node name="GoToLocation" type="Node" parent="StateMachine" unique_id=821544733 node_paths=PackedStringArray("nav_agent", "wait_timer", "npc")]
+script = ExtResource("7_l12ue")
+detected_state_name = "ChasePlayer"
+nav_agent = NodePath("../../NavigationAgent3D")
+wait_timer = NodePath("Timer")
+npc = NodePath("../..")
+
+[node name="Timer" type="Timer" parent="StateMachine/GoToLocation" unique_id=778404631]
+unique_name_in_owner = true
+one_shot = true
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=838253104]
 
@@ -100,7 +113,7 @@ spot_angle = 10.8
 disable_3d = true
 transparent_bg = true
 
-[node name="SuspicionBar" parent="SubViewport" unique_id=1428092685 instance=ExtResource("7_1gpve")]
+[node name="SuspicionBar" parent="SubViewport" unique_id=1428092685 instance=ExtResource("7_l1g45")]
 value = 50.0
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=153913080]
@@ -113,7 +126,7 @@ texture = SubResource("ViewportTexture_isfhd")
 shape = SubResource("SphereShape3D_xrivr")
 
 [node name="ShootSound" type="AudioStreamPlayer" parent="." unique_id=1577658701]
-stream = ExtResource("8_36iok")
+stream = ExtResource("8_fjb2t")
 volume_db = 1.13
 bus = &"Sfx"
 

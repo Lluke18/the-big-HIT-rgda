@@ -23,6 +23,7 @@ var is_chasing: bool = false
 var gravity = 9.8
 
 @onready var nav_agent: NavigationAgent3D = $NavigationAgent3D
+@export var location_wait_time: float
 
 @onready var see_cast: RayCast3D = $SeeCast
 @export var vision_range: float = 10.0

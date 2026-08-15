@@ -66,6 +66,7 @@ npc = NodePath("../..")
 
 [node name="GoToLocation" type="Node" parent="StateMachine" unique_id=569105462 node_paths=PackedStringArray("nav_agent", "wait_timer", "npc")]
 script = ExtResource("5_cqk4r")
+detected_state_name = "RunToGuard"
 nav_agent = NodePath("../../NavigationAgent3D")
 wait_timer = NodePath("wait_at_location")
 npc = NodePath("../..")
@@ -98,8 +99,9 @@ material = SubResource("FogMaterial_2cktm")
 [node name="SpotLight3D" type="SpotLight3D" parent="FogVolume" unique_id=1315327744]
 transform = Transform3D(1, 0, 0, 0, -0.9008197, 0.43419334, 0, -0.43419334, -0.9008197, 0, 0.8461004, -1.6942955)
 light_color = Color(1, 0, 0, 1)
-light_energy = 16.0
+light_energy = 32.0
 light_volumetric_fog_energy = 10.0
+light_size = 0.5
 spot_range = 10.0
 spot_angle = 10.8
 

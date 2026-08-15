@@ -71,8 +71,9 @@ material = SubResource("FogMaterial_piusc")
 [node name="SpotLight3D" type="SpotLight3D" parent="FogVolume" index="0" unique_id=1392063540]
 transform = Transform3D(1, 0, 0, 0, -0.9008197, 0.43419334, 0, -0.43419334, -0.9008197, 0, 0.8461004, -1.6942955)
 light_color = Color(1, 0, 0, 1)
-light_energy = 16.0
+light_energy = 32.0
 light_volumetric_fog_energy = 10.0
+light_size = 0.596
 spot_angle = 10.8
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="FogVolume" index="1" unique_id=2118373776]

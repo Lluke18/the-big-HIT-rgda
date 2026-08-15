@@ -1,12 +1,15 @@
 extends Node
 
 #Music
+@export var music_player_gameover: AudioStreamPlayer
 @export var MAIN_MENU_SONG: AudioStream
 @export var IN_GAME_SONG: AudioStream
 
 #Sfx
 @export var WALK_SOUND: AudioStream
 @export var INTERACT_SOUND: AudioStream
+
+
 
 var _master_bus : int
 var _music_bus : int
@@ -50,7 +53,16 @@ func play_music(stream: AudioStream) -> void:
 	music_player.stream = stream
 	music_player.play()
 
+func stop_music() -> void:
+	music_player.stop()
+
 func play_sfx(stream: AudioStream) -> void:
 	sfx_player.stream = stream
 	sfx_player.play()
-	
+
+func play_gameover_music(stream: AudioStream) -> void:
+	music_player_gameover.stream = stream
+	music_player_gameover.play()
+
+func stop_gameover_music() -> void:
+	music_player_gameover.stop()
