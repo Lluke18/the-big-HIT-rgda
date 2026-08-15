@@ -152,6 +152,9 @@ size = Vector3(19.445557, 5.7960205, 19.508026)
 
 [node name="Floor" parent="." unique_id=2031031718 instance=ExtResource("1_xdpj6")]
 
+[node name="Floor2" parent="." unique_id=196509621 instance=ExtResource("1_xdpj6")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 5.031109, 20)
+
 [node name="Walls" type="Node3D" parent="." unique_id=374419697]
 
 [node name="WallWindows" parent="Walls" unique_id=376110060 instance=ExtResource("2_rh1wt")]
