@@ -28,7 +28,8 @@ var gravity = 9.8
 @export var vision_range: float = 10.0
 @export var fov: float = 90.0
 
-var player_seen: bool = false
+@export var player_seen: bool = false
+var was_seen: bool = false
 @onready var suspicion_bar: SuspicionBar = $SubViewport/SuspicionBar
 
 
@@ -45,25 +46,28 @@ func _ready() -> void:
 		for child in players_spawn.get_children():
 			print("i am a child of player spawn, name is: ", child.name)
 			players.append(child)
-	else: player = get_tree().get_first_node_in_group("character")
+	#else: player = get_tree().get_first_node_in_group("character")
 	#player = get_node(player_path)
 
 func _physics_process(delta: float) -> void:
-	if !multiplayer.is_server():
-		#return
-		pass
+	if multiplayer.is_server():
+		var live_players = get_tree().get_nodes_in_group("player")
+		player_seen = check_for_players(live_players)
+		
+		if !player_seen:
+			red_light.rotation_degrees = Vector3(-154.3, 0, 0)
 	
+		if !is_on_floor():
+			velocity.y -= gravity * delta
 	
-	if check_for_players(players):
+		move_and_slide()
+		
+	if player_seen:
 		suspicion_bar.start_increase()
 	else:
-		red_light.rotation_degrees = Vector3(-154.3, 0, 0)
 		suspicion_bar.stop_increase()
 	
-	if !is_on_floor():
-		velocity.y -= gravity * delta
-	
-	move_and_slide()
+
 	
 func reset():
 	fsm.current_state = fsm.initial_state
@@ -93,7 +97,6 @@ func check_for_players(player_arr: Array) -> bool:
 		#finally, we aim the cast(line of sight check)
 		var aim_target = player.global_position + Vector3(0,1.0,0)
 		see_cast.target_position = see_cast.to_local(aim_target)
-		
 		see_cast.force_raycast_update()
 		
 		if see_cast.is_colliding() and see_cast.get_collider().is_in_group("player"):
