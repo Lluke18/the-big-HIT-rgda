@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://cmjtrcpuihtvm"]
+
+[ext_resource type="PackedScene" uid="uid://bh2k32p33sixg" path="res://assets/Security Camera by J-Toastie - a6J7IDufQP.glb" id="1_10jbn"]
+[ext_resource type="Script" uid="uid://d3bopf6qwswmv" path="res://assets/Objects/security_cam.gd" id="2_faghu"]
+[ext_resource type="PackedScene" uid="uid://oenhlr20lqb2" path="res://scenes/UI/SuspicionBar.tscn" id="3_piusc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_piusc"]
+emission_enabled = true
+emission = Color(0.2673042, 0.26730424, 0.2673042, 1)
+emission_energy_multiplier = 1.83
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_piusc"]
+points = PackedVector3Array(1.5134816, 0.755584, -1.3291836e-05, 1.5130861, 0.71406937, 0.39310598, 2.3341353, -0.24859667, 0.3514976, 2.3341353, -0.24859667, -0.35164768, 1.5130861, 0.71406937, -0.39325607, -1.70625, 0.755584, -1.3291836e-05, 1.5126905, 0.6576724, 0.50089276, -1.70625, 0.71406937, 0.39310598, 2.3341353, -0.38201737, 0.49212658, 2.3341353, -0.38201737, -0.49215326, 1.5126905, 0.6576724, -0.5010429, -1.70625, 0.71406937, -0.39325607, 1.5130861, 0.5446172, 0.5457114, -1.705459, 0.6576724, 0.50089276, -1.70625, 0.5446172, 0.5457114, 1.7088566, -0.4689629, 0.71547866, 2.3341353, -1.0801919, 0.52879643, 2.3341353, -1.0801919, -0.52894646, 1.5130861, 0.5446172, -0.545738, -1.705459, 0.6576724, -0.5010429, -1.70625, 0.5446172, -0.545738, -1.70625, 0.5407007, 0.52608013, -1.5136435, -0.15277398, 0.5457114, 2.2411938, -1.7786274, 0.49212658, 2.3341353, -1.7786274, 0.49212658, 1.1417155, -0.7783632, 0.6239896, 2.3341353, -1.7786274, -0.49215326, 2.2411938, -1.0801919, -0.52894646, 1.5130861, -0.15277398, -0.545738, -1.5136435, -0.15277398, -0.545738, -1.70625, 0.5407007, -0.5261067, -1.3969722, -0.34964132, -1.3291836e-05, -1.3969722, -0.30864906, 0.38890815, -0.35088575, -1.3710544, 0.19395357, 2.2411938, -1.911787, 0.3514976, 2.3341353, -1.911787, 0.3514976, 2.3341353, -1.911787, -0.35164768, 2.2411938, -1.7786274, -0.49215326, -0.35088575, -1.3710544, -0.19410363, -1.3969722, -0.30864906, -0.3890582, -0.0629648, -1.5047362, 0.036286056, -8.094311e-05, -1.5047362, 0.072585344, 2.2411938, -1.911787, -0.35164768, -8.094311e-05, -1.5047362, -0.07273543, -0.0629648, -1.5047362, -0.03643608)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_piusc"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_on4bg"]
+properties/0/path = NodePath(".:player_seen")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath("FogVolume/SpotLight3D:rotation")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+properties/2/path = NodePath("NurbsPath:rotation")
+properties/2/spawn = true
+properties/2/replication_mode = 1
+
+[sub_resource type="FogMaterial" id="FogMaterial_piusc"]
+density = 0.05
+
+[node name="SecurityCam" unique_id=1970247811 instance=ExtResource("1_10jbn")]
+transform = Transform3D(0.2153889, 0, 0, 0, 0.2153889, 0, 0, 0, 0.2153889, 0, 0, 0)
+script = ExtResource("2_faghu")
+
+[node name="NurbsPath" parent="." index="0" unique_id=1547094137]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+surface_material_override/2 = SubResource("StandardMaterial3D_piusc")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NurbsPath" index="0" unique_id=1427952924]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NurbsPath/StaticBody3D" index="0" unique_id=221000330]
+shape = SubResource("ConvexPolygonShape3D_piusc")
+
+[node name="SeeCast" type="RayCast3D" parent="." index="1" unique_id=90946216]
+transform = Transform3D(9.28867e-08, 26.53, -3.208661e-07, 2.125, -1.1596632e-06, 1.6940659e-21, -1.40255e-14, -4.0059185e-06, -2.125, 0, 0.27131283, -0.13610265)
+target_position = Vector3(0, 0, 15)
+
+[node name="SubViewport" type="SubViewport" parent="." index="2" unique_id=357777914]
+disable_3d = true
+transparent_bg = true
+
+[node name="SuspicionBar" parent="SubViewport" index="0" unique_id=1428092685 instance=ExtResource("3_piusc")]
+offset_top = 0.0
+offset_bottom = 27.0
+value = 50.0
+
+[node name="Sprite3D" type="Sprite3D" parent="." index="3" unique_id=1574891341]
+transform = Transform3D(1.4000001, 0, 0, 0, 1.4000001, 0, 0, 0, 1.4000001, 0, -1.3052524, 0)
+billboard = 1
+texture = SubResource("ViewportTexture_piusc")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." index="4" unique_id=378194719]
+replication_config = SubResource("SceneReplicationConfig_on4bg")
+
+[node name="FogVolume" type="FogVolume" parent="." index="5" unique_id=990738376]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, -1.8171985)
+size = Vector3(2, 2, 4.131836)
+material = SubResource("FogMaterial_piusc")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="FogVolume" index="0" unique_id=1392063540]
+transform = Transform3D(1, 0, 0, 0, -0.9008197, 0.43419334, 0, -0.43419334, -0.9008197, 0, 0.8461004, -1.6942955)
+light_color = Color(1, 0, 0, 1)
+light_energy = 16.0
+light_volumetric_fog_energy = 10.0
+spot_angle = 10.8
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="FogVolume" index="1" unique_id=2118373776]
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 0, 0.382, 0)
+visible = false
+light_color = Color(0.5215736, 1.4499388e-06, 3.3691526e-07, 1)
+light_energy = 16.0
+light_volumetric_fog_energy = 10.0
+spot_angle = 10.8

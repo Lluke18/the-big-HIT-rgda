@@ -32,3 +32,4 @@ func setup_doors_for_everyone() -> void:
 func open_door() -> void:
 	if InventoryManager.obtained_items.has(InventoryManager.BOSS_KEYS):
 		animation_player.play("OpenDoor")
+ 
