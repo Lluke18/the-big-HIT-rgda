@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://be2vkrgly3wld" path="res://scripts/fsm scripts/infinite_follow.gd" id="6_2uld6"]
 [ext_resource type="PackedScene" uid="uid://bd1yqcw8cjnhm" path="res://assets/NPC/ActualGuard.tscn" id="6_nnhgj"]
 [ext_resource type="PackedScene" uid="uid://oenhlr20lqb2" path="res://scenes/UI/SuspicionBar.tscn" id="7_1gpve"]
+[ext_resource type="AudioStream" uid="uid://b833geojx8317" path="res://audio/Revolver shoot - Sound effect (HD).mp3" id="8_36iok"]
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_bjc1w"]
 properties/0/path = NodePath(".:position")
@@ -91,7 +92,6 @@ material = SubResource("FogMaterial_2cktm")
 transform = Transform3D(1, 0, 0, 0, -0.9008197, 0.43419334, 0, -0.43419334, -0.9008197, 0, 0.8461004, -1.6942955)
 light_color = Color(1, 0, 0, 1)
 light_energy = 16.0
-light_volumetric_fog_energy = 10.0
 spot_angle = 10.8
 
 [node name="SubViewport" type="SubViewport" parent="." unique_id=1333327056]
@@ -109,6 +109,11 @@ texture = SubResource("ViewportTexture_isfhd")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="AttackRange" unique_id=407600985]
 shape = SubResource("SphereShape3D_xrivr")
+
+[node name="ShootSound" type="AudioStreamPlayer" parent="." unique_id=1577658701]
+stream = ExtResource("8_36iok")
+volume_db = 1.13
+bus = &"Sfx"
 
 [connection signal="timeout" from="StateMachine/Idle/IdleTimer" to="StateMachine/Idle" method="_on_idle_timer_timeout"]
 [connection signal="body_entered" from="AttackRange" to="." method="_on_attack_range_body_entered"]

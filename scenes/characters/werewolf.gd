@@ -1,11 +1,17 @@
 extends Player
 class_name Werewolf
 
+@onready var werewolf_head: MeshInstance3D = $AnimatedCharacter/RootNode/CharacterArmature/Skeleton3D/BoneAttachment3D/werewolf_head2/Object_7_002
+
+
+
 func _physics_process(delta: float) -> void:
 	super(delta)
 	
 	if not is_multiplayer_authority():
 		return
+	werewolf_head.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_SHADOWS_ONLY
+	
 	
 	#region Interaction
 	seetext.hide()

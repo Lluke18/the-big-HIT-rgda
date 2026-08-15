@@ -2,13 +2,18 @@
 
 [ext_resource type="PackedScene" uid="uid://drhrysbemwqc8" path="res://assets/OfficeFBX/Floor.fbx" id="1_w8e2k"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qjwcd"]
+albedo_color = Color(0.73467994, 0.73467994, 0.7346799, 1)
+metallic = 0.57
+
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_glit8"]
 points = PackedVector3Array(9.834766e-07, -2.0000002, -0.0375, 9.834766e-07, -2.0000002, 0, 9.834766e-07, -0.00019574165, -0.0375, 1.9999992, -2.0000002, -0.0375, 1.9999992, -2.0000002, 0, 9.834766e-07, -0.00019574165, 0, 1.9999992, -0.00019574165, -0.0375, 1.9999992, -0.00019574165, 0)
 
 [node name="Floor" unique_id=2031031718 instance=ExtResource("1_w8e2k")]
 
-[node name="Floor_005" parent="." index="0" unique_id=1561537808]
+[node name="Floor_005" parent="." index="0" unique_id=1019045292]
 transform = Transform3D(10, 0, 0, 0, -4.371139e-07, 1, 0, -10, -4.371139e-08, 0, 0, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_qjwcd")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Floor_005" index="0" unique_id=1408911308]
 

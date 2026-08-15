@@ -5,20 +5,6 @@
 [ext_resource type="Script" uid="uid://crxgo1vxodg8w" path="res://scenes/levels/level_container.gd" id="3_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://bfq0cqshrnqvo" path="res://scenes/UI/MainMenu.tscn" id="3_tbgi4"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_o5qli"]
-sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-
-[sub_resource type="Sky" id="Sky_0wfyh"]
-sky_material = SubResource("ProceduralSkyMaterial_o5qli")
-
-[sub_resource type="Environment" id="Environment_sugp2"]
-background_mode = 2
-sky = SubResource("Sky_0wfyh")
-glow_enabled = true
-volumetric_fog_enabled = true
-volumetric_fog_density = 0.0
-
 [node name="Main" type="Node3D" unique_id=1847829112 node_paths=PackedStringArray("network_manager", "players_spawn")]
 script = ExtResource("1_tefeu")
 network_manager = NodePath("NetworkManager")
@@ -33,9 +19,6 @@ _players_spawn_node = NodePath("../players")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=511713067]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
 shadow_enabled = true
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1127617473]
-environment = SubResource("Environment_sugp2")
 
 [node name="players" type="Node3D" parent="." unique_id=769424871]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.995867, -1.5480781)
