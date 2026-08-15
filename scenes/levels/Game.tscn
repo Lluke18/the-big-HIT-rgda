@@ -80,10 +80,12 @@ transform = Transform3D(-0.3721515, 0, -0.928172, 0, 1, 0, 0.928172, 0, -0.37215
 players_spawn = NodePath("../../Players")
 route = NodePath("../../NPCRoutes/Route2")
 
-[node name="special_corpo" parent="NPCs" unique_id=746657997 node_paths=PackedStringArray("players_spawn", "route") instance=ExtResource("7_nxjv3")]
+[node name="Test_tony" parent="NPCs" unique_id=746657997 node_paths=PackedStringArray("players_spawn", "route") instance=ExtResource("7_nxjv3")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 19.919338, 0.98870075, 37.29141)
 players_spawn = NodePath("../../Players")
+move_speed = 1.0
 route = NodePath("../../NPCRoutes/Route1")
+fov = 100.0
 
 [node name="storage_guard_1" parent="NPCs" unique_id=829427830 node_paths=PackedStringArray("players_spawn", "route") instance=ExtResource("7_hcw8b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -57.591465, 0.7687936, 35.201187)
@@ -109,10 +111,20 @@ fov = 100.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.741301, 1, 60.25077)
 players_spawn = NodePath("../../Players")
 
-[node name="wanderc_3c_room" parent="NPCs" unique_id=1796978680 node_paths=PackedStringArray("players_spawn", "route") instance=ExtResource("6_hqrlp")]
-transform = Transform3D(0.92842495, 0, 0.37152007, 0, 1, 0, -0.37152007, 0, 0.92842495, 19.691902, 0.75644857, -1.7111456)
+[node name="path_corpo_c3_vent" parent="NPCs" unique_id=643323560 node_paths=PackedStringArray("players_spawn", "route") instance=ExtResource("7_nxjv3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.561296, 0.8185618, -2.1648185)
 players_spawn = NodePath("../../Players")
 route = NodePath("../../NPCRoutes/c3_route")
+
+[node name="bath_patrol_guard" parent="NPCs" unique_id=1987846108 node_paths=PackedStringArray("players_spawn", "route") instance=ExtResource("7_hcw8b")]
+transform = Transform3D(-0.25881904, 0, 0.9659258, 0, 1, 0, -0.9659258, 0, -0.25881904, 36.71461, 0.8838005, 14.633714)
+players_spawn = NodePath("../../Players")
+move_speed = 3.0
+route = NodePath("../../NPCRoutes/BathPatrol")
+sus_multiplier = 2.0
+location_wait_time = 5.0
+vision_range = 12.0
+fov = 100.0
 
 [node name="NPCRoutes" type="Node3D" parent="." unique_id=270287974]
 
@@ -172,13 +184,33 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.558826, 0, 59.43819)
 [node name="c3_route" type="Node3D" parent="NPCRoutes" unique_id=1602167659]
 
 [node name="Marker3D" type="Marker3D" parent="NPCRoutes/c3_route" unique_id=716798570]
-transform = Transform3D(0.92842495, 0, 0.37152007, 0, 1, 0, -0.37152007, 0, 0.92842495, 19.692, 0, -1.9368718)
+transform = Transform3D(0.92842495, 0, 0.37152007, 0, 1, 0, -0.37152007, 0, 0.92842495, 19.692, 0, -2.1975656)
 
 [node name="Marker3D2" type="Marker3D" parent="NPCRoutes/c3_route" unique_id=1479618439]
-transform = Transform3D(0.92842495, 0, 0.37152007, 0, 1, 0, -0.37152007, 0, 0.92842495, 18.586718, 0, -6.6517887)
+transform = Transform3D(0.92842495, 0, 0.37152007, 0, 1, 0, -0.37152007, 0, 0.92842495, 15.202876, 0, -9.034067)
 
 [node name="Marker3D3" type="Marker3D" parent="NPCRoutes/c3_route" unique_id=153324844]
 transform = Transform3D(0.92842495, 0, 0.37152007, 0, 1, 0, -0.37152007, 0, 0.92842495, 13.500306, 0, 23.092913)
+
+[node name="BathPatrol" type="Node3D" parent="NPCRoutes" unique_id=1542169806]
+
+[node name="Marker3D" type="Marker3D" parent="NPCRoutes/BathPatrol" unique_id=1820527130]
+transform = Transform3D(-0.25881904, 0, 0.9659258, 0, 1, 0, -0.9659258, 0, -0.25881904, 36.715, 0, 14.634)
+
+[node name="Marker3D2" type="Marker3D" parent="NPCRoutes/BathPatrol" unique_id=1710811481]
+transform = Transform3D(-0.25881904, 0, 0.9659258, 0, 1, 0, -0.9659258, 0, -0.25881904, 27.913647, 0, 13.015868)
+
+[node name="Marker3D3" type="Marker3D" parent="NPCRoutes/BathPatrol" unique_id=1932134138]
+transform = Transform3D(-0.25881904, 0, 0.9659258, 0, 1, 0, -0.9659258, 0, -0.25881904, 18.572233, 0, 20.53138)
+
+[node name="Marker3D4" type="Marker3D" parent="NPCRoutes/BathPatrol" unique_id=1590450138]
+transform = Transform3D(-0.25881904, 0, 0.9659258, 0, 1, 0, -0.9659258, 0, -0.25881904, 1.6593125, 0, 12.249396)
+
+[node name="Marker3D5" type="Marker3D" parent="NPCRoutes/BathPatrol" unique_id=1791417598]
+transform = Transform3D(-0.25881904, 0, 0.9659258, 0, 1, 0, -0.9659258, 0, -0.25881904, -17.605873, 0, 19.63777)
+
+[node name="Marker3D6" type="Marker3D" parent="NPCRoutes/BathPatrol" unique_id=1432847434]
+transform = Transform3D(-0.25881904, 0, 0.9659258, 0, 1, 0, -0.9659258, 0, -0.25881904, -39.473858, 0, 14.716031)
 
 [node name="SecurityCams" type="Node3D" parent="." unique_id=1242907450]
 

@@ -15,15 +15,21 @@ var move_dir: Vector3
 func _ready() -> void:
 	await get_tree().process_frame
 	suspicion_bar.detected_player.connect(on_player_detected)
-	if is_instance_valid(npc.route):
-		for marker in npc.route.get_children():
-			position_arr.append(marker.global_position)
+	#if is_instance_valid(npc.route):
+		#for marker in npc.route.get_children():
+			#position_arr.append(marker.global_position)
 	wait_timer.wait_time = npc.location_wait_time
 
 func Enter():
 	if !wait_timer.timeout.is_connected(_on_wait_at_location_timeout):
 		wait_timer.timeout.connect(_on_wait_at_location_timeout)
 	is_waiting = false
+	
+	if position_arr.is_empty():
+		if is_instance_valid(npc.route):
+			for marker in npc.route.get_children():
+				position_arr.append(marker.global_position)
+	
 	nav_agent.set_target_position(position_arr[curr_pos_index])
 	
 func Physics_Update(delta: float):
