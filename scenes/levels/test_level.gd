@@ -4,6 +4,7 @@ extends Node3D
 
 var game_level_scene = preload("res://scenes/levels/GameLevel.tscn")
 @onready var current_game_level: Node3D = $GameLevel
+@onready var alarm: AudioStreamPlayer = $Audio/alarm
 
 @onready var npcs_parent: Node3D = $NPCs
 
@@ -62,3 +63,8 @@ func reset_level():
 	add_child(new_game_level)
 	current_game_level = new_game_level
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+
+
+func _on_idle_guard_play_alarm() -> void:
+	alarm.play()
+	#await alarm to finish, then play exciting music

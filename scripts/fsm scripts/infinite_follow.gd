@@ -7,6 +7,8 @@ var target: Player
 func Enter():
 	npc.is_chasing = true
 	print("entered chase state")
+	if npc.name == "idle_guard":
+		npc.play_alarm.emit()
 	#maybe freeze the bar and lock it and 100%
 	npc.suspicion_bar.value = npc.suspicion_bar.max_value
 	npc.suspicion_bar.process_mode = Node.PROCESS_MODE_DISABLED
