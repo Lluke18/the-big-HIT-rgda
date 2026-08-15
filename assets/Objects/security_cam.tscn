@@ -74,6 +74,7 @@ light_color = Color(1, 0, 0, 1)
 light_energy = 32.0
 light_volumetric_fog_energy = 10.0
 light_size = 0.596
+spot_range = 15.0
 spot_angle = 10.8
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="FogVolume" index="1" unique_id=2118373776]

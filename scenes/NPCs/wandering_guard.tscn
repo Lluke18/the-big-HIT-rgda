@@ -37,9 +37,10 @@ viewport_path = NodePath("SubViewport")
 [sub_resource type="SphereShape3D" id="SphereShape3D_xrivr"]
 radius = 3.6341572
 
-[node name="NPC" type="CharacterBody3D" unique_id=399691295 node_paths=PackedStringArray("animated_character") groups=["guard", "npc"]]
+[node name="NPC" type="CharacterBody3D" unique_id=399691295 node_paths=PackedStringArray("timer", "animated_character") groups=["guard", "npc"]]
 collision_layer = 2
 script = ExtResource("1_34dhy")
+timer = NodePath("StateMachine/GoToLocation/Timer")
 animated_character = NodePath("ActualGuard")
 move_speed = 2.7
 run_speed = 5.5
