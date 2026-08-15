@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cp7g153570ebb" path="res://scenes/NPCs/special_corpo.tscn" id="7_nxjv3"]
 [ext_resource type="PackedScene" uid="uid://cmjtrcpuihtvm" path="res://assets/Objects/security_cam.tscn" id="8_ee3lx"]
 [ext_resource type="AudioStream" uid="uid://dt2xdkum8uwfj" path="res://audio/jeremayjimenez-greece-eas-alarm-451404.mp3" id="8_hcw8b"]
+[ext_resource type="PackedScene" uid="uid://c506wm7cxrgdv" path="res://scenes/NPCs/BossMan.tscn" id="9_qjwcd"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ee3lx"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -58,11 +59,11 @@ transform = Transform3D(0.9928652, 0, -0.11924212, 0, 1, 0, 0.11924212, 0, 0.992
 transform = Transform3D(0.9898962, 0, 0.14179337, 0, 1, 0, -0.14179337, 0, 0.9898962, 1.3336794, 0.8, 42.199547)
 
 [node name="idle_corpo_test" parent="NPCs" unique_id=1508298263 node_paths=PackedStringArray("players_spawn") instance=ExtResource("3_4gy8a")]
-transform = Transform3D(0.92148787, 0, -0.38840723, 0, 1, 0, 0.38840723, 0, 0.92148787, -3.4306173, 0.82329667, 12.396174)
+transform = Transform3D(-0.6272348, 0, -0.7788302, 0, 1, 0, 0.7788302, 0, -0.6272348, -6.4691567, 0.82329667, 12.396174)
 players_spawn = NodePath("../../Players")
 
 [node name="idle_guard" parent="NPCs" unique_id=437874083 node_paths=PackedStringArray("players_spawn") instance=ExtResource("4_fqm1f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.777077, 0.8009088, 34.138348)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.777077, 0.8009088, 34.54789)
 players_spawn = NodePath("../../Players")
 
 [node name="wander_corpo_test" parent="NPCs" unique_id=1106175981 node_paths=PackedStringArray("players_spawn", "route") instance=ExtResource("6_hqrlp")]
@@ -94,6 +95,10 @@ sus_multiplier = 1.5
 location_wait_time = 2.0
 vision_range = 12.0
 fov = 100.0
+
+[node name="BossMan" parent="NPCs" unique_id=1044256156 node_paths=PackedStringArray("players_spawn") instance=ExtResource("9_qjwcd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.741301, 1, 60.25077)
+players_spawn = NodePath("../../Players")
 
 [node name="NPCRoutes" type="Node3D" parent="." unique_id=270287974]
 
@@ -157,6 +162,10 @@ transform = Transform3D(0.2153889, 0, 5.6896576e-09, 0, 0.2153889, 0, -5.6896576
 
 [node name="SecurityCam2" parent="SecurityCams" unique_id=2142168739 instance=ExtResource("8_ee3lx")]
 transform = Transform3D(0.2153889, 0, 0, 0, 0.2153889, 0, 0, 0, 0.2153889, -16.639206, 5.305248, 20.221169)
+
+[node name="SecurityCam3" parent="SecurityCams" unique_id=793765677 instance=ExtResource("8_ee3lx")]
+transform = Transform3D(-9.414948e-09, 0, 0.2153889, 0, 0.2153889, 0, -0.2153889, 0, -9.414948e-09, 23.181768, 3.3435204, 16.806732)
+vision_range = 15.0
 
 [node name="Audio" type="Node3D" parent="." unique_id=1850932779]
 

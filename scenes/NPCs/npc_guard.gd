@@ -5,7 +5,7 @@ var bullet = preload("res://scenes/NPCs/misc/bullet.tscn")
 var bullet_instance 
 signal play_alarm
 
-@onready var timer: Timer = %Timer
+@export var timer: Timer
 
 
 
