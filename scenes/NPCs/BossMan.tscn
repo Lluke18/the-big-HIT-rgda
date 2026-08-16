@@ -3,9 +3,11 @@
 [ext_resource type="Script" uid="uid://bu1e7dtww230r" path="res://scenes/NPCs/npc.gd" id="1_77xen"]
 [ext_resource type="Script" uid="uid://bkuygnj6nmexp" path="res://scripts/fsm scripts/fsm.gd" id="2_sm1ty"]
 [ext_resource type="Script" uid="uid://byvfg0ibjqt5x" path="res://scripts/fsm scripts/idle.gd" id="3_ncga6"]
-[ext_resource type="Script" uid="uid://hs5y1th4s20b" path="res://scenes/NPCs/run_to_guard.gd" id="4_37li2"]
+[ext_resource type="Script" uid="uid://buaausr3mfk6i" path="res://scripts/fsm scripts/grab_coffee.gd" id="4_77xen"]
 [ext_resource type="PackedScene" uid="uid://benv65o4k44ph" path="res://assets/NPC/BossNPC.tscn" id="5_hexoh"]
+[ext_resource type="Script" uid="uid://cy14537pebee0" path="res://scripts/fsm scripts/guard_attack.gd" id="5_sm1ty"]
 [ext_resource type="PackedScene" uid="uid://oenhlr20lqb2" path="res://scenes/UI/SuspicionBar.tscn" id="7_sjxin"]
+[ext_resource type="AudioStream" uid="uid://b833geojx8317" path="res://audio/Revolver shoot - Sound effect (HD).mp3" id="8_sm1ty"]
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_bjc1w"]
 properties/0/path = NodePath(".:position")
@@ -43,6 +45,8 @@ script = ExtResource("1_77xen")
 animated_character = NodePath("Boss")
 move_speed = 2.2
 run_speed = 5.0
+sus_multiplier = 3.0
+location_wait_time = 5.0
 
 [node name="StateMachine" type="Node" parent="." unique_id=470339980 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("2_sm1ty")
@@ -50,8 +54,9 @@ initial_state = NodePath("Idle")
 
 [node name="Idle" type="Node" parent="StateMachine" unique_id=1233826377 node_paths=PackedStringArray("suspicion_bar", "npc")]
 script = ExtResource("3_ncga6")
+wander_state_name = "grabcoffee"
 suspicion_bar = NodePath("../../SubViewport/SuspicionBar")
-detected_state_name = "runtoguard"
+detected_state_name = "attack"
 idle_time = 8.0
 idle_time_deviation = 5.0
 npc = NodePath("../..")
@@ -59,10 +64,22 @@ npc = NodePath("../..")
 [node name="IdleTimer" type="Timer" parent="StateMachine/Idle" unique_id=1932874965]
 one_shot = true
 
-[node name="RunToGuard" type="Node" parent="StateMachine" unique_id=1696750292 node_paths=PackedStringArray("guard_detection_area", "npc")]
-script = ExtResource("4_37li2")
-idle_state_name = "idle"
-guard_detection_area = NodePath("../../GuardDetectionArea")
+[node name="GrabCoffee" type="Node" parent="StateMachine" unique_id=1163910580 node_paths=PackedStringArray("nav_agent", "wait_timer", "npc")]
+script = ExtResource("4_77xen")
+detected_state_name = "attack"
+nav_agent = NodePath("../../NavigationAgent3D")
+wait_timer = NodePath("Timer")
+npc = NodePath("../..")
+
+[node name="Timer" type="Timer" parent="StateMachine/GrabCoffee" unique_id=1114053574]
+one_shot = true
+
+[node name="door_timer" type="Timer" parent="StateMachine/GrabCoffee" unique_id=945617846]
+one_shot = true
+
+[node name="Attack" type="Node" parent="StateMachine" unique_id=1212202497 node_paths=PackedStringArray("attack_range", "npc")]
+script = ExtResource("5_sm1ty")
+attack_range = NodePath("../../GuardDetectionArea")
 npc = NodePath("../..")
 
 [node name="Boss" parent="." unique_id=237304749 instance=ExtResource("5_hexoh")]
@@ -111,4 +128,10 @@ collision_mask = 3
 [node name="CollisionShape3D" type="CollisionShape3D" parent="GuardDetectionArea" unique_id=1996179596]
 shape = SubResource("SphereShape3D_xrivr")
 
+[node name="ShootSound" type="AudioStreamPlayer" parent="." unique_id=1970239052]
+stream = ExtResource("8_sm1ty")
+volume_db = 1.13
+bus = &"Sfx"
+
 [connection signal="timeout" from="StateMachine/Idle/IdleTimer" to="StateMachine/Idle" method="_on_idle_timer_timeout"]
+[connection signal="timeout" from="StateMachine/GrabCoffee/door_timer" to="StateMachine/GrabCoffee" method="_on_door_timer_timeout"]

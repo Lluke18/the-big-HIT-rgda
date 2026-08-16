@@ -99,7 +99,7 @@ _data = {
 transform = Transform3D(1, 0, 0, 0, 1.2, 0, 0, 0, 1, 0, 0, 0)
 script = ExtResource("1_648bn")
 
-[node name="InteractableObject" parent="." unique_id=216604155 instance=ExtResource("2_qsqac")]
+[node name="InteractableObject" parent="." unique_id=216604155 groups=["door"] instance=ExtResource("2_qsqac")]
 
 [node name="CollisionShape3D" parent="InteractableObject" index="0" unique_id=1785336431]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.93115234, 0.82281494, -0.05279541)
@@ -123,7 +123,7 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.1
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=508201684]
 libraries/ = SubResource("AnimationLibrary_qn8k1")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1595694697]
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1595694697 groups=["door"]]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1481733523]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0257721, 0.8388062, 0.03173828)

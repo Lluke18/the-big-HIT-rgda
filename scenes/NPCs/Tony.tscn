@@ -1,0 +1,152 @@
+[gd_scene format=3 uid="uid://bou1hqq5x1428"]
+
+[ext_resource type="Script" uid="uid://bu1e7dtww230r" path="res://scenes/NPCs/npc.gd" id="1_pwhg4"]
+[ext_resource type="Script" uid="uid://bkuygnj6nmexp" path="res://scripts/fsm scripts/fsm.gd" id="2_d558j"]
+[ext_resource type="Script" uid="uid://byvfg0ibjqt5x" path="res://scripts/fsm scripts/idle.gd" id="3_o1bhs"]
+[ext_resource type="Script" uid="uid://hs5y1th4s20b" path="res://scenes/NPCs/run_to_guard.gd" id="4_gsewg"]
+[ext_resource type="PackedScene" uid="uid://csrj6j2v2bg0h" path="res://assets/NPC/corporatist.tscn" id="6_jlbve"]
+[ext_resource type="PackedScene" uid="uid://oenhlr20lqb2" path="res://scenes/UI/SuspicionBar.tscn" id="7_b8wh7"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_bjc1w"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:rotation")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+properties/2/path = NodePath(".:player_seen")
+properties/2/spawn = true
+properties/2/replication_mode = 1
+properties/3/path = NodePath("FogVolume/SpotLight3D:rotation")
+properties/3/spawn = true
+properties/3/replication_mode = 1
+properties/4/path = NodePath("SubViewport/SuspicionBar:value")
+properties/4/spawn = true
+properties/4/replication_mode = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pwhg4"]
+albedo_color = Color(0.58085877, 0.013656788, 0.34379765, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d558j"]
+albedo_color = Color(0.61878806, 0.5319713, 0.23154712, 1)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xrivr"]
+radius = 0.18066406
+height = 1.7868347
+
+[sub_resource type="FogMaterial" id="FogMaterial_2cktm"]
+density = 0.05
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_isfhd"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_xrivr"]
+radius = 3.2732813
+
+[node name="NPC" type="CharacterBody3D" unique_id=399691295 node_paths=PackedStringArray("animated_character") groups=["npc"]]
+collision_layer = 2
+script = ExtResource("1_pwhg4")
+animated_character = NodePath("AnimatedCharacter")
+move_speed = 2.2
+run_speed = 5.0
+sus_multiplier = 3.5
+location_wait_time = 5.0
+
+[node name="StateMachine" type="Node" parent="." unique_id=470339980 node_paths=PackedStringArray("initial_state")]
+script = ExtResource("2_d558j")
+initial_state = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="StateMachine" unique_id=1233826377 node_paths=PackedStringArray("suspicion_bar", "npc")]
+script = ExtResource("3_o1bhs")
+suspicion_bar = NodePath("../../SubViewport/SuspicionBar")
+detected_state_name = "runtoguard"
+idle_time = 8.0
+idle_time_deviation = 5.0
+npc = NodePath("../..")
+
+[node name="IdleTimer" type="Timer" parent="StateMachine/Idle" unique_id=1932874965]
+one_shot = true
+
+[node name="RunToGuard" type="Node" parent="StateMachine" unique_id=1696750292 node_paths=PackedStringArray("guard_detection_area", "npc")]
+script = ExtResource("4_gsewg")
+idle_state_name = "idle"
+guard_detection_area = NodePath("../../GuardDetectionArea")
+npc = NodePath("../..")
+
+[node name="MoneyCalling" type="Node" parent="StateMachine" unique_id=580808129]
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=838253104]
+
+[node name="SeeCast" type="RayCast3D" parent="." unique_id=833471495]
+transform = Transform3D(9.28867e-08, 26.53, -3.208661e-07, 2.125, -1.1596632e-06, 1.6940659e-21, -1.40255e-14, -4.0059185e-06, -2.125, 0, 0.7617147, -0.13610265)
+target_position = Vector3(0, 0, 3.47)
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=400696466]
+replication_config = SubResource("SceneReplicationConfig_bjc1w")
+
+[node name="AnimatedCharacter" parent="." unique_id=797959439 instance=ExtResource("6_jlbve")]
+transform = Transform3D(-1, 0, 1.509958e-07, 0, 1, 0, -1.509958e-07, 0, -1, 0, -0.82309425, 0.09335184)
+
+[node name="Skeleton3D" parent="AnimatedCharacter/RootNode/CharacterArmature" parent_id_path=PackedInt32Array(797959439, 792162539) index="0" unique_id=990968856]
+bones/7/rotation = Quaternion(-0.024510872, -0.00027539246, 0.00012030281, 0.9996996)
+bones/33/rotation = Quaternion(-0.20576303, -0.19378641, 0.3239576, 0.90286213)
+
+[node name="Index4_R" parent="AnimatedCharacter/RootNode/CharacterArmature/Skeleton3D" index="6" unique_id=1134444818]
+transform = Transform3D(-0.3520469, 0.33255988, -0.8749093, 0.8856522, -0.18403353, -0.42632213, -0.3027908, -0.9249506, -0.22974369, -0.0018807452, -0.0022238325, 0.008298372)
+
+[node name="Middle4_R" parent="AnimatedCharacter/RootNode/CharacterArmature/Skeleton3D" index="7" unique_id=985971918]
+transform = Transform3D(-0.35683435, 0.36659503, -0.8592304, 0.91191363, -0.06286811, -0.4055364, -0.20268606, -0.9282538, -0.31186932, -0.002012911, -0.0019085698, 0.008012931)
+
+[node name="Ring4_R" parent="AnimatedCharacter/RootNode/CharacterArmature/Skeleton3D" index="8" unique_id=1263075721]
+transform = Transform3D(-0.6031035, 0.44121522, -0.66452605, 0.75811064, 0.057979345, -0.64954257, -0.24805942, -0.8955263, -0.36945727, -0.0020793674, -0.0016050957, 0.008100953)
+
+[node name="Pinky4_R" parent="AnimatedCharacter/RootNode/CharacterArmature/Skeleton3D" index="9" unique_id=1903060947]
+transform = Transform3D(-0.34265092, 0.56492037, -0.75063634, 0.9165152, 0.025494047, -0.39918488, -0.20637125, -0.82475114, -0.52649367, -0.002126307, -0.0013817996, 0.008282277)
+
+[node name="Thumb3_R" parent="AnimatedCharacter/RootNode/CharacterArmature/Skeleton3D" index="10" unique_id=1170468993]
+transform = Transform3D(-0.31759632, 0.3073211, -0.89704263, 0.6253588, -0.64324033, -0.44177708, -0.7127816, -0.70128065, 0.012105167, -0.0017242534, -0.0024329124, 0.00951157)
+
+[node name="Casual2_Body" parent="AnimatedCharacter/RootNode/CharacterArmature/Skeleton3D" index="18" unique_id=280860619]
+surface_material_override/0 = SubResource("StandardMaterial3D_pwhg4")
+
+[node name="Casual2_Head" parent="AnimatedCharacter/RootNode/CharacterArmature/Skeleton3D" index="19" unique_id=837975931]
+surface_material_override/4 = SubResource("StandardMaterial3D_d558j")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1175898848]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.01850912, 0.03996277, 0)
+shape = SubResource("CapsuleShape3D_xrivr")
+
+[node name="FogVolume" type="FogVolume" parent="." unique_id=818601699]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, -1.8171985)
+size = Vector3(2, 2, 4.131836)
+material = SubResource("FogMaterial_2cktm")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="FogVolume" unique_id=1315327744]
+transform = Transform3D(1, 0, 0, 0, -0.9008197, 0.43419334, 0, -0.43419334, -0.9008197, 0, 0.8461004, -1.6942955)
+light_color = Color(1, 0, 0, 1)
+light_energy = 32.0
+light_volumetric_fog_energy = 10.0
+light_size = 0.5
+spot_range = 10.0
+spot_angle = 10.8
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=1333327056]
+disable_3d = true
+transparent_bg = true
+
+[node name="SuspicionBar" parent="SubViewport" unique_id=1428092685 instance=ExtResource("7_b8wh7")]
+value = 50.0
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=153913080]
+billboard = 1
+texture = SubResource("ViewportTexture_isfhd")
+
+[node name="GuardDetectionArea" type="Area3D" parent="." unique_id=1183282833]
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GuardDetectionArea" unique_id=1996179596]
+shape = SubResource("SphereShape3D_xrivr")
+
+[connection signal="timeout" from="StateMachine/Idle/IdleTimer" to="StateMachine/Idle" method="_on_idle_timer_timeout"]
+
+[editable path="AnimatedCharacter"]

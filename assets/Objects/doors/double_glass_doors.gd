@@ -35,3 +35,7 @@ func open_door() -> void:
 	if InventoryManager.obtained_items.has(InventoryManager.BOSS_KEYS):
 		animation_player.play("OpenDoor")
 		interactable_object.remove_from_group("interactable")
+
+@rpc("authority", "call_local", "reliable")
+func npc_opens_door() -> void:
+	animation_player.play("OpenDoor")

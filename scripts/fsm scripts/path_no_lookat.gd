@@ -53,17 +53,6 @@ func Physics_Update(delta: float):
 		is_waiting = true
 		npc.animated_character.play_idle_animation()
 		
-		#LOOK AT NEXT MARKER LOGIC
-		var next = curr_pos_index + 1
-		if next >= position_arr.size():
-			next = 0
-		var next_pos = position_arr[next]
-		var next_target = Vector3(next_pos.x, npc.global_position.y, next_pos.z)
-		
-		if !npc.global_position.is_equal_approx(next_target):
-			npc.look_at(next_target)
-		
-		
 		wait_timer.start()
 		return
 
