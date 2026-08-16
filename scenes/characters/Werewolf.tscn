@@ -52,7 +52,7 @@ fill = 1
 fill_from = Vector2(0.48976108, 0.51706487)
 fill_to = Vector2(0, 1)
 
-[node name="Werewolf" type="CharacterBody3D" unique_id=1149247979 node_paths=PackedStringArray("camera", "canvas_layer", "head", "seetext")]
+[node name="Werewolf" type="CharacterBody3D" unique_id=1149247979 node_paths=PackedStringArray("camera", "canvas_layer", "head", "seetext") groups=["player"]]
 collision_layer = 513
 script = ExtResource("1_pajqt")
 camera = NodePath("head/SpringArm3D/Camera3D")
@@ -253,6 +253,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("GradientTexture2D_gs7cj")
+
 [node name="LockerUI" parent="CanvasLayer" unique_id=2115574007 instance=ExtResource("5_gs7cj")]
 visible = false
 

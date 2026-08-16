@@ -34,6 +34,9 @@ fog_light_energy = 0.66
 [sub_resource type="BoxShape3D" id="BoxShape3D_xrivr"]
 size = Vector3(6.373291, 1, 6.072571)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_7vga6"]
+size = Vector3(6.2596817, 2.9887695, 4.6715164)
+
 [node name="Game" type="Node3D" unique_id=1889830372 node_paths=PackedStringArray("players_spawn")]
 script = ExtResource("1_7vga6")
 players_spawn = NodePath("Players")
@@ -111,7 +114,7 @@ location_wait_time = 2.0
 vision_range = 12.0
 fov = 100.0
 
-[node name="BossMan" parent="NPCs" unique_id=1044256156 node_paths=PackedStringArray("bath_route", "players_spawn", "route") instance=ExtResource("9_qjwcd")]
+[node name="BossMan" parent="NPCs" unique_id=1044256156 node_paths=PackedStringArray("bath_route", "players_spawn", "route") groups=["target"] instance=ExtResource("9_qjwcd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.489259, 1, 57.406216)
 bath_route = NodePath("../../NPCRoutes/BossBathRoute")
 players_spawn = NodePath("../../Players")
@@ -243,7 +246,7 @@ transform = Transform3D(-0.25881904, 0, 0.9659258, 0, 1, 0, -0.9659258, 0, -0.25
 [node name="BossRoute" type="Node3D" parent="NPCRoutes" unique_id=1830238882]
 
 [node name="Coffee_loc" type="Marker3D" parent="NPCRoutes/BossRoute" unique_id=1349786171]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.753094, 0, 9.350502)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.753094, 0, 10.9088)
 
 [node name="Office_pos" type="Marker3D" parent="NPCRoutes/BossRoute" unique_id=1959870551]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.165244, 0, 57.949062)
@@ -303,4 +306,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.04748535, 0, -0.42581177)
 shape = SubResource("BoxShape3D_xrivr")
 debug_color = Color(0.40825254, 0.6034062, 0, 1)
 
+[node name="CoffeeArea3D" type="Area3D" parent="." unique_id=1499688554]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.35838, 0, 7.7675714)
+collision_layer = 19
+collision_mask = 19
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CoffeeArea3D" unique_id=2076729664]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.114399, 0.99438477, 3.3299246)
+shape = SubResource("BoxShape3D_7vga6")
+debug_color = Color(0, 0.41284704, 0.48287332, 1)
+
 [connection signal="play_alarm" from="NPCs/idle_guard" to="." method="_on_idle_guard_play_alarm"]
+[connection signal="body_entered" from="CoffeeArea3D" to="." method="_on_coffee_area_3d_body_entered"]

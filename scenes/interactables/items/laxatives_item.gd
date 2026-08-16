@@ -23,6 +23,6 @@ func delete_laxatives_for_everyone() -> void:
 	
 @rpc("authority", "call_local", "reliable")
 func delete_laxatives() -> void:
-	InventoryManager.add_item(InventoryManager.BOSS_KEYS)
+	InventoryManager.add_item(InventoryManager.LAXATIVES)
 	NotesManager.try_to_update_step(NotesManager.step.LAXATIVES)
 	queue_free()

@@ -166,9 +166,6 @@ points = PackedVector3Array(19.19138, 0, -36.430813, 18.49102, -7.463723, -36.43
 [sub_resource type="BoxShape3D" id="BoxShape3D_ragau"]
 size = Vector3(19.445557, 5.7960205, 19.508026)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_umu6e"]
-size = Vector3(5.0853577, 1, 1.7481079)
-
 [node name="CoffeeRoom" type="Node3D" unique_id=538983221]
 
 [node name="Floor" parent="." unique_id=2031031718 instance=ExtResource("1_xdpj6")]
@@ -180,19 +177,19 @@ transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 5
 
 [node name="WallWindows" parent="Walls" unique_id=376110060 instance=ExtResource("2_rh1wt")]
 
-[node name="Wall_Medium" parent="Walls/WallWindows/Wall_Medium2" parent_id_path=PackedInt32Array(376110060, 2137611996) index="0" unique_id=1465244875]
+[node name="Wall_Medium" parent="Walls/WallWindows/Wall_Medium2" parent_id_path=PackedInt32Array(376110060, 2137611996) index="0" unique_id=1511786428]
 surface_material_override/0 = SubResource("StandardMaterial3D_b1lj4")
 
-[node name="Wall_Medium" parent="Walls/WallWindows/Wall_Medium3" parent_id_path=PackedInt32Array(376110060, 62503023) index="0" unique_id=1465244875]
+[node name="Wall_Medium" parent="Walls/WallWindows/Wall_Medium3" parent_id_path=PackedInt32Array(376110060, 62503023) index="0" unique_id=1511786428]
 surface_material_override/0 = SubResource("StandardMaterial3D_njqwk")
 
 [node name="WallWindows2" parent="Walls" unique_id=692367103 instance=ExtResource("2_rh1wt")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
 
-[node name="Wall_Medium" parent="Walls/WallWindows2/Wall_Medium2" parent_id_path=PackedInt32Array(692367103, 2137611996) index="0" unique_id=1465244875]
+[node name="Wall_Medium" parent="Walls/WallWindows2/Wall_Medium2" parent_id_path=PackedInt32Array(692367103, 2137611996) index="0" unique_id=1511786428]
 surface_material_override/0 = SubResource("StandardMaterial3D_6bctx")
 
-[node name="Wall_Medium" parent="Walls/WallWindows2/Wall_Medium3" parent_id_path=PackedInt32Array(692367103, 62503023) index="0" unique_id=1465244875]
+[node name="Wall_Medium" parent="Walls/WallWindows2/Wall_Medium3" parent_id_path=PackedInt32Array(692367103, 62503023) index="0" unique_id=1511786428]
 surface_material_override/0 = SubResource("StandardMaterial3D_h2ft2")
 
 [node name="WallDoors" parent="Walls" unique_id=214762846 instance=ExtResource("3_6bctx")]
@@ -331,7 +328,7 @@ mesh = SubResource("ArrayMesh_kp7bg")
 [node name="CoffeeMachine" parent="." unique_id=740283531 instance=ExtResource("11_ognue")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 5.9024377, 1.1388121, 0.71552444)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="CoffeeMachine/CoffeeMachine" parent_id_path=PackedInt32Array(740283531, 1570159999) index="0" unique_id=208890539]
+[node name="StaticBody3D" type="StaticBody3D" parent="CoffeeMachine/CoffeeMachine" parent_id_path=PackedInt32Array(740283531, 1450685791) index="0" unique_id=208890539]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CoffeeMachine/CoffeeMachine/StaticBody3D" unique_id=1162348917]
 shape = SubResource("ConvexPolygonShape3D_vyhko")
@@ -448,15 +445,6 @@ shape = SubResource("BoxShape3D_ragau")
 
 [node name="GarlicItem" parent="." unique_id=2117054936 instance=ExtResource("18_h2ft2")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 9.669101, 1.1528523, 8.10209)
-
-[node name="CoffeeArea3D" type="Area3D" parent="." unique_id=2097859768]
-collision_layer = 16
-collision_mask = 0
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CoffeeArea3D" unique_id=1140831947]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5185323, 0, 2.829257)
-shape = SubResource("BoxShape3D_umu6e")
-debug_color = Color(0, 0.41284704, 0.48287332, 1)
 
 [editable path="Walls/WallWindows"]
 [editable path="Walls/WallWindows/Wall_Medium2"]
