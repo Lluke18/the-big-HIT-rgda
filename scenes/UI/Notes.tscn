@@ -94,6 +94,7 @@ offset_top = -60.0
 offset_right = 95.0
 offset_bottom = -60.0
 title = "Vents..."
+description = "Bats can go through different rooms"
 unlocked_arrows = [NodePath("../../Lines/Line2D_0"), NodePath("../../Lines/Line2D_4")]
 
 [node name="Label" type="Label" parent="Page/MethodStepsParent/MethodStep_0" unique_id=1749466950]
@@ -112,7 +113,8 @@ offset_top = -61.0
 offset_right = 234.0
 offset_bottom = -61.0
 title = "The Storage Room"
-unlocked_arrows = [NodePath("../../Lines/Line2D_1"), NodePath("../../Lines/Line2D_5")]
+description = "You might find something useful in there"
+unlocked_arrows = [NodePath("../../Lines/Line2D_1")]
 
 [node name="Label" type="Label" parent="Page/MethodStepsParent/MethodStep_1" unique_id=679410685]
 layout_mode = 0
@@ -130,6 +132,7 @@ offset_top = -58.0
 offset_right = 398.0
 offset_bottom = -58.0
 title = "Laxatives!"
+description = "Can be used to distract the boss"
 unlocked_arrows = [NodePath("../../Lines/Line2D_2")]
 
 [node name="Label" type="Label" parent="Page/MethodStepsParent/MethodStep_2" unique_id=171257576]
@@ -148,6 +151,7 @@ offset_top = -55.0
 offset_right = 570.0
 offset_bottom = -55.0
 title = "Boss needs to go \\t to the bathroom"
+description = "Now you can surprise him in the stall"
 unlocked_arrows = [NodePath("../../Lines/Line2D_3"), NodePath("../../Lines/Line2D_6")]
 
 [node name="Label" type="Label" parent="Page/MethodStepsParent/MethodStep_3" unique_id=1013325808]
@@ -167,6 +171,7 @@ offset_top = -58.0
 offset_right = 729.0
 offset_bottom = -58.0
 title = "Kill method #1"
+description = "Boss found dead in bathroom stall..."
 
 [node name="Label" type="Label" parent="Page/MethodStepsParent/MethodStep_4" unique_id=1240286161]
 layout_mode = 0
@@ -184,6 +189,7 @@ offset_top = 66.0
 offset_right = 98.0
 offset_bottom = 66.0
 title = "Cameras Disabled!"
+description = "Now they won't track you anymore"
 
 [node name="Label" type="Label" parent="Page/MethodStepsParent/MethodStep_5" unique_id=1058048691]
 layout_mode = 0
@@ -201,7 +207,8 @@ offset_top = 64.0
 offset_right = 233.0
 offset_bottom = 64.0
 title = "Boss Keys found!"
-unlocked_arrows = [NodePath("../../Lines/Line2D_7")]
+description = "You can now open all locked doors"
+unlocked_arrows = [NodePath("../../Lines/Line2D_5"), NodePath("../../Lines/Line2D_7")]
 
 [node name="Label" type="Label" parent="Page/MethodStepsParent/MethodStep_6" unique_id=64122411]
 layout_mode = 0
@@ -219,6 +226,7 @@ offset_top = 58.0
 offset_right = 732.0
 offset_bottom = 58.0
 title = "The Boss is now \\t a vampire!"
+description = "It would be a shame if he got too close to some garlic..."
 unlocked_arrows = [NodePath("../../Lines/Line2D_8")]
 
 [node name="Label" type="Label" parent="Page/MethodStepsParent/MethodStep_7" unique_id=1636057865]
@@ -238,6 +246,7 @@ offset_top = 120.0
 offset_right = 904.0
 offset_bottom = 120.0
 title = "Kill Method #2"
+description = "Boss ate a garlic sandwhich and died..."
 
 [node name="Label" type="Label" parent="Page/MethodStepsParent/MethodStep_8" unique_id=433586603]
 layout_mode = 0
@@ -255,6 +264,7 @@ offset_top = 200.0
 offset_right = 93.0
 offset_bottom = 200.0
 title = "Tony is watching..."
+description = "No one gets past him"
 unlocked_arrows = [NodePath("../../Lines/Line2D_9")]
 
 [node name="Label" type="Label" parent="Page/MethodStepsParent/MethodStep_9" unique_id=804915205]
@@ -273,6 +283,7 @@ offset_top = 199.0
 offset_right = 236.0
 offset_bottom = 199.0
 title = "The Office locker"
+description = "Perfect hiding spot for a mercenary"
 unlocked_arrows = [NodePath("../../Lines/Line2D_10")]
 
 [node name="Label" type="Label" parent="Page/MethodStepsParent/MethodStep_10" unique_id=1387163281]
@@ -291,6 +302,7 @@ offset_top = 193.0
 offset_right = 417.0
 offset_bottom = 193.0
 title = "Kill Method #3"
+description = "Boss found dead in his office..."
 
 [node name="Label" type="Label" parent="Page/MethodStepsParent/MethodStep_11" unique_id=699322285]
 layout_mode = 0
@@ -308,6 +320,7 @@ offset_top = 193.0
 offset_right = 578.0
 offset_bottom = 193.0
 title = "Found Garlic!"
+description = "An interesting ingredient to add..."
 unlocked_arrows = [NodePath("../../Lines/Line2D_11")]
 
 [node name="Label" type="Label" parent="Page/MethodStepsParent/MethodStep_12" unique_id=1308984794]
@@ -326,6 +339,7 @@ offset_top = 193.0
 offset_right = 724.0
 offset_bottom = 193.0
 title = "Boss got garlic in sandwich"
+description = "It would be a shame if he was a vampire"
 unlocked_arrows = [NodePath("../../Lines/Line2D_12")]
 
 [node name="Label" type="Label" parent="Page/MethodStepsParent/MethodStep_13" unique_id=1361702143]
@@ -344,6 +358,7 @@ offset_top = 325.0
 offset_right = 103.0
 offset_bottom = 325.0
 title = "A wired phone"
+description = "The perfect distraction"
 unlocked_arrows = [NodePath("../../Lines/Line2D_13")]
 
 [node name="Label" type="Label" parent="Page/MethodStepsParent/MethodStep_14" unique_id=224310529]
@@ -429,7 +444,8 @@ points = PackedVector2Array(136, -61, 159, -79)
 default_color = Color(0, 0, 0, 1)
 
 [node name="Line2D_5" type="Line2D" parent="Page/Lines" unique_id=1974525082]
-position = Vector2(109, 44)
+position = Vector2(359, -42)
+rotation = 3.1415927
 points = PackedVector2Array(124, -64, 124, -20)
 default_color = Color(0, 0, 0, 1)
 

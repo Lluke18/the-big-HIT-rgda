@@ -105,8 +105,9 @@ func on_player_detected():
 	state_transition.emit(self, detected_state_name)
 
 func _on_door_timer_timeout() -> void:
-	opened_doors[0].animation_player.play_backwards("OpenDoor")
-	opened_doors.pop_front()
+	if opened_doors[0] != null:
+		opened_doors[0].animation_player.play_backwards("OpenDoor")
+		opened_doors.pop_front()
 		
 func _on_coffee_area_3d_area_entered(area: Area3D) -> void:
 	

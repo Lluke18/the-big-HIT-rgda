@@ -62,9 +62,9 @@ func reset_level():
 		if npc is NPC:
 			npc.reset()
 			
-	#for cam in security_cams.get_children():
-		#if cam is SecurityCam:
-			#cam.reset()
+	for cam in security_cams.get_children():
+		if cam is SecurityCam:
+			cam.reset()
 	
 	var new_game_level = game_level_scene.instantiate()
 	current_game_level.queue_free()

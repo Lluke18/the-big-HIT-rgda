@@ -12,6 +12,8 @@ func _ready() -> void:
 
 func Enter():
 	print(name, "entered Idle!")
+	if npc.nav_agent:
+		npc.nav_agent.target_position = npc.global_position
 	idle_timer.wait_time = idle_time + randf_range(idle_time_deviation, idle_time_deviation * 2)
 	idle_timer.start()
 	await get_tree().create_timer(0.5).timeout
