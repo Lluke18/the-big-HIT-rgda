@@ -36,11 +36,14 @@ var was_seen: bool = false
 
 
 var initial_position: Vector3
+var initial_rotation: Vector3
 
 func _ready() -> void:
 	SignalBus.disable_npcs.connect(disable)
 	
 	initial_position = global_position
+	initial_rotation = global_rotation
+	
 	await get_tree().create_timer(1).timeout
 	#players_spawn = get_node("/root/Main/LevelContainer/Game/Players")
 	if players_spawn:
@@ -68,13 +71,20 @@ func _physics_process(delta: float) -> void:
 	else:
 		suspicion_bar.stop_increase()
 	
-
-	
 func reset():
-	fsm.current_state = fsm.initial_state
-	global_position = initial_position
-	is_chasing = false
 	process_mode = Node.PROCESS_MODE_INHERIT
+	suspicion_bar.reset()
+	is_chasing = false
+	
+	if fsm.current_state.name != fsm.initial_state.name:
+		fsm.change_state(fsm.current_state, fsm.initial_state.name)
+	
+	global_position = initial_position
+	global_rotation = initial_rotation
+	
+	await get_tree().create_timer(3).timeout
+	SignalBus.already_lost = false
+	
 
 func disable():
 	process_mode = Node.PROCESS_MODE_DISABLED

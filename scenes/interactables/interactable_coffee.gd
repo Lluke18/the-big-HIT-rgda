@@ -7,7 +7,7 @@ func _ready() -> void:
 	interactable_object.vampire_interaction_text = "[Left Click] Put Laxatives (need Laxatives)"
 	interactable_object.werewolf_interaction_text = "[Left Click] Put Laxatives (need Laxatives)"
 
-func on_laxative_put(player: Player):
+func on_laxatives_put(player: Player):
 	if multiplayer.is_server():
 		put_laxatives.rpc()
 	else:

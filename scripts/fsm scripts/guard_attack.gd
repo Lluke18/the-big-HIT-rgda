@@ -12,5 +12,7 @@ func Enter():
 	shoot_sound.play()
 	await npc.animated_character.animation_player.animation_finished
 	#PLAY SHOOT SOUND HERE!
-	get_tree().quit()
+	if SignalBus.already_lost == false:
+		SignalBus.game_lost.emit("The guards got you...")
+		SignalBus.already_lost = true
 	

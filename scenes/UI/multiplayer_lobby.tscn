@@ -220,12 +220,11 @@ label_settings = SubResource("LabelSettings_ragau")
 
 [node name="SamePC" type="Label" parent="MultiplayerUI" unique_id=113230066]
 layout_mode = 0
-offset_left = 58.0
-offset_top = 139.0
-offset_right = 793.0
-offset_bottom = 318.0
-text = "Run 2 instances 
-on the same PC"
+offset_left = 62.0
+offset_top = 291.0
+offset_right = 797.0
+offset_bottom = 470.0
+text = "Lan multiplayer"
 label_settings = SubResource("LabelSettings_6tjod")
 
 [node name="Or" type="Label" parent="MultiplayerUI" unique_id=550977579]

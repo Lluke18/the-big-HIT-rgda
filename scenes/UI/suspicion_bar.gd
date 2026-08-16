@@ -32,5 +32,6 @@ func stop_increase():
 	is_increasing = false
 	
 func reset():
+	process_mode = Node.PROCESS_MODE_INHERIT
 	is_increasing = false
 	value = min_value
