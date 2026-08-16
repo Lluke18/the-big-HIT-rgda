@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c506wm7cxrgdv"]
 
-[ext_resource type="Script" uid="uid://bu1e7dtww230r" path="res://scenes/NPCs/npc.gd" id="1_77xen"]
+[ext_resource type="Script" uid="uid://bpq0xihvv2p34" path="res://scenes/NPCs/boss_man.gd" id="1_sm1ty"]
 [ext_resource type="Script" uid="uid://bkuygnj6nmexp" path="res://scripts/fsm scripts/fsm.gd" id="2_sm1ty"]
 [ext_resource type="Script" uid="uid://byvfg0ibjqt5x" path="res://scripts/fsm scripts/idle.gd" id="3_ncga6"]
 [ext_resource type="Script" uid="uid://buaausr3mfk6i" path="res://scripts/fsm scripts/grab_coffee.gd" id="4_77xen"]
@@ -41,12 +41,12 @@ viewport_path = NodePath("SubViewport")
 [sub_resource type="SphereShape3D" id="SphereShape3D_xrivr"]
 radius = 3.2732813
 
-[node name="NPC" type="CharacterBody3D" unique_id=399691295 node_paths=PackedStringArray("animated_character") groups=["npc"]]
+[node name="NPC" type="CharacterBody3D" unique_id=399691295 node_paths=PackedStringArray("grab_coffee_state", "animated_character") groups=["npc"]]
 collision_layer = 2
-script = ExtResource("1_77xen")
+script = ExtResource("1_sm1ty")
+grab_coffee_state = NodePath("StateMachine/GrabCoffee")
 animated_character = NodePath("Boss")
 move_speed = 2.2
-run_speed = 5.0
 sus_multiplier = 3.0
 location_wait_time = 5.0
 
@@ -56,7 +56,7 @@ initial_state = NodePath("Idle")
 
 [node name="Idle" type="Node" parent="StateMachine" unique_id=1233826377 node_paths=PackedStringArray("suspicion_bar", "npc")]
 script = ExtResource("3_ncga6")
-wander_state_name = "grabcoffee"
+wander_state_name = "GrabCoffee"
 suspicion_bar = NodePath("../../SubViewport/SuspicionBar")
 detected_state_name = "attack"
 idle_time = 8.0
@@ -64,6 +64,7 @@ idle_time_deviation = 5.0
 npc = NodePath("../..")
 
 [node name="IdleTimer" type="Timer" parent="StateMachine/Idle" unique_id=1932874965]
+wait_time = 20.0
 one_shot = true
 
 [node name="GrabCoffee" type="Node" parent="StateMachine" unique_id=1163910580 node_paths=PackedStringArray("nav_agent", "wait_timer", "npc")]
@@ -90,6 +91,17 @@ shape = SubResource("CapsuleShape3D_ragau")
 script = ExtResource("5_sm1ty")
 attack_range = NodePath("../../GuardDetectionArea")
 npc = NodePath("../..")
+
+[node name="GotoBath" type="Node" parent="StateMachine" unique_id=1783794286 node_paths=PackedStringArray("nav_agent", "wait_timer", "npc")]
+script = ExtResource("4_77xen")
+detected_state_name = "Attack"
+nav_agent = NodePath("../../NavigationAgent3D")
+wait_timer = NodePath("BathTimer")
+npc = NodePath("../..")
+
+[node name="BathTimer" type="Timer" parent="StateMachine/GotoBath" unique_id=493836222]
+wait_time = 8.0
+one_shot = true
 
 [node name="Boss" parent="." unique_id=237304749 instance=ExtResource("5_hexoh")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, -0.8359131, 0.077668786)

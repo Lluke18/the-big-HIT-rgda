@@ -8,6 +8,8 @@ script = ExtResource("1_r1srg")
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="." unique_id=384220163]
 process_mode = 3
 autoplay = true
+bus = &"Music"
 
 [node name="SfxPlayer" type="AudioStreamPlayer" parent="." unique_id=769089708]
 process_mode = 3
+bus = &"Sfx"

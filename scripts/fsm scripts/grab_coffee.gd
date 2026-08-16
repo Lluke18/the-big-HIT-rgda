@@ -17,6 +17,8 @@ var opened_doors: Array = []
 var move_dir: Vector3
 
 var is_vampire: bool = false
+var coffee_has_laxatives: bool = false
+
 
 func _ready() -> void:
 	await get_tree().process_frame
@@ -107,10 +109,14 @@ func _on_door_timer_timeout() -> void:
 	opened_doors.pop_front()
 		
 func _on_coffee_area_3d_area_entered(area: Area3D) -> void:
+	
 	if is_vampire:
 		area.set_deferred("process_mode", Node.PROCESS_MODE_DISABLED)
 		victory()
-		
+	else:
+		if coffee_has_laxatives:
+			SignalBus.drank_coffee_laxative.emit()
+
 func victory():
 	if multiplayer.is_server():
 		win_game.rpc()

@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://drtrpp588123n" path="res://sprites/ButtonDisabled.png" id="2_e2655"]
 [ext_resource type="PackedScene" uid="uid://xhbnsy4gqo1j" path="res://scenes/UI/ResizableButton.tscn" id="3_evuln"]
 [ext_resource type="VideoStream" uid="uid://eq0gsufipose" path="res://assets/characters/endinganim0001-0026.ogv" id="4_e2655"]
+[ext_resource type="AudioStream" uid="uid://bka4245m64evl" path="res://audio/Win_jingle.wav" id="5_evuln"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_qffkq"]
 font_size = 96
@@ -166,6 +167,10 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Repeat Mission"
 label_settings = SubResource("LabelSettings_gjgpg")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1604805064]
+stream = ExtResource("5_evuln")
+bus = &"Sfx"
 
 [connection signal="pressed" from="Background/ExitToMenu" to="." method="_on_exit_to_menu_pressed"]
 [connection signal="pressed" from="Background/TryAgain" to="." method="_on_try_again_pressed"]

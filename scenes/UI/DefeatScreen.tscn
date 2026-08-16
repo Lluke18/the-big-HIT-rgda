@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://de1sj1wnnkcq4" path="res://scenes/UI/defeat_screen.gd" id="1_0vqnf"]
 [ext_resource type="Texture2D" uid="uid://drtrpp588123n" path="res://sprites/ButtonDisabled.png" id="2_lgkil"]
 [ext_resource type="PackedScene" uid="uid://xhbnsy4gqo1j" path="res://scenes/UI/ResizableButton.tscn" id="3_cf5ru"]
+[ext_resource type="AudioStream" uid="uid://bpxjxpr8i60ob" path="res://audio/lose_jingle.wav" id="4_cf5ru"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ragau"]
 font_size = 96
@@ -140,6 +141,9 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Try Again"
 label_settings = SubResource("LabelSettings_6yb6h")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=615722330]
+stream = ExtResource("4_cf5ru")
 
 [connection signal="pressed" from="ExitToMenu" to="." method="_on_exit_to_menu_pressed"]
 [connection signal="pressed" from="TryAgain" to="." method="_on_try_again_pressed"]

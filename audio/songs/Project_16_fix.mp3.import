@@ -12,8 +12,8 @@ dest_files=["res://.godot/imported/Project_16_fix.mp3-ec784ce532dd77993be16a1810
 
 [params]
 
-loop=false
-loop_offset=0
-bpm=0
+loop=true
+loop_offset=0.0
+bpm=0.0
 beat_count=0
 bar_beats=4

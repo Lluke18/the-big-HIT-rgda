@@ -11,6 +11,9 @@ extends Node3D
 @onready var camera_3d: Camera3D = $Camera3D
 
 @onready var spawner_marker: Marker3D = $SpawnerMarker
+@onready var audio_player: AudioStreamPlayer = $AudioStreamPlayer
+@onready var reverse_bat: AudioStreamPlayer = $AudioStreamPlayer2
+
 
 func _ready() -> void:
 	animated_character.visible = false
@@ -30,7 +33,7 @@ func on_switch_to_vent(vent_index: int):
 func on_vent_enter(player: Player):
 	if player is Werewolf:
 		return
-		
+	audio_player.play()
 	player.hide_crosshair()
 		
 	player.hide()
@@ -56,6 +59,7 @@ func on_vent_enter(player: Player):
 	SignalBus.enter_vent.emit(index)
 	
 func on_vent_exit(vent_index: int, player: Player):
+	reverse_bat.play()
 	if vent_index != index:
 		return
 		
