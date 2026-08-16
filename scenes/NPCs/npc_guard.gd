@@ -17,4 +17,3 @@ func _ready() -> void:
 func on_found_intruder():
 	if not fsm.current_state.name == "ChasePlayer":
 		fsm.change_state(fsm.current_state, "ChasePlayer")
-#or just quit here
