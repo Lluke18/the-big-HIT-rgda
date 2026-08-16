@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://cm8d43ksk8k8s"]
+
+[ext_resource type="Script" uid="uid://01xwljm8xk2s" path="res://scripts/items/item_data.gd" id="1_d8ncv"]
+[ext_resource type="Texture2D" uid="uid://dop24ummtax76" path="res://sprites/items/Laxatives.png" id="1_tpesh"]
+
+[resource]
+script = ExtResource("1_d8ncv")
+item_name = "Laxatives"
+icon = ExtResource("1_tpesh")
+metadata/_custom_type_script = "uid://01xwljm8xk2s"

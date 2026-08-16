@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://ds10b4bpy367m"]
+
+[ext_resource type="PackedScene" uid="uid://c4dyskokp1u1o" path="res://assets/pill bottles 2 kinds/Laxatives.tscn" id="1_l21bk"]
+[ext_resource type="Script" uid="uid://cpywxq6j6q6on" path="res://scenes/interactables/items/laxatives_item.gd" id="1_vihtu"]
+[ext_resource type="PackedScene" uid="uid://csvwgky3s6fcf" path="res://scenes/interactables/InteractableObject.tscn" id="2_vihtu"]
+
+[node name="LaxativesItem" type="Node3D" unique_id=2125269717]
+script = ExtResource("1_vihtu")
+
+[node name="Laxatives" parent="." unique_id=1661245087 instance=ExtResource("1_l21bk")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 0, 0, 0)
+
+[node name="InteractableObject" parent="." unique_id=216604155 instance=ExtResource("2_vihtu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.27505243, 0)
+
+[node name="Label3D" type="Label3D" parent="." unique_id=1499912259]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0591724, -0.060697794)
+billboard = 1
+text = "Laxatives"
+font_size = 80

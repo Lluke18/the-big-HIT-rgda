@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bp3ru4i8yxani"]
+
+[ext_resource type="Texture2D" uid="uid://bd5btxnlpjla" path="res://assets/pill bottles 2 kinds/cyclo_drug01_BaseColor.png" id="1_1bi84"]
+[ext_resource type="Texture2D" uid="uid://bqo4h7ucm3voj" path="res://assets/pill bottles 2 kinds/drug01_drug01_MaskMap.png" id="2_yf1uj"]
+[ext_resource type="Texture2D" uid="uid://cwrvyoc5wagwu" path="res://assets/pill bottles 2 kinds/drug01_drug01_Normal.png" id="3_tseet"]
+
+[resource]
+albedo_texture = ExtResource("1_1bi84")
+emission_enabled = true
+normal_enabled = true
+normal_texture = ExtResource("3_tseet")
+detail_mask = ExtResource("2_yf1uj")

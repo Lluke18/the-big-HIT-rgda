@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://c4dyskokp1u1o"]
+
+[ext_resource type="PackedScene" uid="uid://dviu8wtyhqigk" path="res://assets/pill bottles 2 kinds/drug01.fbx" id="1_3rajn"]
+
+[node name="Laxatives" unique_id=1661245087 instance=ExtResource("1_3rajn")]

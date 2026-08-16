@@ -2,6 +2,8 @@ extends Node
 
 #ITEMS
 const BOSS_KEYS: ItemData = preload("res://scripts/items/BossKeys.tres")
+const LAXATIVES: ItemData = preload("res://scripts/items/Laxatives.tres")
+const GARLIC: ItemData = preload("res://scripts/items/Garlic.tres")
 
 const MAX_SIZE = 3
 

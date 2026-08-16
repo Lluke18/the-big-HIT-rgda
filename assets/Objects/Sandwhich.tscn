@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://cda065r4vrwhv"]
+
+[ext_resource type="Script" uid="uid://bdl080s11i5q4" path="res://assets/Objects/sandwhich.gd" id="1_8bbew"]
+[ext_resource type="PackedScene" uid="uid://cgv3dujbwcbs7" path="res://assets/OfficeFBX/Food_Bread.fbx" id="1_0182b"]
+[ext_resource type="PackedScene" uid="uid://befq67ysfwsqr" path="res://assets/OfficeFBX/Food_CheeseSlice.fbx" id="2_cqno6"]
+[ext_resource type="PackedScene" uid="uid://jfh2k4cw2v5v" path="res://assets/OfficeFBX/Food_LettuceSlice.fbx" id="3_8bbew"]
+[ext_resource type="PackedScene" uid="uid://4qm4142vjmlk" path="res://assets/OfficeFBX/Food_TomatoSlice.fbx" id="4_qkgda"]
+[ext_resource type="PackedScene" uid="uid://csvwgky3s6fcf" path="res://scenes/interactables/InteractableObject.tscn" id="5_cqno6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8bbew"]
+size = Vector3(0.35046387, 0.4576416, 0.5458374)
+
+[node name="Sandwhich" type="Node3D" unique_id=468044689]
+script = ExtResource("1_8bbew")
+
+[node name="Food_Bread" parent="." unique_id=1035235395 instance=ExtResource("1_0182b")]
+
+[node name="Food_CheeseSlice" parent="." unique_id=1718913050 instance=ExtResource("2_cqno6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.014245801, 0)
+
+[node name="Food_LettuceSlice" parent="." unique_id=1017041094 instance=ExtResource("3_8bbew")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.021075897, 0)
+
+[node name="Food_TomatoSlice" parent="." unique_id=1033000130 instance=ExtResource("4_qkgda")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.036890373, 0.06148258)
+
+[node name="Food_TomatoSlice2" parent="." unique_id=1500564126 instance=ExtResource("4_qkgda")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.047982812, 0.036890373, -0.031618804)
+
+[node name="Food_Bread2" parent="." unique_id=1812049567 instance=ExtResource("1_0182b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.043032944, 0)
+
+[node name="InteractableObject" parent="." unique_id=216604155 instance=ExtResource("5_cqno6")]
+
+[node name="CollisionShape3D" parent="InteractableObject" index="0" unique_id=1785336431]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0072631836, 0.17315674, -0.026947021)
+shape = SubResource("BoxShape3D_8bbew")
+debug_color = Color(0.8784314, 0, 0.83137256, 1)
+
+[editable path="InteractableObject"]

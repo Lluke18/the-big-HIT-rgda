@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://uf4wjrxudxdl"]
+
+[ext_resource type="PackedScene" uid="uid://c68q0rtjfq532" path="res://assets/cartoon AI data center/Data+Center.fbx" id="1_yigu4"]
+[ext_resource type="PackedScene" uid="uid://csvwgky3s6fcf" path="res://scenes/interactables/InteractableObject.tscn" id="2_dk6c8"]
+[ext_resource type="Script" uid="uid://cqfh83mq6d8dt" path="res://scenes/interactables/server_rack.gd" id="2_vx0pm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vx0pm"]
+albedo_color = Color(0, 0, 0, 1)
+metallic = 0.5
+
+[sub_resource type="BoxMesh" id="BoxMesh_ragau"]
+size = Vector3(1.199585, 1.5021973, 1.34021)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_umu6e"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vx0pm"]
+size = Vector3(3.684701, 4.027458, 2.1159668)
+
+[node name="ServerRack" unique_id=701569919 instance=ExtResource("1_yigu4")]
+script = ExtResource("2_vx0pm")
+
+[node name="Retopo_Plane_048" parent="." index="0" unique_id=319848970]
+transform = Transform3D(30, 0, 0, 0, -6.556708e-07, 30, 0, -15, -1.3113416e-06, 0, 0.7582936, 0)
+
+[node name="Retopo_Plane_001" parent="Retopo_Plane_048" index="0" unique_id=789899411]
+transform = Transform3D(0.98012185, 0, 0, 0, 0.98012185, -7.1054274e-15, 0, 8.881784e-15, 0.9999999, 0.00016751052, 7.3503365e-06, -0.04156094)
+surface_material_override/0 = SubResource("StandardMaterial3D_vx0pm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Retopo_Plane_048" index="4" unique_id=607557647]
+transform = Transform3D(0.06666663, 0, 0, 0, -2.9140903e-09, -0.06666663, 0, 0.06801789, -2.9730192e-09, 0.0041381842, 6.103392e-05, 0.0027648918)
+mesh = SubResource("BoxMesh_ragau")
+surface_material_override/0 = SubResource("StandardMaterial3D_umu6e")
+
+[node name="InteractableObject" parent="." index="1" unique_id=216604155 instance=ExtResource("2_dk6c8")]
+
+[node name="CollisionShape3D" parent="InteractableObject" index="0" unique_id=1785336431]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.024473667, 1.0557747, -0.041870117)
+shape = SubResource("BoxShape3D_vx0pm")
+
+[node name="Label3D" type="Label3D" parent="." index="2" unique_id=1082372716]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5090904, 2.3739126)
+billboard = 1
+text = "Security Servers"
+font_size = 80
+
+[editable path="InteractableObject"]

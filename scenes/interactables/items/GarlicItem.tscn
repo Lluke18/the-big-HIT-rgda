@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dqqovdqyrglgf"]
+
+[ext_resource type="Script" uid="uid://brh3x4ieetia0" path="res://scenes/interactables/items/garlic_item.gd" id="1_lg631"]
+[ext_resource type="PackedScene" uid="uid://csvwgky3s6fcf" path="res://scenes/interactables/InteractableObject.tscn" id="1_uit5c"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lg631"]
+size = Vector3(2.354065, 1, 4.5079956)
+
+[node name="GarlicItem" type="Node3D" unique_id=2117054936]
+script = ExtResource("1_lg631")
+
+[node name="InteractableObject" parent="." unique_id=216604155 instance=ExtResource("1_uit5c")]
+
+[node name="CollisionShape3D" parent="InteractableObject" index="0" unique_id=1785336431]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.019378662, 0, 0.041290283)
+shape = SubResource("BoxShape3D_lg631")
+debug_color = Color(0.8784314, 0, 0.83137256, 1)
+
+[editable path="InteractableObject"]

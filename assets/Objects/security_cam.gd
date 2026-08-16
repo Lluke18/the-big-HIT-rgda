@@ -11,8 +11,8 @@ var already_called: bool = false
 @onready var red_light: SpotLight3D = $FogVolume/SpotLight3D
 @onready var cam_mesh: MeshInstance3D = $NurbsPath
 
-
-
+func _ready() -> void:
+	SignalBus.break_cameras.connect(disable)
 
 func _physics_process(delta: float) -> void:
 	if multiplayer.is_server():
