@@ -24,6 +24,10 @@ func Enter():
 	pick_new_location()
 
 func Physics_Update(_delta: float):
+	if not multiplayer.is_server():
+		return
+	
+	
 	var next_path_position = nav_agent.get_next_path_position()
 	move_dir = npc.global_position.direction_to(next_path_position)
 	
@@ -42,6 +46,8 @@ func Physics_Update(_delta: float):
 		npc.velocity = Vector3.ZERO
 		
 	if nav_agent.is_navigation_finished():
+		npc.velocity = Vector3.ZERO
+		npc.animated_character.play_idle_animation()
 		state_transition.emit(self, "Idle")
 
 func pick_new_location():

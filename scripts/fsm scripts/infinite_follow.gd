@@ -48,8 +48,8 @@ func Physics_Update(_delta: float):
 	for body in overlapping_bodies:
 		if body.is_in_group("Player"):
 			print("Detected player, SHOOTIN'")
-			state_transition.emit(self, "Attack")
 			npc.velocity = Vector3.ZERO
+			state_transition.emit(self, "Attack")
 			break
 
 func get_closest_player() -> CharacterBody3D:

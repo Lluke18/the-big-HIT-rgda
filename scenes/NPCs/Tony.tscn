@@ -4,8 +4,10 @@
 [ext_resource type="Script" uid="uid://bkuygnj6nmexp" path="res://scripts/fsm scripts/fsm.gd" id="2_d558j"]
 [ext_resource type="Script" uid="uid://byvfg0ibjqt5x" path="res://scripts/fsm scripts/idle.gd" id="3_o1bhs"]
 [ext_resource type="Script" uid="uid://hs5y1th4s20b" path="res://scenes/NPCs/run_to_guard.gd" id="4_gsewg"]
+[ext_resource type="Script" uid="uid://bh2u8x1fcythr" path="res://scripts/fsm scripts/path_no_lookat.gd" id="5_d558j"]
 [ext_resource type="PackedScene" uid="uid://csrj6j2v2bg0h" path="res://assets/NPC/corporatist.tscn" id="6_jlbve"]
 [ext_resource type="PackedScene" uid="uid://oenhlr20lqb2" path="res://scenes/UI/SuspicionBar.tscn" id="7_b8wh7"]
+[ext_resource type="Script" uid="uid://tu07mfqt11te" path="res://scenes/NPCs/Tony_phone.gd" id="8_o1bhs"]
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_bjc1w"]
 properties/0/path = NodePath(".:position")
@@ -73,7 +75,15 @@ idle_state_name = "idle"
 guard_detection_area = NodePath("../../GuardDetectionArea")
 npc = NodePath("../..")
 
-[node name="MoneyCalling" type="Node" parent="StateMachine" unique_id=580808129]
+[node name="MoneyCalling" type="Node" parent="StateMachine" unique_id=580808129 node_paths=PackedStringArray("nav_agent", "wait_timer", "npc")]
+script = ExtResource("5_d558j")
+detected_state_name = "RunToGuard"
+nav_agent = NodePath("../../NavigationAgent3D")
+wait_timer = NodePath("stay_at_sec_timer")
+npc = NodePath("../..")
+
+[node name="stay_at_sec_timer" type="Timer" parent="StateMachine/MoneyCalling" unique_id=1890027256]
+one_shot = true
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=838253104]
 
@@ -146,6 +156,9 @@ collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="GuardDetectionArea" unique_id=1996179596]
 shape = SubResource("SphereShape3D_xrivr")
+
+[node name="Node" type="Node" parent="." unique_id=28294667]
+script = ExtResource("8_o1bhs")
 
 [connection signal="timeout" from="StateMachine/Idle/IdleTimer" to="StateMachine/Idle" method="_on_idle_timer_timeout"]
 
