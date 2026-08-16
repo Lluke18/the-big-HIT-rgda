@@ -11,6 +11,7 @@ func _ready() -> void:
 	suspicion_bar.detected_player.connect(on_player_detected)
 
 func Enter():
+	print(name, "entered Idle!")
 	idle_timer.wait_time = idle_time + randf_range(idle_time_deviation, idle_time_deviation * 2)
 	idle_timer.start()
 	await get_tree().create_timer(0.5).timeout

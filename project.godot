@@ -47,6 +47,7 @@ npc=""
 interactable=""
 player=""
 guard=""
+door="determines if yo're a door or not"
 
 [gui]
 
