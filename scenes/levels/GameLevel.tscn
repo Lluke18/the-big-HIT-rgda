@@ -130,7 +130,7 @@ transform = Transform3D(1, 0, 0, 0, 1.2, 0, 0, 0, 1, -0.96029186, 0.19144869, -2
 
 [node name="Items" type="Node3D" parent="Interactables" unique_id=1710210810]
 
-[node name="InteractableCoffee" parent="Interactables/Items" unique_id=815212263 instance=ExtResource("12_omf75")]
+[node name="InteractableCoffee" parent="Interactables/Items" unique_id=815212263 groups=["interactable"] instance=ExtResource("12_omf75")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.34515, 1.2628981, 7.775564)
 
 [node name="Sandwhich" parent="Interactables/Items" unique_id=468044689 instance=ExtResource("13_3ob56")]

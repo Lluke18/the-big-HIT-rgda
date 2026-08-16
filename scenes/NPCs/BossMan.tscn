@@ -47,7 +47,7 @@ script = ExtResource("1_sm1ty")
 grab_coffee_state = NodePath("StateMachine/GrabCoffee")
 animated_character = NodePath("Boss")
 move_speed = 2.2
-sus_multiplier = 3.0
+sus_multiplier = 3.5
 location_wait_time = 5.0
 
 [node name="StateMachine" type="Node" parent="." unique_id=470339980 node_paths=PackedStringArray("initial_state")]
@@ -59,8 +59,8 @@ script = ExtResource("3_ncga6")
 wander_state_name = "GrabCoffee"
 suspicion_bar = NodePath("../../SubViewport/SuspicionBar")
 detected_state_name = "attack"
-idle_time = 8.0
-idle_time_deviation = 5.0
+idle_time = 20.0
+idle_time_deviation = 6.0
 npc = NodePath("../..")
 
 [node name="IdleTimer" type="Timer" parent="StateMachine/Idle" unique_id=1932874965]
@@ -96,14 +96,14 @@ npc = NodePath("../..")
 script = ExtResource("4_77xen")
 detected_state_name = "Attack"
 nav_agent = NodePath("../../NavigationAgent3D")
-wait_timer = NodePath("BathTimer")
+wait_timer = NodePath("door_timer")
 npc = NodePath("../..")
 
-[node name="BathTimer" type="Timer" parent="StateMachine/GotoBath" unique_id=493836222]
+[node name="door_timer" type="Timer" parent="StateMachine/GotoBath" unique_id=493836222]
 wait_time = 8.0
 one_shot = true
 
-[node name="Boss" parent="." unique_id=237304749 instance=ExtResource("5_hexoh")]
+[node name="Boss" parent="." unique_id=237304749 groups=["target"] instance=ExtResource("5_hexoh")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, -0.8359131, 0.077668786)
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=838253104]

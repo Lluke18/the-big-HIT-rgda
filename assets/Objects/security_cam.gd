@@ -5,6 +5,7 @@ class_name SecurityCam
 @export var vision_range: float = 10.0
 @export var fov: float = 180.0
 var already_called: bool = false
+@export var sus_multiplier: float = 1.0
 
 @export var player_seen: bool = false
 @onready var suspicion_bar: SuspicionBar = $SubViewport/SuspicionBar
@@ -23,7 +24,7 @@ func _physics_process(delta: float) -> void:
 			red_light.rotation_degrees = Vector3(0, -180, 0)
 	
 	if player_seen:
-		suspicion_bar.start_increase()
+		suspicion_bar.start_increase(sus_multiplier)
 	else:
 		suspicion_bar.stop_increase()
 		

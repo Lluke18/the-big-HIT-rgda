@@ -44,8 +44,10 @@ func join_as_client(lobby_id = 0):
 	
 func list_lobbies():
 	_build_multiplayer_network()
-	active_network.list_lobbies()
-	
+	if active_network_type == MULTIPLAYER_NETWORK_TYPE.STEAM:
+		active_network.list_lobbies()
+	else:
+		print("you need to use steam to access lobbies")
 func quit_lobby() -> void:
 	if multiplayer.is_server():
 		close_lobby.rpc()

@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 class_name Player
 
-const SPRINT_SPEED = 8.7  #RUUUUN
+var SPRINT_SPEED = 8.0  #RUUUUN
 var walk_speed := 5.0
 var current_speed
 var jump_velocity := 4.5
