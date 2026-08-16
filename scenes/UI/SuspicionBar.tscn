@@ -2,6 +2,18 @@
 
 [ext_resource type="Script" uid="uid://bf4w3nc2yf461" path="res://scenes/UI/suspicion_bar.gd" id="1_jo1md"]
 
+[sub_resource type="Theme" id="Theme_vou6s"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qffkq"]
+bg_color = Color(0.01, 0.01, 0.01, 0.5372549)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fqm1f"]
+bg_color = Color(0.57, 0, 0.16149998, 0.61960787)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
 [node name="SuspicionBar" type="ProgressBar" unique_id=1428092685]
 anchors_preset = 5
 anchor_left = 0.5
@@ -13,4 +25,9 @@ offset_bottom = 141.0
 grow_horizontal = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme = SubResource("Theme_vou6s")
+theme_override_constants/outline_size = 5
+theme_override_styles/background = SubResource("StyleBoxFlat_qffkq")
+theme_override_styles/fill = SubResource("StyleBoxFlat_fqm1f")
+show_percentage = false
 script = ExtResource("1_jo1md")

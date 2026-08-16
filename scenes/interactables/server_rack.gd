@@ -1,6 +1,9 @@
 extends Node3D
 
 @onready var interactable_object: InteractableObject = $InteractableObject
+@onready var audio_player: AudioStreamPlayer = $AudioStreamPlayer
+
+
 
 func _ready() -> void:
 	interactable_object.interact = Callable(self, "on_servers_broken")
@@ -23,6 +26,7 @@ func break_server_for_everyone() -> void:
 	
 @rpc("authority", "call_local", "reliable")
 func break_server() -> void:
+	audio_player.play()
 	NotesManager.try_to_update_step(NotesManager.step.CAMERAS)
 	SignalBus.break_cameras.emit()
 	interactable_object.remove_from_group("interactable")

@@ -2,7 +2,7 @@ extends Node3D
 
 @export var players_spawn: Node3D
 @export var discount: AudioStream # asa se numeste main loopul 
-@export var game_over_music: AudioStream
+@export var chase_music: AudioStream
 
 
 var game_level_scene = preload("res://scenes/levels/GameLevel.tscn")
@@ -76,4 +76,6 @@ func reset_level():
 
 func _on_idle_guard_play_alarm() -> void:
 	alarm.play()
+	await alarm.finished
+	AudioManager.play_music(chase_music)
 	#await alarm to finish, then play exciting music

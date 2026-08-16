@@ -21,3 +21,4 @@ signal call_tony
 signal break_cameras
 signal turn_boss_into_vampire
 signal laxatives_put
+signal drank_coffee_laxative

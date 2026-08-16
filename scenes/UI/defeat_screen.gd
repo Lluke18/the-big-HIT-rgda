@@ -3,6 +3,7 @@ extends Control
 @onready var description: Label = $Description
 
 @onready var game_scene_path : String = "res://scenes/levels/Game.tscn"
+@onready var lose_jingle: AudioStreamPlayer = $AudioStreamPlayer
 
 func _ready() -> void:
 	hide()
@@ -15,6 +16,7 @@ func _on_try_again_pressed() -> void:
 	SignalBus.reset_level.emit()
 	
 func _on_defeat(defeat_description: String):
+	lose_jingle.play()
 	if multiplayer.is_server():
 		show_defeat.rpc(defeat_description)
 	else:

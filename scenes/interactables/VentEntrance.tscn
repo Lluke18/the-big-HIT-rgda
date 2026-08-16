@@ -5,6 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://csvwgky3s6fcf" path="res://scenes/interactables/InteractableObject.tscn" id="2_nxlra"]
 [ext_resource type="PackedScene" uid="uid://dl2yuch7k4ty" path="res://assets/characters/vampire_model.tscn" id="4_6wcmj"]
 [ext_resource type="PackedScene" uid="uid://c8ep6vaepb7dp" path="res://assets/characters/vampire_bat.tscn" id="5_0oojn"]
+[ext_resource type="AudioStream" uid="uid://bon2gmojrk6kh" path="res://audio/bat_transform.mp3" id="6_to0p1"]
+[ext_resource type="AudioStream" uid="uid://bgnuju3bvm567" path="res://audio/bat_reverse.wav" id="7_a0no0"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nxlra"]
 size = Vector3(1.8830566, 2.0275574, 1.005127)
@@ -40,6 +42,12 @@ transform = Transform3D(0.9183732, -0.19828993, 0.3424494, 0.047567923, 0.914436
 
 [node name="SpawnerMarker" type="Marker3D" parent="." unique_id=1091532999]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.2330344)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1473055705]
+stream = ExtResource("6_to0p1")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=269177821]
+stream = ExtResource("7_a0no0")
 
 [editable path="InteractableObject"]
 [editable path="AnimatedCharacter"]

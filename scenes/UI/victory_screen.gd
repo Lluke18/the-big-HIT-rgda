@@ -6,6 +6,7 @@ extends Control
 @onready var background: TextureRect = $Background
 
 @onready var video_stream_player: VideoStreamPlayer = $VideoStreamPlayer
+@onready var win_jingle: AudioStreamPlayer = $AudioStreamPlayer
 
 var methods_discovered: int = 0
 
@@ -46,6 +47,7 @@ func _on_try_again_pressed() -> void:
 	SignalBus.reset_level.emit()
 	
 func _on_victory():
+	win_jingle.play()
 	if multiplayer.is_server():
 		show_victory.rpc()
 	else:
