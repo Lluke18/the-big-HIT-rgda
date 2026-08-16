@@ -10,7 +10,7 @@ func _ready() -> void:
 	super()
 	SignalBus.laxatives_put.connect(on_laxatives_put)
 	SignalBus.drank_coffee_laxative.connect(go_to_bath)
-	#SignalBus.
+	SignalBus.turn_boss_into_vampire.connect(transform_vampire)
 
 
 func on_laxatives_put():
@@ -24,3 +24,5 @@ func go_to_bath():
 
 func victory():
 	grab_coffee_state.victory()
+func transform_vampire():
+	is_vampire = true
