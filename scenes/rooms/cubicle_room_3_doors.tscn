@@ -29,33 +29,33 @@ data = PackedVector3Array(-0.583, -5.6, 0, -8.186, 5.6, 0, -8.186, -5.6, 0, -0.5
 points = PackedVector3Array(8.185955, 5.598904, 28.36705, 8.185955, 5.598904, 27.948004, -8.185955, 5.598904, 28.36705, 8.185955, -5.6, 28.36705, 8.185955, -5.6, 27.948004, -8.185955, 5.598904, 27.948004, -8.185955, -5.6, 28.36705, -8.185955, -5.6, 27.948004)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xrivr"]
-size = Vector3(3.414917, 2.7495117, 12.962212)
+size = Vector3(4.1530457, 2.7495117, 13.090969)
 
 [node name="cubicle_room_3doors" unique_id=1262223568 instance=ExtResource("1_ryfob")]
 
-[node name="Desk_004" parent="." index="13" unique_id=364998819]
+[node name="Desk_004" parent="." index="13" unique_id=543329241]
 transform = Transform3D(-6.556706e-12, -2.2649368e-11, -0.00014999999, 0, -0.00014999998, 2.2649367e-11, -0.00014999993, 9.900353e-19, 6.5567074e-12, -4.3492765, 0.33297086, 2.2801428)
 
-[node name="Pen Holder_001" parent="." index="17" unique_id=622571346]
+[node name="Pen Holder_001" parent="." index="17" unique_id=2002265059]
 transform = Transform3D(-6.556708e-10, 0.015, 0, 0, 0, -0.015, -0.015, -6.556708e-10, 0, -2.519581, 0.95812523, 1.528239)
 visible = false
 
-[node name="Mug 4_001" parent="." index="22" unique_id=993105467]
+[node name="Mug 4_001" parent="." index="22" unique_id=1508458243]
 transform = Transform3D(-6.556708e-10, 0.015, 0, 0, 0, -0.015, -0.015, -6.556708e-10, 0, -2.809191, 0.9378562, 1.5448205)
 visible = false
 
-[node name="Top_Drawer_003" parent="." index="24" unique_id=1019173457]
+[node name="Top_Drawer_003" parent="." index="24" unique_id=1050281676]
 transform = Transform3D(-6.556706e-12, -2.2649368e-11, -0.00014999999, 0, -0.00014999998, 2.2649367e-11, -0.00014999993, 9.900353e-19, 6.5567074e-12, -4.8502126, 0.7099787, 1.7614498)
 
-[node name="Mug 3_001" parent="." index="27" unique_id=711364712]
+[node name="Mug 3_001" parent="." index="27" unique_id=330196467]
 transform = Transform3D(-6.556708e-10, 0.015, 0, 0, 0, -0.015, -0.015, -6.556708e-10, 0, -3.030975, 0.94932306, 1.5493667)
 visible = false
 
-[node name="Mug 2_001" parent="." index="32" unique_id=1414838872]
+[node name="Mug 2_001" parent="." index="32" unique_id=2023696949]
 transform = Transform3D(-6.556708e-10, 0.015, 0, 0, 0, -0.015, -0.015, -6.556708e-10, 0, -3.2694962, 0.9378562, 1.5448205)
 visible = false
 
-[node name="Phone_002" parent="." index="35" unique_id=1519063356]
+[node name="Phone_002" parent="." index="35" unique_id=2126079740]
 script = ExtResource("2_gry7p")
 
 [node name="InteractableObject" parent="Phone_002" index="0" unique_id=216604155 instance=ExtResource("2_7wk44")]
@@ -72,14 +72,14 @@ billboard = 1
 text = "Wired Phone"
 font_size = 80
 
-[node name="Bottom_Drawer_003" parent="." index="58" unique_id=1262187415]
+[node name="Bottom_Drawer_003" parent="." index="58" unique_id=1662136041]
 transform = Transform3D(-6.556706e-12, -2.2649368e-11, -0.00014999999, 0, -0.00014999998, 2.2649367e-11, -0.00014999993, 9.900353e-19, 6.5567074e-12, -4.8510547, 0.4080028, 1.9242)
 
-[node name="Mug 1_001" parent="." index="62" unique_id=1909934394]
+[node name="Mug 1_001" parent="." index="62" unique_id=1870997172]
 transform = Transform3D(-2.9494792e-11, 0.0006747622, 0, 0, 0, -0.0008795097, -0.0006747622, -2.9494792e-11, 0, -3.5139334, 0.94932306, 1.5493667)
 visible = false
 
-[node name="Plane" parent="." index="238" unique_id=930703043]
+[node name="Plane" parent="." index="238" unique_id=571277639]
 material_override = ExtResource("2_dokcv")
 surface_material_override/0 = ExtResource("2_427pr")
 
@@ -88,7 +88,7 @@ surface_material_override/0 = ExtResource("2_427pr")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Plane/StaticBody3D" index="0" unique_id=1808646945]
 shape = SubResource("ConvexPolygonShape3D_ryfob")
 
-[node name="Plane_145" parent="." index="239" unique_id=470790017]
+[node name="Plane_145" parent="." index="239" unique_id=1574613793]
 material_override = ExtResource("2_427pr")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Plane_145" index="0" unique_id=1153345373]
@@ -96,7 +96,7 @@ material_override = ExtResource("2_427pr")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Plane_145/StaticBody3D" index="0" unique_id=700665967]
 shape = SubResource("ConcavePolygonShape3D_f4n67")
 
-[node name="Plane_146" parent="." index="240" unique_id=840001286]
+[node name="Plane_146" parent="." index="240" unique_id=73189339]
 material_override = ExtResource("2_427pr")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Plane_146" index="0" unique_id=2007026795]
@@ -104,7 +104,7 @@ material_override = ExtResource("2_427pr")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Plane_146/StaticBody3D" index="0" unique_id=715826812]
 shape = SubResource("ConcavePolygonShape3D_427pr")
 
-[node name="Plane_147" parent="." index="241" unique_id=1643301457]
+[node name="Plane_147" parent="." index="241" unique_id=319447644]
 material_override = ExtResource("2_427pr")
 surface_material_override/0 = SubResource("StandardMaterial3D_77nyq")
 
@@ -113,7 +113,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_77nyq")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Plane_147/StaticBody3D" index="0" unique_id=750299081]
 shape = SubResource("ConcavePolygonShape3D_dokcv")
 
-[node name="Plane_148" parent="." index="242" unique_id=1559148376]
+[node name="Plane_148" parent="." index="242" unique_id=1957450880]
 material_override = ExtResource("2_427pr")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Plane_148" index="0" unique_id=239880463]
@@ -121,28 +121,28 @@ material_override = ExtResource("2_427pr")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Plane_148/StaticBody3D" index="0" unique_id=534068104]
 shape = SubResource("ConvexPolygonShape3D_7wk44")
 
-[node name="Cube_227" parent="." index="244" unique_id=528931615]
+[node name="Cube_227" parent="." index="244" unique_id=2072385958]
 surface_material_override/0 = ExtResource("3_dokcv")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="245" unique_id=836160543]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=261543362]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7290034, 0.87475586, -12.752213)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.423872, 0.87475586, -12.687834)
 shape = SubResource("BoxShape3D_xrivr")
 debug_color = Color(1, 0.74259377, 0.93351334, 1)
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" index="1" unique_id=1141701346]
-transform = Transform3D(0.99998546, 0.004672457, -0.002687535, -0.0046720407, 0.9999891, 0.00016106141, 0.0026882582, -0.00014849927, 0.99999636, 14.5091505, 0.87475586, -12.752213)
+transform = Transform3D(0.99998546, 0.004672457, -0.002687535, -0.0046720407, 0.9999891, 0.00016106141, 0.0026882582, -0.00014849927, 0.99999636, 14.661345, 0.87475586, -12.752213)
 shape = SubResource("BoxShape3D_xrivr")
 debug_color = Color(1, 0.74259377, 0.93351334, 1)
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D" index="2" unique_id=1518840090]
-transform = Transform3D(0.99998546, 0.004672457, -0.002687535, -0.0046720407, 0.9999891, 0.00016106141, 0.0026882582, -0.00014849927, 0.99999636, 14.5091505, 0.87475586, 9.712391)
+transform = Transform3D(0.99998546, 0.004672457, -0.002687535, -0.0046720407, 0.9999891, 0.00016106141, 0.0026882582, -0.00014849927, 0.99999636, 14.741601, 0.87475586, 9.712391)
 shape = SubResource("BoxShape3D_xrivr")
 debug_color = Color(1, 0.74259377, 0.93351334, 1)
 
 [node name="CollisionShape3D4" type="CollisionShape3D" parent="StaticBody3D" index="3" unique_id=1728595372]
-transform = Transform3D(0.99998546, 0.004672457, -0.002687535, -0.0046720407, 0.9999891, 0.00016106141, 0.0026882582, -0.00014849927, 0.99999636, 4.8058043, 0.87475586, 9.991685)
+transform = Transform3D(0.99998546, 0.004672457, -0.002687535, -0.0046720407, 0.9999891, 0.00016106141, 0.0026882582, -0.00014849927, 0.99999636, 4.436745, 0.8764801, 9.990692)
 shape = SubResource("BoxShape3D_xrivr")
 debug_color = Color(1, 0.74259377, 0.93351334, 1)
 

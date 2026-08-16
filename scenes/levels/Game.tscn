@@ -76,8 +76,8 @@ transform = Transform3D(-0.88402784, 0, 0.4674343, 0, 1, 0, -0.4674343, 0, -0.88
 players_spawn = NodePath("../../Players")
 sus_multiplier = 5.0
 
-[node name="idle_corpo_test" parent="NPCs" unique_id=1508298263 node_paths=PackedStringArray("players_spawn") instance=ExtResource("3_4gy8a")]
-transform = Transform3D(-0.6272348, 0, -0.7788302, 0, 1, 0, 0.7788302, 0, -0.6272348, -6.4691567, 0.82329667, 12.396174)
+[node name="idle_corpo_4c" parent="NPCs" unique_id=1508298263 node_paths=PackedStringArray("players_spawn") instance=ExtResource("3_4gy8a")]
+transform = Transform3D(-0.6536741, 0, 0.7567761, 0, 1, 0, -0.7567761, 0, -0.6536741, 2.811206, 0.82329667, 12.566856)
 players_spawn = NodePath("../../Players")
 fov = 100.0
 
@@ -135,9 +135,11 @@ location_wait_time = 5.0
 vision_range = 12.0
 fov = 100.0
 
-[node name="Tony" parent="NPCs" unique_id=662425812 node_paths=PackedStringArray("players_spawn") instance=ExtResource("9_tgnlw")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 19.989626, 0.8847008, 37.58875)
+[node name="Tony" parent="NPCs" unique_id=662425812 node_paths=PackedStringArray("players_spawn", "route") instance=ExtResource("9_tgnlw")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 19.989626, 0.8847008, 38.90135)
 players_spawn = NodePath("../../Players")
+route = NodePath("../../NPCRoutes/TonyRoute")
+sus_multiplier = 5.0
 vision_range = 13.0
 fov = 110.0
 
@@ -156,7 +158,7 @@ location_wait_time = 2.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15027201, 0, 40.776653)
 
 [node name="Marker3D4" type="Marker3D" parent="NPCRoutes/TonyRoute" unique_id=660606793]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.096487, 0, 37.12297)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.096487, 0, 37.94309)
 
 [node name="Route2" type="Node3D" parent="NPCRoutes" unique_id=825274622]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8827437, 0, 29.602005)
@@ -165,7 +167,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8827437, 0, 29.602005)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.722848, 0, -29.514929)
 
 [node name="Marker3D2" type="Marker3D" parent="NPCRoutes/Route2" unique_id=1611702998]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.8739219, 0, -10.704714)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.6558744, 0, -9.92905)
 
 [node name="Marker3D3" type="Marker3D" parent="NPCRoutes/Route2" unique_id=2048011672]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.473801, 0, -9.652643)
