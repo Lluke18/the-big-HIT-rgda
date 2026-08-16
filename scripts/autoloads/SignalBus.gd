@@ -17,3 +17,6 @@ signal exit_vent(vent_index: int, player: Player)
 signal found_intruder(intruder_position: Vector3)
 
 signal boss_pooping_update(is_pooping: bool)
+signal call_tony
+
+signal break_cameras

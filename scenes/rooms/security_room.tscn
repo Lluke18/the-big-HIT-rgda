@@ -16,8 +16,8 @@
 [ext_resource type="Texture2D" uid="uid://cmik8llacrceh" path="res://assets/90's office pack/90s Office Pack_91.png" id="14_2edh7"]
 [ext_resource type="Texture2D" uid="uid://bktccjx1qpelv" path="res://assets/90's office pack/90s Office Pack_92.png" id="15_65sfq"]
 [ext_resource type="Material" uid="uid://6lvovtvcxqlo" path="res://assets/materials/light_emission.tres" id="16_u8f20"]
-[ext_resource type="Texture2D" uid="uid://hp8u3qdng15a" path="res://assets/textures/palette1.png" id="17_fg1p4"]
-[ext_resource type="Texture2D" uid="uid://skp1m1ob5dl8" path="res://assets/textures/screens.png" id="18_csl4m"]
+[ext_resource type="Texture2D" uid="uid://hp8u3qdng15a" path="res://assets/Textures/palette1.png" id="17_fg1p4"]
+[ext_resource type="Texture2D" uid="uid://skp1m1ob5dl8" path="res://assets/Textures/screens.png" id="18_csl4m"]
 [ext_resource type="PackedScene" uid="uid://dw4gfe1l8ux38" path="res://assets/Objects/computer_case_old.tscn" id="19_bq3ga"]
 [ext_resource type="Texture2D" uid="uid://gnlr6i80dsce" path="res://assets/90's office pack/90s Office Pack_21.png" id="20_2oe23"]
 [ext_resource type="Texture2D" uid="uid://bsmwahdow0lx2" path="res://assets/90's office pack/90s Office Pack_22.png" id="21_1b62d"]
@@ -29,6 +29,7 @@
 [ext_resource type="Texture2D" uid="uid://b1580ay4k3fvg" path="res://assets/90's office pack/90s Office Pack_119.png" id="27_4oai1"]
 [ext_resource type="Texture2D" uid="uid://dld5u24m5n5h" path="res://assets/90's office pack/90s Office Pack_120.png" id="28_s5iea"]
 [ext_resource type="Texture2D" uid="uid://dc2eajyv66a7p" path="res://assets/90's office pack/90s Office Pack_123.png" id="29_o8tp7"]
+[ext_resource type="PackedScene" uid="uid://uf4wjrxudxdl" path="res://scenes/interactables/ServerRack.tscn" id="30_vimue"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8bh5w"]
 resource_name = "Cabinet"
@@ -983,10 +984,10 @@ transform = Transform3D(-8.195639e-08, 0, -1.8, 0, 1.8, 0, 1.8, 0, -8.195639e-08
 mesh = SubResource("ArrayMesh_4sjbh")
 surface_material_override/0 = SubResource("StandardMaterial3D_uyubt")
 
-[node name="Plane_153 " parent="." index="1" unique_id=1808925814]
+[node name="Plane_153 " parent="." index="1" unique_id=2026705363]
 surface_material_override/0 = ExtResource("2_wib36")
 
-[node name="Plane_154 " parent="." index="2" unique_id=613185975]
+[node name="Plane_154 " parent="." index="2" unique_id=1914644594]
 surface_material_override/0 = ExtResource("2_wib36")
 
 [node name="Bottom_Drawer_002" type="MeshInstance3D" parent="Plane_154 " index="1" unique_id=533824284]
@@ -1145,3 +1146,6 @@ shape = SubResource("ConvexPolygonShape3D_wk1ip")
 [node name="Mug 4_001" type="MeshInstance3D" parent="." index="27" unique_id=125858345]
 transform = Transform3D(-2.404142, 0, -1.0659616, 0, 2.629862, 0, 1.0659616, 0, -2.404142, -10.35066, 1.1407646, 9.78225)
 mesh = SubResource("ArrayMesh_gdcrt")
+
+[node name="ServerRack" parent="." index="28" unique_id=701569919 instance=ExtResource("30_vimue")]
+transform = Transform3D(-3.4969112e-08, 0, -0.8, 0, 0.8, 0, 0.8, 0, -3.4969112e-08, -2.1823545, 0.7413207, 6.133397)

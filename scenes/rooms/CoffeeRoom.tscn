@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://n5714vw5oqpv" path="res://assets/fruitsandvegetables/garlic01.fbx" id="15_h2ft2"]
 [ext_resource type="PackedScene" uid="uid://k1meyy27qs74" path="res://assets/fruitsandvegetables/garlic02.fbx" id="16_kp7bg"]
 [ext_resource type="PackedScene" uid="uid://ck5026ivujci0" path="res://assets/Objects/tables/coffee_table.tscn" id="17_6bctx"]
+[ext_resource type="PackedScene" uid="uid://dqqovdqyrglgf" path="res://scenes/interactables/items/GarlicItem.tscn" id="18_h2ft2"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b1lj4"]
 
@@ -176,29 +177,25 @@ transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 5
 
 [node name="WallWindows" parent="Walls" unique_id=376110060 instance=ExtResource("2_rh1wt")]
 
-[node name="Wall_Medium" parent="Walls/WallWindows/Wall_Medium2" parent_id_path=PackedInt32Array(376110060, 2137611996) index="0" unique_id=1511786428]
+[node name="Wall_Medium" parent="Walls/WallWindows/Wall_Medium2" parent_id_path=PackedInt32Array(376110060, 2137611996) index="0" unique_id=1465244875]
 surface_material_override/0 = SubResource("StandardMaterial3D_b1lj4")
 
-[node name="Wall_Medium" parent="Walls/WallWindows/Wall_Medium3" parent_id_path=PackedInt32Array(376110060, 62503023) index="0" unique_id=1511786428]
+[node name="Wall_Medium" parent="Walls/WallWindows/Wall_Medium3" parent_id_path=PackedInt32Array(376110060, 62503023) index="0" unique_id=1465244875]
 surface_material_override/0 = SubResource("StandardMaterial3D_njqwk")
 
 [node name="WallWindows2" parent="Walls" unique_id=692367103 instance=ExtResource("2_rh1wt")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
 
-[node name="Wall_Medium" parent="Walls/WallWindows2/Wall_Medium2" parent_id_path=PackedInt32Array(692367103, 2137611996) index="0" unique_id=1511786428]
+[node name="Wall_Medium" parent="Walls/WallWindows2/Wall_Medium2" parent_id_path=PackedInt32Array(692367103, 2137611996) index="0" unique_id=1465244875]
 surface_material_override/0 = SubResource("StandardMaterial3D_6bctx")
 
-[node name="Wall_Medium" parent="Walls/WallWindows2/Wall_Medium3" parent_id_path=PackedInt32Array(692367103, 62503023) index="0" unique_id=1511786428]
+[node name="Wall_Medium" parent="Walls/WallWindows2/Wall_Medium3" parent_id_path=PackedInt32Array(692367103, 62503023) index="0" unique_id=1465244875]
 surface_material_override/0 = SubResource("StandardMaterial3D_h2ft2")
 
 [node name="WallDoors" parent="Walls" unique_id=214762846 instance=ExtResource("3_6bctx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 20)
 
-[node name="DoubleGlassDoors" parent="Walls/WallDoors" index="0" unique_id=358607124]
-transform = Transform3D(1, 0, 0, 0, 1.06, 0, 0, 0, 1, 8.914108, 0, 0)
-is_interactable = true
-
-[node name="Wall_Medium9" parent="Walls/WallDoors" index="3" unique_id=2051108434]
+[node name="Wall_Medium9" parent="Walls/WallDoors" index="2" unique_id=2051108434]
 transform = Transform3D(0.115, 0, 0, 0, 0.56, 0, 0, 0, 3, 8.767693, 2.2222497, 0)
 
 [node name="WallDoors2" parent="Walls" unique_id=688953168 instance=ExtResource("3_6bctx")]
@@ -331,7 +328,7 @@ mesh = SubResource("ArrayMesh_kp7bg")
 [node name="CoffeeMachine" parent="." unique_id=740283531 instance=ExtResource("11_ognue")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 5.9024377, 1.1388121, 0.71552444)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="CoffeeMachine/CoffeeMachine" parent_id_path=PackedInt32Array(740283531, 1450685791) index="0" unique_id=208890539]
+[node name="StaticBody3D" type="StaticBody3D" parent="CoffeeMachine/CoffeeMachine" parent_id_path=PackedInt32Array(740283531, 1570159999) index="0" unique_id=208890539]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CoffeeMachine/CoffeeMachine/StaticBody3D" unique_id=1162348917]
 shape = SubResource("ConvexPolygonShape3D_vyhko")
@@ -445,6 +442,9 @@ collision_mask = 0
 [node name="CollisionShape3D" type="CollisionShape3D" parent="GarlicArea3D" unique_id=2025017281]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.917358, 2.3980103, 10.100906)
 shape = SubResource("BoxShape3D_ragau")
+
+[node name="GarlicItem" parent="." unique_id=2117054936 instance=ExtResource("18_h2ft2")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 9.669101, 1.1528523, 8.10209)
 
 [editable path="Walls/WallWindows"]
 [editable path="Walls/WallWindows/Wall_Medium2"]

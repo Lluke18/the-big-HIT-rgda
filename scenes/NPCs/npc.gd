@@ -71,11 +71,10 @@ func _physics_process(delta: float) -> void:
 
 	
 func reset():
-	pass
-	#fsm.current_state = fsm.initial_state
-	#global_position = initial_position
-	#is_chasing = false
-	#process_mode = Node.PROCESS_MODE_INHERIT
+	fsm.current_state = fsm.initial_state
+	global_position = initial_position
+	is_chasing = false
+	process_mode = Node.PROCESS_MODE_INHERIT
 
 func disable():
 	process_mode = Node.PROCESS_MODE_DISABLED
