@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://ctkoxsltvebaw" path="res://scenes/UI/VentUI.tscn" id="4_bnap0"]
 [ext_resource type="PackedScene" uid="uid://cqa7wrhwccnld" path="res://scenes/UI/GarlicMeter.tscn" id="6_th15p"]
 [ext_resource type="AudioStream" uid="uid://b5axx787f0goa" path="res://audio/JDSherbert - Footstep Foley SFX Pack - Footstep (Concrete - 1).wav" id="7_0hssf"]
+[ext_resource type="PackedScene" uid="uid://dhwrchvc6hpdl" path="res://scenes/UI/LockerUI.tscn" id="7_b7ydn"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_am7ow"]
 radius = 0.21972656
@@ -127,6 +128,9 @@ grow_vertical = 2
 text = "Click to Interact"
 
 [node name="GarlicMeter" parent="CanvasLayer" unique_id=1866509356 instance=ExtResource("6_th15p")]
+visible = false
+
+[node name="LockerUI" parent="CanvasLayer" unique_id=2115574007 instance=ExtResource("7_b7ydn")]
 visible = false
 
 [node name="PlayerTag" type="Label3D" parent="." unique_id=350879227]

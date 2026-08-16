@@ -1,10 +1,9 @@
 [gd_scene format=4 uid="uid://b3htxmmkp6okf"]
 
 [ext_resource type="PackedScene" uid="uid://vqas75yvho6r" path="res://assets/rooms/boss_room.glb" id="1_rmaf1"]
-[ext_resource type="Texture2D" uid="uid://hp8u3qdng15a" path="res://assets/Textures/palette1.png" id="2_2y12g"]
 [ext_resource type="Texture2D" uid="uid://dih38wxjk0bra" path="res://assets/rooms/cubicle_room_3doors_Ucupaint paper 3 Color.png" id="3_ir4o7"]
-[ext_resource type="Texture2D" uid="uid://hp8u3qdng15a" path="res://assets/textures/palette1.png" id="3_m0gjn"]
-[ext_resource type="Texture2D" uid="uid://clje5df3f14a7" path="res://assets/textures/Paintings.png" id="4_1cvy8"]
+[ext_resource type="Texture2D" uid="uid://hp8u3qdng15a" path="res://assets/Textures/palette1.png" id="3_m0gjn"]
+[ext_resource type="Texture2D" uid="uid://clje5df3f14a7" path="res://assets/Textures/Paintings.png" id="4_1cvy8"]
 [ext_resource type="Texture2D" uid="uid://8yvelwwuq7li" path="res://assets/rooms/cubicle_room_4doors_Ucupaint paper 2 Color.png" id="4_e6cx8"]
 [ext_resource type="PackedScene" uid="uid://cxodqnjyuxpeb" path="res://assets/OfficeFBX/Office_Desk_1.fbx" id="5_4hilx"]
 [ext_resource type="Texture2D" uid="uid://bma3gdmhmw75g" path="res://assets/rooms/cubicle_room_4doors_Ucupaint paper 3 Color.png" id="5_655tv"]
@@ -12,15 +11,16 @@
 [ext_resource type="Texture2D" uid="uid://bfso8x8gldpxe" path="res://assets/rooms/cubicle_room_3doors_Ucupaint paper 2 Color.png" id="6_qq3yh"]
 [ext_resource type="Texture2D" uid="uid://dvkxxn33d3c7t" path="res://assets/Textures/Rug_1.png" id="7_0p40x"]
 [ext_resource type="Texture2D" uid="uid://b1ml2ata3rboi" path="res://assets/Textures/Paintings3.png" id="7_gb5xr"]
-[ext_resource type="Texture2D" uid="uid://skp1m1ob5dl8" path="res://assets/Textures/screens.png" id="8_jipsg"]
-[ext_resource type="Texture2D" uid="uid://skp1m1ob5dl8" path="res://assets/textures/screens.png" id="9_ir4o7"]
+[ext_resource type="Texture2D" uid="uid://skp1m1ob5dl8" path="res://assets/Textures/screens.png" id="9_ir4o7"]
+[ext_resource type="Script" uid="uid://cqmrctjsy5o1f" path="res://scenes/rooms/boss_entrance_area_3d.gd" id="15_jipsg"]
 [ext_resource type="PackedScene" uid="uid://cfkypxwr5fftd" path="res://assets/OfficeFBX/AirConditioner_A.fbx" id="15_v5yoe"]
 [ext_resource type="PackedScene" uid="uid://istbep20s1gx" path="res://assets/OfficeFBX/AirConditioner_B.fbx" id="16_i5tle"]
+[ext_resource type="PackedScene" uid="uid://bmqrwntun5gcq" path="res://scenes/interactables/BossLocker.tscn" id="16_ir4o7"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yanbd"]
 resource_name = "Palette"
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("2_2y12g")
+albedo_texture = ExtResource("3_m0gjn")
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2isgn"]
@@ -97,7 +97,7 @@ albedo_texture = ExtResource("6_qq3yh")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p332g"]
 resource_name = "Palette"
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("2_2y12g")
+albedo_texture = ExtResource("3_m0gjn")
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ti8mr"]
@@ -276,7 +276,7 @@ shadow_mesh = SubResource("ArrayMesh_2kwy5")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7vpud"]
 resource_name = "Palette"
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("2_2y12g")
+albedo_texture = ExtResource("3_m0gjn")
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_xpr6a"]
@@ -357,7 +357,7 @@ shadow_mesh = SubResource("ArrayMesh_qrx3q")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_72cbe"]
 resource_name = "Palette"
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("2_2y12g")
+albedo_texture = ExtResource("3_m0gjn")
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_rfwa5"]
@@ -400,13 +400,13 @@ points = PackedVector3Array(-0.20289648, -0.2848095, 0.60360235, -0.23846506, -0
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lvw2f"]
 resource_name = "Palette"
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("2_2y12g")
+albedo_texture = ExtResource("3_m0gjn")
 emission_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kone4"]
 resource_name = "Screens"
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("8_jipsg")
+albedo_texture = ExtResource("9_ir4o7")
 emission_enabled = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_jw4q0"]
@@ -545,6 +545,9 @@ emission_enabled = true
 emission = Color(0.88062793, 0.20776382, 0.25159922, 1)
 emission_energy_multiplier = 4.7
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_ragau"]
+size = Vector3(3.1792603, 1, 1.7192383)
+
 [node name="boss_room" unique_id=1418459769 instance=ExtResource("1_rmaf1")]
 
 [node name="Painting_Photo" type="MeshInstance3D" parent="." index="2" unique_id=187832461]
@@ -636,3 +639,19 @@ transform = Transform3D(-6.8947365e-08, 0, -1.5773318, 0, 1.5773318, 0, 1.577331
 
 [node name="AirConditioner_B" parent="." index="16" unique_id=1897122294 instance=ExtResource("16_i5tle")]
 transform = Transform3D(-6.8947365e-08, 0, -1.5773318, 0, 1.5773318, 0, 1.5773318, 0, -6.8947365e-08, 2.833588, 2.8974407, 0.07376307)
+
+[node name="BossEntranceArea3D" type="Area3D" parent="." index="17" unique_id=685488002]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("15_jipsg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BossEntranceArea3D" index="0" unique_id=1745879049]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.046539307, 0, -2.534912)
+shape = SubResource("BoxShape3D_ragau")
+debug_color = Color(0, 8.264991, 9.509301, 1)
+
+[node name="BossLocker" parent="." index="18" unique_id=698072361 instance=ExtResource("16_ir4o7")]
+transform = Transform3D(-4.3711385e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3711385e-08, 2.4213548, 0, -2.3995376)
+
+[connection signal="body_entered" from="BossEntranceArea3D" to="BossEntranceArea3D" method="_on_body_entered"]
+[connection signal="body_exited" from="BossEntranceArea3D" to="BossEntranceArea3D" method="_on_body_exited"]

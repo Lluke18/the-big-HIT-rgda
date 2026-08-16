@@ -9,7 +9,8 @@ var is_waiting: bool = false
 var position_arr: Array[Vector3]
 var curr_pos_index: int = 0
 @onready var boss_area: Area3D = $"../../GuardDetectionArea"
-@onready var door_timer: Timer = $door_timer
+
+@export var door_timer: Timer
 
 var is_opening_doors: bool
 var opened_doors: Array = []

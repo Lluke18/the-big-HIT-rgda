@@ -3,8 +3,9 @@
 [ext_resource type="Script" uid="uid://bqwxtqruqdfga" path="res://scenes/UI/tooltip.gd" id="1_7wlsf"]
 
 [node name="Tooltip" type="PanelContainer" unique_id=195502370]
+z_index = 10
 anchors_preset = -1
-offset_right = 500.0
+offset_right = 199.0
 offset_bottom = 41.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -15,6 +16,6 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="VBoxContainer" unique_id=1570553866]
 custom_minimum_size = Vector2(10, 0)
-custom_maximum_size = Vector2(500, 100)
+custom_maximum_size = Vector2(300, 100)
 layout_mode = 2
 autowrap_mode = 3

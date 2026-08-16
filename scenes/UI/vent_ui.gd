@@ -8,7 +8,7 @@ extends Control
 const NUMBER_OF_VENTS: int = 4
 const LOCATION_NAMES: Array[String] = [
 	"Bathroom Stall",
-	"Cubicals",
+	"Cubicles",
 	"Security Room",
 	"Storage Room"
 ]

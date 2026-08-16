@@ -16,9 +16,6 @@ font_size = 32
 [sub_resource type="LabelSettings" id="LabelSettings_p7mif"]
 font_size = 32
 
-[sub_resource type="LabelSettings" id="LabelSettings_gjgpg"]
-font_size = 40
-
 [node name="VictoryScreen" type="Control" unique_id=319326158]
 layout_mode = 3
 anchors_preset = 15
@@ -111,10 +108,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -434.0
-offset_top = 27.0
-offset_right = -83.0
-offset_bottom = 204.0
+offset_left = -175.5
+offset_top = 9.0
+offset_right = 175.5
+offset_bottom = 186.0
 grow_horizontal = 2
 grow_vertical = 2
 ignore_texture_size = true
@@ -136,41 +133,8 @@ grow_vertical = 2
 text = "Exit To Main Menu"
 label_settings = SubResource("LabelSettings_p7mif")
 
-[node name="TryAgain" parent="Background" unique_id=386316256 instance=ExtResource("3_evuln")]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 75.0
-offset_top = 27.0
-offset_right = 426.0
-offset_bottom = 204.0
-grow_horizontal = 2
-grow_vertical = 2
-ignore_texture_size = true
-stretch_mode = 5
-
-[node name="Label" type="Label" parent="Background/TryAgain" unique_id=419989738]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-text = "Repeat Mission"
-label_settings = SubResource("LabelSettings_gjgpg")
-
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1604805064]
 stream = ExtResource("5_evuln")
 bus = &"Sfx"
 
 [connection signal="pressed" from="Background/ExitToMenu" to="." method="_on_exit_to_menu_pressed"]
-[connection signal="pressed" from="Background/TryAgain" to="." method="_on_try_again_pressed"]

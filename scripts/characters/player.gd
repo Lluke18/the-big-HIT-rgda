@@ -43,6 +43,8 @@ signal clicked
 
 @onready var player_tag: Label3D = $PlayerTag
 
+@onready var locker_ui: Control = $CanvasLayer/LockerUI
+
 var initial_position: Vector3 = Vector3.ZERO
 
 #@export var player_id := 1:

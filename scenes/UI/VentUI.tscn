@@ -98,9 +98,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -177.0
-offset_top = -520.0
+offset_top = 185.0
 offset_right = 177.0
-offset_bottom = -339.0
+offset_bottom = 366.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("4_hx20u")
@@ -122,6 +122,7 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Bathroom Stall"
 label_settings = SubResource("LabelSettings_ragau")
+horizontal_alignment = 1
 
 [node name="KillUI" type="Control" parent="." unique_id=1232773308]
 visible = false

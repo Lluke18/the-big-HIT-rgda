@@ -4,6 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://bbbc124sp3tn6" path="res://scenes/UI/multiplayer_lobby.tscn" id="2_58fj5"]
 [ext_resource type="Texture2D" uid="uid://y4d54gc6ym8h" path="res://assets/characters/MainMenu.png" id="3_3h7gc"]
 [ext_resource type="PackedScene" uid="uid://xhbnsy4gqo1j" path="res://scenes/UI/ResizableButton.tscn" id="3_4vh8y"]
+[ext_resource type="PackedScene" uid="uid://deuiq7uj1xsrk" path="res://scenes/UI/Settings.tscn" id="4_b1p1q"]
+[ext_resource type="Texture2D" uid="uid://drtrpp588123n" path="res://sprites/ButtonDisabled.png" id="6_s7yn2"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ragau"]
 font_size = 48
@@ -11,7 +13,16 @@ font_size = 48
 [sub_resource type="LabelSettings" id="LabelSettings_4vh8y"]
 font_size = 48
 
+[sub_resource type="LabelSettings" id="LabelSettings_s7yn2"]
+font_size = 40
+
 [sub_resource type="LabelSettings" id="LabelSettings_b1p1q"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_umu6e"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_n6yxf"]
 font_size = 32
 
 [node name="MainMenu" type="Control" unique_id=1711847682]
@@ -84,6 +95,72 @@ grow_vertical = 2
 text = "Play"
 label_settings = SubResource("LabelSettings_4vh8y")
 
+[node name="HowToPlayButton" parent="." unique_id=484753564 instance=ExtResource("3_4vh8y")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.47200003
+anchor_top = 0.31100002
+anchor_right = 0.47200003
+anchor_bottom = 0.31100002
+offset_left = 338.75995
+offset_top = 114.119965
+offset_right = 643.32635
+offset_bottom = 218.92221
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.020378409
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="HowToPlayButton" unique_id=1624798306]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "How To play"
+label_settings = SubResource("LabelSettings_s7yn2")
+
+[node name="SettingsButton" parent="." unique_id=983480996 instance=ExtResource("3_4vh8y")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.47200003
+anchor_top = 0.31100002
+anchor_right = 0.47200003
+anchor_bottom = 0.31100002
+offset_left = -0.24005127
+offset_top = 121.119965
+offset_right = 304.32635
+offset_bottom = 225.92221
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.020378409
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="SettingsButton" unique_id=1253927211]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Settings"
+label_settings = SubResource("LabelSettings_4vh8y")
+
 [node name="ExitButton" parent="." unique_id=1579488803 instance=ExtResource("3_4vh8y")]
 layout_mode = 1
 anchors_preset = -1
@@ -117,11 +194,92 @@ grow_vertical = 2
 text = "Exit to Desktop"
 label_settings = SubResource("LabelSettings_b1p1q")
 
+[node name="Settings" parent="." unique_id=610332145 instance=ExtResource("4_b1p1q")]
+visible = false
+layout_mode = 1
+
+[node name="HowToPlay" type="TextureRect" parent="." unique_id=817144448]
+visible = false
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -605.5
+offset_top = -309.0
+offset_right = 605.5
+offset_bottom = 309.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_s7yn2")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="HowToPlay" unique_id=316282882]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -947.5
+offset_top = -232.0
+offset_right = 959.5
+offset_bottom = 209.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "How to play with your friend through Steam:
+1. Make sure you have steam opened and your account is online.
+2. Press the 'Use Steam' button
+3. If you want to host, press the 'Become host' button.
+ If you want to join, press 'List lobbies' and join 'HIT | COOP'.
+4. Make sure to select different characters. 
+To start, the host needs to press 'Start Game'.
+
+						THE HIT BEGINS!"
+label_settings = SubResource("LabelSettings_umu6e")
+horizontal_alignment = 1
+
+[node name="CloseHowButton" parent="HowToPlay" unique_id=365737024 instance=ExtResource("3_4vh8y")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 210.0
+offset_top = 114.0
+offset_right = 412.0
+offset_bottom = 216.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="HowToPlay/CloseHowButton" unique_id=1076637584]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -22.0
+offset_top = -11.5
+offset_right = 22.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Close"
+label_settings = SubResource("LabelSettings_n6yxf")
+
 [node name="MultiplayerLobby" parent="." unique_id=1482253729 instance=ExtResource("2_58fj5")]
 visible = false
 layout_mode = 1
 
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="HowToPlayButton" to="." method="_on_how_to_play_button_pressed"]
+[connection signal="pressed" from="SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="HowToPlay/CloseHowButton" to="." method="_on_close_how_button_pressed"]
 
 [editable path="MultiplayerLobby"]
