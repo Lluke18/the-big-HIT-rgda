@@ -10,10 +10,11 @@ func _ready() -> void:
 	SignalBus.game_lost.connect(_on_defeat)
 
 func _on_exit_to_menu_pressed() -> void:
+	lose_jingle.stop()
 	NetworkManager.quit_lobby()
 
-func _on_try_again_pressed() -> void:
-	SignalBus.reset_level.emit()
+#func _on_try_again_pressed() -> void:
+	#SignalBus.reset_level.emit()
 	
 func _on_defeat(defeat_description: String):
 	lose_jingle.play()

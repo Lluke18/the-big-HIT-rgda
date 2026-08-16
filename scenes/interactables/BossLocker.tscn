@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://bmqrwntun5gcq"]
+
+[ext_resource type="PackedScene" uid="uid://i1rioq4ljumx" path="res://assets/OfficeFBX/Drawer_1.fbx" id="1_4gksc"]
+[ext_resource type="Script" uid="uid://bemxu7b5rrw37" path="res://scenes/interactables/boss_locker.gd" id="1_lh334"]
+[ext_resource type="PackedScene" uid="uid://bvdx6i55btw34" path="res://assets/OfficeFBX/Drawer_Door.fbx" id="2_e6rqt"]
+[ext_resource type="PackedScene" uid="uid://cxmujkcg6mpfq" path="res://assets/OfficeFBX/Door_Handle2.fbx" id="4_5s8hq"]
+[ext_resource type="PackedScene" uid="uid://csvwgky3s6fcf" path="res://scenes/interactables/InteractableObject.tscn" id="5_b7u7h"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_knstu"]
+size = Vector3(1.1377106, 2.520996, 1.5355225)
+
+[node name="BossLocker" type="Node3D" unique_id=698072361]
+script = ExtResource("1_lh334")
+
+[node name="Drawer_1" parent="." unique_id=1050923300 instance=ExtResource("1_4gksc")]
+transform = Transform3D(1.99, 0, 0, 0, 1.99, 0, 0, 0, 1.99, 0, 0, 0)
+
+[node name="Drawer_Door" parent="." unique_id=182877505 instance=ExtResource("2_e6rqt")]
+transform = Transform3D(2.315, 0, 0, 0, 2.715, 0, 0, 0, 1.99, 0.5799807, -0.0999292, 0.53982794)
+
+[node name="Door_Handle2" parent="." unique_id=1878184427 instance=ExtResource("4_5s8hq")]
+transform = Transform3D(2.1200023e-08, 1, 1.509958e-07, 0.485, -4.371139e-08, 0, 3.2011145e-15, 1.509958e-07, -1, -0.07218188, 1.0579482, 0.59272903)
+
+[node name="Door_Handle3" parent="." unique_id=1866752974 instance=ExtResource("4_5s8hq")]
+transform = Transform3D(2.1200023e-08, 1, 1.509958e-07, 0.485, -4.371139e-08, 0, 3.2011145e-15, 1.509958e-07, -1, 0.024585664, 1.0579482, 0.59272903)
+
+[node name="Label3D" type="Label3D" parent="." unique_id=104087278]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0981451, 2.1576934, 0.44651663)
+billboard = 1
+text = "Office Locker"
+font_size = 80
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1242640396]
+transform = Transform3D(1, 0, 0, 0, 0.84059966, 0.5416569, 0, -0.5416569, 0.84059966, 0, 2.037643, 2.5353146)
+
+[node name="InteractableObject" parent="." unique_id=216604155 instance=ExtResource("5_b7u7h")]
+
+[node name="CollisionShape3D" parent="InteractableObject" index="0" unique_id=1785336431]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15642548, 0.76049805, 0.011291504)
+shape = SubResource("BoxShape3D_knstu")
+
+[editable path="InteractableObject"]

@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://c4sjkxxg01dgw" path="res://scenes/characters/werewolf.gd" id="1_pajqt"]
 [ext_resource type="Script" uid="uid://dkkxcbjegykti" path="res://scripts/characters/input_synchronizer.gd" id="2_pajqt"]
 [ext_resource type="Script" uid="uid://c4ggjq2lmkfxy" path="res://scenes/characters/player_ui.gd" id="4_k4pkd"]
+[ext_resource type="PackedScene" uid="uid://dhwrchvc6hpdl" path="res://scenes/UI/LockerUI.tscn" id="5_gs7cj"]
 [ext_resource type="AudioStream" uid="uid://b5axx787f0goa" path="res://audio/JDSherbert - Footstep Foley SFX Pack - Footstep (Concrete - 1).wav" id="5_tv6fu"]
 [ext_resource type="AudioStream" uid="uid://c7qhayrhmigob" path="res://audio/werewolf_growl.mp3" id="6_gs7cj"]
 
@@ -252,6 +253,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("GradientTexture2D_gs7cj")
+[node name="LockerUI" parent="CanvasLayer" unique_id=2115574007 instance=ExtResource("5_gs7cj")]
+visible = false
 
 [node name="PlayerTag" type="Label3D" parent="." unique_id=2136461645]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0490413, 0)

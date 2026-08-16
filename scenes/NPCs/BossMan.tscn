@@ -67,11 +67,12 @@ npc = NodePath("../..")
 wait_time = 20.0
 one_shot = true
 
-[node name="GrabCoffee" type="Node" parent="StateMachine" unique_id=1163910580 node_paths=PackedStringArray("nav_agent", "wait_timer", "npc")]
+[node name="GrabCoffee" type="Node" parent="StateMachine" unique_id=1163910580 node_paths=PackedStringArray("nav_agent", "wait_timer", "door_timer", "npc")]
 script = ExtResource("4_77xen")
 detected_state_name = "attack"
 nav_agent = NodePath("../../NavigationAgent3D")
 wait_timer = NodePath("Timer")
+door_timer = NodePath("door_timer")
 npc = NodePath("../..")
 
 [node name="Timer" type="Timer" parent="StateMachine/GrabCoffee" unique_id=1114053574]
@@ -92,11 +93,12 @@ script = ExtResource("5_sm1ty")
 attack_range = NodePath("../../GuardDetectionArea")
 npc = NodePath("../..")
 
-[node name="GotoBath" type="Node" parent="StateMachine" unique_id=1783794286 node_paths=PackedStringArray("nav_agent", "wait_timer", "npc")]
+[node name="GotoBath" type="Node" parent="StateMachine" unique_id=1783794286 node_paths=PackedStringArray("nav_agent", "wait_timer", "door_timer", "npc")]
 script = ExtResource("4_77xen")
 detected_state_name = "Attack"
 nav_agent = NodePath("../../NavigationAgent3D")
 wait_timer = NodePath("door_timer")
+door_timer = NodePath("door_timer")
 npc = NodePath("../..")
 
 [node name="door_timer" type="Timer" parent="StateMachine/GotoBath" unique_id=493836222]
@@ -154,6 +156,14 @@ stream = ExtResource("8_sm1ty")
 volume_db = 1.13
 bus = &"Sfx"
 
+[node name="Label3D" type="Label3D" parent="." unique_id=870146466]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 1.1115025, -0.060697794)
+billboard = 1
+modulate = Color(1, 0, 0, 1)
+text = "Target"
+font_size = 96
+
 [connection signal="timeout" from="StateMachine/Idle/IdleTimer" to="StateMachine/Idle" method="_on_idle_timer_timeout"]
 [connection signal="timeout" from="StateMachine/GrabCoffee/door_timer" to="StateMachine/GrabCoffee" method="_on_door_timer_timeout"]
 [connection signal="area_entered" from="StateMachine/GrabCoffee/CoffeeArea3D" to="StateMachine/GrabCoffee" method="_on_coffee_area_3d_area_entered"]
+[connection signal="timeout" from="StateMachine/GotoBath/door_timer" to="StateMachine/GotoBath" method="_on_door_timer_timeout"]

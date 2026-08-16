@@ -14,6 +14,10 @@ var game_level_scene = preload("res://scenes/levels/GameLevel.tscn")
 
 func _ready() -> void:
 	SignalBus.reset_level.connect(_on_level_reset_requested)
+	NotesManager.try_to_update_step(NotesManager.step.VENTS)
+	NotesManager.try_to_update_step(NotesManager.step.STORAGE)
+	NotesManager.try_to_update_step(NotesManager.step.TONY)
+	SignalBus.already_lost = false
 	
 	var main_menu = get_node("/root/Main/MainMenu")
 	var lobby = get_node("/root/Main/MainMenu/MultiplayerLobby")
