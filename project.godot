@@ -107,6 +107,7 @@ open_notes={
 3d_physics/layer_2="NPC's"
 3d_physics/layer_3="Interactables"
 3d_physics/layer_4="Garlic"
+3d_physics/layer_5="Coffee"
 3d_physics/layer_9="VampireMesh"
 3d_physics/layer_10="WerewolfMesh"
 

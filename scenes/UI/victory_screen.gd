@@ -1,12 +1,17 @@
 extends Control
 
-@onready var description_1: Label = $Description1
-@onready var description_2: Label = $Description2
+@onready var description_1: Label = $Background/Description1
+@onready var description_2: Label = $Background/Description2
+
+@onready var background: TextureRect = $Background
+
+@onready var video_stream_player: VideoStreamPlayer = $VideoStreamPlayer
 
 var methods_discovered: int = 0
 
 func _ready() -> void:
 	hide()
+	background.hide()
 	SignalBus.game_won.connect(_on_victory)
 
 func count_methods_discovered():
@@ -56,7 +61,13 @@ func show_victory_for_everyone() -> void:
 	
 @rpc("authority", "call_local", "reliable")
 func show_victory():
-	count_methods_discovered()
-	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	SignalBus.disable_npcs.emit()
 	show()
+	
+	SignalBus.disable_npcs.emit()
+	count_methods_discovered()
+	
+	video_stream_player.play()
+	await video_stream_player.finished
+	
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	background.show()

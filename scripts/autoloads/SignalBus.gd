@@ -18,5 +18,6 @@ signal found_intruder(intruder_position: Vector3)
 
 signal boss_pooping_update(is_pooping: bool)
 signal call_tony
-
 signal break_cameras
+signal turn_boss_into_vampire
+signal laxatives_put

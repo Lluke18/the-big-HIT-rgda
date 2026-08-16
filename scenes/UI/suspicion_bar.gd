@@ -30,3 +30,7 @@ func start_increase():
 	
 func stop_increase():
 	is_increasing = false
+	
+func reset():
+	is_increasing = false
+	value = min_value

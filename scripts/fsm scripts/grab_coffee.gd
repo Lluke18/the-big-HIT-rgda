@@ -16,6 +16,8 @@ var opened_doors: Array = []
 
 var move_dir: Vector3
 
+var is_vampire: bool = false
+
 func _ready() -> void:
 	await get_tree().process_frame
 	suspicion_bar.detected_player.connect(on_player_detected)
@@ -23,7 +25,10 @@ func _ready() -> void:
 		#for marker in npc.route.get_children():
 			#position_arr.append(marker.global_position)
 	wait_timer.wait_time = npc.location_wait_time
+	SignalBus.turn_boss_into_vampire.connect(on_turn_into_vampire)
 	
+func on_turn_into_vampire():
+	is_vampire = true
 
 func Enter():
 	print("boss is going for coffee")
@@ -97,9 +102,31 @@ func _on_wait_at_location_timeout() -> void:
 func on_player_detected():
 	state_transition.emit(self, detected_state_name)
 
-
-
 func _on_door_timer_timeout() -> void:
 	opened_doors[0].animation_player.play_backwards("OpenDoor")
 	opened_doors.pop_front()
 		
+func _on_coffee_area_3d_area_entered(area: Area3D) -> void:
+	if is_vampire:
+		area.set_deferred("process_mode", Node.PROCESS_MODE_DISABLED)
+		victory()
+		
+func victory():
+	if multiplayer.is_server():
+		win_game.rpc()
+	else:
+		# Ask the server to delete the keys
+		win_game_for_everyone.rpc_id(1)
+
+@rpc("any_peer", "reliable")
+func win_game_for_everyone() -> void:
+	if not multiplayer.is_server():
+		return
+		
+	win_game.rpc()
+	
+@rpc("authority", "call_local", "reliable")
+func win_game():
+	is_vampire = false
+	NotesManager.try_to_update_step(NotesManager.step.KILL_2)
+	SignalBus.game_won.emit()

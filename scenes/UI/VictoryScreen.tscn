@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://d4i5jvljiucq8" path="res://scenes/UI/victory_screen.gd" id="1_aje4w"]
 [ext_resource type="Texture2D" uid="uid://drtrpp588123n" path="res://sprites/ButtonDisabled.png" id="2_e2655"]
 [ext_resource type="PackedScene" uid="uid://xhbnsy4gqo1j" path="res://scenes/UI/ResizableButton.tscn" id="3_evuln"]
+[ext_resource type="VideoStream" uid="uid://eq0gsufipose" path="res://assets/characters/endinganim0001-0026.ogv" id="4_e2655"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_qffkq"]
 font_size = 96
@@ -26,6 +27,15 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_aje4w")
 
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=387154442]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("4_e2655")
+
 [node name="Background" type="TextureRect" parent="." unique_id=914915729]
 texture_filter = 1
 layout_mode = 1
@@ -44,23 +54,23 @@ texture = ExtResource("2_e2655")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Title" type="Label" parent="." unique_id=1238763773]
+[node name="Title" type="Label" parent="Background" unique_id=1238763773]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -112.0
-offset_top = -220.0
-offset_right = 112.0
-offset_bottom = -133.0
+offset_left = -433.0
+offset_top = -242.0
+offset_right = 433.0
+offset_bottom = -111.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Mission Complete!"
 label_settings = SubResource("LabelSettings_qffkq")
 
-[node name="Description1" type="Label" parent="." unique_id=2086327296]
+[node name="Description1" type="Label" parent="Background" unique_id=2086327296]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -77,7 +87,7 @@ text = "You have 2 more methods to kill your target"
 label_settings = SubResource("LabelSettings_m1i3h")
 horizontal_alignment = 1
 
-[node name="Description2" type="Label" parent="." unique_id=913292847]
+[node name="Description2" type="Label" parent="Background" unique_id=913292847]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -93,7 +103,7 @@ grow_vertical = 2
 label_settings = SubResource("LabelSettings_m1i3h")
 horizontal_alignment = 1
 
-[node name="ExitToMenu" parent="." unique_id=203274285 instance=ExtResource("3_evuln")]
+[node name="ExitToMenu" parent="Background" unique_id=203274285 instance=ExtResource("3_evuln")]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -109,7 +119,7 @@ grow_vertical = 2
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="ExitToMenu" unique_id=1615131656]
+[node name="Label" type="Label" parent="Background/ExitToMenu" unique_id=1615131656]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -125,7 +135,7 @@ grow_vertical = 2
 text = "Exit To Main Menu"
 label_settings = SubResource("LabelSettings_p7mif")
 
-[node name="TryAgain" parent="." unique_id=386316256 instance=ExtResource("3_evuln")]
+[node name="TryAgain" parent="Background" unique_id=386316256 instance=ExtResource("3_evuln")]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -141,7 +151,7 @@ grow_vertical = 2
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="TryAgain" unique_id=419989738]
+[node name="Label" type="Label" parent="Background/TryAgain" unique_id=419989738]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -157,5 +167,5 @@ grow_vertical = 2
 text = "Repeat Mission"
 label_settings = SubResource("LabelSettings_gjgpg")
 
-[connection signal="pressed" from="ExitToMenu" to="." method="_on_exit_to_menu_pressed"]
-[connection signal="pressed" from="TryAgain" to="." method="_on_try_again_pressed"]
+[connection signal="pressed" from="Background/ExitToMenu" to="." method="_on_exit_to_menu_pressed"]
+[connection signal="pressed" from="Background/TryAgain" to="." method="_on_try_again_pressed"]

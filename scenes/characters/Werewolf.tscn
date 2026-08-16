@@ -50,7 +50,7 @@ seetext = NodePath("CanvasLayer/SeeText")
 
 [node name="AnimatedCharacter" parent="." unique_id=1458199447 instance=ExtResource("1_gbqi8")]
 
-[node name="Skeleton3D" parent="AnimatedCharacter/RootNode/CharacterArmature" parent_id_path=PackedInt32Array(1458199447, 1773801412) index="0" unique_id=649866143]
+[node name="Skeleton3D" parent="AnimatedCharacter/RootNode/CharacterArmature" parent_id_path=PackedInt32Array(1458199447, 520688514) index="0" unique_id=1898885443]
 bones/1/position = Vector3(4.532188e-06, 0.00068335095, -0.0014683789)
 bones/1/rotation = Quaternion(-0.37724775, 0.1701337, -0.011392579, 0.9102797)
 bones/3/rotation = Quaternion(0.18233913, 0.0479157, -0.068451874, 0.979679)
@@ -111,55 +111,55 @@ bones/60/rotation = Quaternion(0.61428666, 0.03576963, -0.045296505, 0.7869693)
 bones/61/position = Vector3(-0.00083370146, 0.00995904, 0.0059603406)
 bones/61/rotation = Quaternion(0.006811719, -3.3884116e-05, -2.1625351e-07, 0.9999768)
 
-[node name="Head" parent="AnimatedCharacter/RootNode/CharacterArmature/Skeleton3D" index="0" unique_id=1780514282]
+[node name="Head" parent="AnimatedCharacter/RootNode/CharacterArmature/Skeleton3D" index="0" unique_id=1400939627]
 transform = Transform3D(0.9865098, 0.10517122, 0.12544818, 0.1507292, -0.28459197, -0.94672465, -0.063866645, 0.952862, -0.29660526, 0.00073064206, 0.0032909354, 0.0072214347)
 
-[node name="Index4_L" parent="AnimatedCharacter/RootNode/CharacterArmature/Skeleton3D" index="1" unique_id=892759367]
+[node name="Index4_L" parent="AnimatedCharacter/RootNode/CharacterArmature/Skeleton3D" index="1" unique_id=602460434]
 transform = Transform3D(0.33918712, 0.9402684, 0.029096363, -0.9157127, 0.32292953, 0.23913509, 0.21545541, -0.10775533, 0.97054976, 0.0050163004, 0.00486413, 0.001294743)
 
-[node name="Middle4_L" parent="AnimatedCharacter/RootNode/CharacterArmature/Skeleton3D" index="2" unique_id=375611530]
+[node name="Middle4_L" parent="AnimatedCharacter/RootNode/CharacterArmature/Skeleton3D" index="2" unique_id=134123278]
 transform = Transform3D(0.38055056, 0.92230964, 0.06727283, -0.91101456, 0.36140624, 0.19858539, 0.15884462, -0.1368583, 0.97777146, 0.005097602, 0.0052431747, 0.0012538204)
 
-[node name="Ring4_L" parent="AnimatedCharacter/RootNode/CharacterArmature/Skeleton3D" index="3" unique_id=606873735]
+[node name="Ring4_L" parent="AnimatedCharacter/RootNode/CharacterArmature/Skeleton3D" index="3" unique_id=314570202]
 transform = Transform3D(0.49791133, 0.85614324, 0.13821208, -0.8671819, 0.49314624, 0.06928788, -0.008838165, -0.15435424, 0.98797536, 0.004786665, 0.00550308, 0.0011985397)
 
-[node name="Pinky4_L" parent="AnimatedCharacter/RootNode/CharacterArmature/Skeleton3D" index="4" unique_id=746161244]
+[node name="Pinky4_L" parent="AnimatedCharacter/RootNode/CharacterArmature/Skeleton3D" index="4" unique_id=34394902]
 transform = Transform3D(0.6181322, 0.7628814, 0.18953598, -0.7777714, 0.62850964, 0.006794839, -0.1139414, -0.15161583, 0.98184973, 0.004445883, 0.005666501, 0.0011957907)
 
-[node name="Thumb3_L" parent="AnimatedCharacter/RootNode/CharacterArmature/Skeleton3D" index="5" unique_id=1368386099]
+[node name="Thumb3_L" parent="AnimatedCharacter/RootNode/CharacterArmature/Skeleton3D" index="5" unique_id=93706120]
 transform = Transform3D(-0.26104128, 0.9628917, -0.06852653, -0.964547, -0.26302448, -0.021568771, -0.038792487, 0.06046707, 0.9974156, 0.0041807964, 0.003972714, 0.0013409947)
 
-[node name="Index4_R" parent="AnimatedCharacter/RootNode/CharacterArmature/Skeleton3D" index="6" unique_id=123854645]
+[node name="Index4_R" parent="AnimatedCharacter/RootNode/CharacterArmature/Skeleton3D" index="6" unique_id=1223385072]
 transform = Transform3D(-0.7921343, -0.5958688, 0.13214713, 0.5872081, -0.6849778, 0.43126622, -0.1664603, 0.41921884, 0.8924939, -0.0022756113, -0.0015819389, 0.0034657381)
 
-[node name="Middle4_R" parent="AnimatedCharacter/RootNode/CharacterArmature/Skeleton3D" index="7" unique_id=873857226]
+[node name="Middle4_R" parent="AnimatedCharacter/RootNode/CharacterArmature/Skeleton3D" index="7" unique_id=1164074739]
 transform = Transform3D(-0.77382624, -0.58694285, -0.2380983, 0.42816722, -0.76174086, 0.48623276, -0.4667599, 0.27431434, 0.8407653, -0.0024375904, -0.0014331803, 0.003376855)
 
-[node name="Ring4_R" parent="AnimatedCharacter/RootNode/CharacterArmature/Skeleton3D" index="8" unique_id=1639202099]
+[node name="Ring4_R" parent="AnimatedCharacter/RootNode/CharacterArmature/Skeleton3D" index="8" unique_id=699225155]
 transform = Transform3D(-0.48427457, -0.6971626, 0.5286234, 0.8577081, -0.4975382, 0.1295843, 0.17266943, 0.516159, 0.8389067, -0.0026001893, -0.0013858255, 0.0032248786)
 
-[node name="Pinky4_R" parent="AnimatedCharacter/RootNode/CharacterArmature/Skeleton3D" index="9" unique_id=2072674297]
+[node name="Pinky4_R" parent="AnimatedCharacter/RootNode/CharacterArmature/Skeleton3D" index="9" unique_id=143767222]
 transform = Transform3D(-0.7080117, -0.70193106, 0.07753727, 0.52179945, -0.44599137, 0.7271972, -0.47586125, 0.5553233, 0.6820348, -0.0028361632, -0.0013103131, 0.003124175)
 
-[node name="Thumb3_R" parent="AnimatedCharacter/RootNode/CharacterArmature/Skeleton3D" index="10" unique_id=592651616]
+[node name="Thumb3_R" parent="AnimatedCharacter/RootNode/CharacterArmature/Skeleton3D" index="10" unique_id=1936247361]
 transform = Transform3D(-0.8771565, -0.46569157, -0.11716299, 0.42067143, -0.62752485, -0.6551691, 0.23158431, -0.62397325, 0.7463413, -0.002121513, -0.0017787655, 0.0036920705)
 
-[node name="LowerLeg_L" parent="AnimatedCharacter/RootNode/CharacterArmature/Skeleton3D" index="11" unique_id=879590157]
+[node name="LowerLeg_L" parent="AnimatedCharacter/RootNode/CharacterArmature/Skeleton3D" index="11" unique_id=632863153]
 transform = Transform3D(0.9989182, -0.013924289, -0.04376652, 0.017960723, -0.7586039, 0.65130365, -0.0422691, -0.65140253, -0.7575531, 0.001276481, -0.0012198593, 0.004556039)
 
-[node name="LowerLeg_R" parent="AnimatedCharacter/RootNode/CharacterArmature/Skeleton3D" index="12" unique_id=168440936]
+[node name="LowerLeg_R" parent="AnimatedCharacter/RootNode/CharacterArmature/Skeleton3D" index="12" unique_id=1870048860]
 transform = Transform3D(0.99542004, 0.08588726, -0.041349515, 0.08693855, -0.6401845, 0.76328546, 0.03908402, -0.763405, -0.6447363, -0.0011189599, -0.0014242417, 0.0053208647)
 
-[node name="Foot_L" parent="AnimatedCharacter/RootNode/CharacterArmature/Skeleton3D" index="13" unique_id=800340035]
+[node name="Foot_L" parent="AnimatedCharacter/RootNode/CharacterArmature/Skeleton3D" index="13" unique_id=861591156]
 transform = Transform3D(1, 5.016102e-08, 5.5818684e-05, 4.5502893e-06, -0.9967446, -0.08062337, 5.563293e-05, 0.08062338, -0.9967445, 0.0012059172, -0.004775116, 0.00084311137)
 
-[node name="PT_L" parent="AnimatedCharacter/RootNode/CharacterArmature/Skeleton3D" index="14" unique_id=1143477569]
+[node name="PT_L" parent="AnimatedCharacter/RootNode/CharacterArmature/Skeleton3D" index="14" unique_id=1784636561]
 transform = Transform3D(1, 4.350052e-08, 6.7340945e-05, 6.733733e-05, -0.011029176, -0.99993914, 6.9921737e-07, 0.99993914, -0.011029176, 0.0015902363, -0.005749964, 0.00937636)
 
-[node name="Foot_R" parent="AnimatedCharacter/RootNode/CharacterArmature/Skeleton3D" index="15" unique_id=100146004]
+[node name="Foot_R" parent="AnimatedCharacter/RootNode/CharacterArmature/Skeleton3D" index="15" unique_id=1051728878]
 transform = Transform3D(0.9933375, 0.11523976, 0.00064918224, 0.11194951, -0.963609, -0.24274473, -0.027348291, 0.24120013, -0.9700899, -0.0006850702, -0.0043877745, 0.0011054777)
 
-[node name="PT_R" parent="AnimatedCharacter/RootNode/CharacterArmature/Skeleton3D" index="16" unique_id=1612715188]
+[node name="PT_R" parent="AnimatedCharacter/RootNode/CharacterArmature/Skeleton3D" index="16" unique_id=961087918]
 transform = Transform3D(1, -2.5873135e-08, -6.753121e-05, -6.752529e-05, -0.01362324, -0.99990714, -8.9412316e-07, 0.99990714, -0.01362324, -0.00083370006, -0.006683228, 0.009959038)
 
 [node name="BoneAttachment3D" parent="AnimatedCharacter/RootNode/CharacterArmature/Skeleton3D" index="21" unique_id=1406825964]
