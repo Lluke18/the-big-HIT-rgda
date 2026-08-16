@@ -67,7 +67,7 @@ func _physics_process(delta: float) -> void:
 		move_and_slide()
 		
 	if player_seen:
-		suspicion_bar.start_increase()
+		suspicion_bar.start_increase(sus_multiplier)
 	else:
 		suspicion_bar.stop_increase()
 	

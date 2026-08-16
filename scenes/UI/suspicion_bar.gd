@@ -5,6 +5,7 @@ var is_increasing: bool = false
 @export var increase_rate: float = 0.1
 signal detected_player
 #@export var npc: NPC
+var curr_multiplier: float = 1.0
 
 func _ready() -> void:
 	is_increasing = false
@@ -17,7 +18,7 @@ func _process(delta: float) -> void:
 	if not is_increasing:
 		value -= increase_rate
 	else:
-		value += increase_rate 
+		value += increase_rate * curr_multiplier
 		if value == max_value:
 			print("DETECTED INTRUDER!")
 			detected_player.emit()
@@ -25,9 +26,10 @@ func _process(delta: float) -> void:
 			#freeze or maybe delete the bar
 			self.process_mode = Node.PROCESS_MODE_DISABLED
 
-func start_increase():
+func start_increase(multiplier: float):
 	is_increasing = true
-	
+	curr_multiplier = multiplier
+
 func stop_increase():
 	is_increasing = false
 	

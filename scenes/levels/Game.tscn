@@ -61,10 +61,12 @@ spawn_limit = 2
 [node name="idle_guard2_4c_room" parent="NPCs" unique_id=399691295 node_paths=PackedStringArray("players_spawn") instance=ExtResource("4_fqm1f")]
 transform = Transform3D(0.9928652, 0, -0.11924212, 0, 1, 0, 0.11924212, 0, 0.9928652, -1.3910034, 0.8, 42.199547)
 players_spawn = NodePath("../../Players")
+sus_multiplier = 1.3
 
 [node name="idle_guard_4c_room" parent="NPCs" unique_id=1524290428 node_paths=PackedStringArray("players_spawn") instance=ExtResource("4_fqm1f")]
 transform = Transform3D(0.9898962, 0, 0.14179337, 0, 1, 0, -0.14179337, 0, 0.9898962, 1.3336794, 0.8, 42.199547)
 players_spawn = NodePath("../../Players")
+sus_multiplier = 1.3
 
 [node name="cyberguard" parent="NPCs" unique_id=115337626 node_paths=PackedStringArray("players_spawn") instance=ExtResource("4_fqm1f")]
 transform = Transform3D(-0.88402784, 0, 0.4674343, 0, 1, 0, -0.4674343, 0, -0.88402784, 0.48960066, 0.8, 60.979374)
@@ -74,11 +76,13 @@ sus_multiplier = 5.0
 [node name="idle_corpo_4c" parent="NPCs" unique_id=1508298263 node_paths=PackedStringArray("players_spawn") instance=ExtResource("3_4gy8a")]
 transform = Transform3D(-0.6536741, 0, 0.7567761, 0, 1, 0, -0.7567761, 0, -0.6536741, 2.811206, 0.82329667, 12.566856)
 players_spawn = NodePath("../../Players")
+sus_multiplier = 1.1
 fov = 100.0
 
 [node name="idle_guard" parent="NPCs" unique_id=437874083 node_paths=PackedStringArray("players_spawn") instance=ExtResource("4_fqm1f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.777077, 0.8009088, 34.54789)
 players_spawn = NodePath("../../Players")
+sus_multiplier = 1.3
 
 [node name="wander_corpo_test" parent="NPCs" unique_id=1106175981 node_paths=PackedStringArray("players_spawn", "route") instance=ExtResource("6_hqrlp")]
 transform = Transform3D(-0.3721515, 0, -0.928172, 0, 1, 0, 0.928172, 0, -0.3721515, 0.69072676, 0.8, 30.490192)
@@ -120,6 +124,7 @@ fov = 110.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.561296, 0.8185618, -2.1648185)
 players_spawn = NodePath("../../Players")
 route = NodePath("../../NPCRoutes/c3_route")
+sus_multiplier = 1.5
 
 [node name="bath_patrol_guard" parent="NPCs" unique_id=1987846108 node_paths=PackedStringArray("players_spawn", "route") instance=ExtResource("7_hcw8b")]
 transform = Transform3D(-0.25881904, 0, 0.9659258, 0, 1, 0, -0.9659258, 0, -0.25881904, 36.71461, 0.8838005, 14.633714)
@@ -135,6 +140,7 @@ fov = 100.0
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 19.989626, 0.8847008, 38.90135)
 players_spawn = NodePath("../../Players")
 route = NodePath("../../NPCRoutes/TonyRoute")
+sus_multiplier = 10.0
 vision_range = 13.0
 fov = 110.0
 
@@ -268,12 +274,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.24423, 0, 20.885593)
 
 [node name="SecurityCam" parent="SecurityCams" unique_id=1970247811 instance=ExtResource("8_ee3lx")]
 transform = Transform3D(0.2153889, 0, 5.6896576e-09, 0, 0.2153889, 0, -5.6896576e-09, 0, 0.2153889, 0.08257407, 3.8383875, 42.513687)
+sus_multiplier = 1.3
 
 [node name="SecurityCam2" parent="SecurityCams" unique_id=2142168739 instance=ExtResource("8_ee3lx")]
 transform = Transform3D(0.2153889, 0, 0, 0, 0.2153889, 0, 0, 0, 0.2153889, -16.639206, 5.305248, 20.221169)
 
 [node name="SecurityCam3" parent="SecurityCams" unique_id=793765677 instance=ExtResource("8_ee3lx")]
 transform = Transform3D(-9.414948e-09, 0, 0.2153889, 0, 0.2153889, 0, -0.2153889, 0, -9.414948e-09, 23.181768, 3.3435204, 16.806732)
+
+[node name="SecurityCam5" parent="SecurityCams" unique_id=412734218 instance=ExtResource("8_ee3lx")]
+transform = Transform3D(-9.414948e-09, 0, 0.2153889, 0, 0.2153889, 0, -0.2153889, 0, -9.414948e-09, 37.414436, 3.3435204, 16.806732)
+vision_range = 14.0
+sus_multiplier = 3.2
 
 [node name="SecurityCam4" parent="SecurityCams" unique_id=1189982840 instance=ExtResource("8_ee3lx")]
 transform = Transform3D(-9.414948e-09, 0, 0.2153889, 0, 0.2153889, 0, -0.2153889, 0, -9.414948e-09, -23.222454, 2.9765716, 16.310959)

@@ -11,6 +11,7 @@ var werewolf_scene := preload("res://scenes/characters/character.tscn")
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	AudioManager.stop_music()
 	AudioManager.play_music(menu_theme)
 	NetworkManager.return_to_menu.connect(_on_return_to_menu)
 	if SignalBus.steam_activated:
