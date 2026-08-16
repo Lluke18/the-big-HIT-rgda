@@ -10,8 +10,10 @@
 [ext_resource type="PackedScene" uid="uid://cyr3sk0flxvja" path="res://scenes/rooms/security_room.tscn" id="8_1jfvb"]
 [ext_resource type="PackedScene" uid="uid://cxb14tpq7hda3" path="res://scenes/rooms/Bathroom.tscn" id="8_x7wba"]
 [ext_resource type="PackedScene" uid="uid://ch3va1th02ful" path="res://assets/Objects/doors/double_glass_doors.tscn" id="10_1jfvb"]
-[ext_resource type="PackedScene" uid="uid://ibxk3cfa0hi3" path="res://assets/Objects/walls/wall_medium.tscn" id="11_7432f"]
 [ext_resource type="PackedScene" uid="uid://ykjkvnw12pl5" path="res://assets/Objects/doors/double_doors.tscn" id="12_6syvk"]
+[ext_resource type="PackedScene" uid="uid://cretm1lb8pokq" path="res://scenes/interactables/InteractableCoffee.tscn" id="12_omf75"]
+[ext_resource type="PackedScene" uid="uid://ds10b4bpy367m" path="res://scenes/interactables/items/LaxativesItem.tscn" id="12_yds1n"]
+[ext_resource type="PackedScene" uid="uid://cda065r4vrwhv" path="res://assets/Objects/Sandwhich.tscn" id="13_3ob56"]
 [ext_resource type="PackedScene" uid="uid://0lka2urij18c" path="res://scenes/interactables/items/BossKeys.tscn" id="13_wlxk1"]
 [ext_resource type="PackedScene" uid="uid://dahk83kgaclwp" path="res://scenes/interactables/VentEntrance.tscn" id="14_seyys"]
 [ext_resource type="PackedScene" uid="uid://dgvgh5abs8c08" path="res://scenes/UI/Notes.tscn" id="15_2xyan"]
@@ -66,20 +68,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.313099, 0, 35.691803)
 [node name="Bathroom" parent="NavigationRegion3D/Map" unique_id=1405531023 instance=ExtResource("8_x7wba")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 59.863873, 0, 8.670387)
 
-[node name="ExitCorner" type="Node3D" parent="NavigationRegion3D" unique_id=75431785]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -11.571625)
-
-[node name="EntranceCorner" type="Node3D" parent="NavigationRegion3D" unique_id=1083450235]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -67.19328, 0, 8.633148)
-
-[node name="Wall_Medium" parent="NavigationRegion3D/EntranceCorner" unique_id=2137611996 instance=ExtResource("11_7432f")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 20)
-visible = false
-
-[node name="Wall_Medium2" parent="NavigationRegion3D/EntranceCorner" unique_id=733792432 instance=ExtResource("11_7432f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 20)
-visible = false
-
 [node name="Doors" type="Node3D" parent="NavigationRegion3D" unique_id=1902153812]
 
 [node name="DoubleGlassDoors" parent="NavigationRegion3D/Doors" unique_id=358607124 instance=ExtResource("10_1jfvb")]
@@ -113,6 +101,7 @@ is_interactable = true
 
 [node name="DoubleGlassDoors10" parent="NavigationRegion3D/Doors" unique_id=765683866 instance=ExtResource("10_1jfvb")]
 transform = Transform3D(1.07, 0, 0, 0, 1.06, 0, 0, 0, 1, -1.1480088, 0, 42.977566)
+is_interactable = true
 
 [node name="DoubleDoors" parent="NavigationRegion3D/Doors" unique_id=1955729017 instance=ExtResource("12_6syvk")]
 transform = Transform3D(1, 0, 0, 0, 1.2, 0, 0, 0, 1, -0.96029186, 0.19144869, -2.3601038)
@@ -120,6 +109,15 @@ transform = Transform3D(1, 0, 0, 0, 1.2, 0, 0, 0, 1, -0.96029186, 0.19144869, -2
 [node name="Interactables" type="Node3D" parent="." unique_id=1392192078]
 
 [node name="Items" type="Node3D" parent="Interactables" unique_id=1710210810]
+
+[node name="InteractableCoffee" parent="Interactables/Items" unique_id=815212263 instance=ExtResource("12_omf75")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.34515, 1.2628981, 7.775564)
+
+[node name="Sandwhich" parent="Interactables/Items" unique_id=468044689 instance=ExtResource("13_3ob56")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.666332, 1.2093538, 7.735995)
+
+[node name="LaxativesItem" parent="Interactables/Items" unique_id=2125269717 instance=ExtResource("12_yds1n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.735798, 2.0618873, 35.705112)
 
 [node name="BossKeys" parent="Interactables/Items" unique_id=1903770464 instance=ExtResource("13_wlxk1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.309102, 0.7312201, 23.482958)
@@ -143,8 +141,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.255045, 2.3900797, -9.7275
 index = 1
 
 [node name="VentEntrance2" parent="Interactables/Vents" unique_id=1177532097 instance=ExtResource("14_seyys")]
-transform = Transform3D(1.1924881e-08, 0, 1, 0, 1, 0, -1, 0, 1.1924881e-08, -42.02317, 1.7573376, 10.108175)
+transform = Transform3D(-0.7, 0, 6.119594e-08, 0, 0.7, 0, -6.119594e-08, 0, -0.7, -4.840006, 1.7573376, 63.787)
 index = 2
+
+[node name="VentEntrance3" parent="Interactables/Vents" unique_id=466995928 instance=ExtResource("14_seyys")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -27.48171, 1.4497039, 33.49612)
+index = 3
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=549445705]
 layer = 2
@@ -154,6 +156,7 @@ layer = 2
 [node name="DefeatScreen" parent="CanvasLayer" unique_id=962478225 instance=ExtResource("16_6k6xt")]
 
 [node name="VictoryScreen" parent="CanvasLayer" unique_id=319326158 instance=ExtResource("16_4yhiw")]
+visible = false
 
 [node name="Options" parent="CanvasLayer" unique_id=315241284 instance=ExtResource("17_1yncy")]
 visible = false

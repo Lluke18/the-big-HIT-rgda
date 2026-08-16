@@ -26,7 +26,7 @@ func _on_resume_button_pressed() -> void:
 	hide()
 
 func _on_settings_button_pressed() -> void:
-	pass # Replace with function body.
+	settings.show()
 
 func _on_exit_to_menu_button_pressed() -> void:
 	NetworkManager.quit_lobby()

@@ -10,6 +10,7 @@ var game_level_scene = preload("res://scenes/levels/GameLevel.tscn")
 @onready var alarm: AudioStreamPlayer = $Audio/alarm
 
 @onready var npcs_parent: Node3D = $NPCs
+@onready var security_cams: Node3D = $SecurityCams
 
 func _ready() -> void:
 	SignalBus.reset_level.connect(_on_level_reset_requested)
@@ -60,6 +61,10 @@ func reset_level():
 	for npc in npcs_parent.get_children():
 		if npc is NPC:
 			npc.reset()
+			
+	#for cam in security_cams.get_children():
+		#if cam is SecurityCam:
+			#cam.reset()
 	
 	var new_game_level = game_level_scene.instantiate()
 	current_game_level.queue_free()

@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://oenhlr20lqb2" path="res://scenes/UI/SuspicionBar.tscn" id="7_sjxin"]
 [ext_resource type="AudioStream" uid="uid://b833geojx8317" path="res://audio/Revolver shoot - Sound effect (HD).mp3" id="8_sm1ty"]
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ragau"]
+
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_bjc1w"]
 properties/0/path = NodePath(".:position")
 properties/0/spawn = true
@@ -77,6 +79,13 @@ one_shot = true
 [node name="door_timer" type="Timer" parent="StateMachine/GrabCoffee" unique_id=945617846]
 one_shot = true
 
+[node name="CoffeeArea3D" type="Area3D" parent="StateMachine/GrabCoffee" unique_id=2109063874]
+collision_layer = 0
+collision_mask = 16
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StateMachine/GrabCoffee/CoffeeArea3D" unique_id=1630447966]
+shape = SubResource("CapsuleShape3D_ragau")
+
 [node name="Attack" type="Node" parent="StateMachine" unique_id=1212202497 node_paths=PackedStringArray("attack_range", "npc")]
 script = ExtResource("5_sm1ty")
 attack_range = NodePath("../../GuardDetectionArea")
@@ -135,3 +144,4 @@ bus = &"Sfx"
 
 [connection signal="timeout" from="StateMachine/Idle/IdleTimer" to="StateMachine/Idle" method="_on_idle_timer_timeout"]
 [connection signal="timeout" from="StateMachine/GrabCoffee/door_timer" to="StateMachine/GrabCoffee" method="_on_door_timer_timeout"]
+[connection signal="area_entered" from="StateMachine/GrabCoffee/CoffeeArea3D" to="StateMachine/GrabCoffee" method="_on_coffee_area_3d_area_entered"]

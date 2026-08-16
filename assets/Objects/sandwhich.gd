@@ -4,8 +4,8 @@ extends Node3D
 
 func _ready() -> void:
 	interactable_object.interact = Callable(self, "on_garlic_put")
-	interactable_object.vampire_interaction_text = "[Left Click] Put garlic in sandwhich"
-	interactable_object.werewolf_interaction_text = "[Left Click] Put garlic in sandwhich"
+	interactable_object.vampire_interaction_text = "[Left Click] Put garlic in sandwhich (need Garlic)"
+	interactable_object.werewolf_interaction_text = "[Left Click] Put garlic in sandwhich (need Garlic)"
 
 func on_garlic_put(player: Player):
 	if multiplayer.is_server():

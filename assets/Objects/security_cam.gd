@@ -1,5 +1,5 @@
 extends Node3D
-
+class_name SecurityCam
 
 @onready var see_cast: RayCast3D = $SeeCast
 @export var vision_range: float = 10.0
@@ -63,3 +63,7 @@ func check_for_players(player_arr: Array) -> bool:
 
 func disable():
 	process_mode = Node.PROCESS_MODE_DISABLED
+	
+func reset():
+	#suspicion_bar.reset()
+	process_mode = Node.PROCESS_MODE_INHERIT

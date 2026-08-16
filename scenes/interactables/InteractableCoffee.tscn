@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cretm1lb8pokq"]
+
+[ext_resource type="Script" uid="uid://dwbit1pmu2xpr" path="res://scenes/interactables/interactable_coffee.gd" id="1_2ryrx"]
+[ext_resource type="PackedScene" uid="uid://csvwgky3s6fcf" path="res://scenes/interactables/InteractableObject.tscn" id="2_peh3q"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2ryrx"]
+
+[node name="InteractableCoffee" type="Node3D" unique_id=815212263]
+script = ExtResource("1_2ryrx")
+
+[node name="InteractableObject" parent="." unique_id=216604155 instance=ExtResource("2_peh3q")]
+
+[node name="CollisionShape3D" parent="InteractableObject" index="0" unique_id=1785336431]
+shape = SubResource("BoxShape3D_2ryrx")
+
+[node name="Label3D" type="Label3D" parent="." unique_id=461356872]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.84128237, -0.060697794)
+billboard = 1
+text = "Boss's Coffee"
+font_size = 80
+
+[editable path="InteractableObject"]
