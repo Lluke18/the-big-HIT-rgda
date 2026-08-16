@@ -34,15 +34,14 @@ func on_turn_into_vampire():
 	is_vampire = true
 
 func Enter():
-	print("Boss is entering the coffee state!") 
+	print("boss is going TO BATH")
 	if !wait_timer.timeout.is_connected(_on_wait_at_location_timeout):
 		wait_timer.timeout.connect(_on_wait_at_location_timeout)
 	is_waiting = false
 	
 	if position_arr.is_empty():
-		# THE FIX: Tell him to look at the bathroom route, not the normal route!
-		if is_instance_valid(npc.route):
-			for marker in npc.route.get_children():
+		if is_instance_valid(npc.bath_route):
+			for marker in npc.bath_route.get_children():
 				position_arr.append(marker.global_position)
 	
 	nav_agent.set_target_position(position_arr[curr_pos_index])

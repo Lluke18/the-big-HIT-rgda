@@ -11,6 +11,7 @@ var game_level_scene = preload("res://scenes/levels/GameLevel.tscn")
 
 @onready var npcs_parent: Node3D = $NPCs
 @onready var security_cams: Node3D = $SecurityCams
+@onready var coffee_area_3d: Area3D = $CoffeeArea3D
 
 func _ready() -> void:
 	SignalBus.reset_level.connect(_on_level_reset_requested)
@@ -84,3 +85,16 @@ func _on_idle_guard_play_alarm() -> void:
 	await alarm.finished
 	AudioManager.play_music(chase_music)
 	#await alarm to finish, then play exciting music
+
+
+func _on_coffee_area_3d_body_entered(body: Node3D) -> void:
+	if body.is_in_group("target"):
+		print("a mers")
+		if body.is_vampire:
+			coffee_area_3d.set_deferred("process_mode", Node.PROCESS_MODE_DISABLED)
+			body.victory()
+		else:
+			print("HEY, iM NOT A VAMPIRE!")
+			if body.coffee_has_laxatives:
+				print("drank laxatives")
+				SignalBus.drank_coffee_laxative.emit()
